@@ -43,12 +43,12 @@ Ans:
 
 
 
-6. JavaScriptમાં global variable શું છે?  
+6. JavaScript માં global variable શું છે?  
 Ans: global variable એ એવી વેરીએબલ છે જે ફંક્શનથી બહાર declare કરવામાં આવે છે અને એના મૂલ્યને કોડના કોઈપણ ભાગથી, ફંક્શનની અંદર પણ, access કરી શકાય છે.
 
 
 
-7. JavaScriptમાં લોકલ વેરીએબલ શું છે?  
+7. JavaScript માં local વેરીએબલ શું છે?  
 Ans: લોકલ વેરીએબલ એ એવી વેરીએબલ છે જે ફંક્શનની અંદર declare કરવામાં આવે છે અને તેનો ઉપયોગ ફક્ત તે ફંક્શનની અંદર જ કરી શકાય છે.
 
 
