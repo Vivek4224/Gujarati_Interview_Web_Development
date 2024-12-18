@@ -1,0 +1,181 @@
+Here is a list of **30 questions and answers** focused on APIs and databases, which can help you prepare for interviews related to backend development and working with data.
+
+---
+
+### **API Questions**
+
+---
+
+### **1. What is an API?**
+An API (Application Programming Interface) allows different software systems to communicate with each other. It defines methods and data formats for exchanging information between systems.
+
+---
+
+### **2. What is REST?**
+REST (Representational State Transfer) is an architectural style for building web services that rely on stateless communication, HTTP methods (GET, POST, PUT, DELETE), and resource-based URLs.
+
+---
+
+### **3. What is a Web API?**
+A Web API is an API accessible over the web using HTTP protocols. It allows applications to interact with other applications via the internet, commonly using RESTful services.
+
+---
+
+### **4. What is the difference between SOAP and REST?**
+- **SOAP** (Simple Object Access Protocol) is a protocol with stricter standards and requires more overhead for communication.
+- **REST** is an architectural style with simpler, more flexible communication, often using HTTP methods for CRUD operations.
+
+---
+
+### **5. What is JSON?**
+JSON (JavaScript Object Notation) is a lightweight data interchange format used for representing data objects in a human-readable way.
+
+Example of JSON:
+```json
+{
+  "name": "John",
+  "age": 30
+}
+```
+
+---
+
+### **6. What is the HTTP method for retrieving data?**
+The `GET` method is used to retrieve data from the server.
+
+---
+
+### **7. What is the HTTP method for creating new data?**
+The `POST` method is used to create new data on the server.
+
+---
+
+### **8. What is the HTTP method for updating existing data?**
+The `PUT` method is used to update existing data on the server.
+
+---
+
+### **9. What is the HTTP method for deleting data?**
+The `DELETE` method is used to delete data on the server.
+
+---
+
+### **10. What is an endpoint in an API?**
+An endpoint is a specific URL or URI within an API that represents a resource and can be accessed through HTTP methods to perform operations (e.g., `GET /users`).
+
+---
+
+### **11. What is an API Key?**
+An API key is a unique identifier used to authenticate a client application when accessing an API. It ensures that the request is coming from a trusted source.
+
+---
+
+### **12. What is OAuth?**
+OAuth is an open standard for authorization that allows third-party applications to access user data without exposing their credentials. It enables secure access through tokens.
+
+---
+
+### **13. What is CORS?**
+CORS (Cross-Origin Resource Sharing) is a security feature implemented in browsers to control how resources on a web server can be requested from a different domain.
+
+---
+
+### **14. What is Rate Limiting in API?**
+Rate limiting is a strategy used by APIs to limit the number of requests a user can make to the server within a specified time period, preventing abuse.
+
+---
+
+### **15. What is versioning in API?**
+API versioning is the practice of managing changes to an API by introducing new versions while maintaining backward compatibility for existing users. This can be done using URL paths, headers, or query parameters.
+
+---
+
+### **16. What is an API Gateway?**
+An API Gateway is a server that acts as an entry point for API requests, handling things like authentication, load balancing, request routing, and response aggregation.
+
+---
+
+### **17. What is WebSocket?**
+WebSocket is a protocol that enables full-duplex communication between a client and a server over a single, long-lived connection, ideal for real-time applications.
+
+---
+
+### **18. What is JSON Web Token (JWT)?**
+JWT is a compact, URL-safe way to represent claims between two parties. It is commonly used for securely transmitting user authentication and authorization information in API calls.
+
+---
+
+### **19. What is a RESTful API?**
+A RESTful API follows REST principles, using HTTP methods, stateless communication, and resources identified by URLs. It typically returns data in JSON format.
+
+---
+
+### **20. What is the difference between synchronous and asynchronous API calls?**
+- **Synchronous** API calls block the execution of code until the response is received.
+- **Asynchronous** API calls allow code execution to continue while waiting for the response.
+
+---
+
+### **Database Questions**
+
+---
+
+### **21. What is a Database?**
+A database is an organized collection of structured data that can be easily accessed, managed, and updated. It typically uses a Database Management System (DBMS) for data management.
+
+---
+
+### **22. What is a relational database?**
+A relational database stores data in tables with rows and columns, and the tables can be related to each other using foreign keys. Examples include MySQL, PostgreSQL, and Oracle.
+
+---
+
+### **23. What is SQL?**
+SQL (Structured Query Language) is a language used to communicate with and manage relational databases. It allows for querying, updating, and managing data in a database.
+
+---
+
+### **24. What is a primary key?**
+A primary key is a unique identifier for a record in a table. It ensures that no two records have the same value for that field.
+
+---
+
+### **25. What is a foreign key?**
+A foreign key is a field in a table that is used to reference the primary key of another table, establishing a relationship between the two tables.
+
+---
+
+### **26. What is normalization in databases?**
+Normalization is the process of organizing data in a database to eliminate redundancy and dependency by dividing large tables into smaller ones.
+
+---
+
+### **27. What is denormalization in databases?**
+Denormalization is the process of introducing redundancy into a database to optimize read performance at the cost of write performance and storage space.
+
+---
+
+### **28. What is a JOIN in SQL?**
+A JOIN is a SQL operation used to combine rows from two or more tables based on a related column, usually a foreign key.
+
+Types of JOINs:
+- **INNER JOIN**: Returns rows that have matching values in both tables.
+- **LEFT JOIN**: Returns all rows from the left table and matching rows from the right table.
+- **RIGHT JOIN**: Returns all rows from the right table and matching rows from the left table.
+- **FULL OUTER JOIN**: Returns all rows when there is a match in either left or right table.
+
+---
+
+### **29. What is an index in a database?**
+An index is a database object used to speed up the retrieval of rows from a table by providing a fast lookup for queries based on certain columns.
+
+---
+
+### **30. What is ACID in database management?**
+ACID is a set of properties that guarantee database transactions are processed reliably:
+- **Atomicity**: A transaction is treated as a single unit, either fully completed or fully rolled back.
+- **Consistency**: A transaction ensures the database transitions from one valid state to another.
+- **Isolation**: Transactions are isolated from each other, preventing interference.
+- **Durability**: Once a transaction is committed, the changes are permanent.
+
+---

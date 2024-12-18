@@ -1,0 +1,291 @@
+Here is a list of **30 questions and answers** focused on **events in JavaScript**, covering basic concepts, event handling, and advanced topics.
+
+---
+
+### **1. What is an event in JavaScript?**
+An event in JavaScript is an occurrence that can be triggered by user interactions (like clicks, keypresses, etc.) or by other elements of the browser, such as page loading or resizing.
+
+---
+
+### **2. What is event handling in JavaScript?**
+Event handling in JavaScript refers to the process of responding to user actions or other events (like mouse clicks or keyboard input). This is done by attaching event listeners to HTML elements.
+
+---
+
+### **3. What is an event listener in JavaScript?**
+An event listener is a function in JavaScript that waits for a specific event to occur on a particular element and then executes a callback function when the event is triggered.
+
+```javascript
+element.addEventListener('click', function() {
+    alert('Element clicked!');
+});
+```
+
+---
+
+### **4. What is the `addEventListener()` method?**
+The `addEventListener()` method is used to attach an event handler to a specified element without overwriting existing event handlers.
+
+```javascript
+element.addEventListener('click', function() {
+    alert('Element clicked!');
+});
+```
+
+---
+
+### **5. What is the `removeEventListener()` method?**
+The `removeEventListener()` method is used to remove an event listener that was previously added to an element.
+
+```javascript
+const handleClick = function() {
+    alert('Element clicked!');
+};
+
+element.addEventListener('click', handleClick);
+element.removeEventListener('click', handleClick);
+```
+
+---
+
+### **6. What is the difference between `addEventListener()` and `onclick`?**
+- `addEventListener()` allows multiple event listeners to be attached to the same element for the same event.
+- `onclick` can only have one event handler at a time and will overwrite any existing handler.
+
+---
+
+### **7. What is event propagation in JavaScript?**
+Event propagation refers to the order in which events are received by elements in the DOM. It can be either **bubbling** or **capturing**:
+- **Bubbling**: The event starts from the target element and bubbles up to the root.
+- **Capturing**: The event starts from the root and propagates down to the target element.
+
+---
+
+### **8. What is event bubbling?**
+Event bubbling is a type of event propagation where the event starts from the target element and then "bubbles up" through the parent elements to the root of the DOM.
+
+---
+
+### **9. What is event capturing?**
+Event capturing (or trickling) is the opposite of event bubbling. The event starts from the root element and propagates down to the target element.
+
+---
+
+### **10. How can you stop event propagation?**
+To stop event propagation, you can use the `stopPropagation()` method on the event object:
+
+```javascript
+element.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+```
+
+---
+
+### **11. What is the `preventDefault()` method?**
+The `preventDefault()` method is used to prevent the default action associated with an event from being performed. For example, it can be used to prevent a form submission or a link navigation.
+
+```javascript
+element.addEventListener('submit', function(event) {
+    event.preventDefault();
+});
+```
+
+---
+
+### **12. What are the different types of mouse events in JavaScript?**
+- `click`: Fires when an element is clicked.
+- `dblclick`: Fires when an element is double-clicked.
+- `mousedown`: Fires when the mouse button is pressed down.
+- `mouseup`: Fires when the mouse button is released.
+- `mousemove`: Fires when the mouse moves over an element.
+
+---
+
+### **13. What are the different types of keyboard events in JavaScript?**
+- `keydown`: Fires when a key is pressed down.
+- `keyup`: Fires when a key is released.
+- `keypress`: Deprecated. Fires when a key is pressed and released.
+
+---
+
+### **14. What is the `onload` event in JavaScript?**
+The `onload` event is triggered when a resource (such as an image or script) has been successfully loaded.
+
+```javascript
+window.onload = function() {
+    console.log('Page has loaded!');
+};
+```
+
+---
+
+### **15. What is the `onresize` event in JavaScript?**
+The `onresize` event is triggered when the browser window is resized.
+
+```javascript
+window.onresize = function() {
+    console.log('Window resized!');
+};
+```
+
+---
+
+### **16. What is the `onscroll` event in JavaScript?**
+The `onscroll` event is triggered when an element is scrolled, such as when a user scrolls the page or a scrollable container.
+
+```javascript
+window.onscroll = function() {
+    console.log('Page scrolled!');
+};
+```
+
+---
+
+### **17. What is the `focus` event in JavaScript?**
+The `focus` event is triggered when an element (typically an input or textarea) gains focus.
+
+```javascript
+element.addEventListener('focus', function() {
+    console.log('Input focused!');
+});
+```
+
+---
+
+### **18. What is the `blur` event in JavaScript?**
+The `blur` event is triggered when an element loses focus.
+
+```javascript
+element.addEventListener('blur', function() {
+    console.log('Input lost focus!');
+});
+```
+
+---
+
+### **19. What is the `change` event in JavaScript?**
+The `change` event is triggered when the value of an input, select, or textarea element changes and the element loses focus.
+
+```javascript
+element.addEventListener('change', function() {
+    console.log('Value changed!');
+});
+```
+
+---
+
+### **20. What is the `submit` event in JavaScript?**
+The `submit` event is triggered when a form is submitted.
+
+```javascript
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('Form submitted!');
+});
+```
+
+---
+
+### **21. What is the `input` event in JavaScript?**
+The `input` event is triggered when the value of an input or textarea element changes while the user types.
+
+```javascript
+element.addEventListener('input', function() {
+    console.log('Input value changed!');
+});
+```
+
+---
+
+### **22. What is the `DOMContentLoaded` event in JavaScript?**
+The `DOMContentLoaded` event is fired when the HTML has been completely loaded and parsed, but before stylesheets, images, and other resources have finished loading.
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed!');
+});
+```
+
+---
+
+### **23. What is event delegation?**
+Event delegation is a technique where a single event listener is attached to a parent element to handle events for multiple child elements, reducing the number of event listeners.
+
+```javascript
+document.querySelector('#parent').addEventListener('click', function(event) {
+    if (event.target && event.target.matches('button')) {
+        console.log('Button clicked!');
+    }
+});
+```
+
+---
+
+### **24. What is the `target` property in an event?**
+The `target` property refers to the element that triggered the event. It allows you to access the specific element that caused the event.
+
+```javascript
+element.addEventListener('click', function(event) {
+    console.log(event.target); // Logs the clicked element
+});
+```
+
+---
+
+### **25. What is the `currentTarget` property in an event?**
+The `currentTarget` property refers to the element to which the event listener is attached. It may be different from `target` in cases of event delegation.
+
+```javascript
+element.addEventListener('click', function(event) {
+    console.log(event.currentTarget); // Logs the element the listener is attached to
+});
+```
+
+---
+
+### **26. What is a `keyboardEvent` in JavaScript?**
+A `keyboardEvent` is an event that occurs when a user interacts with the keyboard, such as pressing or releasing a key. It provides information about the key pressed through properties like `key`, `keyCode`, and `which`.
+
+---
+
+### **27. How can you prevent the default behavior of an event?**
+Use the `event.preventDefault()` method. For example, preventing form submission:
+```javascript
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('Form submission prevented!');
+});
+```
+
+---
+
+### **28. What is the `mousemove` event in JavaScript?**
+The `mousemove` event is triggered whenever the mouse moves over an element.
+
+```javascript
+element.addEventListener('mousemove', function(event) {
+    console.log('Mouse moved at: ' + event.clientX + ', ' + event.clientY);
+});
+```
+
+---
+
+### **29. What is the `mouseenter` and `mouseleave` event?**
+- **mouseenter**: Fired when the mouse pointer enters an element (does not bubble).
+- **mouseleave**: Fired when the mouse pointer leaves an element (does not bubble).
+
+---
+
+### **30. What is the `drag` event in JavaScript?**
+The `drag` event is triggered when an element is being dragged.
+
+```javascript
+element.addEventListener('drag', function() {
+    console.log('Element is being dragged');
+});
+```
+
+---
+
+These questions cover a wide range of JavaScript events and event handling techniques, from basic concepts to advanced topics, making them useful for interview preparation.

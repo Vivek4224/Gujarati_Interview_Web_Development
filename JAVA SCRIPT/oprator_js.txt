@@ -317,5 +317,3 @@ Here are 50 JavaScript operator-related interview questions and answers:
    ```javascript
    5 != "5"; // false
    ```
-
-These questions and answers cover a broad range of operators in JavaScript, which will be helpful for interview preparation.

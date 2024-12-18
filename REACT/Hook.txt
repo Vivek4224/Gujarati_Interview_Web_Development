@@ -1,0 +1,230 @@
+Here are some key **questions and answers** related to **React Hooks** for a fresher's interview:
+
+---
+
+### **1. What are React Hooks?**
+React Hooks are functions that allow you to "hook into" React state and lifecycle features from function components. They were introduced in React 16.8 to simplify working with state and side effects in functional components, eliminating the need for class components.
+
+---
+
+### **2. What is the `useState` hook?**
+`useState` is a hook that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update it.
+
+```javascript
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **3. What is the `useEffect` hook?**
+`useEffect` is a hook that performs side effects in function components, such as data fetching, subscriptions, or manually changing the DOM. It is similar to lifecycle methods in class components (`componentDidMount`, `componentDidUpdate`, `componentWillUnmount`).
+
+```javascript
+import React, { useState, useEffect } from "react";
+
+function FetchData() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://api.example.com/data")
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []); // Empty dependency array means it runs once, like componentDidMount
+
+  return <div>{data ? JSON.stringify(data) : "Loading..."}</div>;
+}
+```
+
+---
+
+### **4. What is the `useContext` hook?**
+`useContext` is a hook that allows you to access the value of a context in a function component. It is used to consume values from a React context.
+
+```javascript
+import React, { useContext } from "react";
+
+const ThemeContext = React.createContext("light");
+
+function ThemedComponent() {
+  const theme = useContext(ThemeContext);
+  return <div>The current theme is {theme}</div>;
+}
+```
+
+---
+
+### **5. What is the `useReducer` hook?**
+`useReducer` is a hook that is used for more complex state logic in React, similar to `useState` but allows for managing state transitions through actions and reducers.
+
+```javascript
+import React, { useReducer } from "react";
+
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **6. What is the `useRef` hook?**
+`useRef` is a hook that allows you to persist values across renders without triggering a re-render. It can also be used to reference DOM elements.
+
+```javascript
+import React, { useRef } from "react";
+
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **7. What is the `useMemo` hook?**
+`useMemo` is a hook that memoizes the result of a computation and only recalculates it when one of its dependencies changes. This is useful for optimizing expensive calculations.
+
+```javascript
+import React, { useState, useMemo } from "react";
+
+function ExpensiveCalculation({ number }) {
+  const expensiveResult = useMemo(() => {
+    return number * 1000;
+  }, [number]); // Only re-compute when `number` changes
+
+  return <div>Result: {expensiveResult}</div>;
+}
+```
+
+---
+
+### **8. What is the `useCallback` hook?**
+`useCallback` is a hook that returns a memoized version of a callback function. It is used to optimize performance when passing functions as props to child components, preventing unnecessary re-renders.
+
+```javascript
+import React, { useState, useCallback } from "react";
+
+function Child({ onClick }) {
+  return <button onClick={onClick}>Click Me</button>;
+}
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const memoizedCallback = useCallback(() => {
+    console.log("Button clicked");
+  }, []); // Will not change unless dependencies change
+
+  return (
+    <div>
+      <p>{count}</p>
+      <Child onClick={memoizedCallback} />
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **9. What is the `useLayoutEffect` hook?**
+`useLayoutEffect` is similar to `useEffect`, but it is executed synchronously after all DOM mutations. It is useful when you need to measure DOM elements or perform any operations that may cause visual changes.
+
+```javascript
+import React, { useLayoutEffect, useRef } from "react";
+
+function ResizeComponent() {
+  const divRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const divWidth = divRef.current.getBoundingClientRect().width;
+    console.log("Width of div:", divWidth);
+  }, []);
+
+  return <div ref={divRef}>Hello</div>;
+}
+```
+
+---
+
+### **10. What is the `useImperativeHandle` hook?**
+`useImperativeHandle` is used in combination with `forwardRef` to customize the instance value that is exposed to parent components when using refs. This is useful when you need to expose specific methods or properties to the parent component.
+
+```javascript
+import React, { useImperativeHandle, useRef, forwardRef } from "react";
+
+const Child = forwardRef((props, ref) => {
+  const localRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      localRef.current.focus();
+    }
+  }));
+
+  return <input ref={localRef} />;
+});
+
+function Parent() {
+  const childRef = useRef();
+
+  return (
+    <div>
+      <Child ref={childRef} />
+      <button onClick={() => childRef.current.focus()}>Focus Input</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **11. What are the rules of using React Hooks?**
+- Hooks should only be called at the top level of your component (not inside loops, conditions, or nested functions).
+- Hooks should only be called in React function components or custom hooks.
+- Do not call hooks from regular JavaScript functions.
+
+---
+
+These questions and answers cover the key **React Hooks** that allow you to manage state, side effects, refs, and performance optimizations in functional components. They are essential for understanding modern React development with hooks.

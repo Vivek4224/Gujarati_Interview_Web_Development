@@ -1,0 +1,201 @@
+Here are the **top 10 questions and answers** focused on **props** in React, which are essential for a **fresher** preparing for a React interview:
+
+---
+
+### **1. What are props in React?**
+
+**Answer**:  
+Props (short for "properties") are read-only data passed from a parent component to a child component. Props allow data to flow through the component tree and make components dynamic and reusable.
+
+```jsx
+function Greeting({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+// Parent component
+<Greeting name="John" />
+```
+
+---
+
+### **2. What is the difference between props and state in React?**
+
+**Answer**:  
+- **Props**: Immutable and passed from parent to child. They cannot be changed within the child component.
+- **State**: Mutable and managed within the component. State can change and trigger re-renders.
+
+```jsx
+// Props example:
+function ChildComponent({ name }) {
+  return <h1>{name}</h1>;
+}
+
+// State example:
+class Counter extends React.Component {
+  state = { count: 0 };
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return <button onClick={this.increment}>{this.state.count}</button>;
+  }
+}
+```
+
+---
+
+### **3. How do you pass props to a child component?**
+
+**Answer**:  
+You pass props to a child component by adding them as attributes when rendering the child component within the parent.
+
+```jsx
+function Parent() {
+  const name = 'Alice';
+  return <Child name={name} />;
+}
+
+function Child({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+```
+
+---
+
+### **4. Can props be modified inside the child component?**
+
+**Answer**:  
+No, props are **immutable**. They are read-only, and any modification should be done in the parent component before passing them down. If you need to modify data, you should use state within the child component.
+
+---
+
+### **5. What is prop drilling in React?**
+
+**Answer**:  
+Prop drilling refers to the process of passing props through multiple levels of components in a component tree, even if some intermediate components don't need the props. This can lead to cumbersome code, especially in large applications.
+
+```jsx
+function Grandparent() {
+  const name = 'Alice';
+  return <Parent name={name} />;
+}
+
+function Parent({ name }) {
+  return <Child name={name} />;
+}
+
+function Child({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+```
+
+---
+
+### **6. What is defaultProps in React?**
+
+**Answer**:  
+`defaultProps` is a way to define default values for props in case they are not passed by the parent component. It ensures that a prop has a value even if it is not explicitly passed.
+
+```jsx
+function MyComponent({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+
+MyComponent.defaultProps = {
+  name: 'Guest',
+};
+```
+
+If `name` is not provided by the parent, it defaults to `'Guest'`.
+
+---
+
+### **7. How can you validate props in React?**
+
+**Answer**:  
+You can validate props using `PropTypes`. This allows you to enforce the expected types and structure of props passed to a component. If the props don't match the expected type, React will show a warning in the console.
+
+```jsx
+import PropTypes from 'prop-types';
+
+function MyComponent({ name, age }) {
+  return <h1>{name} is {age} years old.</h1>;
+}
+
+MyComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+};
+```
+
+---
+
+### **8. What are the children props in React?**
+
+**Answer**:  
+`children` is a special prop in React that allows components to pass arbitrary content between their opening and closing tags. It can be any valid React elements or components.
+
+```jsx
+function MyContainer({ children }) {
+  return <div>{children}</div>;
+}
+
+<MyContainer>
+  <h1>Hello, world!</h1>
+</MyContainer>
+```
+
+In this case, the content (`<h1>Hello, world!</h1>`) is passed as `children`.
+
+---
+
+### **9. How can you pass multiple values as props to a component?**
+
+**Answer**:  
+You can pass multiple values as props by adding each prop individually when rendering the component.
+
+```jsx
+function Greeting({ name, age }) {
+  return <h1>{name} is {age} years old.</h1>;
+}
+
+<Greeting name="John" age={25} />
+```
+
+Alternatively, you can pass an object as a prop and destructure it in the child component:
+
+```jsx
+function Greeting({ person }) {
+  return <h1>{person.name} is {person.age} years old.</h1>;
+}
+
+const person = { name: 'John', age: 25 };
+<Greeting person={person} />
+```
+
+---
+
+### **10. How can you pass a function as a prop in React?**
+
+**Answer**:  
+You can pass a function as a prop to allow a child component to call it. This is commonly used for event handling or communication between components.
+
+```jsx
+function Parent() {
+  const greet = (name) => {
+    alert(`Hello, ${name}`);
+  };
+
+  return <Child greet={greet} />;
+}
+
+function Child({ greet }) {
+  return <button onClick={() => greet('John')}>Greet</button>;
+}
+```
+
+In this example, the `Parent` component passes a `greet` function to `Child`, which calls it when the button is clicked.
+
+---

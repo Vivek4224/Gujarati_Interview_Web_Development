@@ -1,0 +1,102 @@
+Here are the **top 10 questions and answers** specifically focused on **JSX** in React for a fresher's interview:
+
+---
+
+### **1. What is JSX?**
+JSX stands for JavaScript XML, and it is a syntax extension for JavaScript used with React. JSX allows you to write HTML-like code inside JavaScript, which React then converts into JavaScript functions.
+
+```javascript
+const element = <h1>Hello, World!</h1>;
+```
+
+---
+
+### **2. How does JSX work in React?**
+JSX gets transformed into React.createElement calls. React uses these calls to create a virtual DOM, which is later rendered to the actual DOM. JSX is a syntactic sugar for `React.createElement()`.
+
+```javascript
+const element = <h1>Hello, World!</h1>;
+// This gets converted into:
+const element = React.createElement('h1', null, 'Hello, World!');
+```
+
+---
+
+### **3. Is it necessary to use JSX in React?**
+No, it’s not strictly necessary. You can use `React.createElement()` directly to create elements without JSX. However, JSX is more concise and easier to understand, which is why it’s widely used in React.
+
+---
+
+### **4. What are the advantages of using JSX?**
+- **Readability**: JSX is more readable and easier to write than `React.createElement()` calls.
+- **Declarative syntax**: It allows you to define UI in a more declarative and intuitive way.
+- **Error Handling**: JSX helps catch common errors, such as missing closing tags, during compile-time rather than runtime.
+
+---
+
+### **5. Can you write JavaScript expressions inside JSX?**
+Yes, you can write JavaScript expressions inside JSX by wrapping them in curly braces `{}`. For example, you can display a variable value or perform calculations.
+
+```javascript
+const name = "John";
+const element = <h1>Hello, {name}!</h1>;
+```
+
+---
+
+### **6. How do you conditionally render content in JSX?**
+You can use JavaScript operators like `if`, ternary operators, or logical `&&` inside JSX to conditionally render content.
+
+```javascript
+const isLoggedIn = true;
+const element = <h1>{isLoggedIn ? "Welcome back!" : "Please sign up"}</h1>;
+```
+
+---
+
+### **7. What is the purpose of `key` in JSX?**
+The `key` attribute in JSX is used to help React identify which items in a list are changed, added, or removed. It improves the performance of list rendering and helps React optimize re-renders.
+
+```javascript
+const items = ["Apple", "Banana", "Cherry"];
+const listItems = items.map((item, index) => <li key={index}>{item}</li>);
+```
+
+---
+
+### **8. How do you handle events in JSX?**
+You can handle events in JSX by using camelCase naming conventions. For example, instead of `onclick`, you would use `onClick` in JSX. Event handlers are passed as functions.
+
+```javascript
+function handleClick() {
+  alert("Button clicked!");
+}
+
+const element = <button onClick={handleClick}>Click Me</button>;
+```
+
+---
+
+### **9. Can you return multiple elements from a JSX block?**
+Yes, but the elements must be wrapped in a single parent element (like a `<div>` or a React Fragment). You can use `React.Fragment` or short syntax `<> </>` to return multiple elements without adding extra nodes to the DOM.
+
+```javascript
+const element = (
+  <>
+    <h1>Hello</h1>
+    <p>Welcome to React</p>
+  </>
+);
+```
+
+---
+
+### **10. What is the difference between JSX and HTML?**
+- **HTML**: HTML attributes like `class`, `for`, and `style` differ in JSX.
+- **JSX**: In JSX, `class` becomes `className`, `for` becomes `htmlFor`, and `style` is passed as an object.
+
+```javascript
+const element = <div className="myClass" htmlFor="inputField">Hello</div>;
+```
+
+---

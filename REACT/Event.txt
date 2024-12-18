@@ -1,0 +1,245 @@
+Here are some key **questions and answers about events in React** for a fresher's interview:
+
+---
+
+### **1. How do you handle events in React?**
+In React, events are handled using camelCase syntax. Event handlers are written as functions, and the event object is automatically passed to them. You attach an event handler to an element using the corresponding JSX event attribute.
+
+```javascript
+class MyComponent extends React.Component {
+  handleClick = () => {
+    console.log("Button clicked!");
+  };
+
+  render() {
+    return <button onClick={this.handleClick}>Click Me</button>;
+  }
+}
+```
+
+---
+
+### **2. How do you pass arguments to event handlers in React?**
+To pass arguments to an event handler in React, you can use an arrow function or bind the event handler in the constructor.
+
+```javascript
+class MyComponent extends React.Component {
+  handleClick = (message) => {
+    alert(message);
+  };
+
+  render() {
+    return <button onClick={() => this.handleClick("Hello, World!")}>Click Me</button>;
+  }
+}
+```
+
+Alternatively, you can bind the function in the constructor:
+
+```javascript
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this, "Hello, World!");
+  }
+
+  handleClick(message) {
+    alert(message);
+  }
+
+  render() {
+    return <button onClick={this.handleClick}>Click Me</button>;
+  }
+}
+```
+
+---
+
+### **3. What is the difference between synthetic events and native events in React?**
+React uses **Synthetic Events**, a cross-browser wrapper around native events to ensure consistency across different browsers. These synthetic events have the same interface as native events, but they are normalized for performance and cross-browser compatibility.
+
+For example:
+```javascript
+<button onClick={this.handleClick}>Click Me</button>
+
+// handleClick receives a SyntheticEvent, not the native browser event
+handleClick(event) {
+  console.log(event); // SyntheticEvent
+}
+```
+
+---
+
+### **4. How do you handle form input events in React?**
+In React, form inputs can be controlled using state. You can handle input events like `onChange` to update the state as the user types.
+
+```javascript
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = { value: "" };
+  }
+
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  };
+
+  render() {
+    return <input type="text" value={this.state.value} onChange={this.handleChange} />;
+  }
+}
+```
+
+---
+
+### **5. What is the `onSubmit` event handler in React?**
+The `onSubmit` event handler in React is used for handling form submissions. It is typically used with a `<form>` element. You can prevent the default form submission behavior using `event.preventDefault()`.
+
+```javascript
+class MyComponent extends React.Component {
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted!");
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+```
+
+---
+
+### **6. What is event delegation in React?**
+Event delegation is a technique where you attach a single event listener to a parent element rather than multiple listeners to individual child elements. React uses this technique internally, so you don't need to worry about it when adding event listeners to child elements.
+
+```javascript
+class MyComponent extends React.Component {
+  handleClick = (event) => {
+    console.log("Button clicked:", event.target);
+  };
+
+  render() {
+    return (
+      <div onClick={this.handleClick}>
+        <button>Button 1</button>
+        <button>Button 2</button>
+      </div>
+    );
+  }
+}
+```
+
+In this case, the event listener is added to the parent `<div>`, and it listens for clicks on both buttons.
+
+---
+
+### **7. How do you stop an event's default behavior in React?**
+You can call `event.preventDefault()` to stop the default behavior of an event in React. For example, this is often used in form submission to prevent the page from refreshing.
+
+```javascript
+handleSubmit = (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+  console.log("Form submitted");
+};
+```
+
+---
+
+### **8. How do you stop the propagation of an event in React?**
+To stop the propagation of an event in React (i.e., prevent it from bubbling up to parent elements), you use `event.stopPropagation()`.
+
+```javascript
+handleClick = (event) => {
+  event.stopPropagation(); // Prevents the event from bubbling
+  console.log("Button clicked");
+};
+
+handleParentClick = () => {
+  console.log("Parent clicked");
+};
+
+render() {
+  return (
+    <div onClick={this.handleParentClick}>
+      <button onClick={this.handleClick}>Click Me</button>
+    </div>
+  );
+}
+```
+In this case, the button click will not propagate to the parent `div`.
+
+---
+
+### **9. What are controlled and uncontrolled components in React with respect to events?**
+- **Controlled Components**: These are components where form data (like input, select, etc.) is managed by React state. Events such as `onChange` are used to update the state.
+- **Uncontrolled Components**: These are components where the form data is managed by the DOM itself, not by React state. You can access the value of the form element using refs.
+
+```javascript
+// Controlled Component
+class MyComponent extends React.Component {
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  };
+
+  render() {
+    return <input type="text" value={this.state.value} onChange={this.handleChange} />;
+  }
+}
+
+// Uncontrolled Component
+class MyComponent extends React.Component {
+  inputRef = React.createRef();
+
+  handleSubmit = () => {
+    alert(this.inputRef.current.value);
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" ref={this.inputRef} />
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+```
+
+---
+
+### **10. How do you bind `this` to event handlers in class components?**
+In class components, event handler methods do not automatically bind `this` to the component instance. You can bind `this` in the constructor or use arrow functions to ensure the correct context.
+
+**Binding in constructor:**
+```javascript
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log("Button clicked!");
+  }
+
+  render() {
+    return <button onClick={this.handleClick}>Click Me</button>;
+  }
+}
+```
+
+**Using arrow functions:**
+```javascript
+handleClick = () => {
+  console.log("Button clicked!");
+};
+```
+
+---
+
+These questions cover the basics of handling **events** in React, including form events, event delegation, stopping event propagation, and managing context in class components. They are important for understanding how to interact with the user and handle input in React applications.

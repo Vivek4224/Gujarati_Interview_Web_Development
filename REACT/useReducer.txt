@@ -1,0 +1,212 @@
+Here are the **top 10 questions and answers** related to **`useReducer`** in React, which will help a **fresher** prepare for a React interview:
+
+---
+
+### **1. What is `useReducer` in React?**
+
+**Answer**:  
+`useReducer` is a hook in React that is used to manage more complex state logic in a functional component. It is similar to `useState`, but instead of just updating state, it uses a reducer function to handle state transitions. `useReducer` is typically used when the state logic is more complicated or involves multiple sub-values or actions.
+
+Example:
+
+```jsx
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **2. How does `useReducer` differ from `useState`?**
+
+**Answer**:  
+- **`useState`** is used for simple state management, typically when state values are primitive types or just a single value.
+- **`useReducer`** is used for managing complex state, especially when the next state depends on the previous state or involves multiple sub-values. It also allows handling actions in a more structured way, similar to Redux.
+
+In `useReducer`, a reducer function defines how the state should change based on different actions.
+
+---
+
+### **3. When should you use `useReducer` over `useState`?**
+
+**Answer**:  
+You should use `useReducer` when:
+- The state logic is complex and involves multiple sub-values.
+- State changes depend on the previous state.
+- You need to handle more complex actions (e.g., in response to user events, API responses).
+- You want to manage state in a more structured way (similar to Redux).
+
+For simple state updates, `useState` is often preferred as it's more concise.
+
+---
+
+### **4. What are the parameters of the `useReducer` hook?**
+
+**Answer**:  
+`useReducer` takes two parameters:
+1. **A reducer function**: A function that specifies how the state changes in response to actions.
+2. **An initial state**: The initial state value before any action is dispatched.
+
+The reducer function receives the current state and an action and returns the new state.
+
+```jsx
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+---
+
+### **5. What is the reducer function?**
+
+**Answer**:  
+The reducer function is a function that defines how the state should be updated in response to specific actions. It takes two arguments:
+1. **`state`**: The current state.
+2. **`action`**: An object that describes the action to perform.
+
+It returns the new state.
+
+Example of a reducer function:
+
+```jsx
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+```
+
+---
+
+### **6. How do you dispatch an action with `useReducer`?**
+
+**Answer**:  
+You dispatch an action by calling the `dispatch` function returned by `useReducer`. The action is typically an object that contains a `type` and possibly additional data to help update the state.
+
+Example:
+
+```jsx
+dispatch({ type: 'increment' });  // Action with a type of 'increment'
+```
+
+---
+
+### **7. Can you pass additional data in the action when dispatching?**
+
+**Answer**:  
+Yes, you can pass additional data in the action object. This is often useful when you need to update the state with dynamic values.
+
+Example:
+
+```jsx
+dispatch({ type: 'setCount', payload: 5 });  // Action with a 'payload' for dynamic data
+```
+
+In the reducer, you can handle this data:
+
+```jsx
+function reducer(state, action) {
+  switch (action.type) {
+    case 'setCount':
+      return { count: action.payload };
+    default:
+      return state;
+  }
+}
+```
+
+---
+
+### **8. Can `useReducer` be used with asynchronous actions?**
+
+**Answer**:  
+`useReducer` itself does not directly handle asynchronous actions. However, you can dispatch actions asynchronously by using side-effects, such as within `useEffect` or with `async` functions.
+
+Example with `useEffect` and `async`:
+
+```jsx
+function fetchData(dispatch) {
+  fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+      dispatch({ type: 'setData', payload: data });
+    });
+}
+
+function MyComponent() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    fetchData(dispatch);
+  }, []);
+
+  return <div>{state.data}</div>;
+}
+```
+
+---
+
+### **9. How do you use multiple `useReducer` hooks in a single component?**
+
+**Answer**:  
+You can use multiple `useReducer` hooks in a single component to manage different pieces of state independently. Each `useReducer` will manage its own part of the state and its own dispatch function.
+
+Example:
+
+```jsx
+const [countState, dispatchCount] = useReducer(countReducer, { count: 0 });
+const [textState, dispatchText] = useReducer(textReducer, { text: '' });
+
+function MyComponent() {
+  return (
+    <div>
+      <p>{countState.count}</p>
+      <button onClick={() => dispatchCount({ type: 'increment' })}>Increment</button>
+
+      <p>{textState.text}</p>
+      <button onClick={() => dispatchText({ type: 'updateText', payload: 'Hello' })}>
+        Update Text
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+### **10. What are the advantages of using `useReducer` over `useState`?**
+
+**Answer**:  
+- **Better management of complex state**: `useReducer` is better suited for managing complex state that involves multiple sub-values or more complicated state transitions.
+- **More predictable state updates**: It centralizes the state update logic in a single reducer function, making it easier to understand how the state changes.
+- **Decouples state logic from UI**: `useReducer` separates state changes from the UI components, making it easier to maintain and test.
+
+`useReducer` is especially useful when the component has multiple state variables that change based on different actions.
+
+---
+
+These questions and answers cover the essential concepts of `useReducer`, a powerful hook in React used for managing complex state transitions.

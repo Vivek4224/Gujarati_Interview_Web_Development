@@ -1,0 +1,286 @@
+Here are **30 questions and answers** about **React** to help with interviews or understanding core concepts:
+
+---
+
+### **1. What is React?**
+React is a JavaScript library for building user interfaces, primarily for single-page applications. It allows developers to build reusable UI components and manage the state of the application.
+
+---
+
+### **2. What are components in React?**
+Components are the building blocks of a React application. They can be function components or class components and define how the UI looks and behaves.
+
+---
+
+### **3. What is the difference between a function component and a class component?**
+- **Function Component**: A simpler way to write components, introduced with hooks in React 16.8.
+- **Class Component**: An older style of writing components that can have lifecycle methods and state.
+
+Example:
+```javascript
+// Function component
+function MyComponent() {
+  return <div>Hello, World!</div>;
+}
+
+// Class component
+class MyComponent extends React.Component {
+  render() {
+    return <div>Hello, World!</div>;
+  }
+}
+```
+
+---
+
+### **4. What are props in React?**
+Props (short for properties) are inputs to a React component. They are passed down from parent to child components and are immutable within the child component.
+
+```javascript
+function MyComponent(props) {
+  return <h1>{props.message}</h1>;
+}
+```
+
+---
+
+### **5. What is state in React?**
+State is a mutable data structure that is managed within a component. It allows components to re-render when the data changes.
+
+```javascript
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+  render() {
+    return <div>{this.state.count}</div>;
+  }
+}
+```
+
+---
+
+### **6. What are hooks in React?**
+Hooks are functions that allow you to "hook into" React state and lifecycle features from function components. Common hooks include `useState`, `useEffect`, and `useContext`.
+
+---
+
+### **7. What is `useState()` hook?**
+`useState()` is a hook that allows you to add state to function components. It returns an array with two elements: the current state value and a function to update it.
+
+```javascript
+const [count, setCount] = useState(0);
+```
+
+---
+
+### **8. What is `useEffect()` hook?**
+`useEffect()` is a hook that performs side effects in function components, like fetching data or updating the DOM. It replaces lifecycle methods like `componentDidMount` and `componentDidUpdate` in class components.
+
+```javascript
+useEffect(() => {
+  console.log('Component mounted or updated');
+}, [count]); // Dependency array
+```
+
+---
+
+### **9. What is JSX in React?**
+JSX (JavaScript XML) is a syntax extension for JavaScript, used with React to describe what the UI should look like. It allows HTML-like code in JavaScript files.
+
+```javascript
+const element = <h1>Hello, World!</h1>;
+```
+
+---
+
+### **10. What is a virtual DOM?**
+The virtual DOM is a lightweight in-memory representation of the actual DOM. React uses it to optimize updates to the real DOM by first comparing the virtual DOM with the real DOM and then updating only the necessary parts.
+
+---
+
+### **11. What is the difference between controlled and uncontrolled components in React?**
+- **Controlled Components**: Form elements whose value is controlled by React state.
+- **Uncontrolled Components**: Form elements that maintain their own internal state, with the value accessed using refs.
+
+---
+
+### **12. What are keys in React?**
+Keys help React identify which items in the list are changed, added, or removed. They should be unique for each item in a list.
+
+```javascript
+const items = ["Apple", "Banana", "Cherry"];
+const listItems = items.map((item, index) => <li key={index}>{item}</li>);
+```
+
+---
+
+### **13. What is the context API in React?**
+The context API allows you to pass data through the component tree without having to pass props down manually at every level. It’s useful for global state management.
+
+```javascript
+const MyContext = React.createContext();
+```
+
+---
+
+### **14. What are higher-order components (HOCs)?**
+A higher-order component is a function that takes a component and returns a new component with additional props or behavior.
+
+```javascript
+function withLoading(Component) {
+  return function Loading(props) {
+    return props.isLoading ? <div>Loading...</div> : <Component {...props} />;
+  };
+}
+```
+
+---
+
+### **15. What is a functional component?**
+A functional component is a simpler form of a component in React, written as a JavaScript function. It does not have its own state or lifecycle methods until React introduced hooks.
+
+```javascript
+function MyComponent() {
+  return <h1>Hello, World!</h1>;
+}
+```
+
+---
+
+### **16. What is a class component?**
+A class component is a React component defined using a JavaScript class. It can have state and lifecycle methods.
+
+```javascript
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello, World!</h1>;
+  }
+}
+```
+
+---
+
+### **17. What are lifecycle methods in React?**
+Lifecycle methods are hooks in class components that allow you to run code at specific points during a component’s life, such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+---
+
+### **18. What is React Router?**
+React Router is a library that enables routing in React applications. It allows you to navigate between different views or components based on the URL.
+
+```javascript
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+<Router>
+  <Switch>
+    <Route path="/home" component={Home} />
+    <Route path="/about" component={About} />
+  </Switch>
+</Router>
+```
+
+---
+
+### **19. What is Redux?**
+Redux is a state management library for JavaScript apps. It provides a global store for the application state and uses actions and reducers to update the state.
+
+---
+
+### **20. What is a reducer in Redux?**
+A reducer is a pure function that takes the current state and an action as arguments and returns a new state.
+
+```javascript
+function counter(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    default:
+      return state;
+  }
+}
+```
+
+---
+
+### **21. What is the difference between `useEffect()` and `componentDidMount()`?**
+- `componentDidMount()` is used in class components to perform side effects after the component mounts.
+- `useEffect()` in function components can be used to achieve the same effect, but it runs after every render unless you specify dependencies.
+
+---
+
+### **22. What is the purpose of `useCallback()` hook?**
+`useCallback()` is a hook used to memoize functions, ensuring that the function is not recreated on every render unless its dependencies change.
+
+```javascript
+const memoizedFunction = useCallback(() => {
+  // Function body
+}, [dependency]);
+```
+
+---
+
+### **23. What is the purpose of `useMemo()` hook?**
+`useMemo()` is a hook used to memoize expensive calculations so that they are recalculated only when the dependencies change.
+
+```javascript
+const memoizedValue = useMemo(() => expensiveCalculation(a, b), [a, b]);
+```
+
+---
+
+### **24. What is Prop drilling?**
+Prop drilling refers to the process of passing data from a parent component to a deeply nested child component through intermediate components. This can be avoided using the Context API or state management libraries like Redux.
+
+---
+
+### **25. What are controlled forms in React?**
+Controlled forms in React are forms where the form data is controlled by React state. The input elements' values are linked to the state, and updates to the form are done via `setState()`.
+
+---
+
+### **26. How do you optimize performance in React?**
+- Use `React.memo()` for functional components to prevent unnecessary re-renders.
+- Use `PureComponent` for class components.
+- Use `useCallback()` and `useMemo()` to avoid recreating functions and values.
+- Split the app into smaller chunks using code-splitting.
+
+---
+
+### **27. What is the difference between `React.createElement()` and JSX?**
+- `React.createElement()` is a low-level API to create React elements.
+- JSX is a syntax extension that makes it easier to write `React.createElement()` calls in a declarative way.
+
+---
+
+### **28. What are error boundaries in React?**
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree and log those errors, preventing the app from crashing.
+
+```javascript
+class ErrorBoundary extends React.Component {
+  componentDidCatch(error, info) {
+    // Handle error
+  }
+}
+```
+
+---
+
+### **29. How do you trigger a re-render in React?**
+Re-renders in React occur when state or props change. You can trigger a re-render by calling `setState()` in class components or updating state with `useState()` in function components.
+
+---
+
+### **30. What is the purpose of `React.StrictMode`?**
+`React.StrictMode` is a wrapper component that highlights potential problems in your application, like deprecated APIs and unsafe lifecycle methods. It does not affect the production build.
+
+```javascript
+<React.StrictMode>
+  <App />
+</React.StrictMode>
+```
+
+---

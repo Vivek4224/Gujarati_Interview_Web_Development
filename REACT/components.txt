@@ -1,0 +1,199 @@
+Here are the **top 10 React component-related questions and answers** for a **fresher** preparing for a React interview:
+
+---
+
+### **1. What are React components?**
+
+**Answer**:  
+React components are the building blocks of a React application. A component is a self-contained unit that manages its own state and renders UI based on its props. There are two types of components in React:
+- **Class components**: Traditional components that extend `React.Component`.
+- **Functional components**: Simpler components defined as JavaScript functions.
+
+---
+
+### **2. What is the difference between a class component and a functional component in React?**
+
+**Answer**:  
+- **Class components**: These are ES6 classes that extend `React.Component` and must have a `render()` method. They can hold and manage state and lifecycle methods.
+  
+```jsx
+class MyClassComponent extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+```
+
+- **Functional components**: These are simple JavaScript functions that can accept `props` and return JSX. With React 16.8 and the introduction of Hooks, functional components can also manage state and use lifecycle-like features.
+
+```jsx
+function MyFunctionalComponent({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+```
+
+---
+
+### **3. What are props in React?**
+
+**Answer**:  
+Props (short for "properties") are read-only inputs passed to a component from its parent. Props allow data to flow from one component to another, making components reusable and dynamic.
+
+```jsx
+function Greeting({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+// Parent component
+<Greeting name="John" />
+```
+
+---
+
+### **4. What is state in React?**
+
+**Answer**:  
+State is a JavaScript object that holds data that can change over time and can affect how a component renders. State is managed within a component and can be updated using `this.setState()` in class components or the `useState()` hook in functional components.
+
+```jsx
+// Using state in a class component
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    );
+  }
+}
+```
+
+---
+
+### **5. What is the `useState` hook?**
+
+**Answer**:  
+`useState` is a Hook in functional components that allows you to add state to a function component. It returns an array with two elements: the current state value and a function to update it.
+
+```jsx
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+---
+
+### **6. What are lifecycle methods in React?**
+
+**Answer**:  
+Lifecycle methods are special methods in class components that allow you to run code at specific points in a component's lifecycle. Some common lifecycle methods include:
+- `componentDidMount()`: Runs once after the component is mounted.
+- `componentDidUpdate()`: Runs after the component is updated.
+- `componentWillUnmount()`: Runs before the component is removed from the DOM.
+
+---
+
+### **7. What are React Hooks?**
+
+**Answer**:  
+React Hooks are functions that allow you to use state and other React features in functional components. Some commonly used Hooks are:
+- `useState`: Manages state in a functional component.
+- `useEffect`: Handles side effects like data fetching, timers, etc.
+- `useContext`: Accesses context in a functional component.
+
+---
+
+### **8. What is the `useEffect` hook in React?**
+
+**Answer**:  
+`useEffect` is a Hook that lets you perform side effects in functional components. It can be used for tasks like fetching data, setting up subscriptions, and updating the DOM after render. It runs after every render by default, but you can control when it runs by passing dependencies.
+
+```jsx
+import { useEffect, useState } from 'react';
+
+function FetchData() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []); // Empty dependency array means it runs once, similar to componentDidMount.
+
+  return <div>{JSON.stringify(data)}</div>;
+}
+```
+
+---
+
+### **9. What is component composition in React?**
+
+**Answer**:  
+Component composition is the practice of combining smaller, reusable components to build more complex UI components. React encourages composition over inheritance, allowing you to combine simple components to create more flexible UIs.
+
+```jsx
+function Header() {
+  return <h1>Welcome to My Website</h1>;
+}
+
+function Content() {
+  return <p>This is some content.</p>;
+}
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <Content />
+    </div>
+  );
+}
+```
+
+---
+
+### **10. What is the context API in React?**
+
+**Answer**:  
+The Context API allows you to share values like themes, user authentication, etc., across multiple components without having to pass props manually through every level of the component tree. It includes `React.createContext()`, `Provider`, and `Consumer` components.
+
+```jsx
+const MyContext = React.createContext();
+
+function Parent() {
+  return (
+    <MyContext.Provider value="Hello, world!">
+      <Child />
+    </MyContext.Provider>
+  );
+}
+
+function Child() {
+  return (
+    <MyContext.Consumer>
+      {value => <h1>{value}</h1>}
+    </MyContext.Consumer>
+  );
+}
+```
+
+---

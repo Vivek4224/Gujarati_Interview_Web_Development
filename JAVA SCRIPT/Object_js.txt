@@ -1,0 +1,309 @@
+Here’s a set of **30 JavaScript object-related questions** along with answers, specifically tailored for a fresher-level interview. These cover various aspects of working with objects in JavaScript, including methods and concepts.
+
+---
+
+### **1. What is an object in JavaScript?**
+An object is a collection of key-value pairs where keys are strings (or Symbols) and values can be any data type, including functions, arrays, or other objects.
+
+```javascript
+const person = {
+  name: "John",
+  age: 30,
+  greet: function () {
+    return "Hello!";
+  },
+};
+```
+
+---
+
+### **2. How do you create an object in JavaScript?**
+Objects can be created in multiple ways:
+1. Using object literal syntax:
+   ```javascript
+   const obj = { key: "value" };
+   ```
+2. Using the `Object` constructor:
+   ```javascript
+   const obj = new Object();
+   obj.key = "value";
+   ```
+
+---
+
+### **3. What are the key-value pairs in an object?**
+A key-value pair consists of:
+- **Key**: A string (or symbol) that identifies the property.
+- **Value**: The data associated with the key.
+  
+Example:
+```javascript
+const car = { make: "Toyota", year: 2022 };
+```
+
+---
+
+### **4. How do you access object properties?**
+1. Dot notation:
+   ```javascript
+   obj.key;
+   ```
+2. Bracket notation:
+   ```javascript
+   obj["key"];
+   ```
+
+---
+
+### **5. How do you add or update a property in an object?**
+You can directly assign a value using dot or bracket notation:
+```javascript
+const obj = {};
+obj.key = "value"; // Add
+obj.key = "new value"; // Update
+```
+
+---
+
+### **6. How do you delete a property in an object?**
+Using the `delete` operator:
+```javascript
+const obj = { key: "value" };
+delete obj.key;
+```
+
+---
+
+### **7. How can you check if a property exists in an object?**
+1. Using the `in` operator:
+   ```javascript
+   "key" in obj;
+   ```
+2. Using `hasOwnProperty`:
+   ```javascript
+   obj.hasOwnProperty("key");
+   ```
+
+---
+
+### **8. What is the `Object.keys()` method?**
+It returns an array of an object's own enumerable property names:
+```javascript
+const obj = { a: 1, b: 2 };
+Object.keys(obj); // ["a", "b"]
+```
+
+---
+
+### **9. What is the `Object.values()` method?**
+It returns an array of the values of an object's own properties:
+```javascript
+const obj = { a: 1, b: 2 };
+Object.values(obj); // [1, 2]
+```
+
+---
+
+### **10. What is the `Object.entries()` method?**
+It returns an array of key-value pairs:
+```javascript
+const obj = { a: 1, b: 2 };
+Object.entries(obj); // [["a", 1], ["b", 2]]
+```
+
+---
+
+### **11. What is the `Object.assign()` method?**
+It copies the properties of one or more source objects into a target object:
+```javascript
+const target = { a: 1 };
+const source = { b: 2 };
+Object.assign(target, source); // { a: 1, b: 2 }
+```
+
+---
+
+### **12. How do you clone an object in JavaScript?**
+Using `Object.assign()` or the spread operator:
+```javascript
+const obj = { a: 1 };
+const clone = Object.assign({}, obj);
+// OR
+const clone = { ...obj };
+```
+
+---
+
+### **13. What is the `Object.freeze()` method?**
+It prevents adding, deleting, or modifying properties of an object:
+```javascript
+const obj = { a: 1 };
+Object.freeze(obj);
+obj.a = 2; // No effect
+```
+
+---
+
+### **14. What is the `Object.seal()` method?**
+It prevents adding or removing properties but allows modifying existing ones:
+```javascript
+const obj = { a: 1 };
+Object.seal(obj);
+obj.a = 2; // Works
+delete obj.a; // Fails
+```
+
+---
+
+### **15. How do you iterate over an object's properties?**
+Using `for...in` or `Object.keys()` with `forEach`:
+```javascript
+const obj = { a: 1, b: 2 };
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+```
+
+---
+
+### **16. How can you merge two objects?**
+Using `Object.assign()` or the spread operator:
+```javascript
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2 }
+```
+
+---
+
+### **17. What is a method in an object?**
+A method is a function associated with an object:
+```javascript
+const obj = {
+  greet: function () {
+    return "Hello!";
+  },
+};
+```
+
+---
+
+### **18. What is `this` in an object method?**
+In an object method, `this` refers to the object itself:
+```javascript
+const obj = {
+  name: "John",
+  greet: function () {
+    return `Hello, ${this.name}`;
+  },
+};
+```
+
+---
+
+### **19. What is the prototype of an object?**
+The prototype is an object from which other objects inherit properties and methods.
+
+---
+
+### **20. How do you get the prototype of an object?**
+Using `Object.getPrototypeOf()`:
+```javascript
+const obj = {};
+console.log(Object.getPrototypeOf(obj));
+```
+
+---
+
+### **21. What is a constructor function?**
+A constructor function creates objects with the `new` keyword:
+```javascript
+function Person(name) {
+  this.name = name;
+}
+const person = new Person("John");
+```
+
+---
+
+### **22. How do you check if two objects are equal?**
+You can use `JSON.stringify()` to compare:
+```javascript
+const obj1 = { a: 1 };
+const obj2 = { a: 1 };
+JSON.stringify(obj1) === JSON.stringify(obj2); // true
+```
+
+---
+
+### **23. What is `Object.create()`?**
+It creates a new object with the specified prototype:
+```javascript
+const proto = { greet: "Hello" };
+const obj = Object.create(proto);
+```
+
+---
+
+### **24. What is the difference between shallow and deep cloning?**
+- **Shallow clone**: Copies only the first level.
+- **Deep clone**: Copies nested structures as well.
+  
+For deep cloning:
+```javascript
+const clone = JSON.parse(JSON.stringify(obj));
+```
+
+---
+
+### **25. How do you check the type of an object?**
+Using `typeof` or `Object.prototype.toString`:
+```javascript
+typeof obj; // "object"
+Object.prototype.toString.call(obj); // "[object Object]"
+```
+
+---
+
+### **26. What is an enumerable property?**
+An enumerable property can be iterated using `for...in` or `Object.keys()`.
+
+---
+
+### **27. What is `Object.hasOwn()`?**
+It checks if the object itself has a property:
+```javascript
+const obj = { a: 1 };
+Object.hasOwn(obj, "a"); // true
+```
+
+---
+
+### **28. How do you convert an object to a string?**
+Using `JSON.stringify()`:
+```javascript
+const obj = { a: 1 };
+JSON.stringify(obj); // '{"a":1}'
+```
+
+---
+
+### **29. How do you make an object immutable?**
+Using `Object.freeze()`:
+```javascript
+const obj = Object.freeze({ a: 1 });
+obj.a = 2; // Fails
+```
+
+---
+
+### **30. Can objects have dynamic properties?**
+Yes, you can add properties dynamically:
+```javascript
+const obj = {};
+obj["dynamicKey"] = "value";
+```
+
+--- 
+
+These questions should help prepare you for interviews on JavaScript object concepts.

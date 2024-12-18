@@ -1,0 +1,37 @@
+Here’s a list of **questions and answers** related to **events in React**:
+
+---
+
+### **1. How do you handle events in React?**
+React events are handled using camelCase syntax. Event handlers are written as functions and automatically pass an event object.
+
+### **2. How do you pass arguments to event handlers in React?**
+You can pass arguments using an arrow function or by binding the event handler.
+
+### **3. What is the difference between synthetic events and native events in React?**
+Synthetic Events are a cross-browser wrapper around native events, offering normalized functionality.
+
+### **4. How do you handle form input events in React?**
+Form input events like `onChange` are used with controlled components, where state is updated on user input.
+
+### **5. What is the `onSubmit` event handler in React?**
+`onSubmit` handles form submissions, and `event.preventDefault()` is often used to prevent the default form submission behavior.
+
+### **6. What is event delegation in React?**
+Event delegation involves attaching a single event listener to a parent element to handle events for child elements, improving performance.
+
+### **7. How do you stop an event's default behavior in React?**
+Use `event.preventDefault()` to stop the default behavior, such as stopping a form from submitting.
+
+### **8. How do you stop the propagation of an event in React?**
+Use `event.stopPropagation()` to prevent the event from bubbling up to parent elements.
+
+### **9. What are controlled and uncontrolled components in React with respect to events?**
+Controlled components manage form data using React state, while uncontrolled components rely on the DOM itself using refs.
+
+### **10. How do you bind `this` to event handlers in class components?**
+In class components, you bind `this` to event handlers either in the constructor or by using arrow functions.
+
+---
+
+These questions cover essential aspects of event handling in React, including basic event handling, form management, propagation control, and component types (controlled and uncontrolled).

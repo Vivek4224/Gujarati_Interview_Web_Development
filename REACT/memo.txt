@@ -1,0 +1,138 @@
+Here are the **top 10 questions and answers** related to **`React.memo`**, which will help a **fresher** prepare for a React interview:
+
+---
+
+### **1. What is `React.memo`?**
+
+**Answer**:  
+`React.memo` is a higher-order component that helps to optimize functional components by memoizing them. It prevents unnecessary re-renders of a component when its props do not change. It only re-renders the component when the props passed to it have changed.
+
+```jsx
+const MyComponent = React.memo(function MyComponent(props) {
+  // component logic
+  return <div>{props.value}</div>;
+});
+```
+
+---
+
+### **2. How does `React.memo` improve performance?**
+
+**Answer**:  
+`React.memo` improves performance by skipping the re-rendering of functional components when the props haven’t changed. This is especially useful when a component receives the same props on subsequent renders, which would otherwise cause unnecessary updates.
+
+---
+
+### **3. How do you use `React.memo` with a functional component?**
+
+**Answer**:  
+You can wrap a functional component with `React.memo` to enable memoization. This will make the component re-render only when the props change.
+
+```jsx
+const MyComponent = React.memo(function MyComponent({ name }) {
+  console.log('Rendering:', name);
+  return <div>{name}</div>;
+});
+```
+
+---
+
+### **4. Does `React.memo` compare all props of a component by default?**
+
+**Answer**:  
+Yes, by default, `React.memo` performs a shallow comparison of the component's props. If the props are complex (such as objects or arrays), it may lead to re-renders even if the content hasn't changed. You can optimize it further using a custom comparison function.
+
+Example with default shallow comparison:
+
+```jsx
+const MyComponent = React.memo(function MyComponent({ name, age }) {
+  return <div>{name} is {age}</div>;
+});
+```
+
+---
+
+### **5. How can you provide a custom comparison function to `React.memo`?**
+
+**Answer**:  
+You can pass a second argument to `React.memo`, which is a custom comparison function that compares the current props with the next props. This allows more control over when the component should re-render.
+
+```jsx
+const MyComponent = React.memo(
+  function MyComponent({ name, age }) {
+    return <div>{name} is {age}</div>;
+  },
+  (prevProps, nextProps) => {
+    return prevProps.name === nextProps.name && prevProps.age === nextProps.age;
+  }
+);
+```
+
+In this example, the component will only re-render if either the `name` or `age` prop changes.
+
+---
+
+### **6. Can `React.memo` be used with class components?**
+
+**Answer**:  
+No, `React.memo` only works with functional components. If you want similar functionality in a class component, you can use `PureComponent`, which performs shallow comparison of the component's props and state.
+
+```jsx
+class MyComponent extends React.PureComponent {
+  render() {
+    const { name, age } = this.props;
+    return <div>{name} is {age}</div>;
+  }
+}
+```
+
+---
+
+### **7. When should you use `React.memo`?**
+
+**Answer**:  
+You should use `React.memo` when:
+- Your component is receiving the same props multiple times and you want to avoid unnecessary re-renders.
+- The component is a **pure** component, meaning it only relies on props and doesn't have internal state changes that affect the rendering.
+- Your component is complex and performance may be an issue with frequent re-renders.
+
+---
+
+### **8. Can `React.memo` be used with hooks?**
+
+**Answer**:  
+Yes, `React.memo` can be used with functional components that use hooks. It will optimize the re-rendering based on prop changes, and it works seamlessly with hooks like `useState`, `useEffect`, etc.
+
+```jsx
+const MyComponent = React.memo(function MyComponent({ name }) {
+  const [count, setCount] = useState(0);
+  return <div>{name} - Count: {count}</div>;
+});
+```
+
+---
+
+### **9. What is the difference between `React.memo` and `useMemo`?**
+
+**Answer**:  
+- **`React.memo`** is used to memoize entire components. It optimizes functional components by preventing unnecessary re-renders based on prop changes.
+- **`useMemo`** is a hook used to memoize expensive calculations or values inside a functional component to avoid recalculating them on every render.
+
+```jsx
+// Using React.memo
+const MyComponent = React.memo(function MyComponent(props) { ... });
+
+// Using useMemo
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+---
+
+### **10. Can `React.memo` be used to optimize functional components with context?**
+
+**Answer**:  
+`React.memo` does not prevent re-renders when the component's context changes. If a context value changes, `React.memo` will still cause the component to re-render because context values are not part of the shallow comparison. You can optimize context updates by using `React.memo` for the child components and passing the context values more efficiently.
+
+---
+
+These questions and answers cover the basic usage and advanced concepts related to `React.memo`, which is useful for optimizing the performance of React applications, especially when dealing with functional components.

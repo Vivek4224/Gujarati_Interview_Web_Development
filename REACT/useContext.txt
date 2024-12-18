@@ -1,0 +1,213 @@
+Here are the **top 10 questions and answers** related to **`useContext`** in React, which will help a **fresher** prepare for a React interview:
+
+---
+
+### **1. What is `useContext` in React?**
+
+**Answer**:  
+`useContext` is a hook in React that allows you to access the value of a context directly within a functional component. It provides a way to pass data through the component tree without having to manually pass props down at every level.
+
+Example:
+
+```jsx
+const MyContext = React.createContext();
+
+function MyComponent() {
+  const value = useContext(MyContext);
+  return <div>{value}</div>;
+}
+```
+
+---
+
+### **2. How do you create a context in React?**
+
+**Answer**:  
+You can create a context using `React.createContext()`. This function returns an object that includes `Provider` and `Consumer` components. The `Provider` is used to pass down the context value to the component tree, while `useContext` or `Consumer` can be used to access it.
+
+Example:
+
+```jsx
+const MyContext = React.createContext('default value');
+```
+
+---
+
+### **3. How do you provide a context value in React?**
+
+**Answer**:  
+To provide a context value, use the `Provider` component that comes with the context. The `value` prop of the `Provider` is used to pass the value to all components within the context's scope.
+
+Example:
+
+```jsx
+const MyContext = React.createContext();
+
+function App() {
+  return (
+    <MyContext.Provider value="Hello, World!">
+      <MyComponent />
+    </MyContext.Provider>
+  );
+}
+```
+
+---
+
+### **4. How do you consume a context value in a component?**
+
+**Answer**:  
+You can consume a context value inside a functional component using the `useContext` hook. It takes the context object as an argument and returns the current context value.
+
+Example:
+
+```jsx
+const MyContext = React.createContext();
+
+function MyComponent() {
+  const value = useContext(MyContext);
+  return <div>{value}</div>;
+}
+```
+
+---
+
+### **5. Can you use `useContext` in class components?**
+
+**Answer**:  
+No, `useContext` is a hook and can only be used in functional components. In class components, you would use the `static contextType` or the `Context.Consumer` to access context.
+
+Example with `contextType` in class components:
+
+```jsx
+const MyContext = React.createContext();
+
+class MyComponent extends React.Component {
+  static contextType = MyContext;
+
+  render() {
+    return <div>{this.context}</div>;
+  }
+}
+```
+
+---
+
+### **6. How does `useContext` differ from `Context.Consumer`?**
+
+**Answer**:  
+- `useContext` is a hook that works only in functional components and provides the current context value directly.
+- `Context.Consumer` is a component that uses a render prop pattern and can be used in both functional and class components.
+
+Example with `Context.Consumer`:
+
+```jsx
+const MyContext = React.createContext('Hello');
+
+function MyComponent() {
+  return (
+    <MyContext.Consumer>
+      {value => <div>{value}</div>}
+    </MyContext.Consumer>
+  );
+}
+```
+
+---
+
+### **7. How do you update the context value?**
+
+**Answer**:  
+You can update the context value by using the state in the `Provider` component. When the state changes, the context value automatically updates and triggers re-renders for all consumers.
+
+Example:
+
+```jsx
+const MyContext = React.createContext();
+
+function App() {
+  const [value, setValue] = useState('Hello');
+
+  return (
+    <MyContext.Provider value={value}>
+      <button onClick={() => setValue('World')}>Change Value</button>
+      <MyComponent />
+    </MyContext.Provider>
+  );
+}
+
+function MyComponent() {
+  const value = useContext(MyContext);
+  return <div>{value}</div>;
+}
+```
+
+---
+
+### **8. Can you pass multiple values through a context?**
+
+**Answer**:  
+Yes, you can pass multiple values through a context by using an object or an array as the value. The consumers will receive the entire object or array and can destructure the values they need.
+
+Example:
+
+```jsx
+const MyContext = React.createContext();
+
+function App() {
+  const contextValue = { user: 'John', role: 'Admin' };
+
+  return (
+    <MyContext.Provider value={contextValue}>
+      <MyComponent />
+    </MyContext.Provider>
+  );
+}
+
+function MyComponent() {
+  const { user, role } = useContext(MyContext);
+  return <div>{`User: ${user}, Role: ${role}`}</div>;
+}
+```
+
+---
+
+### **9. When should you use `useContext` in React?**
+
+**Answer**:  
+You should use `useContext` when you need to pass data through many layers of components without having to explicitly pass props down the component tree. It’s particularly useful for global state, theming, or user authentication contexts.
+
+Examples:
+- User authentication state
+- Theme (light or dark mode)
+- Language/locale settings
+
+---
+
+### **10. What are the performance considerations when using `useContext`?**
+
+**Answer**:  
+When you update a context value, all components that consume that context will re-render, even if only a small part of the context is changed. To optimize performance, you can:
+- **Split contexts**: Use different contexts for different pieces of state to avoid unnecessary re-renders.
+- **Memoize context values**: Use `useMemo` to memoize the context value if it is computed or derived from other values.
+
+Example with `useMemo`:
+
+```jsx
+const MyContext = React.createContext();
+
+function App() {
+  const [count, setCount] = useState(0);
+  const contextValue = useMemo(() => ({ count }), [count]);
+
+  return (
+    <MyContext.Provider value={contextValue}>
+      <MyComponent />
+    </MyContext.Provider>
+  );
+}
+```
+
+---
+
+These questions and answers cover the basics of `useContext` and help in understanding how context works in React, and when and how to use it efficiently.

@@ -1,0 +1,109 @@
+Here are the **top 10 React rendering-related questions and answers** for a **fresher**:
+
+---
+
+### **1. What is rendering in React?**
+
+**Answer**:  
+Rendering in React refers to the process of converting React components into HTML elements that are displayed in the browser. React efficiently updates the DOM by using a virtual DOM, which is compared to the real DOM to minimize unnecessary updates.
+
+---
+
+### **2. What is the Virtual DOM in React?**
+
+**Answer**:  
+The Virtual DOM is an in-memory representation of the real DOM. React uses it to optimize rendering by comparing the virtual DOM with the real DOM and updating only the parts that have changed, instead of re-rendering the entire DOM.
+
+---
+
+### **3. What is the `render()` method in React?**
+
+**Answer**:  
+The `render()` method is used in React class components to specify the JSX that should be rendered to the screen. It is called every time the component's state or props change.
+
+```jsx
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello, World!</h1>;
+  }
+}
+```
+
+---
+
+### **4. How does React decide when to re-render a component?**
+
+**Answer**:  
+React re-renders a component when its **state** or **props** change. When a component's state or props change, React triggers the `render()` method to update the component’s output.
+
+---
+
+### **5. What is the significance of the `key` prop in React rendering?**
+
+**Answer**:  
+The `key` prop is used in React when rendering lists of elements. It helps React identify which items have changed, been added, or removed. Using keys improves performance by allowing React to efficiently update and re-render only the changed elements.
+
+```jsx
+const items = ['Apple', 'Banana', 'Cherry'];
+const list = items.map((item, index) => <li key={index}>{item}</li>);
+```
+
+---
+
+### **6. What is React’s reconciliation process?**
+
+**Answer**:  
+React’s reconciliation process, also known as "diffing", compares the current virtual DOM with the new virtual DOM and calculates the minimal set of changes required to update the real DOM. This allows React to render updates efficiently without reloading the entire UI.
+
+---
+
+### **7. What is `shouldComponentUpdate()` in React?**
+
+**Answer**:  
+`shouldComponentUpdate()` is a lifecycle method that allows you to prevent unnecessary re-renders of a component. It returns `true` by default, but you can override it to perform a custom comparison of props and state and decide whether the component needs to re-render.
+
+```jsx
+shouldComponentUpdate(nextProps, nextState) {
+  return nextProps.value !== this.props.value;
+}
+```
+
+---
+
+### **8. What is a PureComponent in React?**
+
+**Answer**:  
+`React.PureComponent` is a base class that implements `shouldComponentUpdate()` with a shallow prop and state comparison. This means that `PureComponent` prevents re-rendering if the props and state have not changed, optimizing performance for functional components.
+
+```jsx
+class MyComponent extends React.PureComponent {
+  render() {
+    return <h1>{this.props.name}</h1>;
+  }
+}
+```
+
+---
+
+### **9. What is React.memo() and how does it help with rendering?**
+
+**Answer**:  
+`React.memo()` is a higher-order component (HOC) that memoizes a functional component. It prevents unnecessary re-renders by comparing the previous and next props. If the props haven’t changed, React skips the re-rendering.
+
+```jsx
+const MyComponent = React.memo(function({ name }) {
+  return <h1>{name}</h1>;
+});
+```
+
+---
+
+### **10. What are the potential causes of unnecessary re-renders in React?**
+
+**Answer**:  
+Unnecessary re-renders in React can be caused by:
+- Changing state or props in a way that triggers re-renders without affecting the component’s output.
+- Not using `shouldComponentUpdate()` or `React.memo()` to prevent redundant rendering.
+- Passing new object or array references as props that cause re-rendering even when data has not changed.
+
+---
