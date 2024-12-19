@@ -1,153 +1,143 @@
-### **1. DOM શું છે?**  
-DOM (Document Object Model) એ HTML દસ્તાવેજની બંધારણને નોડ્સના વૃક્ષ તરીકે દર્શાવે છે. દરેક નોડ પેજના એક ભાગને અનુરૂપ હોય છે (ઉદાહરણ તરીકે, એલીમેન્ટ્સ, એટ્રિબ્યુટ્સ, ટેક્સ્ટ).
+1. DOM શું છે?  
+DOM (Document Object Model) એ HTML Document ની બંધારણને નોડ્સના વૃક્ષ તરીકે દર્શાવે છે. દરેક નોડ પેજના એક ભાગને અનુરૂપ હોય છે (ઉદાહરણ તરીકે, એલીમેન્ટ્સ, એટ્રિબ્યુટ્સ, ટેક્સ્ટ).
 
----
 
-### **2. તમે DOM માં કોઈ એલીમેન્ટને તેના ID દ્વારા કેવી રીતે ઍક્સેસ કરી શકો છો?**  
+
+2. તમે DOM માં કોઈ એલીમેન્ટને તેના ID દ્વારા કેવી રીતે ઍક્સેસ કરી શકો છો?  
 તમે `document.getElementById()` નો ઉપયોગ કરી શકો છો:  
-```javascript  
+
 const element = document.getElementById("myId"); 
-```
 
----
 
-### **3. તમે class name દ્વારા એલીમેન્ટ્સને કેવી રીતે ઍક્સેસ કરી શકો છો?**  
+
+
+3. તમે class name દ્વારા એલીમેન્ટ્સને કેવી રીતે ઍક્સેસ કરી શકો છો? 
 `document.getElementsByClassName()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 const elements = document.getElementsByClassName("myClass");  
-```
 
----
 
-### **4. તમે tag name દ્વારા એલીમેન્ટ્સને કેવી રીતે ઍક્સેસ કરી શકો છો?**  
+
+
+4. તમે tag name દ્વારા એલીમેન્ટ્સને કેવી રીતે ઍક્સેસ કરી શકો છો?
 `document.getElementsByTagName()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 const elements = document.getElementsByTagName("p");  
-```
 
----
 
-### **5. `getElementById()` અને `getElementsByClassName()` વચ્ચે શું તફાવત છે?**  
+
+
+5. `getElementById()` અને `getElementsByClassName()` વચ્ચે શું તફાવત છે?  
 - `getElementById()` ID દ્વારા એક જ એલીમેન્ટ રિટર્ન કરે છે.  
 - `getElementsByClassName()` આપેલા ક્લાસ નામ સાથે એલીમેન્ટ્સની એક લાઈવ HTMLCollection રિટર્ન કરે છે.  
 
 
 
-### **6. તમે CSS સિલેક્ટરનો ઉપયોગ કરીને એલીમેન્ટ્સને કેવી રીતે સિલેક્ટ કરી શકો છો?**  
+6. તમે CSS સિલેક્ટરનો ઉપયોગ કરીને એલીમેન્ટ્સને કેવી રીતે સિલેક્ટ કરી શકો છો?
 એક સિંગલ એલીમેન્ટ માટે `document.querySelector()` અને મલ્ટિપલ એલીમેન્ટ્સ માટે `document.querySelectorAll()` નો ઉપયોગ કરો:  
-```javascript  
+
 const element = document.querySelector(".myClass"); // પ્રથમ મૅચ  
 const elements = document.querySelectorAll(".myClass"); // તમામ મૅચ  
-```
 
----
 
-### **7. તમે એલીમેન્ટનું કન્ટેન્ટ કેવી રીતે બદલશો?**  
+
+7. તમે એલીમેન્ટનું કન્ટેન્ટ કેવી રીતે બદલશો?  
 `innerHTML` અથવા `textContent` નો ઉપયોગ કરો:  
-```javascript  
+
 document.getElementById("myId").innerHTML = "New Content";  
-```
 
----
 
-### **8. તમે input field ની value કેવી રીતે બદલી શકો છો?**  
+
+8. તમે input field ની value કેવી રીતે બદલી શકો છો?  
 `value` પ્રોપર્ટી નો ઉપયોગ કરો:  
-```javascript  
+
 document.getElementById("myInput").value = "New Value";  
-```
 
----
 
-### **9. તમે DOM માં એક નવો HTML એલીમેન્ટ કેવી રીતે ઉમેરશો?**  
+
+
+9. તમે DOM માં એક નવો HTML એલીમેન્ટ કેવી રીતે ઉમેરશો?
 `document.createElement()` અને `appendChild()` નો ઉપયોગ કરો:  
-```javascript  
+
 const newElement = document.createElement("div");  
 newElement.innerHTML = "New Element";  
 document.body.appendChild(newElement);  
-```
 
----
 
-### **10. તમે DOM માંથી એલીમેન્ટ કેવી રીતે દૂર કરી શકો છો?**  
+
+
+10. તમે DOM માંથી એલીમેન્ટ કેવી રીતે દૂર કરી શકો છો? 
 `removeChild()` અથવા `remove()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 const element = document.getElementById("myElement");  
 element.remove(); // એલીમેન્ટને દૂર કરે છે  
-```
 
----
 
-### **11. `innerHTML` શું છે અને તમે તેને ક્યારે ઉપયોગ કરવો જોઈએ?**  
+
+11. `innerHTML` શું છે અને તમે તેને ક્યારે ઉપયોગ કરવો જોઈએ? 
 `innerHTML` તમને કોઈ એલીમેન્ટની અંદરની HTML કન્ટેન્ટને મેળવવાની અથવા સેટ કરવાની પરવાનગી આપે છે. તે એલીમેન્ટના કન્ટેન્ટને સુધારવા માટે વપરાઈ શકે છે, પરંતુ XSS (Cross-Site Scripting) vulnerabilities થી સંલગ્ન રિસ્ક માટે સાવચેત રહીને તેનો ઉપયોગ કરવો જોઈએ.
 
-```javascript
+
 document.getElementById("myElement").innerHTML = "<b>Bold Text</b>";
-```
 
----
 
-### **12. તમે એલીમેન્ટના attributes કેવી રીતે બદલી શકો છો?**  
+
+
+12. તમે એલીમેન્ટના attributes કેવી રીતે બદલી શકો છો?
 `setAttribute()` નો ઉપયોગ કરીને attributes બદલી શકો છો અથવા નવા attributes એડ કરી શકો છો:  
-```javascript  
+
 const element = document.getElementById("myElement");  
 element.setAttribute("class", "newClass");  
-```
 
----
 
-### **13. તમે એલીમેન્ટના attribute ને કેવી રીતે મેળવશો?**  
+
+13. તમે એલીમેન્ટના attribute ને કેવી રીતે મેળવશો?
 `getAttribute()` નો ઉપયોગ કરો:  
-```javascript  
+  
 const classValue = document.getElementById("myElement").getAttribute("class");  
-```
-```
 
----
 
-### **14. તમે એલીમેન્ટ પર event listener કેવી રીતે એડ કરશો?**  
+
+
+14. તમે એલીમેન્ટ પર event listener કેવી રીતે એડ કરશો?  
 `addEventListener()` નો ઉપયોગ કરો:  
-```javascript  
+  
 document.getElementById("myButton").addEventListener("click", function() {  
   alert("Button clicked!");  
 });  
-```
-```
 
----
 
-### **15. `addEventListener()` અને `onclick` વચ્ચે શું તફાવત છે?**  
+15. `addEventListener()` અને `onclick` વચ્ચે શું તફાવત છે? 
 - `addEventListener()` તમને એલીમેન્ટ પર એકથી વધુ event listeners એડ કરવાનો વિકલ્પ આપે છે.  
 - `onclick` ફક્ત એક જ event handlerને જોડવા માટે ઉપયોગી છે.
 
----
 
-### **16. તમે event listener કેવી રીતે દૂર કરી શકો છો?**  
+
+16. તમે event listener કેવી રીતે દૂર કરી શકો છો? 
 `removeEventListener()` નો ઉપયોગ કરો:  
-```javascript  
+
 function handleClick() {  
   console.log("Clicked");  
 }  
 document.getElementById("myButton").addEventListener("click", handleClick);  
 // તેને દૂર કરવા માટે  
 document.getElementById("myButton").removeEventListener("click", handleClick);  
-```
 
----
 
-### **17. તમે event નો ડિફૉલ્ટ વર્તન કેવી રીતે રોકી શકો છો?**  
+
+17. તમે event નો ડિફૉલ્ટ વર્તન કેવી રીતે રોકી શકો છો? 
 `event.preventDefault()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 document.getElementById("myForm").addEventListener("submit", function(event) {  
   event.preventDefault();  
   alert("Form submission prevented");  
 });  
-```
 
----
 
-### **18. તમે event propagation કેવી રીતે રોકી શકો છો?**  
+
+18. તમે event propagation કેવી રીતે રોકી શકો છો?  
 `event.stopPropagation()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 document.getElementById("parent").addEventListener("click", function(event) {  
   alert("Parent clicked");  
 });  
@@ -155,109 +145,98 @@ document.getElementById("child").addEventListener("click", function(event) {
   event.stopPropagation();  
   alert("Child clicked");  
 });  
-```
----
 
-### **19. તમે એલીમેન્ટને class કેવી રીતે એડ કરી શકો છો?**  
+
+
+19. તમે એલીમેન્ટને class કેવી રીતે એડ કરી શકો છો? 
 `classList.add()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 document.getElementById("myElement").classList.add("newClass");  
-```
 
----
 
-### **20. તમે એલીમેન્ટમાંથી class કેવી રીતે દૂર કરી શકો છો?**  
+
+
+20. તમે એલીમેન્ટમાંથી class કેવી રીતે દૂર કરી શકો છો?  
 `classList.remove()` નો ઉપયોગ કરો:  
-```javascript  
+  
 document.getElementById("myElement").classList.remove("oldClass");  
-```
 
----
 
-### **21. `classList.toggle()` શું છે?**  
+21. `classList.toggle()` શું છે? 
 `classList.toggle()` તે class ને એલીમેન્ટમાં ઉમેરે છે જો તે હાજર ના હોય, અને જો તે હાજર હોય તો તેને દૂર કરી આપે છે:  
-```javascript  
+  
 document.getElementById("myElement").classList.toggle("active");  
-```
 
----
 
-### **22. તમે કેવી રીતે ચકાસી શકો છો કે એલીમેન્ટ પાસે કોઈ ચોક્કસ class છે?**  
+
+
+22. તમે કેવી રીતે ચકાસી શકો છો કે એલીમેન્ટ પાસે કોઈ ચોક્કસ class છે? 
 `classList.contains()` નો ઉપયોગ કરો:  
-```javascript  
+
 const hasClass = document.getElementById("myElement").classList.contains("active");  
-```
 
----
 
-### **23. તમે DOM ને કેવી રીતે ટ્રાવર્સ કરી શકો છો?**  
+
+
+23. તમે DOM ને કેવી રીતે ટ્રાવર્સ કરી શકો છો?  
 તમે DOM ને પ્રોપર્ટી જેવી કે `parentNode`, `childNodes`, `firstChild`, `lastChild`, `nextSibling`, અને `previousSibling` નો ઉપયોગ કરીને ટ્રાવર્સ કરી શકો છો.
 
-```javascript
+
 const parent = document.getElementById("myElement").parentNode;
-```
 
----
 
-### **24. `createElement()` મેથડ શું છે?**  
+
+24. `createElement()` મેથડ શું છે?  
 `createElement()` એક નવો HTML એલીમેન્ટ બનાવે છે:  
-```javascript  
+ 
 const newElement = document.createElement("div");  
 newElement.textContent = "New Element";  
 document.body.appendChild(newElement);  
-```
 
----
 
-### **25. તમે એક એલીમેન્ટને બીજું એલીમેન્ટ કરતા પહેલા કેવી રીતે ઇન્સર્ટ કરી શકો છો?**  
+
+
+25. તમે એક એલીમેન્ટને બીજું એલીમેન્ટ કરતા પહેલા કેવી રીતે ઇન્સર્ટ કરી શકો છો? 
 `insertBefore()` નો ઉપયોગ કરો:  
-```javascript  
+ 
 const newElement = document.createElement("div");  
 const referenceElement = document.getElementById("reference");  
 document.body.insertBefore(newElement, referenceElement);  
-```
 
----
 
-### **26. તમે એલીમેન્ટના પ્રથમ ચાઇલ્ડને કેવી રીતે સિલેક્ટ કરી શકો છો?**  
+
+26. તમે એલીમેન્ટના પ્રથમ ચાઇલ્ડને કેવી રીતે સિલેક્ટ કરી શકો છો?  
 `firstChild` નો ઉપયોગ કરો:  
-```javascript  
+ 
 const firstChild = document.getElementById("parent").firstChild;  
-```
 
----
 
-### **27. તમે એલીમેન્ટના છેલ્લાં ચાઇલ્ડને કેવી રીતે સિલેક્ટ કરી શકો છો?**  
+
+27. તમે એલીમેન્ટના છેલ્લાં ચાઇલ્ડને કેવી રીતે સિલેક્ટ કરી શકો છો?  
 `lastChild` નો ઉપયોગ કરો:  
-```javascript  
+
 const lastChild = document.getElementById("parent").lastChild;  
-```
 
----
 
-### **28. તમે ટેક્સ્ટ નોડની value કેવી રીતે મેળવો છો?**  
+
+28. તમે ટેક્સ્ટ નોડની value કેવી રીતે મેળવો છો? 
 `nodeValue` નો ઉપયોગ કરો:  
-```javascript  
+
 const textNode = document.getElementById("myText");  
 console.log(textNode.firstChild.nodeValue);  
-```
 
----
 
-### **29. તમે એલીમેન્ટની styles કેવી રીતે અપડેટ કરી શકો છો?**  
+
+29. તમે એલીમેન્ટની styles કેવી રીતે અપડેટ કરી શકો છો?  
 તમે સીધા `style` પ્રોપર્ટી બદલી શકો છો:  
-```javascript  
+ 
 document.getElementById("myElement").style.color = "red";  
-```
 
----
 
-### **30. તમે એલીમેન્ટની computed style કેવી રીતે મેળવી શકો છો?**  
+
+30. તમે એલીમેન્ટની computed style કેવી રીતે મેળવી શકો છો?  
 `getComputedStyle()` નો ઉપયોગ કરો:  
-```javascript  
+
 const element = document.getElementById("myElement");  
 const styles = window.getComputedStyle(element);  
 console.log(styles.backgroundColor);  
-```
-
----

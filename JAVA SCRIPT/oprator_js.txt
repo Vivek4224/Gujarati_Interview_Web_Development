@@ -1,8 +1,10 @@
-### 1. **What are operators in JavaScript?**
-   **Answer**: ઓપરેટર્સ એ સિંબોલ્સ અથવા કીવર્ડ્સ છે જે મૂલ્યો અને ચલ પર ક્રિયાઓ કરવા માટે વપરાય છે. તે ગણિતીય, અસાઇનમેન્ટ, તુલના, લોજિકલ અને અન્ય પ્રકારોમાં વિભાજિત કરવામાં આવે છે.
+1. What are operators in JavaScript?
+Answer: ઓપરેટર્સ એ સિંબોલ્સ અથવા કીવર્ડ્સ છે જે value અને variable પર ક્રિયાઓ કરવા માટે વપરાય છે. તે ગણિતીય, અસાઇનમેન્ટ, તુલના, લોજિકલ અને અન્ય પ્રકારોમાં વિભાજિત કરવામાં આવે છે.
 
-### 2. **What are arithmetic operators in JavaScript?**
-   **Answer**: ગણિતીય ઓપરેટર્સનો ઉપયોગ નંબરો પર ગણિતીય ગણના કરવા માટે થાય છે. તેમાં સમાવિષ્ટ છે:
+
+
+2. What are arithmetic operators in JavaScript?
+Answer: arithmatic operator નો ઉપયોગ નંબરો પર ગણિતીય ગણના કરવા માટે થાય છે. તેમાં સમાવિષ્ટ છે:
    - `+` (જોડવું)
    - `-` (ઘટાડવું)
    - `*` (ગુણાવવું)
@@ -11,13 +13,15 @@
    - `++` (ઇન્ક્રિમેન્ટ)
    - `--` (ડિન્ક્રિમેન્ટ)
 
-### 3. **What is the difference between `++i` and `i++` in JavaScript?**
-   **Answer**: 
-   - `++i` એ **પ્રિ-ઇન્ક્રિમેન્ટ** ઓપરેટર છે. તે `i`નું મૂલ્ય વપરાઈ જવાની પહેલાં તેને વધારાવે છે.
-   - `i++` એ **પોસ્ટ-ઇન્ક્રિમેન્ટ** ઓપરેટર છે. તે પ્રથમ `i`નું મૂલ્ય વાપરે છે અને પછી તેને વધારાવે છે.
 
-### 4. **What are assignment operators in JavaScript?**
-   **Answer**: અસાઇનમેન્ટ ઓપરેટર્સનો ઉપયોગ ચલમાં મૂલ્ય અસાઇન (એડજસ્ટ) કરવા માટે થાય છે. તે નીચે આપેલા છે:
+
+3. What is the difference between `++i` and `i++` in JavaScript?
+Answer: 
+   - `++i` એ પ્રિ-ઇન્ક્રિમેન્ટ ઓપરેટર છે. તે `i`નું મૂલ્ય વપરાઈ જવાની પહેલાં તેને વધારાવે છે.
+   - `i++` એ પોસ્ટ-ઇન્ક્રિમેન્ટ ઓપરેટર છે. તે પ્રથમ `i`નું મૂલ્ય વાપરે છે અને પછી તેને વધારાવે છે.
+
+4. What are assignment operators in JavaScript?
+Answer: અસાઇનમેન્ટ ઓપરેટર્સનો ઉપયોગ variable માં મૂલ્ય અસાઇન (એડજસ્ટ) કરવા માટે થાય છે. તે નીચે આપેલા છે:
    - `=` (અસાઇન)
    - `+=` (જોડો અને અસાઇન કરો)
    - `-=` (ઘટાવો અને અસાઇન કરો)
@@ -25,8 +29,9 @@
    - `/=` (વિભાગ કરો અને અસાઇન કરો)
    - `%=` (મોડ્યુલસ અને અસાઇન કરો)
 
-### 5. **What are comparison operators in JavaScript?**
-   **Answer**: તુલના ઓપરેટર્સનો ઉપયોગ બે મૂલ્યોની તુલના કરવા માટે થાય છે. તે નીચે આપેલા છે:
+
+5. What are comparison operators in JavaScript?
+Answer: તુલના ઓપરેટર્સનો ઉપયોગ બે મૂલ્યોની તુલના કરવા માટે થાય છે. તે નીચે આપેલા છે:
    - `==` (સમાન)
    - `===` (કઠોર સમાન)
    - `!=` (અસમાન)
@@ -36,25 +41,29 @@
    - `>=` (વિશાળ અથવા સમાન)
    - `<=` (ઓછું અથવા સમાન)
 
-### 6. **`==` અને `===` માં શું ફરક છે?**
-   **ઉત્તર**:
+
+6. `==` અને `===` માં શું ફરક છે?
+ઉત્તર:
    - `==` એ values ની સરખામણી કરે છે, પરંતુ તે type coercion સાથે સરખામણી કરે છે.
    - `===` એ values અને types બંનેની સરખામણી કરે છે (strict equality).
 
-### 7. **JavaScript માં logical operators શું છે?**
-   **ઉત્તર**: Logical operators એ logical ક્રિયાઓ કરવા માટે ઉપયોગમાં લેવાય છે, જે સામાન્ય રીતે boolean values પર કામ કરે છે:
+
+7. JavaScript માં logical operators શું છે?
+ઉત્તર: Logical operators એ logical ક્રિયાઓ કરવા માટે ઉપયોગમાં લેવાય છે, જે સામાન્ય રીતે boolean values પર કામ કરે છે:
    - `&&` (Logical AND)
    - `||` (Logical OR)
    - `!` (Logical NOT)
 
-### 8. **JavaScript માં ternary operator શું છે?**
-   **ઉત્તર**: Ternary operator એ `if-else` સ્ટેટમેન્ટ માટેનો shorthand છે. Syntax:
-   ```javascript
-   condition ? expression_if_true : expression_if_false;
-   ```
 
-### 9. **JavaScript માં bitwise operators શું છે?**
-   **ઉત્તર**: Bitwise operators એ numbers ના binary representations પર કામગીરી કરે છે. તેમાં શામેલ છે:
+8. JavaScript માં ternary operator શું છે?
+ઉત્તર: Ternary operator એ `if-else` સ્ટેટમેન્ટ માટેનો shorthand છે. Syntax:
+
+   condition ? expression_if_true : expression_if_false;
+
+
+
+9. JavaScript માં bitwise operators શું છે?
+ઉત્તર: Bitwise operators એ numbers ના binary representations પર કામગીરી કરે છે. તેમાં શામેલ છે:
    - `&` (AND)
    - `|` (OR)
    - `^` (XOR)
@@ -63,21 +72,24 @@
    - `>>` (Right shift)
    - `>>>` (Unsigned right shift)
 
-### 10. **JavaScript માં `typeof` operator નો ઉદ્દેશ્ય શું છે?**
-   **ઉત્તર**: `typeof` operator નો ઉપયોગ એ operand (variable અથવા expression) ના પ્રકારને ઓળખવા માટે થાય છે. ઉદાહરણ:
-   ```javascript
+
+10. JavaScript માં `typeof` operator નો ઉદ્દેશ્ય શું છે?
+ઉત્તર: `typeof` operator નો ઉપયોગ એ operand (variable અથવા expression) ના પ્રકારને ઓળખવા માટે થાય છે. ઉદાહરણ:
+   
    typeof "hello"; // "string"
    typeof 123; // "number"
-   ```
 
-### 11. **JavaScript માં `instanceof` operator નો ઉદ્દેશ્ય શું છે?**
-   **ઉત્તર**: `instanceof` operator એ તપાસ કરવા માટે ઉપયોગ થાય છે કે કોઈ object કોઈ વિશિષ્ટ class અથવા constructor function નો instance છે કે નહીં. ઉદાહરણ:
-   ```javascript
+
+
+11. JavaScript માં `instanceof` operator નો ઉદ્દેશ્ય શું છે?
+ઉત્તર: `instanceof` operator એ તપાસ કરવા માટે ઉપયોગ થાય છે કે કોઈ object કોઈ વિશિષ્ટ class અથવા constructor function નો instance છે કે નહીં. ઉદાહરણ:
+   
    obj instanceof Array; // જો obj એ Array હોય તો true આપે છે
-   ```
 
-### 12. **JavaScript માં assignment operators શું છે?**
-   **ઉત્તર**: Assignment operators એ variables માં values સોંપવા માટે ઉપયોગમાં લેવાય છે. ઉદાહરણ:
+
+
+12. JavaScript માં assignment operators શું છે?
+ઉત્તર: Assignment operators એ variables માં values assign માટે ઉપયોગમાં લેવાય છે. ઉદાહરણ:
    - `=` (મૂલ્ય સોંપવું)
    - `+=` (જોડીને સોંપવું)
    - `-=` (ઘટાવીને સોંપવું)
@@ -85,233 +97,144 @@
    - `/=` (ભાગ કરીને સોંપવું)
    - `%=` (મોડ્યુલસ કરીને સોંપવું)
 
-### 13. **JavaScript માં `in` operator શું છે?**
-   **ઉત્તર**: `in` operator એ તપાસવા માટે ઉપયોગ થાય છે કે કોઈ પproperty object માં હાજર છે કે નહીં. ઉદાહરણ:
-   ```javascript
+
+
+13. JavaScript માં `in` operator શું છે?
+ઉત્તર: `in` operator એ તપાસવા માટે ઉપયોગ થાય છે કે કોઈ property object માં હાજર છે કે નહીં. ઉદાહરણ:
+   
    "name" in obj; // જો "name" obj માં property હોય તો true આપે છે
-   ```
+  
 
-### 14. **JavaScript માં `delete` operator શું છે?**
-   **ઉત્તર**: `delete` operator એ objectમાંથી property અથવા arrayમાંથી element હટાવવા માટે ઉપયોગમાં લેવાય છે. ઉદાહરણ:
-   ```javascript
+14. JavaScript માં `delete` operator શું છે?
+ઉત્તર: `delete` operator એ objectમાંથી property અથવા arrayમાંથી element હટાવવા માટે ઉપયોગમાં લેવાય છે. ઉદાહરણ:
+   
    delete obj.name; // obj માંથી "name" property હટાવે છે
-   ```
+   
 
-### 15. **JavaScript માં `void` operator શું છે?**
-   **ઉત્તર**: `void` operator એ કોઈ expression ને value ચકાસીને `undefined` પર return કરે છે. તે સામાન્ય રીતે એ ખાતરી કરવા માટે ઉપયોગ થાય છે કે function કોઈ value return ન કરે. ઉદાહરણ:
-   ```javascript
+15. JavaScript માં `void` operator શું છે?
+ઉત્તર: `void` operator એ કોઈ expression ને value ચકાસીને `undefined` પર return કરે છે. તે સામાન્ય રીતે એ ખાતરી કરવા માટે ઉપયોગ થાય છે કે function કોઈ value return ન કરે. ઉદાહરણ:
+   
    void(0); // `undefined` આપે છે
-   ```
+   
 
-### 16. **`typeof` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `typeof` operator એ variable અથવા expression નું data type return કરવા માટે ઉપયોગ થાય છે. ઉદાહરણ:
-   ```javascript
+16. `typeof` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `typeof` operator એ variable અથવા expression નું data type return કરવા માટે ઉપયોગ થાય છે. ઉદાહરણ:
+  
    typeof 42; // "number"
    typeof "hello"; // "string"
-   ```
+ 
 
-### 17. **`??` (nullish coalescing) operator શું છે?**
-   **ઉત્તર**: `??` operator એ સપોર્ટ કરતું value આપે છે જ્યારે વામક (left-hand) value `null` અથવા `undefined` હોય, અને જો તે ન હોય તો વામક value ને આપતું રહેશે. ઉદાહરણ:
-   ```javascript
+17. `??` (nullish coalescing) operator શું છે?
+ઉત્તર: `??` operator એ સપોર્ટ કરતું value આપે છે જ્યારે વામક (left-hand) value `null` અથવા `undefined` હોય, અને જો તે ન હોય તો વામક value ને આપતું રહેશે. ઉદાહરણ:
+   
    let x = null ?? "default"; // "default"
-   ```
+   
 
-### 18. **`&&` (AND) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `&&` operator એ `true` return કરે છે જયારે બંને operands સાચા (truthy) હોય. તે સામાન્ય રીતે conditional checks માં ઉપયોગ થાય છે:
-   ```javascript
+18. `&&` (AND) operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `&&` operator એ `true` return કરે છે જયારે બંને operands સાચા (truthy) હોય. તે સામાન્ય રીતે conditional checks માં ઉપયોગ થાય છે:
+   
    if (x && y) { // Executes if both x and y are truthy
    }
-   ```
+ 
 
-### 19. **`||` (OR) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `||` operator એ `true` return કરે છે જયારે ઓછામાં ઓછા એક operand સાચો (truthy) હોય. તે સામાન્ય રીતે default value assignments માં ઉપયોગ થાય છે:
-   ```javascript
+19. `||` (OR) operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `||` operator એ `true` return કરે છે જયારે ઓછામાં ઓછા એક operand સાચો (truthy) હોય. તે સામાન્ય રીતે default value assignments માં ઉપયોગ થાય છે:
+   
    let result = x || y; // Returns x if x is truthy, otherwise returns y
-   ```
+  
 
-### 20. **`!` (NOT) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `!` operator એ તેના operand ના boolean value ને નકારાત્મક (negate) બનાવે છે. ઉદાહરણ:
-   ```javascript
+20. `!` (NOT) operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `!` operator એ તેના operand ના boolean value ને નકારાત્મક (negate) બનાવે છે. ઉદાહરણ:
+   
    !true; // false
    !false; // true
-   ```
+   
 
-### 21. **JavaScript માં `<<` (left shift) operator શું છે?**
-   **ઉત્તર**: Left shift (`<<`) operator એ કોઈ number ના bits ને ડાબી બાજુ ખસેડે છે, અને જમણી બાજુ zeros થી ભરાય છે. દરેક shift operation એ `2` સાથે ગુણાકાર કરતાં સરખું છે. ઉદાહરણ:
-   ```javascript
+21. JavaScript માં `<<` (left shift) operator શું છે?
+ઉત્તર: Left shift (`<<`) operator એ કોઈ number ના bits ને ડાબી બાજુ ખસેડે છે, અને જમણી બાજુ zeros થી ભરાય છે. દરેક shift operation એ `2` સાથે ગુણાકાર કરતાં સરખું છે. ઉદાહરણ:
+   
    5 << 1; // 10 (binary shift of 101 to 1010)
-   ```
+ 
 
-### 22. **JavaScript માં `>>` (right shift) operator શું છે?**
-   **ઉત્તર**: Right shift (`>>`) operator એ number ના bits ને જમણી બાજુ ખસેડે છે. દરેક shift operation એ `2` થી ભાગ આપવામાં જેવું છે. ઉદાહરણ:
-   ```javascript
+22. JavaScript માં `>>` (right shift) operator શું છે?
+ઉત્તર: Right shift (`>>`) operator એ number ના bits ને જમણી બાજુ ખસેડે છે. દરેક shift operation એ `2` થી ભાગ આપવામાં જેવું છે. ઉદાહરણ:
+   
    5 >> 1; // 2 (binary shift of 101 to 10)
-   ```
+   
 
-### 23. **`>>>` (unsigned right shift) operator શું છે?**
-   **ઉત્તર**: Unsigned right shift (`>>>`) operator એ number ના bits ને જમણી બાજુ ખસેડે છે અને જમણી બાજુ zeros થી ભરાય છે, ભલે negative number હોય. ઉદાહરણ:
-   ```javascript
+23. `>>>` (unsigned right shift) operator શું છે?
+ઉત્તર: Unsigned right shift (`>>>`) operator એ number ના bits ને જમણી બાજુ ખસેડે છે અને જમણી બાજુ zeros થી ભરાય છે, ભલે negative number હોય. ઉદાહરણ:
+   
    -5 >>> 1; // 2147483642
-   ```
+   
 
-### 24. **`==` અને `===` માં શું ફરક છે?**
-   **ઉત્તર**:
+24. `==` અને `===` માં શું ફરક છે?
+ઉત્તર:
    - `==` એ type coercion સાથે value ને compare કરે છે.
    - `===` એ strict equality comparison કરે છે, જેમાં type coercion નો ઉપયોગ નથી થતો.
 
-### 25. **`+=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `+=` operator એ right-hand operand ને left-hand operand સાથે જોડી અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
-   ```javascript
+25. `+=` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `+=` operator એ right-hand operand ને left-hand operand સાથે જોડી અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
+  
    x += 5; // x = x + 5
-   ```
+   
 
-### 26. **`-=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `-=` operator એ right-hand operand ને left-hand operand માંથી ઘટાડે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
-   ```javascript
+26. `-=` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `-=` operator એ right-hand operand ને left-hand operand માંથી ઘટાડે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
+   
    x -= 5; // x = x - 5
-   ```
+ 
 
-### 27. **`*=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `*=` operator એ left-hand operand ને right-hand operand સાથે ગુણાકાર કરે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
-   ```javascript
+27. `*=` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `*=` operator એ left-hand operand ને right-hand operand સાથે ગુણાકાર કરે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
+   
    x *= 5; // x = x * 5
-   ```
+  
 
-### 28. **`/=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `/=` operator એ left-hand operand ને right-hand operand થી વિભાજિત કરે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
-   ```javascript
+28. `/=` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `/=` operator એ left-hand operand ને right-hand operand થી વિભાજિત કરે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
+   
    x /= 5; // x = x / 5
-   ```
+   
 
-### 29. **`%=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `%=` operator એ left-hand operand ને right-hand operand થી વિભાજિત કરવાને પછી બાકીની મૂલ્ય (remainder) આપે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
-   ```javascript
+29. `%=` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `%=` operator એ left-hand operand ને right-hand operand થી વિભાજિત કરવાને પછી બાકીની મૂલ્ય (remainder) આપે છે અને પરિણામ left-hand operand ને એસાઇન કરે છે. ઉદાહરણ:
+   
    x %= 5; // x = x % 5
-   ```
+  
 
-### 30. **`in` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `in` operator એ આ પ્રકારની પ્રોપર્ટી એક object માં છે કે કેમ તે તપાસવા માટે ઉપયોગ થાય છે. ઉદાહરણ:
-   ```javascript
+30. `in` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `in` operator એ આ પ્રકારની પ્રોપર્ટી એક object માં છે કે કેમ તે તપાસવા માટે ઉપયોગ થાય છે. ઉદાહરણ:
+   
    "name" in obj; // જો "name" પ્રોપર્ટી obj માં હોય તો true આપે છે
-   ```
+  
 
-### 31. **`instanceof` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `instanceof` operator એ તપાસે છે કે એક object એ વિશિષ્ટ class અથવા constructor function નો instance છે કે નહીં. ઉદાહરણ:
-   ```javascript
+31. `instanceof` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `instanceof` operator એ તપાસે છે કે એક object એ વિશિષ્ટ class અથવા constructor function નો instance છે કે નહીં. ઉદાહરણ:
+  
    obj instanceof Array; // જો obj એ Array હોય તો true આપે છે
-   ```
+   
 
-### 32. **`delete` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `delete` operator એ object માંથી પ્રોપર્ટી અથવા array માંથી એમ element હટાવવાનો ઉપયોગ થાય છે. ઉદાહરણ:
-   ```javascript
+32. `delete` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `delete` operator એ object માંથી પ્રોપર્ટી અથવા array માંથી એમ element હટાવવાનો ઉપયોગ થાય છે. ઉદાહરણ:
+   
    delete obj.name; // 'name' પ્રોપર્ટી objectમાંથી હટાવે છે
-   ```
+   
 
-### 33. **`typeof` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `typeof` operator એ આપેલી value અથવા variable નો type પાછો આપે છે. ઉદાહરણ:
-   ```javascript
+33. `typeof` operator શું માટે ઉપયોગ થાય છે?
+ઉત્તર: `typeof` operator એ આપેલી value અથવા variable નો type પાછો આપે છે. ઉદાહરણ:
+   
    typeof 42; // "number"
-   ```
+   
 
-### 34. **`void` operator શું છે?**
-   **ઉત્તર**: `void` operator એ expression નું મૂલ્ય મૂલવે છે અને `undefined` પાછું આપે છે. ઉદાહરણ:
-   ```javascript
+34. `void` operator શું છે?
+ઉત્તર: `void` operator એ expression નું મૂલ્ય મૂલવે છે અને `undefined` પાછું આપે છે. ઉદાહરણ:
+   
    void(0); // Returns undefined
-   ```
+   
 
-### 35. **`? :` (ternary) operator શું છે?**
-   **ઉત્તર**: Ternary operator એ `if-else` statements માટે shorthand છે. તેની સાઇન્ટેક્સ:
-   ```javascript
+35. `? :` (ternary) operator શું છે?
+ઉત્તર: Ternary operator એ `if-else` statements માટે shorthand છે. તેની સાઇન્ટેક્સ:
+   
    condition ? expr1 : expr2;
-   ```
-
-### 36. **`??` (nullish coalescing) operator શું છે?**
-   **ઉત્તર**: `??` operator એ એ right-hand operand આપે છે, જો left-hand operand `null` અથવા `undefined` હોય. ઉદાહરણ:
-   ```javascript
-   let result = value ?? "default";
-   ```
-
-### 37. **`&&` (logical AND) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `&&` operator એ તપાસે છે કે બંને operands truthy છે કે નહીં. જો તે બંને truthy છે, તો એ બીજું operand આપે છે; જો એક પણ falsy હોય, તો એ પહેલું falsy operand આપે છે. ઉદાહરણ:
-   ```javascript
-   x && y; // જો x અને y બંને truthy છે તો y આપે છે
-   ```
-
-### 38. **`||` (logical OR) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `||` operator એ તપાસે છે કે either operand truthy છે કે નહીં. જો એ truthy હોય, તો એ પહેલા truthy operand આપે છે; નહીંતર બીજું operand આપે છે. ઉદાહરણ:
-   ```javascript
-   x || y; // જો x truthy છે તો x આપે છે, નહીંતર y
-   ```
-
-### 39. **`!` (logical NOT) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `!` operator એ operand ની truthiness ને નકારી નાખે છે. ઉદાહરણ:
-   ```javascript
-   !true; // false
-   ```
-
-### 40. **`&` (bitwise AND) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `&` operator એ બે નંબરો પર bitwise AND કરે છે. તે બંને નમ્બરો ના દરેક bit ની તુલના કરે છે અને 1 પાછું આપે છે જો બંને bits 1 હોય. ઉદાહરણ:
-   ```javascript
-   5 & 3; // 1
-   ```
-
-### 41. **`|` (bitwise OR) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `|` operator એ બે નંબરો પર bitwise OR કરે છે. જો ઓછામાં ઓછા એક bit 1 હોય, તો 1 આપે છે. ઉદાહરણ:
-   ```javascript
-   5 | 3; // 7
-   ```
-
-### 42. **`^` (bitwise XOR) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `^` operator એ બે numbers પર bitwise XOR (exclusive OR) કરે છે. એ માત્ર ત્યારે 1 આપે છે, જયારે એક bit 1 હોય અને બીજું bit 0 હોય. ઉદાહરણ:
-   ```javascript
-   5 ^ 3; // 6
-   ```
-
-### 43. **`~` (bitwise NOT) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `~` operator એ operand ના બધા bits ને ઉલટાવે છે. ઉદાહરણ:
-   ```javascript
-   ~5; // -6
-   ```
-
-### 44. **`<<` (left shift) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `<<` operator એ એક સંખ્યા ના bits ને ડાબી બાજુ ખસેડે છે. ઉદાહરણ:
-   ```javascript
-   5 << 1; // 10
-   ```
-
-### 45. **`>>` (right shift) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `>>` operator એ એક સંખ્યા ના bits ને જમણી બાજુ ખસેડે છે. ઉદાહરણ:
-   ```javascript
-   5 >> 1; // 2
-   ```
-
-### 46. **`>>>` (unsigned right shift) operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `>>>` operator bits ને જમણારી બાજુ ખસેડે છે અને ડાબી બાજુના bits ને zeros થી ભરી આપે છે. ઉદાહરણ:
-   ```javascript
-   -5 >>> 1; // 2147483642
-   ```
-
-### 47. **Strings માં `+=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `+=` operator બે strings ને જોડે છે અને પરિણામે મળેલ value ને ડાબી operand માં એફેક્ટ કરે છે. ઉદાહરણ:
-   ```javascript
-   let str = "Hello";
-   str += " World"; // "Hello World"
-   ```
-
-### 48. **`==` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `==` operator બે values ને તુલના કરવા માટે ઉપયોગ થાય છે, જેમાં type coercion પણ થાય છે. ઉદાહરણ:
-   ```javascript
-   5 == "5"; // true
-   ```
-
-### 49. **`===` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `===` operator બે values ને strict equality માટે તુલના કરે છે (value અને type બંને). ઉદાહરણ:
-   ```javascript
-   5 === "5"; // false
-   ```
-
-### 50. **`!=` operator શું માટે ઉપયોગ થાય છે?**
-   **ઉત્તર**: `!=` operator બે values ને તુલના કરે છે અને inequality ની તપાસ કરે છે, જેમાં type coercion થાય છે. ઉદાહરણ:
-   ```javascript
-   5 != "5"; // false
-   ```
+   

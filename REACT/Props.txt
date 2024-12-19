@@ -1,26 +1,25 @@
-### **1. What are props in React?**
+1. What are props in React?
 
-**ઉત્તર**:  
+ઉત્તર:  
 Props (જેથી "properties" માટે સંક્ષિપ્ત છે) એ વાંચવા માટેના ડેટા છે જે પેરન્ટ કોમ્પોનન્ટમાંથી ચાઈલ્ડ કોમ્પોનન્ટમાં પસાર થાય છે. Props કોમ્પોનન્ટ ટ્રીમાંથી ડેટા પ્રવાહિત કરવામાં મદદ કરે છે અને કોમ્પોનન્ટને ગતિશીલ અને પુનઃઉપયોગયોગ્ય બનાવે છે.
 
-```jsx
+
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 
 // પેરન્ટ કોમ્પોનન્ટ
 <Greeting name="John" />
-```
 
----
 
-### **2. What is the difference between props and state in React?**
 
-**ઉત્તર**:  
-- **Props**: બદલતી નથી અને પેરન્ટથી ચાઈલ્ડમાં પસાર થાય છે. તેને ચાઈલ્ડ કોમ્પોનન્ટમાં બદલવાનું શક્ય નથી.
-- **State**: બદલવાની ક્ષમતા ધરાવે છે અને કોમ્પોનન્ટની અંદર સંચાલિત થાય છે. સ્ટેટ બદલાઈ શકે છે અને રી-રેન્ડરને ટ્રિગર કરી શકે છે.
+2. What is the difference between props and state in React?
 
-```jsx
+ઉત્તર:  
+- Props: બદલતી નથી અને પેરન્ટથી ચાઈલ્ડમાં પસાર થાય છે. તેને ચાઈલ્ડ કોમ્પોનન્ટમાં બદલવાનું શક્ય નથી.
+- State: બદલવાની ક્ષમતા ધરાવે છે અને કોમ્પોનન્ટની અંદર સંચાલિત થાય છે. સ્ટેટ બદલાઈ શકે છે અને રી-રેન્ડરને ટ્રિગર કરી શકે છે.
+
+
 // Props ઉદાહરણ:
 function ChildComponent({ name }) {
   return <h1>{name}</h1>;
@@ -38,16 +37,15 @@ class Counter extends React.Component {
     return <button onClick={this.increment}>{this.state.count}</button>;
   }
 }
-```
 
----
 
-### **3. How do you pass props to a child component?**
 
-**ઉત્તર**:  
+3. How do you pass props to a child component?
+
+ઉત્તર:  
 તમારે ચાઈલ્ડ કોમ્પોનન્ટને પેરન્ટ કોમ્પોનન્ટમાં ચાઈલ્ડને રેન્ડર કરતી વખતે પ્રોપ્સને એટ્રિબ્યુટ્સ તરીકે પસાર કરવા પડે છે.
 
-```jsx
+
 function Parent() {
   const name = 'Alice';
   return <Child name={name} />;
@@ -56,23 +54,21 @@ function Parent() {
 function Child({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
-```
 
----
 
-### **4. Can props be modified inside the child component?**
 
-**ઉત્તર**:  
-ના, props **immutable** છે. આનો અર્થ એ છે કે તેઓ માત્ર વાંચવા માટે છે, અને જો કોઈ ફેરફાર કરવાની જરૂર છે, તો તેને પેરન્ટ કોમ્પોનન્ટમાં કરવો જોઈએ, પછી તેને ચાઈલ્ડમાં મોકલવામાં આવે છે. જો તમને ડેટા બદલીને દેખાવમાં ફેરફાર કરવા હોય, તો તમારે સ્ટેટનો ઉપયોગ કરવાની જરૂર છે.
+4. Can props be modified inside the child component?
 
----
+ઉત્તર:  
+ના, props immutable છે. આનો અર્થ એ છે કે તેઓ માત્ર વાંચવા માટે છે, અને જો કોઈ ફેરફાર કરવાની જરૂર છે, તો તેને પેરન્ટ કોમ્પોનન્ટમાં કરવો જોઈએ, પછી તેને ચાઈલ્ડમાં મોકલવામાં આવે છે. જો તમને ડેટા બદલીને દેખાવમાં ફેરફાર કરવા હોય, તો તમારે સ્ટેટનો ઉપયોગ કરવાની જરૂર છે.
 
-### **5. What is prop drilling in React?**
 
-**ઉત્તર**:  
+5. What is prop drilling in React?
+
+ઉત્તર:  
 પ્રોપ ડ્રિલિંગ એ પ્રોસેસ છે જેમાં પ્રોપ્સને અનેક સ્તરોમાંથી પસાર કરવામાં આવે છે, જ્યાં સુધી તે ચાઈલ્ડ કોમ્પોનન્ટ સુધી પહોંચી જાય. જ્યારે કેટલીક મધ્યસ્થ કોમ્પોનન્ટ્સને એ પ્રોપ્સની જરૂર ન હોય, તો પણ તે પસાર થાય છે. આ આકસ્મિક કોડ થવા માટે સક્રિય કરી શકે છે, ખાસ કરીને મોટા એપ્લિકેશન્સમાં.
 
-```jsx
+
 function Grandparent() {
   const name = 'Alice';
   return <Parent name={name} />;
@@ -85,15 +81,15 @@ function Parent({ name }) {
 function Child({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
-```
 
 
-### **6. What is `defaultProps` in React?**
 
-**ઉત્તર**:  
+6. What is `defaultProps` in React?
+
+ઉત્તર:  
 `defaultProps` એ એ રીતે ડિફોલ્ટ મૂલ્યો નિર્ધારિત કરવા માટે છે જ્યારે પેરન્ટ કોમ્પોનન્ટ દ્વારા પ્રોપ્સ પસાર કરવામાં આવી નથી. આ એ ખાતરી કરે છે કે પ્રોપનો મૂલ્ય હોય, ભલે તે ચોક્કસ રીતે પસાર ન કરાયો હોય.
 
-```jsx
+
 function MyComponent({ name }) {
   return <h1>Hello, {name}</h1>;
 }
@@ -101,18 +97,18 @@ function MyComponent({ name }) {
 MyComponent.defaultProps = {
   name: 'Guest',
 };
-```
+
 
 જ્યારે `name` પેરન્ટ દ્વારા પ્રદાન કરાયું નથી, ત્યારે તે `'Guest'` પર ડિફોલ્ટ થાય છે.
 
----
 
-### **7. How can you validate props in React?**
 
-**ઉત્તર**:  
+7. How can you validate props in React?
+
+ઉત્તર:  
 તમે `PropTypes` નો ઉપયોગ કરીને પ્રોપ્સનું વેલિડેશન કરી શકો છો. આ તમને કોમ્પોનન્ટ્સને આપેલી પ્રોપ્સના અપેક્ષિત પ્રકાર અને માળખાનું અમલ કરવાનો મોકો આપે છે. જો પ્રોપ્સ અપેક્ષિત પ્રકાર સાથે મેળ ખાવા માટે ન હોય, તો React કન્સોલમાં એક ચેતવણી દર્શાવશે.
 
-```jsx
+
 import PropTypes from 'prop-types';
 
 function MyComponent({ name, age }) {
@@ -123,16 +119,15 @@ MyComponent.propTypes = {
   name: PropTypes.string.isRequired,
   age: PropTypes.number,
 };
-```
 
----
 
-### **8. What are the `children` props in React?**
 
-**ઉત્તર**:  
+
+8. What are the `children` props in React?
+
+ઉત્તર:  
 `children` એ Reactમાં એક વિશેષ પ્રોપ છે જે કોમ્પોનન્ટ્સને તેમના ઓપનિંગ અને ક્લોઝિંગ ટેગ્સ વચ્ચે મોહી પૅસ કરવાનો મોકો આપે છે. આ કોઈપણ માન્ય React એલિમેન્ટ્સ અથવા કોમ્પોનન્ટ્સ હોઈ શકે છે.
 
-```jsx
 function MyContainer({ children }) {
   return <div>{children}</div>;
 }
@@ -140,44 +135,44 @@ function MyContainer({ children }) {
 <MyContainer>
   <h1>Hello, world!</h1>
 </MyContainer>
-```
+
 
 આ કેસમાં, કોન્ટેન્ટ (`<h1>Hello, world!</h1>`) એ `children` તરીકે પસાર થાય છે.
 
----
 
-### **9. How can you pass multiple values as props to a component?**
 
-**ઉત્તર**:  
+9. How can you pass multiple values as props to a component?
+
+ઉત્તર:  
 તમે એક પછી એક પ્રોપ્સને કોમ્પોનન્ટને પાસ કરીને અનેક મૂલ્યો તરીકે પ્રોપ્સ પસાર કરી શકો છો.
 
-```jsx
+
 function Greeting({ name, age }) {
   return <h1>{name} is {age} years old.</h1>;
 }
 
 <Greeting name="John" age={25} />
-```
 
-વૈકલ્પિક રીતે, તમે એક ઑબ્જેક્ટને પ્રોપ તરીકે પસાર કરી શકો છો અને બાળક કોમ્પોનન્ટમાં તેને ડિસટ્રક્ચર કરી શકો છો:
 
-```jsx
+વૈકલ્પિક રીતે, તમે એક ઑબ્જેક્ટને પ્રોપ તરીકે પસાર કરી શકો છો અને child કોમ્પોનન્ટમાં તેને ડિસટ્રક્ચર કરી શકો છો:
+
+
 function Greeting({ person }) {
   return <h1>{person.name} is {person.age} years old.</h1>;
 }
 
 const person = { name: 'John', age: 25 };
 <Greeting person={person} />
-```
 
----
 
-### **10. How can you pass a function as a prop in React?**
 
-**ઉત્તર**:  
-તમે ફંક્શનને પ્રોપ તરીકે પસાર કરી શકો છો જેથી બાળક કોમ્પોનન્ટ તેને કૉલ કરી શકે. આ સામાન્ય રીતે ઇવેન્ટ હેન્ડલિંગ અથવા કોમ્પોનન્ટ્સ વચ્ચે સંચાર માટે ઉપયોગ થાય છે.
 
-```jsx
+10. How can you pass a function as a prop in React?
+
+ઉત્તર:  
+તમે ફંક્શનને પ્રોપ તરીકે પસાર કરી શકો છો જેથી child કોમ્પોનન્ટ તેને કૉલ કરી શકે. આ સામાન્ય રીતે ઇવેન્ટ હેન્ડલિંગ અથવા કોમ્પોનન્ટ્સ વચ્ચે સંચાર માટે ઉપયોગ થાય છે.
+
+x
 function Parent() {
   const greet = (name) => {
     alert(`Hello, ${name}`);
@@ -189,8 +184,7 @@ function Parent() {
 function Child({ greet }) {
   return <button onClick={() => greet('John')}>Greet</button>;
 }
-```
 
 આ ઉદાહરણમાં, `Parent` કોમ્પોનન્ટ `greet` ફંક્શનને `Child` ને પસાર કરે છે, જે બટન ક્લિક થતા તેને કૉલ કરે છે.
 
----
+

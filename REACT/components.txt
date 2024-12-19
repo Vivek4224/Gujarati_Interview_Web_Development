@@ -1,57 +1,56 @@
-### **1. React Components શું છે?**
+1. React Components શું છે?
 
-**જવાબ**:  
+જવાબ:  
 React components એ React એપ્લિકેશનના બિલ્ડિંગ બ્લોક્સ છે. એક કમ્પોનેન્ટ એ એક સ્વતંત્ર યુનિટ છે જે પોતાનો state મેનેજ કરે છે અને તેના props પર આધાર રાખીને UIને રેન્ડર કરે છે. React માં બે પ્રકારના કમ્પોનેન્ટ્સ હોય છે:
-- **Class components**: પરંપરાગત કમ્પોનેન્ટ્સ જે `React.Component` થી એક્સટેન્ડ થાય છે.
-- **Functional components**: સરળ કમ્પોનેન્ટ્સ જે JavaScript ફંક્શન્સ તરીકે ડિફાઈન થાય છે.
+- Class components: પરંપરાગત કમ્પોનેન્ટ્સ જે `React.Component` થી એક્સટેન્ડ થાય છે.
+- Functional components: સરળ કમ્પોનેન્ટ્સ જે JavaScript ફંક્શન્સ તરીકે ડિફાઈન થાય છે.
 
----
 
-### **2. React માં class component અને functional component માં શું તફાવત છે?**
+2. React માં class component અને functional component માં શું તફાવત છે?
 
-**જવાબ**:  
-- **Class components**: આ એ ES6 ક્લાસ છે જે `React.Component` થી એક્સટેન્ડ થાય છે અને તેમાં `render()` મેડથોડ હોવું જરૂરી છે. આ કમ્પોનેન્ટ્સ state અને lifecycle methods રાખી શકે છે.
+જવાબ:  
+- Class components: આ એ ES6 ક્લાસ છે જે `React.Component` થી એક્સટેન્ડ થાય છે અને તેમાં `render()` મેડથોડ હોવું જરૂરી છે. આ કમ્પોનેન્ટ્સ state અને lifecycle methods રાખી શકે છે.
 
-```jsx
+
 class MyClassComponent extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }
-```
 
-- **Functional components**: આ સરળ JavaScript ફંક્શન્સ છે જે `props` સ્વીકારે છે અને JSX રિટર્ન કરે છે. React 16.8 સાથે Hooksની ઓળખાણ પછી, functional components હવે state મેનેજ કરી શકે છે અને lifecycle જેવી ફીચર્સનો ઉપયોગ કરી શકે છે.
 
-```jsx
+- Functional components: આ સરળ JavaScript ફંક્શન્સ છે જે `props` સ્વીકારે છે અને JSX રિટર્ન કરે છે. React 16.8 સાથે Hooksની identification પછી, functional components હવે state મેનેજ કરી શકે છે અને lifecycle જેવી ફીચર્સનો ઉપયોગ કરી શકે છે.
+
+
 function MyFunctionalComponent({ name }) {
   return <h1>Hello, {name}</h1>;
 }
-```
 
----
 
-### **3. React માં Props શું છે?**
 
-**જવાબ**:  
+
+3. React માં Props શું છે?
+
+જવાબ:  
 Props (જેને "properties" કહેવામાં આવે છે) એ રીડ-ઓનલિ ઇનપુટ્સ છે જે કમ્પોનેન્ટને તેના પેરેન્ટમાંથી આપવામાં આવે છે. Props એ એક કમ્પોનેન્ટથી બીજું કમ્પોનેન્ટ સુધી ડેટા ફ્લો કરવાની પરવાનગી આપે છે, જે કમ્પોનેન્ટ્સને પુનરાવૃત્તિક (reusable) અને ડાયનેમિક બનાવે છે.
 
-```jsx
+
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 
 // Parent component
 <Greeting name="John" />
-```
 
----
 
-### **4. React માં State શું છે?**
 
-**જવાબ**:  
+
+4. React માં State શું છે?
+
+જવાબ:  
 State એ એક JavaScript ઑબ્જેક્ટ છે જે એ ડેટાને ધરાવે છે જે સમય સાથે બદલાઇ શકે છે અને જે કમ્પોનેન્ટના રેન્ડરિંગને પ્રભાવિત કરી શકે છે. State કમ્પોનેન્ટની અંદર મેનેજ થાય છે અને તેને `this.setState()` દ્વારા class componentsમાં અપડેટ કરવામાં આવે છે અથવા `useState()` hook દ્વારા functional componentsમાં અપડેટ કરવામાં આવે છે.
 
-```jsx
+
 // Class component માં state નો ઉપયોગ
 class MyComponent extends React.Component {
   constructor(props) {
@@ -72,16 +71,14 @@ class MyComponent extends React.Component {
     );
   }
 }
-```
 
----
 
-### **5. `useState` hook શું છે?**
+5. `useState` hook શું છે?
 
-**જવાબ**:  
-`useState` એ એક Hook છે જે ફંક્શનલ કમ્પોનેન્ટ્સમાં state ઉમેરવા માટે ઉપયોગમાં લેવાય છે. તે બે તત્વો ધરાવતો એરે રિટર્ન કરે છે: હાલની state કિંમત અને તેને અપડેટ કરવા માટે એક ફંક્શન.
+જવાબ:  
+`useState` એ એક Hook છે જે ફંક્શનલ કમ્પોનેન્ટ્સમાં state ઉમેરવા માટે ઉપયોગમાં લેવાય છે. તે બે elements ધરાવતો એરે રિટર્ન કરે છે: હાલની state કિંમત અને તેને અપડેટ કરવા માટે એક ફંક્શન.
 
-```jsx
+
 import { useState } from 'react';
 
 function Counter() {
@@ -94,35 +91,35 @@ function Counter() {
     </div>
   );
 }
-```
 
 
-### **6. React માં Lifecycle Methods શું છે?**
 
-**જવાબ**:  
-Lifecycle methods એ ખાસ પદ્ધતિઓ છે જે ક્લાસ કમ્પોનેન્ટ્સમાં હોય છે અને તમને કમ્પોનેન્ટના લાઇફસાયકલના નિશ્ચિત પોઈન્ટ્સ પર કોડ ચલાવવાની પરવાનગી આપે છે. કેટલાક સામાન્ય lifecycle methods એ છે:
+6. React માં Lifecycle Methods શું છે?
+
+જવાબ:  
+Lifecycle methods એ ખાસ પદ્ધતિઓ છે જે ક્લાસ કમ્પોનેન્ટ્સમાં હોય છે અને તમને કમ્પોનેન્ટના લાઇફસાયકલના fixed point પર કોડ ચલાવવાની પરવાનગી આપે છે. કેટલાક સામાન્ય lifecycle methods એ છે:
 - `componentDidMount()`: કમ્પોનેન્ટ માઉન્ટ થયા પછી એકવાર ચાલે છે.
 - `componentDidUpdate()`: કમ્પોનેન્ટ અપડેટ થય પછી ચાલે છે.
 - `componentWillUnmount()`: કમ્પોનેન્ટ DOMમાંથી કાઢી નાખ્યા પહેલા ચાલે છે.
 
 ---
 
-### **7. React Hooks શું છે?**
+7. React Hooks શું છે?
 
-**જવાબ**:  
+જવાબ:  
 React Hooks એ પદ્ધતિઓ છે જે તમને ફંક્શનલ કમ્પોનેન્ટ્સમાં state અને અન્ય React સુવિધાઓનો ઉપયોગ કરવાની પરવાનગી આપે છે. કેટલીક સામાન્ય રીતે ઉપયોગમાં લેવાતી Hooks એ છે:
 - `useState`: ફંક્શનલ કમ્પોનેન્ટમાં state મેનેજ કરે છે.
 - `useEffect`: સાઇડ ઇફેક્ટ્સ જેમ કે ડેટા ફેચિંગ, ટાઇમર્સ વગેરેને હેન્ડલ કરે છે.
 - `useContext`: ફંક્શનલ કમ્પોનેન્ટમાં context ને ઍક્સેસ કરે છે.
 
----
 
-### **8. React માં `useEffect` Hook શું છે?**
 
-**જવાબ**:  
+8. React માં `useEffect` Hook શું છે?
+
+જવાબ:  
 `useEffect` એ એક Hook છે જે ફંક્શનલ કમ્પોનેન્ટ્સમાં સાઇડ ઇફેક્ટ્સને પરફોર્મ કરવાની પરવાનગી આપે છે. તેને ડેટા ફેચિંગ, સબ્સ્ક્રિપ્શન સેટ અપ કરવા, અને રેન્ડર પછી DOMને અપડેટ કરવા માટે ઉપયોગમાં લાવી શકાય છે. ડિફૉલ્ટે, તે દરેક રેન્ડર પછી ચાલે છે, પરંતુ તમે એ ડિપેન્ડન્સી એરે આપી શકો છો અને જ્યારે તે ચાલે છે તે નિયંત્રિત કરી શકો છો.
 
-```jsx
+
 import { useEffect, useState } from 'react';
 
 function FetchData() {
@@ -136,16 +133,16 @@ function FetchData() {
 
   return <div>{JSON.stringify(data)}</div>;
 }
-```
 
----
 
-### **9. React માં Component Composition શું છે?**
 
-**જવાબ**:  
-Component composition એ નાના, પુનરાવર્તિત ઉપયોગ માટેના કમ્પોનેન્ટ્સને એકત્ર કરીને વધુ જટિલ UI કમ્પોનેન્ટ્સ બનાવવાની પદ્ધતિ છે. React એ inheritance કરતાં compositionને પ્રોત્સાહિત કરે છે, જે તમને સરળ કમ્પોનેન્ટ્સને મિશ્રિત કરીને વધુ લચીલા UI બનાવવા દે છે.
 
-```jsx
+9. React માં Component Composition શું છે?
+
+જવાબ:  
+Component composition એ નાના, reapeted ઉપયોગ માટેના કમ્પોનેન્ટ્સને એકત્ર કરીને વધુ જટિલ UI કમ્પોનેન્ટ્સ બનાવવાની પદ્ધતિ છે. React એ inheritance કરતાં composition ને પ્રોત્સાહિત કરે છે, જે તમને સરળ કમ્પોનેન્ટ્સને mix કરીને વધુ flexible UI બનાવવા દે છે.
+
+
 function Header() {
   return <h1>Welcome to My Website</h1>;
 }
@@ -162,16 +159,16 @@ function App() {
     </div>
   );
 }
-```
 
----
 
-### **10. React માં Context API શું છે?**
 
-**જવાબ**:  
-Context API એ તમને મૂલ્યો જેમ કે થીમ્સ, યુઝર ઓથેન્ટિકેશન, વગેરેને ઘણા કમ્પોનેન્ટ્સમાં શેર કરવાની પરવાનગી આપે છે, જ્યારે પ્રોપ્સને દરેક લેવલમાં મેન્યુઅલી પસાર કરવાની જરૂર નથી. તેમાં `React.createContext()`, `Provider`, અને `Consumer` કમ્પોનેન્ટ્સ શામેલ છે.
 
-```jsx
+10. React માં Context API શું છે?
+
+જવાબ:  
+Context API એ તમને value જેમ કે થીમ્સ, યુઝર ઓથેન્ટિકેશન, વગેરેને ઘણા કમ્પોનેન્ટ્સમાં શેર કરવાની પરવાનગી આપે છે, જ્યારે પ્રોપ્સને દરેક લેવલમાં મેન્યુઅલી પસાર કરવાની જરૂર નથી. તેમાં `React.createContext()`, `Provider`, અને `Consumer` કમ્પોનેન્ટ્સ શામેલ છે.
+
+
 const MyContext = React.createContext();
 
 function Parent() {
@@ -189,8 +186,4 @@ function Child() {
     </MyContext.Consumer>
   );
 }
-```
 
----
-
-Let me know if you need more translations!

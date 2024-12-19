@@ -1,8 +1,8 @@
-### **1. What is `useCallback` in React?**
+1. What is `useCallback` in React?
 
-`useCallback` એ Reactમાં એક હૂક છે જે કૉલબેક ફંક્શનનો મેમોઇઝડ વર્ઝન આપે છે. તે સુનિશ્ચિત કરે છે કે ફંક્શન ફક્ત ત્યારે ફરીથી બનાવવામાં આવે છે જ્યારે તેની ડિપેન્ડન્સી બદલાય. આ પરફોર્મન્સ ઓપ્ટિમાઇઝ કરવા માટે મદદ કરે છે, ખાસ કરીને જ્યારે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટ્સને પાસ કરવાનું હોય જે રેફરન્સ ઇક્વાલિટી પર આધાર રાખે છે અનાવશ્યક રી-રેન્ડરથી બચવા માટે.
+`useCallback` એ Reactમાં એક હૂક છે જે કૉલબેક ફંક્શનનો મેમોઇઝડ વર્ઝન આપે છે. તે સુનિશ્ચિત કરે છે કે ફંક્શન ફક્ત ત્યારે ફરીથી બનાવવામાં આવે છે જ્યારે તેની ડિપેન્ડન્સી બદલાય. આ પરફોર્મન્સ ઓપ્ટિમાઇઝ કરવા માટે મદદ કરે છે, ખાસ કરીને જ્યારે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટ્સને પાસ કરવાનું હોય જે રેફરન્સ ઇક્વાલિટી પર આધાર રાખે છે unnecessary રી-રેન્ડરથી બચવા માટે.
 
-```javascript
+
 import { useCallback } from "react";
 
 const MyComponent = () => {
@@ -12,37 +12,36 @@ const MyComponent = () => {
 
   return <button onClick={handleClick}>Click me</button>;
 };
-```
 
----
 
-### **2. What is the syntax for using `useCallback`?**
+
+
+2. What is the syntax for using `useCallback`?
 
 `useCallback` વાપરવાનું સિન્ટેક્સ આ રીતે છે:
 
-```javascript
+
 const memoizedCallback = useCallback(callbackFunction, [dependencies]);
-```
+
 
 - `callbackFunction`: તે ફંક્શન જેને તમે મેમોઇઝ કરવું છે.
 - `dependencies`: એ મૂલ્યોની એરે જે મેમોઇઝ કરેલા ફંક્શન પર આધાર રાખે છે. જો આમાંના કોઈપણ ડિપેન્ડન્સી બદલાય છે, તો ફંક્શન ફરીથી બનાવવામાં આવે છે.
 
----
 
-### **3. When should you use `useCallback`?**
+
+3. When should you use `useCallback`?
 
 તમે `useCallback` નો ઉપયોગ ત્યારે કરવો જોઈએ જ્યારે:
 - દરેક રેન્ડર પર ફંક્શનના નવા નિર્માણને અટકાવવાની જરૂર હોય.
-- ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પાસ કરતા જે `React.memo` નો ઉપયોગ કરે છે અથવા રેફરન્સ ઇક્વાલિટી પર આધાર રાખે છે અનાવશ્યક રી-રેન્ડર્સને અટકાવવા માટે.
+- ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પાસ કરતા જે `React.memo` નો ઉપયોગ કરે છે અથવા રેફરન્સ ઇક્વાલિટી પર આધાર રાખે છે unnecessary રી-રેન્ડર્સને અટકાવવા માટે.
 - એવા કોમ્પોનન્ટ્સમાં પરફોર્મન્સ ઓપ્ટિમાઇઝ કરવા માટે જેમણે મોંઘી કામગીરીઓનો સમાવેશ થાય છે, જેમ કે ઇવેન્ટ હેન્ડલર્સ અથવા ચાઈલ્ડ કોમ્પોનન્ટ્સને પાસ કરેલા ફંક્શન્સ.
 
----
 
-### **4. How does `useCallback` help optimize performance?**
+4. How does `useCallback` help optimize performance?
 
-`useCallback` એ ફંક્શનને મેમોઇઝ કરી સલાહ આપે છે જેથી ફંક્શન દરેક રેન્ડર પર ફરીથી બનાવવામાં ન આવે. આ મદદરૂપ થાય છે જ્યારે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પ્રોપ તરીકે પાસ કરવામાં આવે, જેનાં પરિણામે અનાવશ્યક રી-રેન્ડર ન થાય.
+`useCallback` એ ફંક્શનને મેમોઇઝ કરી સલાહ આપે છે જેથી ફંક્શન દરેક રેન્ડર પર ફરીથી બનાવવામાં ન આવે. આ મદદરૂપ થાય છે જ્યારે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પ્રોપ તરીકે પાસ કરવામાં આવે, જેનાં પરિણામે unnecessary રી-રેન્ડર ન થાય.
 
-```javascript
+
 const ParentComponent = () => {
   const [count, setCount] = useState(0);
 
@@ -52,42 +51,42 @@ const ParentComponent = () => {
 
   return <ChildComponent onClick={increment} />;
 };
-```
 
-આ ઉદાહરણમાં, `increment` ફક્ત ત્યારે જ ફરીથી બનાવવામાં આવશે જ્યારે `count` બદલાશે, જે રેન્ડર્સ દરમિયાન અનાવશ્યક નિર્માણને અટકાવે છે.
 
----
+આ ઉદાહરણમાં, `increment` ફક્ત ત્યારે જ ફરીથી બનાવવામાં આવશે જ્યારે `count` બદલાશે, જે રેન્ડર્સ દરમિયાન unnecessary નિર્માણને અટકાવે છે.
 
-### **5. Can you use `useCallback` without dependencies?**
+
+
+5. Can you use `useCallback` without dependencies?
 
 હા, જો તમે `useCallback` ને ખાલી ડિપેન્ડન્સી એરે `[]` તરીકે બીજું આર્ગ્યુમેન્ટ આપો છો, તો ફંક્શન ફક્ત એકવાર કોમ્પોનન્ટ માઉન્ટ થાય ત્યારે બનાવવામાં આવશે અને તે વાળા નહીં બદલાશે જ્યાં સુધી કોમ્પોનન્ટ ફરીથી માઉન્ટ ના થાય.
 
-```javascript
+
 const memoizedCallback = useCallback(() => {
   console.log("Function created once");
 }, []);
-```
 
 
-### **6. What is the difference between `useCallback` and `useMemo`?**
 
-- **`useCallback`** એ ફંક્શન્સને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જે દરેક રેન્ડર પર ફરીથી બનાવવામાંથી અટકાવે છે.
-- **`useMemo`** એ ગણતરીના પરિણામને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જે પરિણામ ફક્ત તેની ડિપેન્ડન્સી બદલાય ત્યારે ફરીથી ગણવામાં આવે છે.
+6. What is the difference between `useCallback` and `useMemo`?
 
-સારાંશ તરીકે, **`useCallback`** એ `useMemo` નો વિશિષ્ટ વર્ઝન છે, જે ફંક્શન્સ માટે છે.
+- `useCallback` એ ફંક્શન્સને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જે દરેક રેન્ડર પર ફરીથી બનાવવામાંથી અટકાવે છે.
+- `useMemo` એ ગણતરીના પરિણામને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જે પરિણામ ફક્ત તેની ડિપેન્ડન્સી બદલાય ત્યારે ફરીથી ગણવામાં આવે છે.
 
-```javascript
+સારાંશ તરીકે, `useCallback` એ `useMemo` નો વિશિષ્ટ વર્ઝન છે, જે ફંક્શન્સ માટે છે.
+
+
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 const memoizedCallback = useCallback(() => { /* some logic */ }, [dependencies]);
-```
 
----
 
-### **7. Can `useCallback` be used with `React.memo`?**
 
-હા, `useCallback` ને `React.memo` સાથે સારી રીતે કામ કરે છે. `React.memo` એ હાયર-ઓર્ડર કોમ્પોનન્ટ છે, જે કોમ્પોનન્ટના પ્રોપ્સનું શેલો કંપેરિઝન કરીને અનાવશ્યક રી-રેન્ડર અટકાવવાની કોશિશ કરે છે. જ્યારે તમે મેમોઇઝ કરેલી ફંક્શનને `React.memo` કોમ્પોનન્ટને પાસ કરો છો, તે સુનિશ્ચિત કરે છે કે ફંક્શનને તેના ડિપેન્ડન્સી બદલાય ત્યાં સુધી રી-રેન્ડર નહીં થાય.
 
-```javascript
+7. Can `useCallback` be used with `React.memo`?
+
+હા, `useCallback` ને `React.memo` સાથે સારી રીતે કામ કરે છે. `React.memo` એ હાયર-ઓર્ડર કોમ્પોનન્ટ છે, જે કોમ્પોનન્ટના પ્રોપ્સનું શેલો કંપેરિઝન કરીને unnecessary રી-રેન્ડર અટકાવવાની કોશિશ કરે છે. જ્યારે તમે મેમોઇઝ કરેલી ફંક્શનને `React.memo` કોમ્પોનન્ટને પાસ કરો છો, તે સુનિશ્ચિત કરે છે કે ફંક્શનને તેના ડિપેન્ડન્સી બદલાય ત્યાં સુધી રી-રેન્ડર નહીં થાય.
+
+
 const ChildComponent = React.memo(({ onClick }) => {
   console.log("Child re-rendered");
   return <button onClick={onClick}>Click me</button>;
@@ -100,55 +99,55 @@ const ParentComponent = () => {
 
   return <ChildComponent onClick={handleClick} />;
 };
-```
+
 
 આ ઉદાહરણમાં, `ChildComponent` ફક્ત ત્યારે જ રી-રેન્ડર થશે જ્યારે `onClick` ફંક્શન બદલાશે, જે ફક્ત `handleClick` ફંક્શનના મેમોઇઝેશનથી બદલાશે.
 
----
 
-### **8. How does `useCallback` improve the performance of a child component?**
 
-જ્યારે તમે એના પ્રોપ્સ તરીકે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પાસ કરો છો, ત્યારે જો પેરન્ટ કોમ્પોનન્ટ રી-રેન્ડર થાય છે અને ફંક્શન મેમોઇઝડ નહીં હોય, તે નવા ફંક્શન ઇન્સ્ટાન્સને દરેક રેન્ડર પર બનાવે છે. આ કારણભૂત બની શકે છે અનાવશ્યક ચાઈલ્ડ કોમ્પોનન્ટના રી-રેન્ડર, જો તે `React.memo` અથવા `shouldComponentUpdate` જેવી ઑપ્ટિમાઇઝેશન્સનો ઉપયોગ કરે છે.
+8. How does `useCallback` improve the performance of a child component?
 
-`useCallback` નો ઉપયોગ કરીને, તમે ફંક્શનને મેમોઇઝ કરો છો જેથી તે દરેક રેન્ડર પર ફરીથી બનાવવામાં ન આવે, જેથી ચાઈલ્ડ કોમ્પોનન્ટના અનાવશ્યક રી-રેન્ડર અટકાય છે.
+જ્યારે તમે એના પ્રોપ્સ તરીકે ફંક્શનને ચાઈલ્ડ કોમ્પોનન્ટને પાસ કરો છો, ત્યારે જો પેરન્ટ કોમ્પોનન્ટ રી-રેન્ડર થાય છે અને ફંક્શન મેમોઇઝડ નહીં હોય, તે નવા ફંક્શન ઇન્સ્ટાન્સને દરેક રેન્ડર પર બનાવે છે. આ કારણભૂત બની શકે છે unnecessary ચાઈલ્ડ કોમ્પોનન્ટના રી-રેન્ડર, જો તે `React.memo` અથવા `shouldComponentUpdate` જેવી ઑપ્ટિમાઇઝેશન્સનો ઉપયોગ કરે છે.
 
----
+`useCallback` નો ઉપયોગ કરીને, તમે ફંક્શનને મેમોઇઝ કરો છો જેથી તે દરેક રેન્ડર પર ફરીથી બનાવવામાં ન આવે, જેથી ચાઈલ્ડ કોમ્પોનન્ટના unnecessary રી-રેન્ડર અટકાય છે.
 
-### **9. How does the dependency array work in `useCallback`?**
+
+
+9. How does the dependency array work in `useCallback`?
 
 `useCallback` માં ડિપેન્ડન્સી એરે એ રીતે કામ કરે છે જેમણે તે `useEffect` માં કામ કરે છે. જો ડિપેન્ડન્સી એરેમાંના કોઈ પણ મૂલ્ય બદલાય છે, તો ફંક્શન ફરીથી બનાવવામાં આવે છે. જો ડિપેન્ડન્સી તે જ રહે છે, તો મેમોઇઝ કરેલું ફંક્શન પાછું મળશે.
 
-```javascript
+
 const handleClick = useCallback(() => {
   console.log("Button clicked");
 }, [count]); // ફક્ત `count` બદલાય ત્યારે ફંક્શન ફરીથી બનાવે છે
-```
+
 
 આ ઉદાહરણમાં, `handleClick` ફંક્શન ફક્ત ત્યારે જ ફરીથી બનાવવામાં આવશે જ્યારે `count` બદલાશે.
 
----
 
-### **10. Can `useCallback` be used in class components?**
+
+10. Can `useCallback` be used in class components?
 
 ને, `useCallback` એ React હૂક છે, અને હૂક્સ ફક્ત ફંક્શન કોમ્પોનન્ટ્સમાં ઉપલબ્ધ છે. જો તમે ક્લાસ કોમ્પોનન્ટ્સ સાથે કામ કરી રહ્યા છો, તો તમારી પાસે પરફોર્મન્સ ઑપ્ટિમાઇઝેશન્સ માટે `shouldComponentUpdate` અથવા `PureComponent` જેવી સ્ટ્રેટેજીનો ઉપયોગ કરવાનો વિકલ્પ હોય છે.
 
----
 
-### **11. Is `useCallback` always necessary in a React app?**
+
+11. Is `useCallback` always necessary in a React app?
 
 ને, `useCallback` હંમેશા જરૂરી નથી. તે ફક્ત ત્યારે જ જરૂરી છે જ્યારે:
-- તમારી પાસે પરફોર્મન્સ સમસ્યા હોય જ્યાં દરેક રેન્ડર પર નવી ફંક્શન પેરામિટર પાસ થવાથી ચાઈલ્ડ કોમ્પોનન્ટ્સના અનાવશ્યક રી-રેન્ડર્સ થાય છે.
+- તમારી પાસે પરફોર્મન્સ સમસ્યા હોય જ્યાં દરેક રેન્ડર પર નવી ફંક્શન પેરામિટર પાસ થવાથી ચાઈલ્ડ કોમ્પોનન્ટ્સના unnecessary રી-રેન્ડર્સ થાય છે.
 - તમે `React.memo` અથવા આવું જ optimization ઉપયોગ કરતાં વખતે ફંક્શનના નવા રેફરન્સના નિર્માણને અટકાવવા માંગતા હો.
 
 ઘણાં કોમ્પોનન્ટ્સ માટે, React નું ડિફોલ્ટ વર્તન (બિનમેમોઇઝ્ડ) સારી રીતે કામ કરે છે, ખાસ કરીને જો કોમ્પોનન્ટ્સ સરળ હોય અને પરફોર્મન્સ બોટલનેક્સ ન હોય.
 
----
 
-### **12. Can `useCallback` be used with `useEffect`?**
+
+12. Can `useCallback` be used with `useEffect`?
 
 હા, તમે `useCallback` ને `useEffect` સાથે ઉપયોગ કરી શકો છો, જેથી જો કોઈ ચોક્કસ મૂલ્ય પર આધાર રાખતી હોય ત્યારે એફેક્ટમાં ફરીથી ફંક્શનના નિર્માણને અટકાવી શકો.
 
-```javascript
+
 const [count, setCount] = useState(0);
 
 const handleClick = useCallback(() => {
@@ -158,17 +157,17 @@ const handleClick = useCallback(() => {
 useEffect(() => {
   console.log("Effect runs, count:", count);
 }, [handleClick]); // handleClick મેમોઇઝ છે અને ફક્ત `count` બદલાય ત્યારે ફરીથી બનાવવામાં આવે છે
-```
 
-આ ઉદાહરણમાં, `handleClick` એ `useCallback` સાથે મેમોઇઝ છે, તેથી તે ફક્ત ત્યારે બદલાય જ્યારે `count` બદલાય, જે અનાવશ્યક રી-રેન્ડર્સ અથવા એફેક્ટ કાર્યને અટકાવવાનો ઉપયોગ કરે છે.
 
----
+આ ઉદાહરણમાં, `handleClick` એ `useCallback` સાથે મેમોઇઝ છે, તેથી તે ફક્ત ત્યારે બદલાય જ્યારે `count` બદલાય, જે unnecessary રી-રેન્ડર્સ અથવા એફેક્ટ કાર્યને અટકાવવાનો ઉપયોગ કરે છે.
 
-### **13. Can you use `useCallback` in a custom hook?**
+
+
+13. Can you use `useCallback` in a custom hook?
 
 હા, તમે કસ્ટમ હૂકમાં `useCallback` નો ઉપયોગ કરી શકો છો, જેથી તમે કસ્ટમ હૂકથી કોપોનન્ટને પાસ કરવામાં આવેલી ફંક્શનને મેમોઇઝ કરી શકો છો.
 
-```javascript
+
 function useCustomHook() {
   const [value, setValue] = useState(0);
 
@@ -178,24 +177,24 @@ function useCustomHook() {
 
   return { value, increment };
 }
-```
+
 
 અહીં, `increment` મેમોઇઝ છે અને ફક્ત `value` બદલાય ત્યારે બદલાશે, જે તમે તેને ચાઈલ્ડ કોમ્પોનન્ટ્સને પાસ કરતાં ઉપયોગી હોય છે.
 
----
 
-### **14. Can `useCallback` be used to memoize non-function values?**
+
+14. Can `useCallback` be used to memoize non-function values?
 
 ને, `useCallback` ખાસ કરીને ફંક્શન્સને મેમોઇઝ કરવા માટે છે. જો તમે નોન-ફંક્શન મૂલ્યોને મેમોઇઝ કરવા માંગતા હો, તો તમારે `useMemo` નો ઉપયોગ કરવો જોઈએ.
 
-```javascript
+
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-```
 
----
 
-### **15. What happens if the dependencies of `useCallback` don't change?**
 
-જો `useCallback` ના ડિપેન્ડન્સી રેન્ડર્સ વચ્ચે બદલાય નહીં, તો React અગાઉના રેન્ડરમાંથી એ જ મેમોઇઝ કરેલા ફંક્શન ઇન્સ્ટાન્સને પાછું આપે છે, જેથી અનાવશ્યક ફંક્શનના નવીનતમ નિર્માણથી બચાવવાનો પ્રયત્ન કરે છે.
 
----
+15. What happens if the dependencies of `useCallback` don't change?
+
+જો `useCallback` ના ડિપેન્ડન્સી રેન્ડર્સ વચ્ચે બદલાય નહીં, તો React અગાઉના રેન્ડરમાંથી એ જ મેમોઇઝ કરેલા ફંક્શન ઇન્સ્ટાન્સને પાછું આપે છે, જેથી unnecessary ફંક્શનના નવીનતમ નિર્માણથી બચાવવાનો પ્રયત્ન કરે છે.
+
+

@@ -1,30 +1,30 @@
-### **1. React માં conditional rendering કેવી રીતે ઇમ્પલમેન્ટ કરશો?**
+1. React માં conditional rendering કેવી રીતે ઇમ્પલમેન્ટ કરશો?
 
-**જવાબ**:  
+જવાબ:  
 React માં conditional rendering સ્ટાન્ડર્ડ JavaScript ટેકનિકો દ્વારા કરવામાં આવી શકે છે, જેમ કે `if` statements, ternary operators, અથવા logical operators.
 
-- **`if` statement નો ઉપયોગ**:
+- `if` statement નો ઉપયોગ:
 
-```jsx
+
 function MyComponent({ isLoggedIn }) {
   if (isLoggedIn) {
     return <h1>Welcome back!</h1>;
   }
   return <h1>Please log in</h1>;
 }
-```
 
-- **Ternary operator નો ઉપયોગ**:
 
-```jsx
+- Ternary operator નો ઉપયોગ:
+
+
 function MyComponent({ isLoggedIn }) {
   return isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please log in</h1>;
 }
-```
 
-- **Logical `&&` operator નો ઉપયોગ**:
 
-```jsx
+- Logical `&&` operator નો ઉપયોગ:
+
+
 function MyComponent({ isLoggedIn }) {
   return (
     <div>
@@ -32,41 +32,40 @@ function MyComponent({ isLoggedIn }) {
     </div>
   );
 }
-```
 
----
 
-### **2. React માં `if` અને ternary operator નો ઉપયોગ conditional rendering માટે કઈ રીતે જુદો છે?**
 
-**જવાબ**:  
-- **`if` statement**: આ વધુ જટિલ conditions માટે અને જ્યારે તમને એક કરતા વધારે branches હેન્ડલ કરવાની જરૂર હોય ત્યારે ઉપયોગી છે. આ actionને condition પર આધારિત રીતે કરે છે પરંતુ સીધા value પાછું નથી આપતો.
+
+2. React માં `if` અને ternary operator નો ઉપયોગ conditional rendering માટે કઈ રીતે જુદો છે?
+
+જવાબ:  
+- `if` statement: આ વધુ જટિલ conditions માટે અને જ્યારે તમને એક કરતા વધારે branches હેન્ડલ કરવાની જરૂર હોય ત્યારે ઉપયોગી છે. આ actionને condition પર આધારિત રીતે કરે છે પરંતુ સીધા value પાછું નથી આપતો.
   
-- **Ternary operator**: JSX માં સીધા conditional statements લખવાનો એક સંક્ષિપ્ત રસ્તો. આ સામાન્ય રીતે સરળ conditions માટે ઉપયોગ થાય છે, જ્યાં બે વિકલ્પો હોય.
+- Ternary operator: JSX માં સીધા conditional statements લખવાનો એક સંક્ષિપ્ત રસ્તો. આ સામાન્ય રીતે સરળ conditions માટે ઉપયોગ થાય છે, જ્યાં બે વિકલ્પો હોય.
 
 `if` નો ઉદાહરણ:
 
-```jsx
+
 if (isLoggedIn) {
   return <h1>Welcome!</h1>;
 }
-```
+
 
 Ternary નો ઉદાહરણ:
 
-```jsx
+
 return isLoggedIn ? <h1>Welcome!</h1> : <h1>Please log in</h1>;
-```
 
----
 
-### **3. React માં components ને conditionally કેવી રીતે render કરી શકો છો?**
 
-**જવાબ**:  
+
+3. React માં components ને conditionally કેવી રીતે render કરી શકો છો?
+
+જવાબ:  
 તમે JSX માં સીધા `if` statements, ternary operators, અથવા logical operators નો ઉપયોગ કરીને components ને conditionally render કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
 function MyComponent({ isLoggedIn }) {
   return (
     <div>
@@ -74,18 +73,17 @@ function MyComponent({ isLoggedIn }) {
     </div>
   );
 }
-```
 
----
 
-### **4. React માં ઘણા conditions ને કેવી રીતે handle કરી શકો છો?**
 
-**જવાબ**:  
+4. React માં ઘણા conditions ને કેવી રીતે handle કરી શકો છો?
+
+જવાબ:  
 ઘણા conditions ને handle કરવા માટે તમે અનેક `if/else` statements, `switch` statement, અથવા અનેક ternary operators નો ઉપયોગ કરી શકો છો.
 
 `if/else` નો ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ role }) {
   if (role === 'admin') {
     return <AdminPanel />;
@@ -95,11 +93,11 @@ function MyComponent({ role }) {
     return <Guest />;
   }
 }
-```
+
 
 `switch` statement નો ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ role }) {
   switch (role) {
     case 'admin':
@@ -110,18 +108,18 @@ function MyComponent({ role }) {
       return <Guest />;
   }
 }
-```
 
----
 
-### **5. શું તમે `if` statements ને JSX માં સીધા ઉપયોગ કરી શકો છો?**
 
-**જવાબ**:  
+
+5. શું તમે `if` statements ને JSX માં સીધા ઉપયોગ કરી શકો છો?
+
+જવાબ:  
 નહિ, તમે `if` statements ને JSX માં સીધા ઉપયોગ કરી શકતા નથી. પરંતુ, તમે `return` statement પહેલાં `if` statement નો ઉપયોગ કરીને JSX ને conditionally return કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ isLoggedIn }) {
   let message;
   if (isLoggedIn) {
@@ -131,66 +129,65 @@ function MyComponent({ isLoggedIn }) {
   }
   return <div>{message}</div>;
 }
-```
 
 
-### **6. React માં logical `&&` operator કઈ રીતે conditional rendering માં કામ કરે છે?**
+6. React માં logical `&&` operator કઈ રીતે conditional rendering માં કામ કરે છે?
 
-**જવાબ**:  
+જવાબ:  
 Logical `&&` operator એ એવા બનાવટ માટે ઉપયોગી છે જ્યારે condition `true` હોય ત્યારે કોઈ elementને render કરવું હોય. જો condition `false` છે, તો React `&&` પછીની JSX expression ને અવગણશે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ isLoggedIn }) {
   return <div>{isLoggedIn && <h1>Welcome back!</h1>}</div>;
 }
-```
+
 
 આમાં, જો `isLoggedIn` `false` છે, તો `<h1>` tag render નહીં થાય.
 
----
 
-### **7. JSX માં ternary operator નો ઉપયોગ કરવાથી `if` statement કરતા શું ફાયદો છે?**
 
-**જવાબ**:  
+7. JSX માં ternary operator નો ઉપયોગ કરવાથી `if` statement કરતા શું ફાયદો છે?
+
+જવાબ:  
 Ternary operator એક વધુ સંક્ષિપ્ત syntax પ્રદાન કરે છે જે તમને JSXમાં સીધી રીતે conditional rendering કરવાને મંજૂરી આપે છે. જ્યારે condition સરળ હોય અને બે વિકલ્પો પસંદ કરવા હોય ત્યારે ternary operator વધુ ઉપયોગી છે.
 
 ઉદાહરણ:
 
-```jsx
+
 return isLoggedIn ? <h1>Welcome!</h1> : <h1>Please log in</h1>;
-```
+
 
 આ `if`/`else` બ્લોક કરતા छोटું અને વધુ વાંચવામાં સરળ છે.
 
----
 
-### **8. React માં `null` ને કેવી રીતે conditionally render કરી શકો છો?**
 
-**જવાબ**:  
+8. React માં `null` ને કેવી રીતે conditionally render કરી શકો છો?
+
+જવાબ:  
 `null` render કરીને તમે કોઈ component અથવા elementને render થવા થી રોકી શકો છો. આ ખાસ કરીને ઉપયોગી છે જ્યારે તમે કોઈ conditionના આધારે elementને render ના કરવા માંગતા હો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ isLoggedIn }) {
   return isLoggedIn ? <h1>Welcome back!</h1> : null;
 }
-```
+
 
 જો `isLoggedIn` `false` છે, તો કંઈપણ render થશે નહીં.
 
----
 
-### **9. React માં conditions ના આધારે અલગ-અલગ components કેવી રીતે render કરી શકો છો?**
 
-**જવાબ**:  
+9. React માં conditions ના આધારે અલગ-અલગ components કેવી રીતે render કરી શકો છો?
+
+જવાબ:  
 તમે JSXમાં જાવાસ્ક્રિપ્ટની નિયમિત conditionalsનો ઉપયોગ કરીને વિવિધ components render કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ status }) {
   if (status === 'loading') {
     return <Loading />;
@@ -199,22 +196,21 @@ function MyComponent({ status }) {
   }
   return <Content />;
 }
-```
 
----
 
-### **10. React માં short-circuit evaluation શું છે?**
 
-**જવાબ**:  
+10. React માં short-circuit evaluation શું છે?
+
+જવાબ:  
 Short-circuit evaluation એ JavaScriptની એક વિશિષ્ટતા છે જેમાં expression ને left થી right પર evaluated કરવામાં આવે છે, અને જો પહેલી condition `false` હોય, તો બીજી condition ક્યારેય evaluated થતી નથી. React માં, તમે આને logical `&&` operator સાથે contentને conditionally render કરવા માટે ઉપયોગ કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyComponent({ isLoggedIn }) {
   return <div>{isLoggedIn && <h1>Welcome back!</h1>}</div>;
 }
-```
+
 
 આ ઉદાહરણમાં, જો `isLoggedIn` `false` છે, તો `&&` expression ના બીજા ભાગ (`<h1>Welcome back!</h1>`) ને evaluated કરવામાં આવશે નહીં, અને કઈ પણ render થશે નહીં.
 

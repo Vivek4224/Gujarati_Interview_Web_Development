@@ -1,8 +1,7 @@
-### **1. What is an object in JavaScript?**
+1. What is an object in JavaScript?
 
-Object એ કી-વેલ્યુ પેરના સંગ્રહ છે, જ્યાં કી સ્રિંગ્સ (અથવા Symbols) હોય છે અને વેલ્યુ કોઈપણ ડેટા પ્રકાર હોઈ શકે છે, જેમાં ફંક્શન, એરે, અથવા બીજાં ઓબ્જેક્ટ્સ પણ શામેલ હોઈ શકે છે.
+Object એ કી-વેલ્યુ પેરના સંગ્રહ છે, જ્યાં કી string (અથવા Symbols) હોય છે અને વેલ્યુ કોઈપણ ડેટા પ્રકાર હોઈ શકે છે, જેમાં ફંક્શન, એરે, અથવા બીજાં ઓબ્જેક્ટ્સ પણ શામેલ હોઈ શકે છે.
 
-```javascript
 const person = {
   name: "John",
   age: 30,
@@ -10,321 +9,284 @@ const person = {
     return "Hello!";
   },
 };
-```
 
----
 
-### **2. How do you create an object in JavaScript?**
+
+2. How do you create an object in JavaScript?
 
 Objects બનાવવામાં આવવા માટે અનેક રીતો છે:
 1. ઓબ્જેક્ટ literal સિનટેક્સનો ઉપયોગ:
-   ```javascript
+
    const obj = { key: "value" };
-   ```
+
 2. `Object` કન્સ્ટ્રક્ટરનો ઉપયોગ:
-   ```javascript
+ 
    const obj = new Object();
    obj.key = "value";
-   ```
+ 
 
----
-
-### **3. What are the key-value pairs in an object?**
+3. What are the key-value pairs in an object?
 
 Key-value પેયર એ એવું બને છે:
-- **Key**: એ સ્રિંગ (અથવા symbol) છે જે પ્રોપર્ટી ઓળખવા માટે થાય છે.
-- **Value**: તે કી સાથે સંકળાયેલું ડેટા છે.
+- Key: એ string (અથવા symbol) છે જે પ્રોપર્ટી ઓળખવા માટે થાય છે.
+- Value: તે કી સાથે સંકળાયેલું ડેટા છે.
 
 ઉદાહરણ:
-```javascript
+
 const car = { make: "Toyota", year: 2022 };
-```
 
----
 
-### **4. How do you access object properties?**
+4. How do you access object properties?
 
 1. Dot notation:
-   ```javascript
+   
    obj.key;
-   ```
+   
 2. Bracket notation:
-   ```javascript
+   
    obj["key"];
-   ```
+   
 
----
-
-### **5. How do you add or update a property in an object?**
+5. How do you add or update a property in an object?
 
 તમે ડોટ અથવા બ્રેકેટ નોટેશનનો ઉપયોગ કરીને સીધા મૂલ્ય અનુકૂળ રીતે એડ અથવા અપડેટ કરી શકો છો:
-```javascript
+
 const obj = {};
 obj.key = "value"; // Add
 obj.key = "new value"; // Update
-```
----
 
-### **6. How do you delete a property in an object?**
+
+6. How do you delete a property in an object?
 
 `delete` operatorનો ઉપયોગ કરીને તમે ઓબ્જેક્ટમાંથી પ્રોપર્ટી કાઢી શકો છો:
-```javascript
+
 const obj = { key: "value" };
 delete obj.key;
-```
 
----
 
-### **7. How can you check if a property exists in an object?**
+7. How can you check if a property exists in an object?
 
-1. **`in` operator** નો ઉપયોગ:
-   ```javascript
+1. `in` operator નો ઉપયોગ:
+  
    "key" in obj;
-   ```
-2. **`hasOwnProperty`** નો ઉપયોગ:
-   ```javascript
+   
+2. `hasOwnProperty` નો ઉપયોગ:
+   
    obj.hasOwnProperty("key");
-   ```
+ 
 
----
 
-### **8. What is the `Object.keys()` method?**
+8. What is the `Object.keys()` method?
 
 આ એફંક્શન ઓબ્જેક્ટના પોતાના enumerable property નામોનો એરે આપે છે:
-```javascript
+
 const obj = { a: 1, b: 2 };
 Object.keys(obj); // ["a", "b"]
-```
 
----
 
-### **9. What is the `Object.values()` method?**
+
+9. What is the `Object.values()` method?
 
 આ એફંક્શન ઓબ્જેક્ટના પોતાના properties ના values નો એરે આપે છે:
-```javascript
+
 const obj = { a: 1, b: 2 };
 Object.values(obj); // [1, 2]
-```
 
----
 
-### **10. What is the `Object.entries()` method?**
+10. What is the `Object.entries()` method?
 
 આ એફંક્શન કી-વેલ્યુ પેયર્સનો એરે આપે છે:
-```javascript
+
 const obj = { a: 1, b: 2 };
 Object.entries(obj); // [["a", 1], ["b", 2]]
-```
 
----
 
-### **11. What is the `Object.assign()` method?**
 
-`Object.assign()` એ એક મethoden છે જે એક અથવા વધુ સોર્સ ઓબ્જેક્ટની properties ને ટારગેટ ઓબ્જેક્ટમાં કોપી કરે છે:
-```javascript
+11. What is the `Object.assign()` method?
+
+`Object.assign()` એ એક methoden છે જે એક અથવા વધુ સોર્સ ઓબ્જેક્ટની properties ને ટારગેટ ઓબ્જેક્ટમાં કોપી કરે છે:
+
 const target = { a: 1 };
 const source = { b: 2 };
 Object.assign(target, source); // { a: 1, b: 2 }
-```
 
----
 
-### **12. How do you clone an object in JavaScript?**
+
+12. How do you clone an object in JavaScript?
 
 `Object.assign()` અથવા સ્પ્રેડ ઓપરેટરનો ઉપયોગ કરીને તમે ઓબ્જેક્ટને ક્લોન કરી શકો છો:
-```javascript
+
 const obj = { a: 1 };
 const clone = Object.assign({}, obj);
 // OR
 const clone = { ...obj };
-```
 
----
 
-### **13. What is the `Object.freeze()` method?**
+
+13. What is the `Object.freeze()` method?
 
 `Object.freeze()` એ ઓબ્જેક્ટના પ્રોપર્ટીઓમાં કોઈ પણ ઉમેરવા, કાઢી નાખવા અથવા ફેરફાર કરવાની રાહ અટકાવે છે:
-```javascript
+
 const obj = { a: 1 };
 Object.freeze(obj);
 obj.a = 2; // No effect
-```
 
----
 
-### **14. What is the `Object.seal()` method?**
+
+14. What is the `Object.seal()` method?
 
 `Object.seal()` એ ઓબ્જેક્ટના પ્રોપર્ટીઓ ઉમેરવા અથવા કાઢી નાખવાની રોકે છે, પરંતુ મોજુદા પ્રોપર્ટીઓમાં ફેરફાર કરવાની મંજૂરી આપે છે:
-```javascript
+
 const obj = { a: 1 };
 Object.seal(obj);
 obj.a = 2; // Works
 delete obj.a; // Fails
-```
 
----
 
-### **15. How do you iterate over an object's properties?**
+
+15. How do you iterate over an object's properties?
 
 `for...in` લૂપ અથવા `Object.keys()` સાથે `forEach` નો ઉપયોગ કરીને તમે ઓબ્જેક્ટના પ્રોપર્ટીઓ પર ઇટરેક્શન કરી શકો છો:
-```javascript
+
 const obj = { a: 1, b: 2 };
 for (let key in obj) {
   console.log(key, obj[key]);
 }
-```
 
----
 
-### **16. How can you merge two objects?**
+16. How can you merge two objects?
 
 `Object.assign()` અથવા સ્પ્રેડ ઓપરેટરનો ઉપયોગ કરીને તમે બે ઓબ્જેક્ટ્સને મર્જ કરી શકો છો:
-```javascript
+
 const obj1 = { a: 1 };
 const obj2 = { b: 2 };
 const merged = { ...obj1, ...obj2 }; // { a: 1, b: 2 }
-```
 
----
 
-### **17. What is a method in an object?**
+
+17. What is a method in an object?
 
 એક method એ ઓબ્જેક્ટ સાથે જોડાયેલી ફંક્શન છે:
-```javascript
+
 const obj = {
   greet: function () {
     return "Hello!";
   },
 };
-```
 
----
 
-### **18. What is `this` in an object method?**
+
+18. What is `this` in an object method?
 
 ઓબ્જેક્ટ મેથીડમાં, `this` એ ઓબ્જેક્ટને જાતે સંકેત કરે છે:
-```javascript
+
 const obj = {
   name: "John",
   greet: function () {
     return `Hello, ${this.name}`;
   },
 };
-```
 
----
 
-### **19. What is the prototype of an object?**
+19. What is the prototype of an object?
 
 પ્રોટોટાઈપ એ એક ઓબ્જેક્ટ છે, જેના પરથી બીજા ઓબ્જેક્ટ્સ પ્રોપર્ટી અને મેથીડ્સ વારસાગત રીતે વારસાગત કરે છે.
 
----
 
-### **20. How do you get the prototype of an object?**
+
+20. How do you get the prototype of an object?
 
 `Object.getPrototypeOf()`નો ઉપયોગ કરીને તમે ઓબ્જેક્ટનો પ્રોટોટાઈપ મેળવી શકો છો:
-```javascript
+
 const obj = {};
 console.log(Object.getPrototypeOf(obj));
-```
 
----
 
-### **21. What is a constructor function?**
+
+21. What is a constructor function?
 
 એક constructor ફંક્શન ઓબ્જેક્ટ્સ બનાવે છે `new` કીવર્ડનો ઉપયોગ કરીને:
-```javascript
+
 function Person(name) {
   this.name = name;
 }
 const person = new Person("John");
-```
 
----
 
-### **22. How do you check if two objects are equal?**
+
+22. How do you check if two objects are equal?
 
 તમે `JSON.stringify()` નો ઉપયોગ કરીને બે ઓબ્જેક્ટ્સની સરખામણી કરી શકો છો:
-```javascript
+
 const obj1 = { a: 1 };
 const obj2 = { a: 1 };
 JSON.stringify(obj1) === JSON.stringify(obj2); // true
-```
 
----
 
-### **23. What is `Object.create()`?**
+23. What is `Object.create()`?
 
 `Object.create()` એ નવું ઓબ્જેક્ટ બનાવે છે જે નિર્ધારિત પ્રોટોટાઈપ પર આધારિત હોય છે:
-```javascript
+
 const proto = { greet: "Hello" };
 const obj = Object.create(proto);
-```
 
----
 
-### **24. What is the difference between shallow and deep cloning?**
 
-- **Shallow clone**: ફક્ત પ્રથમ લેવલની કોપી કરે છે.
-- **Deep clone**: નેસ્ટેડ structures ની પણ કોપી કરે છે.
+24. What is the difference between shallow and deep cloning?
+
+- Shallow clone: ફક્ત પ્રથમ લેવલની કોપી કરે છે.
+- Deep clone: નેસ્ટેડ structures ની પણ કોપી કરે છે.
 
 Deep cloning માટે:
-```javascript
+
 const clone = JSON.parse(JSON.stringify(obj));
-```
 
----
 
-### **25. How do you check the type of an object?**
+
+25. How do you check the type of an object?
 
 `typeof` અથવા `Object.prototype.toString` નો ઉપયોગ કરીને તમે ઓબ્જેક્ટનો પ્રકાર તપાસી શકો છો:
-```javascript
+
 typeof obj; // "object"
 Object.prototype.toString.call(obj); // "[object Object]"
-```
 
----
 
-### **26. What is an enumerable property?**
+
+26. What is an enumerable property?
 
 એક enumerable પ્રોપર્ટી એવી પ્રોપર્ટી છે જેને `for...in` અથવા `Object.keys()`નો ઉપયોગ કરીને ફરીથી ઈટરે છે.
 
----
 
-### **27. What is `Object.hasOwn()`?**
+27. What is `Object.hasOwn()`?
 
 `Object.hasOwn()` ચકાસે છે કે ઓબ્જેક્ટને પોતે કોઈ પ્રોપર્ટી છે કે નહીં:
-```javascript
+
 const obj = { a: 1 };
 Object.hasOwn(obj, "a"); // true
-```
 
----
 
-### **28. How do you convert an object to a string?**
+
+28. How do you convert an object to a string?
 
 `JSON.stringify()` નો ઉપયોગ કરીને તમે ઓબ્જેક્ટને સ્ટ્રિંગમાં રૂપાંતરિત કરી શકો છો:
-```javascript
+
 const obj = { a: 1 };
 JSON.stringify(obj); // '{"a":1}'
-```
 
----
 
-### **29. How do you make an object immutable?**
+29. How do you make an object immutable?
 
 `Object.freeze()`નો ઉપયોગ કરીને તમે ઓબ્જેક્ટને અસ્થિર (immutable) બનાવી શકો છો:
-```javascript
+
 const obj = Object.freeze({ a: 1 });
 obj.a = 2; // Fails
-```
 
----
 
-### **30. Can objects have dynamic properties?**
+
+
+30. Can objects have dynamic properties?
 
 હા, તમે પ્રોપર્ટી dynamically (ગતિશીલ રીતે) ઉમેરી શકો છો:
-```javascript
+
 const obj = {};
 obj["dynamicKey"] = "value";
-```

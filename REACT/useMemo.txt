@@ -1,21 +1,20 @@
-### **1. What is `useMemo` in React?**
+1. What is `useMemo` in React?
 
-**Answer**:  
+Answer:  
 `useMemo` એ એક React હૂક છે જે ગણતરી કરેલા મૂલ્યને મેમોઈઝ કરે છે, આનો અર્થ એ છે કે તે માત્ર ત્યારે જ મૂલ્યને ફરીથી ગણશે જ્યારે ડિપેન્ડન્સીમાંનું કોઈ એક મૂલ્ય બદલાય. આનું ઉપયોગ પરફોર્મન્સને ઓપ્ટિમાઇઝ કરવા માટે થાય છે, ખાસ કરીને જ્યારે mahalલાપ વિમુક્ત ગણતરીઓને ફરીથી ન કરવી પડે જ્યારે ડિપેન્ડન્સીઓમાં કોઈ ફેરફાર ન થાય.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```jsx
+
 const expensiveValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-```
+
 
 આમાં, `computeExpensiveValue` ફક્ત ત્યારે જ ફરીથી ચાલશે જ્યારે `a` અથવા `b` બદલાય.
 
----
 
-### **2. Why should we use `useMemo`?**
+2. Why should we use `useMemo`?
 
-**Answer**:  
+Answer:  
 `useMemo` નો ઉપયોગ પરફોર્મન્સને ઓપ્ટિમાઇઝ કરવા માટે થાય છે, ખાસ કરીને જ્યારે:
 - તમારી પાસે mahalલાપ ગણતરીઓ છે જે દરેક રેન્ડર પર ચલાવવાની જરૂર નથી.
 - ગણતરી ફક્ત ત્યારે ફરીથી ચલાવવી જોઈએ જ્યારે ચોક્કસ ડિપેન્ડન્સીઓમાં ફેરફાર થાય.
@@ -23,97 +22,92 @@ const expensiveValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 આ એન્જિનિયરિંગ સમસ્યાઓથી બચવામાં મદદ કરે છે, ખાસ કરીને મોટા એપ્લિકેશન્સમાં જ્યાં રી-રેન્ડર અને મૂલ્યની ફરીથી ગણતરી ખર્ચાળ હોઈ શકે છે.
 
----
 
-### **3. What is the syntax of `useMemo`?**
+3. What is the syntax of `useMemo`?
 
-**Answer**:  
+Answer:  
 `useMemo` ની સુઠાણ એ છે:
 
-```jsx
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-```
 
-- **પ્રથમ દલીલ**: એ ફંક્શન જે મૂલ્યને ગણતરી કરે છે.
-- **બીજી દલીલ**: ડિપેન્ડન્સી એરે. `useMemo` ફક્ત ત્યારે મેમોઈઝ્ડ મૂલ્યને ફરીથી ગણશે જ્યારે આ ડિપેન્ડન્સીમાંથી કોઈ એક મૂલ્ય બદલાય.
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+
+- પ્રથમ દલીલ: એ ફંક્શન જે મૂલ્યને ગણતરી કરે છે.
+- બીજી દલીલ: ડિપેન્ડન્સી એરે. `useMemo` ફક્ત ત્યારે મેમોઈઝ્ડ મૂલ્યને ફરીથી ગણશે જ્યારે આ ડિપેન્ડન્સીમાંથી કોઈ એક મૂલ્ય બદલાય.
 
 ---
 
-### **4. Can `useMemo` be used to memoize functions?**
+4. Can `useMemo` be used to memoize functions?
 
-**Answer**:  
+Answer:  
 હા, `useMemo` નો ઉપયોગ ફંક્શનને મેમોઈઝ કરવા માટે કરી શકાય છે. આનો ઉપયોગ ત્યારે થાય છે જ્યારે તમે દરેક રેન્ડર પર ફંક્શનને અનાવશ્યક રીતે ફરીથી ન બનાવવું માંગતા હો, જે સ્પષ્ટ પરફોર્મન્સ ઓપ્ટિમાઇઝેશન માટે મદદગાર હોય શકે છે, ખાસ કરીને જ્યારે ફંક્શનને પ્રોપ્સ તરીકે તાબે કરવું પડે.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```jsx
+
 const memoizedFunction = useMemo(() => () => {
   console.log('Expensive function');
 }, []);
-```
+
 
 આ આ ખાતરી આપે છે કે `memoizedFunction` ફક્ત ત્યારે જ ફરીથી બનાવવામાં આવશે જ્યારે તેની ડિપેન્ડન્સીઓમાં ફેરફાર થાય.
 
----
 
-### **5. How does `useMemo` differ from `useCallback`?**
+5. How does `useMemo` differ from `useCallback`?
 
-**Answer**:  
+Answer:  
 દોણો `useMemo` અને `useCallback` પરફોર્મન્સ ઓપ્ટિમાઇઝેશન માટે વપરાય છે, પરંતુ તેમનો ઉદ્દેશ અલગ છે:
-- **`useMemo`** મેમોઈઝ કરવું છે **મૂલ્યો** અથવા **ગણતરી પરિણામો**.
-- **`useCallback`** મેમોઈઝ કરવું છે **ફંક્શન**.
+- `useMemo` મેમોઈઝ કરવું છે **મૂલ્યો** અથવા **ગણતરી પરિણામો**.
+- `useCallback` મેમોઈઝ કરવું છે **ફંક્શન**.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-- **`useMemo`**:
+- `useMemo`:
 
-```jsx
+
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-```
 
-- **`useCallback`**:
 
-```jsx
+- `useCallback`:
+
 const memoizedFunction = useCallback(() => { doSomething(); }, [dependency]);
-```
+
 
 `useCallback` મેમોઈઝ્ડ ફંક્શન પરત આપે છે, જ્યારે `useMemo` મેમોઈઝ્ડ મૂલ્ય પરત આપે છે.
 
 
 
-### **6. Can `useMemo` be used without dependencies?**
+6. Can `useMemo` be used without dependencies?
 
-**Answer**:  
+Answer:  
 હા, તમે `useMemo` ને ડિપેન્ડન્સી વિના ઉપયોગ કરી શકો છો. જો તમે ખાલી ડિપેન્ડન્સી એરે (`[]`) આપો છો, તો મેમોઇઝ્ડ મૂલ્ય ફક્ત એકવાર (પ્રારંભિક રેન્ડર પર) ગણવામાં આવશે અને તે બદલાશે નહીં.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```jsx
+
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), []);
-```
+
 
 આ ઉદાહરણમાં, `computeExpensiveValue` ફક્ત પ્રારંભિક રેન્ડર દરમિયાન ચાલશે.
 
----
+7. What happens if the dependencies of `useMemo` change?
 
-### **7. What happens if the dependencies of `useMemo` change?**
-
-**Answer**:  
+Answer:  
 જ્યારે `useMemo`ની ડિપેન્ડન્સીઓ બદલાય છે, ત્યારે `useMemo`ની અંદરની ફંક્શન ફરીથી ચલાવવામાં આવે છે, જે મેમોઇઝ્ડ મૂલ્યને ફરીથી ગણવામાં કરે છે. જ્યારે મૂલ્ય ફરીથી ગણવામાં આવે છે, ત્યારે નવું મૂલ્ય પરત કરવામાં આવે છે અને મેમોઇઝ કરાય છે, ત્યાં સુધી ડિપેન્ડન્સીઓ ફરીથી બદલાતી નથી.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```jsx
+
 const memoizedValue = useMemo(() => expensiveCalculation(a, b), [a, b]);
-```
+
 
 જ્યારે `a` અથવા `b` બદલાય છે, ત્યારે `expensiveCalculation` ફરીથી ચાલશે; નહિ તો, `memoizedValue` પહેલાનું મૂલ્ય જ રાખશે.
 
----
 
-### **8. Is `useMemo` always necessary for performance optimization?**
 
-**Answer**:  
+8. Is `useMemo` always necessary for performance optimization?
+
+Answer:  
 ના, `useMemo` ફક્ત જ્યારે જરૂરી હોય ત્યારે જ ઉપયોગ કરવું જોઈએ. આનો ઉપયોગ વધારાની જટિલતા આપે છે અને જો ગણતરી વધુ ખર્ચાળ ન હોય અથવા જો કમ્પોનન્ટ ઘણીવાર રેન્ડર ન થાય તો તેમાં મહત્વપૂર્ણ પરફોર્મન્સ લાભ નહીં મળે. આગળથી `useMemo` નો ઉપયોગ કરવાથી કોડમાં વધુ જટિલતા આવી શકે છે જેનાથી વધુ ફાયદો નથી.
 
 `useMemo` નો ઉપયોગ મુખ્યત્વે ત્યારે કરવો જોઈએ જ્યારે:
@@ -121,30 +115,28 @@ const memoizedValue = useMemo(() => expensiveCalculation(a, b), [a, b]);
 - કમ્પોનન્ટની ઘણીવાર રેન્ડર થાય.
 - મૂલ્યની ફરીથી ગણતરી પરફોર્મન્સ પર નકારાત્મક પ્રભાવ પાડી રહી હોય.
 
----
 
-### **9. Can `useMemo` be used to memoize complex objects or arrays?**
 
-**Answer**:  
+9. Can `useMemo` be used to memoize complex objects or arrays?
+
+Answer:  
 હા, `useMemo` નો ઉપયોગ 복잡વાળા ઑબ્જેક્ટ્સ અથવા એરેને મેમોઈઝ કરવા માટે કરી શકાય છે. આ ઉપયોગી હોય છે જ્યારે તમે એ ખાતરી કરવા માગતા હો છો કે ઑબ્જેક્ટ અથવા એરેની રેફરન્સ ફક્ત જરૂરી હોય ત્યારે જ બદલાય, જે અનાવશ્યક રી-રેન્ડર્સ અથવા ચાઈલ્ડ કોમ્પોનન્ટ અપડેટ્સથી બચાવવાનો સહારો આપે છે.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```jsx
+
 const memoizedObject = useMemo(() => ({ name: 'John', age: 30 }), []);
-```
+
 
 આ ઉદાહરણમાં, `memoizedObject` કમ્પોનન્ટના જીવનચક્ર દરમિયાન સરખું રહેશે, જ્યાં સુધી ડિપેન્ડન્સીઓ બદલાઈ જાય.
 
----
 
-### **10. What are the performance trade-offs of using `useMemo`?**
+10. What are the performance trade-offs of using `useMemo`?
 
-**Answer**:  
+Answer:  
 જ્યારે `useMemo` પરફોર્મન્સ ઑપ્ટિમાઇઝેશનમાં મદદ કરે છે, ત્યારે તેમાં કેટલાક ટ્રેડ-ઓફ્સ છે:
 - **મેમરી ઓવરહેડ**: મેમોઈઝ્ડ મૂલ્યો સંગ્રહવાથી મેમરીનું ઉપયોગ વધે છે, અને જો તેનો વધુ ઉપયોગ કરવામાં આવે તો મેમરી લીક અથવા ઓવરહેડ બની શકે છે.
 - **અણકાર્ય ગણતરી**: જો મેમોઈઝ્ડ મૂલ્યની ગણતરી સસ્તી હોય, તો મેમોઇઝેશનનો ઓવરહેડ પરફોર્મન્સ લાભ કરતાં વધારે હોઈ શકે છે.
 - **જટિલતા**: વધારે `useMemo` નો ઉપયોગ કોડને વાંચવામાં અને જાળવવામાં વધારે જટિલ બનાવી શકે છે. સામાન્ય રીતે, Reactની બિલ્ટ-ઇન ઑપ્ટિમાઇઝેશન ટેકનીક્સ પર આધાર રાખવું વધુ યોગ્ય હોય છે અને ફક્ત જ્યારે સ્પષ્ટ પરફોર્મન્સ ફાયદો હોય ત્યારે જ `useMemo` નો ઉપયોગ કરવો જોઈએ.
 
----
 

@@ -1,170 +1,154 @@
-### **1. What is a function in JavaScript?**
+1. What is a function in JavaScript?
 
-A function એ રિયૂઝેબલ કોડનું બ્લોક છે જે એ特ક ખાસ કામ કરવાં માટે બનાવવામા આવે છે જયારે એને કૉલ કરાય છે.
+A function એ રિયૂઝેબલ કોડનું બ્લોક છે જે એક ખાસ કામ કરવાં માટે બનાવવામા આવે છે જયારે એને કૉલ કરાય છે.
 
-```javascript
+
 function greet() {
   console.log("Hello, World!");
 }
-```
 
----
 
-### **2. How do you declare a function in JavaScript?**
+
+2. How do you declare a function in JavaScript?
 
 `function` કીવર્ડનો ઉપયોગ કરીને તમે ફંક્શન જાહેર કરી શકો છો:
-```javascript
+
 function add(a, b) {
   return a + b;
 }
-```
 
----
 
-### **3. How do you call a function in JavaScript?**
+
+3. How do you call a function in JavaScript?
 
 તમારે ફંક્શનનું નામ લખીને તેના પેરેન્ટિસીસ સાથે ફંક્શન કૉલ કરવું હોય છે:
-```javascript
+
 add(2, 3); // 5
-```
 
----
 
-### **4. What are the types of functions in JavaScript?**
 
-1. **Named functions**:
-   ```javascript
+4. What are the types of functions in JavaScript?
+
+1.Named functions:
+   
    function greet() {
      console.log("Hello");
    }
-   ```
-2. **Anonymous functions** (expressions તરીકે ઉપયોગ થાય છે):
-   ```javascript
+  
+2. Anonymous functions (expressions તરીકે ઉપયોગ થાય છે):
+   
    const greet = function() {
      console.log("Hello");
    };
-   ```
-3. **Arrow functions**:
-   ```javascript
+   
+3. Arrow functions:
+   
    const greet = () => console.log("Hello");
-   ```
+   
 
----
 
-### **5. What are parameters and arguments in a function?**
+5. What are parameters and arguments in a function?
 
-- **Parameters** એ placeholders છે જે ફંક્શન ડેકલેરેશનમાં define કરવામાં આવે છે:
-  ```javascript
+- Parameters એ placeholders છે જે ફંક્શન ડેકલેરેશનમાં define કરવામાં આવે છે:
+  
   function add(a, b) {
     return a + b;
   }
-  ```
-- **Arguments** એ વાસ્તવિક values છે જે ફંક્શનને કૉલ કરતી વખતે પાસ કરવામાં આવે છે:
-  ```javascript
+  
+- Arguments એ વાસ્તવિક values છે જે ફંક્શનને કૉલ કરતી વખતે પાસ કરવામાં આવે છે:
+  
   add(2, 3); // Arguments: 2, 3
-  ```
 
----
 
-### **6. What is the difference between `return` and `console.log()`?**
+
+6. What is the difference between `return` and `console.log()`?
 
 - `return` એ ફંક્શનમાંથી value આપે છે અને તેની execution ને પૂર્ણ કરે છે.
 - `console.log()` value ને console પર print કરે છે, પરંતુ તે ફંક્શનના return value પર અસર નથી પાડતો.
 
----
 
-### **7. What is a default parameter?**
+7. What is a default parameter?
 
 Default parameters એ એવું value આપે છે જ્યારે કોઈ argument પાસ ન થાય:
-```javascript
+
 function greet(name = "Guest") {
   console.log(`Hello, ${name}`);
 }
 greet(); // "Hello, Guest"
-```
 
----
 
-### **8. What is an arrow function?**
+8. What is an arrow function?
 
 Arrow functions એ functions લખવાની shorthand રીત છે. તે પોતાનું `this` context નથી ધરાવતી.
 
-```javascript
 const add = (a, b) => a + b;
-```
 
----
 
-### **9. What is the difference between function expressions and function declarations?**
 
-- **Function Declaration**: Hoisted છે, એટલે તે defined થવા પહેલાં પણ તેનો ઉપયોગ કરી શકાય છે.
-  ```javascript
+9. What is the difference between function expressions and function declarations?
+
+- Function Declaration: Hoisted છે, એટલે તે defined થવા પહેલાં પણ તેનો ઉપયોગ કરી શકાય છે.
+
   function greet() {
     console.log("Hello");
   }
-  ```
-- **Function Expression**: Hoisted નથી, તે ઉપયોગ કરતા પહેલા defined થવું જોઈએ.
-  ```javascript
+
+- Function Expression: Hoisted નથી, તે ઉપયોગ કરતા પહેલા defined થવું જોઈએ.
+  
   const greet = function () {
     console.log("Hello");
   };
-  ```
+  
 
----
-
-### **10. What is an IIFE (Immediately Invoked Function Expression)?**
+10. What is an IIFE (Immediately Invoked Function Expression)?
 
 IIFE એ એફંક્શન છે જે તેને define થાય છે ત્યારત્યારે જ execute થાય છે:
-```javascript
+
 (function () {
   console.log("IIFE executed!");
 })();
-```
 
----
 
-### **11. What is a pure function?**
+11. What is a pure function?
 
 Pure function એફંક્શન છે જે દરેક વખતે તે જ inputs માટે એજ output આપે છે અને એના કઈપણ side effects નથી.
 
-```javascript
+
 function add(a, b) {
   return a + b;
 }
-```
 
-### **12. What is the `this` keyword in a function?**
+
+12. What is the `this` keyword in a function?
 
 `this` એ તે context ને સંકેત કરે છે જેમાં એફંક્શન execute થાય છે. તેની value ફંક્શન કૉલ કરવામાં આવતી રીત પર આધાર રાખે છે.
 
----
 
-### **13. How do you pass a function as an argument?**
+
+13. How do you pass a function as an argument?
 
 ફંક્શનને બીજાં ફંક્શનમાં arguments તરીકે પાસ કરી શકાય છે (callback functions):
-```javascript
+
 function greet(callback) {
   callback();
 }
 greet(() => console.log("Hello"));
-```
 
----
 
-### **14. What is a higher-order function?**
 
-એફંક્શન જે બીજાં ફંક્શનને argument તરીકે લે છે અથવા એફંક્શન રિટર્ન કરે છે:
-```javascript
+14. What is a higher-order function?
+
+એ ફંક્શન જે બીજાં ફંક્શનને argument તરીકે લે છે અથવા ફંક્શન રિટર્ન કરે છે:
+
 function higherOrder(fn) {
   return fn();
 }
-```
 
----
 
-### **15. How do you return a function from another function?**
 
-```javascript
+15. How do you return a function from another function?
+
+
 function outer() {
   return function inner() {
     console.log("Returned function");
@@ -172,14 +156,13 @@ function outer() {
 }
 const inner = outer();
 inner(); // "Returned function"
-```
 
----
 
-### **16. What is a callback function?**
+
+16. What is a callback function?
 
 Callback એ એફંક્શન છે જે બીજું એફંક્શનમાં પાસ કરવામાં આવે છે અને પછી વારમાં ચલાવાય છે:
-```javascript
+
 function fetchData(callback) {
   setTimeout(() => {
     console.log("Data fetched");
@@ -187,55 +170,51 @@ function fetchData(callback) {
   }, 1000);
 }
 fetchData(() => console.log("Callback executed"));
-```
 
----
 
-### **17. What is function hoisting?**
+
+17. What is function hoisting?
 
 ફંક્શન ડેકલેરેશન્સ hoisted થાય છે, જેનો અર્થ એ છે કે તેને defined થવા પહેલા પણ ઉપયોગ કરી શકાય છે:
-```javascript
+
 greet(); // "Hello"
 function greet() {
   console.log("Hello");
 }
-```
 
----
 
-### **18. What is the rest parameter in a function?**
+
+18. What is the rest parameter in a function?
 
 આ એ બધા બાકી ના arguments ને એરેમાં એકઠા કરે છે:
-```javascript
+
 function sum(...nums) {
   return nums.reduce((a, b) => a + b, 0);
 }
 console.log(sum(1, 2, 3)); // 6
-```
 
----
 
-### **19. What is the difference between `apply()`, `call()`, and `bind()`?**
 
-1. **`call()`**: આ ફંક્શનને arguments સાથે વ્યક્તિગત રીતે કૉલ કરે છે.
-   ```javascript
+19. What is the difference between `apply()`, `call()`, and `bind()`?
+
+1. `call()`: આ ફંક્શનને arguments સાથે વ્યક્તિગત રીતે કૉલ કરે છે.
+ 
    func.call(context, arg1, arg2);
-   ```
-2. **`apply()`**: આ ફંક્શનને arguments એરે તરીકે કૉલ કરે છે.
-   ```javascript
+  
+2. `apply()`: આ ફંક્શનને arguments એરે તરીકે કૉલ કરે છે.
+   
    func.apply(context, [arg1, arg2]);
-   ```
-3. **`bind()`**: આ નવા ફંક્શનને બાઉન્ડ context સાથે રિટર્ન કરે છે.
-   ```javascript
+   
+3. `bind()`: આ નવા ફંક્શનને બાઉન્ડ context સાથે રિટર્ન કરે છે.
+   
    const boundFunc = func.bind(context);
-   ```
 
----
 
-### **20. What are closures in JavaScript?**
 
-Closure એ એફંક્શન છે જે તેના lexical scope નો ઍક્સેસ જાળવે છે, ભલે તે સ્કોપ બહાર જexecuted થાય:
-```javascript
+20. What are closures in JavaScript?
+
+Closure એ એફંક્શન છે જે તેના lexical scope નો ઍક્સેસ જાળવે છે, ભલે તે સ્કોપ બહાર executed થાય:
+
 function outer() {
   const msg = "Hello";
   return function inner() {
@@ -244,48 +223,44 @@ function outer() {
 }
 const innerFunc = outer();
 innerFunc(); // "Hello"
-```
 
----
 
-### **21. How do you define a function with optional arguments?**
+
+21. How do you define a function with optional arguments?
 
 ડિફોલ્ટ પેરામિટર્સનો ઉપયોગ કરો:
-```javascript
+
 function greet(name, message = "Welcome") {
   console.log(`${message}, ${name}`);
 }
-```
 
----
 
-### **22. What is recursion in JavaScript?**
+
+22. What is recursion in JavaScript?
 
 એફંક્શન જે પોતાના ને કૉલ કરે છે:
-```javascript
+
 function factorial(n) {
   return n === 0 ? 1 : n * factorial(n - 1);
 }
 console.log(factorial(5)); // 120
-```
 
----
 
-### **23. What are anonymous functions?**
+
+23. What are anonymous functions?
 
 આ તે ફંક્શન છે જેમના નામ નથી:
-```javascript
+
 const greet = function () {
   console.log("Hello");
 };
-```
 
----
 
-### **24. What is memoization?**
 
-Memoization એ એક ઓપ્ટિમાઇઝેશન ટેકનીક છે જ્યાં ફંક્શનના પરિણામો કેશ કરવામાં આવે છે:
-```javascript
+24. What is memoization?
+
+Memoization એ એક ઓપ્ટિમાઇઝેશન ટેકનીક છે જ્યાં ફંક્શનના પરિણામો cache કરવામાં આવે છે:
+
 const memoizedAdd = (() => {
   const cache = {};
   return (num) => {
@@ -295,14 +270,13 @@ const memoizedAdd = (() => {
   };
 })();
 console.log(memoizedAdd(5)); // 15
-```
 
----
 
-### **25. Can a function return multiple values?**
+
+25. Can a function return multiple values?
 
 હા, એરે અથવા ઓબ્જેક્ટ રીટર્ન કરીને:
-```javascript
+
 function getDetails() {
   return [1, "John"];
 }
@@ -310,63 +284,57 @@ function getDetails() {
 function getDetails() {
   return { id: 1, name: "John" };
 }
-```
 
----
 
-### **26. How do you handle asynchronous functions?**
+
+26. How do you handle asynchronous functions?
 
 `async/await` નો ઉપયોગ કરીને:
-```javascript
+
 async function fetchData() {
   const response = await fetch("https://api.example.com");
   return response.json();
 }
-```
 
----
 
-### **27. What is the difference between `var`, `let`, and `const` in functions?**
+
+27. What is the difference between `var`, `let`, and `const` in functions?
 
 - `var`: ફંક્શન-સ્કોપડ, hoisted થાય છે.
 - `let` અને `const`: બ્લોક-સ્કોપડ, hoisted નથી.
 
----
 
-### **28. How do you define an immediately invoked async function?**
 
-```javascript
+28. How do you define an immediately invoked async function?
+
+
 (async () => {
   const data = await fetch("https://api.example.com");
   console.log(data);
 })();
-```
 
----
 
-### **29. What is a generator function?**
+
+29. What is a generator function?
 
 એફંક્શન જે execution અટકાવી શકે છે અને values yield કરી શકે છે:
-```javascript
+
 function* generator() {
   yield 1;
   yield 2;
 }
 const gen = generator();
 console.log(gen.next().value); // 1
-```
 
----
 
-### **30. How do you debug a function?**
+
+30. How do you debug a function?
 
 `console.log()`, બ્રાઉઝરમાં breakpoints, અથવા `debugger` કીવર્ડનો ઉપયોગ કરીને ફંક્શનને ડિબગ કરી શકો છો:
-```javascript
+
 function debugFunc() {
   debugger;
   console.log("Debugging...");
 }
 debugFunc();
-```
 
----

@@ -1,12 +1,12 @@
-### **1. React Hooks શું છે?**
+1. React Hooks શું છે?
 React Hooks એ એવી functions છે જે તમને function components માં React state અને lifecycle features સાથે "hook in" થવાનો મોકો આપે છે. આ hooks React 16.8 માં રજૂ કરવામાં આવ્યા હતા જે functional components માં state અને side effects સાથે કામ કરવું સરળ બનાવે છે, અને class components ની જરૂરિયાત દૂર કરે છે.
 
----
 
-### **2. `useState` hook શું છે?**
+
+2. `useState` hook શું છે?
 `useState` એ એક hook છે જે તમને functional components માં state ઉમેરવાની સગવડ આપે છે. આ hook એ બે એલિમેન્ટ ધરાવતી array આપે છે: વર્તમાન state value અને તેને અપડેટ કરવાની function.
 
-```javascript
+
 import React, { useState } from "react";
 
 function Counter() {
@@ -19,14 +19,13 @@ function Counter() {
     </div>
   );
 }
-```
 
----
 
-### **3. `useEffect` hook શું છે?**
+
+3. `useEffect` hook શું છે?
 `useEffect` એ એક hook છે જે function components માં side effects જેવી કે data fetching, subscriptions, અથવા DOM ને મેન્યુઅલી બદલવાનું કામ કરે છે. આ hook class components ના lifecycle methods (જેમ કે `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`) ના સમાન છે.
 
-```javascript
+
 import React, { useState, useEffect } from "react";
 
 function FetchData() {
@@ -40,14 +39,14 @@ function FetchData() {
 
   return <div>{data ? JSON.stringify(data) : "Loading..."}</div>;
 }
-```
 
----
 
-### **4. `useContext` hook શું છે?**
+
+
+4. `useContext` hook શું છે?
 `useContext` એ એક hook છે જે તમને function component માં context ની value પ્રાપ્ત કરવા માટે સગવડ આપે છે. આ hook React context માંથી values consume કરવા માટે ઉપયોગમાં લેવામાં આવે છે.
 
-```javascript
+
 import React, { useContext } from "react";
 
 const ThemeContext = React.createContext("light");
@@ -56,14 +55,13 @@ function ThemedComponent() {
   const theme = useContext(ThemeContext);
   return <div>The current theme is {theme}</div>;
 }
-```
 
----
 
-### **5. `useReducer` hook શું છે?**
-`useReducer` એ એક hook છે જે React માં વધુ જટિલ state logic માટે ઉપયોગી છે, જે `useState` જેવા છે પરંતુ state transitions ને actions અને reducers દ્વારા મેનેજ કરવા માટે વધુ યોગ્ય છે.
 
-```javascript
+5. `useReducer` hook શું છે?
+`useReducer` એ એક hook છે જે React માં વધુ complex state logic માટે ઉપયોગી છે, જે `useState` જેવા છે પરંતુ state transitions ને actions અને reducers દ્વારા મેનેજ કરવા માટે વધુ યોગ્ય છે.
+
+
 import React, { useReducer } from "react";
 
 const initialState = { count: 0 };
@@ -90,13 +88,13 @@ function Counter() {
     </div>
   );
 }
-```
 
 
-### **6. `useRef` hook શું છે?**
+
+6. `useRef` hook શું છે?
 `useRef` એ એક hook છે જે તમને renders વચ્ચે values ને persist કરવા દે છે, વિના re-render થવાની જરૂરિયાત રાખે. આ DOM elements ને reference કરવા માટે પણ ઉપયોગી છે.
 
-```javascript
+
 import React, { useRef } from "react";
 
 function FocusInput() {
@@ -113,14 +111,12 @@ function FocusInput() {
     </div>
   );
 }
-```
 
----
 
-### **7. `useMemo` hook શું છે?**
+7. `useMemo` hook શું છે?
 `useMemo` એ એક hook છે જે computation ના પરિણામને memoize કરે છે અને માત્ર ત્યારે ફરીથી ગણતરી કરે છે જ્યારે તેની dependencies માંથી કોઈ એક બદલાય છે. આ expensive calculations ને optimize કરવા માટે ઉપયોગી છે.
 
-```javascript
+
 import React, { useState, useMemo } from "react";
 
 function ExpensiveCalculation({ number }) {
@@ -130,14 +126,13 @@ function ExpensiveCalculation({ number }) {
 
   return <div>Result: {expensiveResult}</div>;
 }
-```
 
----
 
-### **8. `useCallback` hook શું છે?**
+
+8. `useCallback` hook શું છે?
 `useCallback` એ એક hook છે જે callback function નો memoized version આપે છે. જ્યારે functions ને child components માં props તરીકે pass કરવામાં આવે છે, ત્યારે unnecessary re-renders ટાળવા માટે આ hook ઉપયોગી છે.
 
-```javascript
+
 import React, { useState, useCallback } from "react";
 
 function Child({ onClick }) {
@@ -159,14 +154,13 @@ function Parent() {
     </div>
   );
 }
-```
 
----
 
-### **9. `useLayoutEffect` hook શું છે?**
+
+9. `useLayoutEffect` hook શું છે?
 `useLayoutEffect` એ `useEffect` જેવી છે, પરંતુ આ DOM mutations પછી સવિશેષ રૂપે synchronous રીતે ચલાવવામાં આવે છે. આ hook ત્યારે ઉપયોગી છે જ્યારે તમે DOM elements ને measure કરવાની જરૂર હોય અથવા એવી કોઈ કામગીરી કરવા જે દ્રષ્ટિમાં ફેરફાર કરી શકે.
 
-```javascript
+
 import React, { useLayoutEffect, useRef } from "react";
 
 function ResizeComponent() {
@@ -179,14 +173,13 @@ function ResizeComponent() {
 
   return <div ref={divRef}>Hello</div>;
 }
-```
 
----
 
-### **10. `useImperativeHandle` hook શું છે?**
+
+10. `useImperativeHandle` hook શું છે?
 `useImperativeHandle` એ `forwardRef` સાથે ઉપયોગમાં લેવાય છે જેથી parent components માટે exposed instance value ને કસ્ટમાઈઝ કરી શકાય જ્યારે refs નો ઉપયોગ થાય છે. આ hook ત્યારે ઉપયોગી છે જ્યારે તમે parent component માટે ચોક્કસ methods અથવા properties expose કરવી હોય.
 
-```javascript
+
 import React, { useImperativeHandle, useRef, forwardRef } from "react";
 
 const Child = forwardRef((props, ref) => {
@@ -211,11 +204,9 @@ function Parent() {
     </div>
   );
 }
-```
 
----
 
-### **11. React Hooks નો ઉપયોગ કરવાના નિયમો શું છે?**
+11. React Hooks નો ઉપયોગ કરવાના નિયમો શું છે?
 - Hooks ને તમારી component ની top level પર જ call કરવું જોઈએ (loops, conditions, અથવા nested functions માં નહીં).
 - Hooks ને React function components અથવા custom hooks માં જ call કરવું જોઈએ.
 - Regular JavaScript functions માં hooks ને call ન કરો.

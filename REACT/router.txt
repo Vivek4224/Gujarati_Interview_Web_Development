@@ -1,40 +1,38 @@
-### **1. What is React Router?**
+1. What is React Router?
 
-**ઉત્તર**:  
+ઉત્તર:  
 React Router એ React એપ્લિકેશનમાં રૂટિંગ હેન્ડલ કરવા માટેની લાઇબ્રેરી છે. તે તમને વિવિધ દૃશ્યો (કોમ્પોનન્ટ્સ) વચ્ચે નેવિગેટ કરવાની અને બ્રાઉઝર URL સંચાલિત કરવાની મંજૂરી આપે છે, જે વર્તમાન URL ના આધાર પર કોમ્પોનન્ટ્સને ડાયનેમિક રીતે રેન્ડર કરવાની રીત પ્રદાન કરે છે.
 
----
+2. How do you install React Router?
 
-### **2. How do you install React Router?**
-
-**ઉત્તર**:  
+ઉત્તર:  
 તમારે React Router ઇન્સ્ટોલ કરવા માટે npm અથવા yarn નો ઉપયોગ કરી શકો છો:
 
-```bash
+
 npm install react-router-dom
 # અથવા
 yarn add react-router-dom
-```
+
+
+
+
+3. What are the main components of React Router?
+
+ઉત્તર:  
+- `BrowserRouter`: એક ઉચ્ચ સ્તરીય કોમ્પોનન્ટ જે HTML5 હિસ્ટ્રી API નો ઉપયોગ કરીને નેવિગેશન સંચાલિત કરે છે.
+- `Route`: URL અને કોમ્પોનન્ટ વચ્ચેના નકશાને વ્યાખ્યાયિત કરે છે.
+- `Link`: પેજ રિલોડ કર્યા વગર અલગ રૂટ્સ વચ્ચે નેવિગેટ કરવામાં મદદ કરે છે.
+- `Switch`: ફક્ત તે પ્રથમ `Route` રેન્ડર કરે છે જે વર્તમાન સ્થાન સાથે મેળવે છે.
+- `Redirect`: વપરાશકર્તાને બીજા રૂટ પર રીડાયરેક્ટ કરે છે.
 
 ---
 
-### **3. What are the main components of React Router?**
+4. How do you set up routing in a React app?
 
-**ઉત્તર**:  
-- **`BrowserRouter`**: એક ઉચ્ચ સ્તરીય કોમ્પોનન્ટ જે HTML5 હિસ્ટ્રી API નો ઉપયોગ કરીને નેવિગેશન સંચાલિત કરે છે.
-- **`Route`**: URL અને કોમ્પોનન્ટ વચ્ચેના નકશાને વ્યાખ્યાયિત કરે છે.
-- **`Link`**: પેજ રિલોડ કર્યા વગર અલગ રૂટ્સ વચ્ચે નેવિગેટ કરવામાં મદદ કરે છે.
-- **`Switch`**: ફક્ત તે પ્રથમ `Route` રેન્ડર કરે છે જે વર્તમાન સ્થાન સાથે મેળવે છે.
-- **`Redirect`**: વપરાશકર્તાને બીજા રૂટ પર રીડાયરેક્ટ કરે છે.
-
----
-
-### **4. How do you set up routing in a React app?**
-
-**ઉત્તર**:  
+ઉત્તર:  
 તમારા એપ્લિકેશનને `BrowserRouter`માં લપેટો, પછી URLs ને કોમ્પોનન્ટ્સ સાથે નકશા બનાવવા માટે `Route` નો ઉપયોગ કરો.
 
-```javascript
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -47,57 +45,56 @@ function App() {
     </BrowserRouter>
   );
 }
-```
 
----
 
-### **5. What is the difference between `Route` and `Link` in React Router?**
 
-**ઉત્તર**:  
-- **`Route`**: તેનો ઉપયોગ એ વ્યાખ્યાયિત કરવા માટે થાય છે કે URL પર આધારિત કયું કોમ્પોનન્ટ રેન્ડર થવું જોઈએ.
-- **`Link`**: તેનો ઉપયોગ પેજ રિલોડ કર્યા વિના અલગ રૂટ્સ વચ્ચે નેવિગેટ કરવા માટે થાય છે.
+5. What is the difference between `Route` and `Link` in React Router?
 
-```javascript
+ઉત્તર:  
+- `Route`: તેનો ઉપયોગ એ વ્યાખ્યાયિત કરવા માટે થાય છે કે URL પર આધારિત કયું કોમ્પોનન્ટ રેન્ડર થવું જોઈએ.
+- `Link`: તેનો ઉપયોગ પેજ રિલોડ કર્યા વિના અલગ રૂટ્સ વચ્ચે નેવિગેટ કરવા માટે થાય છે.
+
+
 <Link to="/about">About</Link>
-```
 
 
-### **6. What is `exact` in `Route`?**
 
-**ઉત્તર**:  
+6. What is `exact` in `Route`?
+
+ઉત્તર:  
 `exact` કીવર્ડ એ સુનિશ્ચિત કરે છે કે રૂટ ફક્ત ત્યારે મેળવે છે જ્યારે URL સંપૂર્ણપણે રૂટ પાથ સાથે સમાન હોય. જો `exact` ના ઉપયોગ કરવામાં ન આવે, તો રૂટ હિસ્સે મેળવે છે અને કોમ્પોનન્ટને રેન્ડર કરે છે.
 
-```javascript
+
 <Route path="/" exact component={Home} />
-```
+
 
 `exact` ના ઉપયોગ વિના, `/about` પણ `/` સાથે મેળવે છે, જે `Home` કોમ્પોનન્ટને રેન્ડર કરશે.
 
----
 
-### **7. How can you pass parameters to a route in React Router?**
 
-**ઉત્તર**:  
+7. How can you pass parameters to a route in React Router?
+
+ઉત્તર:  
 તમે URL નો ઉપયોગ કરીને પેરામીટર્સ મોકલી શકો છો અને `props.match.params` દ્વારા તેમને ઍક્સેસ કરી શકો છો.
 
-```javascript
+
 <Route path="/user/:id" component={UserDetail} />
 
 // Accessing the parameter inside the component
 function UserDetail({ match }) {
   return <h1>User ID: {match.params.id}</h1>;
 }
-```
 
----
 
-### **8. How do you navigate programmatically in React Router?**
 
-**ઉત્તર**:  
+
+8. How do you navigate programmatically in React Router?
+
+ઉત્તર:  
 તમે `useHistory` હૂક (React Router v5 માં) અથવા `useNavigate` (React Router v6 માં) નો ઉપયોગ કરીને પ્રોગ્રામેટિકલી નૅવિગેટ કરી શકો છો.
 
 **React Router v5**:
-```javascript
+
 import { useHistory } from "react-router-dom";
 
 function MyComponent() {
@@ -108,10 +105,10 @@ function MyComponent() {
 
   return <button onClick={handleClick}>Go to About</button>;
 }
-```
+
 
 **React Router v6**:
-```javascript
+
 import { useNavigate } from "react-router-dom";
 
 function MyComponent() {
@@ -122,45 +119,43 @@ function MyComponent() {
 
   return <button onClick={handleClick}>Go to About</button>;
 }
-```
 
----
 
-### **9. What is the purpose of `Switch` in React Router?**
 
-**ઉત્તર**:  
+9. What is the purpose of `Switch` in React Router?
+
+ઉત્તર:  
 `Switch` એ સુનિશ્ચિત કરે છે કે ફક્ત પ્રથમ `Route` અથવા `Redirect` જે વર્તમાન URL સાથે મેળવે છે તે રેન્ડર થશે. જો તે ન હોય, તો React Router બધા મેળવનારા રૂટ્સને રેન્ડર કરશે.
 
-```javascript
+t
 <Switch>
   <Route path="/" exact component={Home} />
   <Route path="/about" component={About} />
 </Switch>
-```
 
----
 
-### **10. How do you handle 404 pages (unknown routes) in React Router?**
 
-**ઉત્તર**:  
+10. How do you handle 404 pages (unknown routes) in React Router?
+
+ઉત્તર:  
 તમે `path` વગરના `Route` નો ઉપયોગ કરીને "Not Found" પેજ જેવી ફોલબેક કોમ્પોનન્ટને રેન્ડર કરી શકો છો જ્યારે કોઇ પણ રૂટ મેલ મેળવે છે.
 
-```javascript
+
 <Switch>
   <Route path="/" exact component={Home} />
   <Route path="/about" component={About} />
   <Route component={NotFound} />
 </Switch>
-```
 
 
 
-### **11. What is `Redirect` in React Router?**
 
-**ઉત્તર**:  
+11. What is `Redirect` in React Router?
+
+ઉત્તર:  
 `Redirect` એ રિએક્ટ રાઉટરમાં યુઝર્સને બીજા રૂટ પર પ્રોગ્રામેટિક રીતે રીડાયરેક્ટ કરવા માટે ઉપયોગ થાય છે. તે સામાન્ય રીતે ફોર્મ સબમિશન પછી અથવા જો યૂઝર ઓથોરાઇઝ્ડ ન હોય તો રીડાયરેક્ટ્સ હેન્ડલ કરવા માટે વપરાય છે.
 
-```javascript
+
 import { Redirect } from "react-router-dom";
 
 function ProtectedRoute() {
@@ -169,16 +164,15 @@ function ProtectedRoute() {
   }
   return <div>Protected Content</div>;
 }
-```
 
----
 
-### **12. How do you handle nested routes in React Router?**
 
-**ઉત્તર**:  
+12. How do you handle nested routes in React Router?
+
+ઉત્તર:  
 તમે `Route` કોમ્પોનન્ટ્સને અન્ય કોમ્પોનન્ટ્સમાં નેસ્ટ કરી શકો છો, જેથી નેસ્ટેડ રૂટ્સ બનાવ્યા જઈ શકે.
 
-```javascript
+
 function Dashboard() {
   return (
     <div>
@@ -190,46 +184,42 @@ function Dashboard() {
 }
 
 <Route path="/dashboard" component={Dashboard} />
-```
 
----
 
-### **13. What is `useParams()` in React Router?**
 
-**ઉત્તર**:  
+
+13. What is `useParams()` in React Router?
+
+ઉત્તર:  
 `useParams` હૂક તમને વર્તમાન રૂટના URLમાંથી પેરામીટર્સ ઍક્સેસ કરવાની મંજૂરી આપે છે. જ્યારે તમારી પાસે ડાયનામિક રૂટ્સ હોય છે જેમને પેરામીટર્સની જરૂર પડે છે, ત્યારે આ ઉપયોગી હોય છે.
 
-```javascript
+
 import { useParams } from "react-router-dom";
 
 function User() {
   const { id } = useParams();
   return <h1>User ID: {id}</h1>;
 }
-```
 
----
 
-### **14. What is `useRouteMatch()` in React Router?**
+14. What is `useRouteMatch()` in React Router?
 
-**ઉત્તર**:  
+ઉત્તર:  
 `useRouteMatch()` હૂક વર્તમાન રૂટ વિશેની માહિતી પૂરી પાડે છે, જેમ કે URL, `params` ઓબ્જેક્ટ, અને મૅચ થયેલ `Route` વિશેની માહિતી.
 
-```javascript
+
 import { useRouteMatch } from "react-router-dom";
 
 function Dashboard() {
   let match = useRouteMatch();
   return <h2>Current Route: {match.path}</h2>;
 }
-```
 
----
 
-### **15. What is `BrowserRouter` vs `HashRouter`?**
 
-**ઉત્તર**:  
-- **`BrowserRouter`**: HTML5 હિસ્ટરી API નો ઉપયોગ કરીને નૅવિગેશન કરે છે અને તે આધુનિક વેબ બ્રાઉઝર્સ સાથે સારી રીતે કાર્ય કરે છે જે તેને સપોર્ટ કરે છે.  
-- **`HashRouter`**: URL ના હેશ હિસ્સા (જેમ કે `example.com/#/home`) નો ઉપયોગ કરે છે, જે જૂના બ્રાઉઝર્સ અથવા સ્ટેટિક ફાઈલ વાતાવરણમાં ઉપયોગી છે.
+15. What is `BrowserRouter` vs `HashRouter`?
 
----
+ઉત્તર:  
+- `BrowserRouter`: HTML5 હિસ્ટરી API નો ઉપયોગ કરીને નૅવિગેશન કરે છે અને તે આધુનિક વેબ બ્રાઉઝર્સ સાથે સારી રીતે કાર્ય કરે છે જે તેને સપોર્ટ કરે છે.  
+- `HashRouter`: URL ના હેશ હિસ્સા (જેમ કે `example.com/#/home`) નો ઉપયોગ કરે છે, જે જૂના બ્રાઉઝર્સ અથવા સ્ટેટિક ફાઈલ વાતાવરણમાં ઉપયોગી છે.
+

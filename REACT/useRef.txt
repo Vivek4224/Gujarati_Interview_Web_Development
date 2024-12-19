@@ -1,11 +1,11 @@
-### **1. What is `useRef` in React?**
+1. What is `useRef` in React?
 
-**Answer**:  
+Answer:  
 `useRef` એ એક હૂક છે જે તમને mutable રેફરન્સ બનાવવાની સકૃતિ આપે છે જે રેન્ડર્સ દરમિયાન પર્સિસ્ટ કરે છે. સ્ટેટની જેમ, `useRef` એ રેન્ડર ટ્રિગર કરતું નથી જ્યારે તેનું મૂલ્ય બદલાય છે. આનું સામાન્ય ઉપયોગ DOM તત્વોને ઍક્સેસ કરવા માટે અથવા તે mutable મૂલ્યોને સ્ટોર કરવા માટે થાય છે જે તત્વને રેન્ડર કરવી જરૂરી નથી.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 import { useRef } from "react";
 
 const MyComponent = () => {
@@ -13,29 +13,28 @@ const MyComponent = () => {
 
   return <input ref={inputRef} />;
 };
-```
 
----
 
-### **2. How do you create a reference using `useRef`?**
 
-**Answer**:  
+2. How do you create a reference using `useRef`?
+
+Answer:  
 રેફરન્સ બનાવવા માટે, તમે `useRef` હૂકને કોલ કરો અને આરંભિક મૂલ્ય પાસ કરો. આ મૂલ્ય દરેક રેન્ડર પર ઉપલબ્ધ રહેશે અને તેના બદલાવથી રેન્ડર થતો નથી.
 
-```javascript
+
 const myRef = useRef(initialValue);
-```
 
----
 
-### **3. How do you access a DOM element using `useRef`?**
 
-**Answer**:  
+
+3. How do you access a DOM element using `useRef`?
+
+Answer:  
 DOM તત્વને ઍક્સેસ કરવા માટે, તમે `ref` એટ્રિબ્યૂટ DOM તત્વ પર પાસ કરો. પછી, તમે તત્વને `myRef.current` મારફતે ઍક્સેસ કરી શકો છો.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 import { useRef } from "react";
 
 const FocusInput = () => {
@@ -52,63 +51,61 @@ const FocusInput = () => {
     </div>
   );
 };
-```
 
----
 
-### **4. Can you update the value of a `useRef` object?**
 
-**Answer**:  
+
+4. Can you update the value of a `useRef` object?
+
+Answer:  
 હા, તમે `useRef` ઓબ્જેક્ટના મૂલ્યને અપડેટ કરી શકો છો, પરંતુ તે રેન્ડર ટ્રિગર નથી કરે. રેફનો મૂલ્ય mutable છે અને તે `current` પ્રોપર્ટી પર સ્ટોર થાય છે.
 
-```javascript
+
 const myRef = useRef(0);
 
 const increment = () => {
   myRef.current += 1;
   console.log(myRef.current); // અપડેટ થયેલ મૂલ્ય લોગ કરે છે, પરંતુ રેન્ડર ટ્રિગર કરતું નથી
 };
-```
 
----
 
-### **5. What is the difference between `useState` and `useRef`?**
+5. What is the difference between `useState` and `useRef`?
 
-**Answer**:  
-- **`useState`** એ રેન્ડર ટ્રિગર કરે છે જ્યારે તેનું મૂલ્ય બદલાય છે અને તેનો ઉપયોગ સામાન્ય રીતે એ સ્ટેટ માટે થાય છે જે કોમ્પોનેન્ટના રેન્ડર પર અસર કરે છે.
-- **`useRef`** એ રેન્ડર ટ્રિગર કરતો નથી જ્યારે તેનો મૂલ્ય બદલાય છે અને તેનો ઉપયોગ DOM તત્વોને ઍક્સેસ કરવા માટે અથવા mutable મૂલ્યોને સ્ટોર કરવા માટે થાય છે જે રેન્ડરિંગને અસર કરવી જરૂરી નથી.
+Answer:  
+- `useState` એ રેન્ડર ટ્રિગર કરે છે જ્યારે તેનું મૂલ્ય બદલાય છે અને તેનો ઉપયોગ સામાન્ય રીતે એ સ્ટેટ માટે થાય છે જે કોમ્પોનેન્ટના રેન્ડર પર અસર કરે છે.
+- `useRef` એ રેન્ડર ટ્રિગર કરતો નથી જ્યારે તેનો મૂલ્ય બદલાય છે અને તેનો ઉપયોગ DOM તત્વોને ઍક્સેસ કરવા માટે અથવા mutable મૂલ્યોને સ્ટોર કરવા માટે થાય છે જે રેન્ડરિંગને અસર કરવી જરૂરી નથી.
 
----
 
-### **6. Can `useRef` store any kind of data?**
 
-**Answer**:  
+6. Can `useRef` store any kind of data?
+
+Answer:  
 હા, `useRef` કોઈપણ પ્રકારના ડેટાને સ્ટોર કરી શકે છે, જેમ કે primitive પ્રકારો, objects, અને functions. તેમ છતાં, જો તમે functions સ્ટોર કરો છો, તો તે ફંક્શન રેન્ડર દ્વારા પર્સિસ્ટ થાય છે જ્યાં સુધી તેને ખાસ કરીને બદલી શકાય.
 
-```javascript
+
 const myRef = useRef({ name: "John", age: 30 });
 
 myRef.current.name = "Doe"; // રેફરન્સને અપડેટ કરે છે, રેન્ડર કરવાથી વિમુક્ત
-```
 
----
 
-### **7. What is the typical use case for `useRef`?**
 
-**Answer**:  
+
+7. What is the typical use case for `useRef`?
+
+Answer:  
 `useRef` ના સામાન્ય ઉપયોગના કેસો incluem:
 - DOM તત્વોને ઍક્સેસ કરવા અને સાથે કાર્ય કરવાનો (ઉદાહરણ તરીકે, ઇનપુટ પર ફોકસ કરવો).
 - એવા મૂલ્યોને સ્ટોર કરવો જે રેન્ડરિંગની જરૂર વગર રેન્ડર વચ્ચે પર્સિસ્ટ કરે છે (જેમ કે પૂર્વવત્તા પ્રોપ્સ અથવા સ્ટેટ).
 - mutable ફેરફારો કરવાનો જે કોમ્પોનેન્ટના રેન્ડર ચક્રને અસર કરતી નથી (જેમ કે ટાઈમર્સ અથવા ઇન્ટરવલ્સ ટ્રેક કરવો).
 
----
 
-### **8. How do you use `useRef` to manage focus on an input element?**
 
-**Answer**:  
+8. How do you use `useRef` to manage focus on an input element?
+
+Answer:  
 તમે `useRef` નો ઉપયોગ ઇનપુટ તત્વ પર રેફરન્સ સ્ટોર કરવા માટે કરી શકો છો અને પછી ref ના `current` પ્રોપર્ટી પર `focus()` મથોડ કૉલ કરીને ઇનપુટ પર ફોકસ કરી શકો છો.
 
-```javascript
+
 import { useRef } from "react";
 
 const FocusComponent = () => {
@@ -125,45 +122,44 @@ const FocusComponent = () => {
     </div>
   );
 };
-```
 
----
 
-### **9. Can you use `useRef` to store values between renders?**
 
-**Answer**:  
+9. Can you use `useRef` to store values between renders?
+
+Answer:  
 હા, `useRef` એ મૂલ્યોને રેન્ડર વચ્ચે પર્સિસ્ટ કરવા માટે વારંવાર ઉપયોગ થાય છે, પરંતુ જ્યારે તે બદલાય છે ત્યારે રેન્ડર ટ્રિગર નથી થતો. આનો ઉપયોગ એવા મૂલ્યોને સ્ટોર કરવા માટે થાય છે જેમ કે પૂર્વવત્તા સ્ટેટ મૂલ્ય અથવા ટાઈમઆઉટ્સ અને ઇન્ટરવલ્સ જેવા લાંબા સમય ચાલતા ઓપરેશન્સ માટે.
 
-```javascript
+
 const countRef = useRef(0);
 
 const incrementCount = () => {
   countRef.current += 1; // ગણતરી વધારવામાં આવી, પરંતુ કોમ્પોનેન્ટ ફરીથી રેન્ડર થતો નથી
   console.log(countRef.current); // અપડેટ થયેલ મૂલ્ય લોગ કરે છે
 };
-```
 
----
 
-### **10. How do you access a value inside a ref object?**
 
-**Answer**:  
+
+10. How do you access a value inside a ref object?
+
+Answer:  
 આપણે રેફની વર્તમાન મૂલ્યને ઍક્સેસ કરવા માટે `current` પ્રોપર્ટીનો ઉપયોગ કરીએ છીએ.
 
-```javascript
+
 const myRef = useRef(0);
 console.log(myRef.current); // રેફના વર્તમાન મૂલ્યને લોગ કરે છે
-```
 
 
-### **11. Can `useRef` be used in a functional component for tracking previous state?**
 
-**Answer**:  
+11. Can `useRef` be used in a functional component for tracking previous state?
+
+Answer:  
 હા, `useRef` ને state અથવા prop ની પૂર્વવત્તા મૂલ્યને ટ્રેક કરવા માટે ઉપયોગ કરી શકાય છે, કારણકે તે રેન્ડરના વચ્ચે સ્ટોર થાય છે અને રેન્ડર થાય ત્યારે તેને ફરીથી ટ્રિગર કરતું નથી.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 import { useState, useEffect, useRef } from "react";
 
 const TrackPreviousState = () => {
@@ -182,18 +178,18 @@ const TrackPreviousState = () => {
     </div>
   );
 };
-```
 
----
 
-### **12. How do you use `useRef` to store a timer ID?**
 
-**Answer**:  
+
+12. How do you use `useRef` to store a timer ID?
+
+Answer:  
 `useRef` ને `setTimeout` અથવા `setInterval` ના ટાઈમર ID ને સ્ટોર કરવા માટે ઉપયોગ કરી શકાય છે, જે ટાઈમર ઘટક અનમાઉન્ટ થાય ત્યારે અથવા જરૂર પડે ત્યારે તેને ક્લિયર કરવામાં મદદરૂપ થાય છે.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 import { useRef, useEffect } from "react";
 
 const TimerComponent = () => {
@@ -210,18 +206,17 @@ const TimerComponent = () => {
 
   return <div>Timer is running...</div>;
 };
-```
 
----
 
-### **13. Can `useRef` be used for accessing a child component's method?**
 
-**Answer**:  
+13. Can `useRef` be used for accessing a child component's method?
+
+Answer:  
 હા, તમે પેરેન્ટ કોમ્પોનેન્ટમાં `ref` પસાર કરી શકો છો, જેથી તે ચાઈલ્ડ કોમ્પોનેન્ટના મથોડ અથવા પ્રોપર્ટી સુધી ઍક્સેસ મેળવી શકે. આ માટે `forwardRef` અને `useImperativeHandle` નો ઉપયોગ થાય છે.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 import { useRef, forwardRef, useImperativeHandle } from "react";
 
 const Child = forwardRef((props, ref) => {
@@ -250,25 +245,25 @@ const Parent = () => {
     </div>
   );
 };
-```
 
----
 
-### **14. What is the advantage of using `useRef` over `useState`?**
 
-**Answer**:  
+
+14. What is the advantage of using `useRef` over `useState`?
+
+Answer:  
 `useRef` નો મુખ્ય લાભ એ છે કે જ્યારે તેનો મૂલ્ય બદલાય છે, ત્યારે તે રેન્ડરને ટ્રિગર કરતું નથી. આ તમને એવા mutable મૂલ્યો સ્ટોર કરવામાં મદદ કરે છે જેમ કે DOM રેફરન્સ અથવા પૂર્વવત્તા મૂલ્યો ટ્રેક કરવામાં, જે રેન્ડરિંગ પ્રક્રિયાને અસર કરવાનું ટાળી શકે છે.
 
----
 
-### **15. Can `useRef` be used with `forwardRef`?**
 
-**Answer**:  
+### 15. Can `useRef` be used with `forwardRef`?
+
+Answer:  
 હા, `useRef` ને `forwardRef` સાથે ઉપયોગ કરી શકાય છે જેથી પેરેન્ટ કોમ્પોનેન્ટમાં ref ને ચાઈલ્ડ કોમ્પોનેન્ટમાં પસાર કરી શકાય.
 
-**ઉદાહરણ**:
+ઉદાહરણ:
 
-```javascript
+
 const Child = forwardRef((props, ref) => {
   return <input ref={ref} />;
 });
@@ -278,6 +273,6 @@ const Parent = () => {
 
   return <Child ref={inputRef} />;
 };
-```
+
 
 

@@ -1,9 +1,9 @@
-### **1. React માં events કેવી રીતે સંભાળી શકાય છે?**
+1. React માં events કેવી રીતે સંભાળી શકાય છે?
 
-**જવાબ**:  
+જવાબ:  
 React માં events ને camelCase સિન્ટેક્સનો ઉપયોગ કરીને સંભાળી શકાય છે. Event handlers ફંક્શન્સ તરીકે લખાય છે અને event object આપોઆપ એ handler ને મોકલવામાં આવે છે. તમે JSX event attribute દ્વારા event handler ને એલીમેન્ટ સાથે જોડો છો.
 
-```javascript
+
 class MyComponent extends React.Component {
   handleClick = () => {
     console.log("બટન ક્લિક થયું!");
@@ -13,16 +13,16 @@ class MyComponent extends React.Component {
     return <button onClick={this.handleClick}>Click Me</button>;
   }
 }
-```
 
----
 
-### **2. React માં event handlers ને arguments કેવી રીતે આપી શકાય છે?**
 
-**જવાબ**:  
+
+2. React માં event handlers ને arguments કેવી રીતે આપી શકાય છે?
+
+જવાબ:  
 React માં event handler ને arguments આપવા માટે, તમે arrow function નો ઉપયોગ કરી શકો છો અથવા constructor માં event handler ને bind કરી શકો છો.
 
-```javascript
+
 class MyComponent extends React.Component {
   handleClick = (message) => {
     alert(message);
@@ -32,11 +32,10 @@ class MyComponent extends React.Component {
     return <button onClick={() => this.handleClick("હેલો, વર્લ્ડ!")}>Click Me</button>;
   }
 }
-```
+
 
 અથવા, તમે function ને constructor માં bind કરી શકો છો:
 
-```javascript
 class MyComponent extends React.Component {
   constructor() {
     super();
@@ -51,34 +50,33 @@ class MyComponent extends React.Component {
     return <button onClick={this.handleClick}>Click Me</button>;
   }
 }
-```
 
----
 
-### **3. React માં synthetic events અને native events વચ્ચે શું ફરક છે?**
 
-**જવાબ**:  
-React **Synthetic Events** નો ઉપયોગ કરે છે, જે native eventsનું cross-browser wrapper છે, જે વિભિન્ન બ્રાઉઝરો વચ્ચે consistency નક્કી કરે છે. આ synthetic events એ native events જેવો ઇન્ટરફેસ ધરાવે છે, પરંતુ performance અને cross-browser compatibility માટે તે normalized છે.
+
+3. React માં synthetic events અને native events વચ્ચે શું ફરક છે?
+
+જવાબ:  
+React Synthetic Events નો ઉપયોગ કરે છે, જે native eventsનું cross-browser wrapper છે, જે વિભિન્ન બ્રાઉઝરો વચ્ચે consistency નક્કી કરે છે. આ synthetic events એ native events જેવો ઇન્ટરફેસ ધરાવે છે, પરંતુ performance અને cross-browser compatibility માટે તે normalized છે.
 
 ઉદાહરણ તરીકે:
 
-```javascript
+
 <button onClick={this.handleClick}>Click Me</button>
 
 // handleClick એક SyntheticEvent પામે છે, native browser event નહીં
 handleClick(event) {
   console.log(event); // SyntheticEvent
 }
-```
 
----
 
-### **4. React માં form input events કેવી રીતે સંભાળવી?**
 
-**જવાબ**:  
+4. React માં form input events કેવી રીતે સંભાળવી?
+
+જવાબ:  
 React માં, form inputs ને state દ્વારા નિયંત્રિત કરી શકાય છે. તમે `onChange` જેવા input events નો ઉપયોગ કરીને state ને અપડેટ કરી શકો છો જેમ કે યૂઝર ટાઈપ કરે છે.
 
-```javascript
+
 class MyComponent extends React.Component {
   constructor() {
     super();
@@ -93,16 +91,15 @@ class MyComponent extends React.Component {
     return <input type="text" value={this.state.value} onChange={this.handleChange} />;
   }
 }
-```
 
----
 
-### **5. React માં `onSubmit` event handler શું છે?**
 
-**જવાબ**:  
+5. React માં `onSubmit` event handler શું છે?
+
+જવાબ:  
 React માં `onSubmit` event handler નો ઉપયોગ form submissions સંભાળવા માટે થાય છે. આ મુખ્યત્વે `<form>` એલેમેન્ટ સાથે ઉપયોગ થાય છે. તમે `event.preventDefault()` નો ઉપયોગ કરીને form submission behaviorને રોકી શકો છો.
 
-```javascript
+
 class MyComponent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
@@ -117,17 +114,15 @@ class MyComponent extends React.Component {
     );
   }
 }
-```
-
----
 
 
-### **6. React માં event delegation શું છે?**
 
-**જવાબ**:  
+6. React માં event delegation શું છે?
+
+જવાબ:  
 Event delegation એ એ ટેકનિક છે જ્યાં તમે દરેક બાળકો પર event listeners લગાડતા બદલે પેરન્ટ એલેમેન્ટ પર એક જ event listener લગાડો છો. React આ ટેકનિકને અંદરથી ઉપયોગ કરે છે, એટલે જ્યારે તમે children elements પર event listeners મૂકતા હો, ત્યારે તમને આ વિશે ચિંતાવટ કરવાની જરૂર નથી.
 
-```javascript
+
 class MyComponent extends React.Component {
   handleClick = (event) => {
     console.log("બટન ક્લિક થયું:", event.target);
@@ -142,32 +137,30 @@ class MyComponent extends React.Component {
     );
   }
 }
-```
+
 
 આ ઉદાહરણમાં, event listener પેરન્ટ `<div>` પર લગાવવામાં આવ્યો છે અને તે બન્ને બટન્સ પર ક્લિક્સ માટે સાંભળે છે.
 
----
 
-### **7. React માં event ની ડિફોલ્ટ વર્તન કેવી રીતે રોકવું?**
 
-**જવાબ**:  
+7. React માં event ની ડિફોલ્ટ વર્તન કેવી રીતે રોકવું?
+
+જવાબ:  
 React માં event ના ડિફોલ્ટ વર્તનને રોકવા માટે, તમે `event.preventDefault()` નો ઉપયોગ કરી શકો છો. આ સામાન્ય રીતે ફોર્મ સબમિટ કરતી વખતે પેજના રિફ્રેશ થવા રોકવા માટે ઉપયોગી થાય છે.
 
-```javascript
+
 handleSubmit = (event) => {
   event.preventDefault(); // ફોર્મ સબમિટ થવામાં રોકે છે
   console.log("ફોર્મ સબમિટ થયું");
 };
-```
 
----
 
-### **8. React માં event ની propagation કેવી રીતે રોકવી?**
+8. React માં event ની propagation કેવી રીતે રોકવી?
 
-**જવાબ**:  
+જવાબ:  
 React માં event ની propagation (અથવા parent elements સુધી event ના પુનરાવૃત્તિ થવા) રોકવા માટે, તમે `event.stopPropagation()` નો ઉપયોગ કરો છો.
 
-```javascript
+
 handleClick = (event) => {
   event.stopPropagation(); // એવેન્ટના propagation ને રોકે છે
   console.log("બટન ક્લિક થયું");
@@ -184,17 +177,17 @@ render() {
     </div>
   );
 }
-```
+
 આ ઉદાહરણમાં, બટન પર ક્લિક થવા છતાં તે parent `div` પર નહિ જાય.
 
----
 
-### **9. React માં controlled અને uncontrolled components એવેન્ટ્સ માટે શું છે?**
 
-- **Controlled Components**: આ એ Components છે જ્યાં ફોર્મ ડેટા (જેમ કે input, select, વગેરે) React state દ્વારા મેનેજ કરવામાં આવે છે. આ માટે `onChange` જેવા events નો ઉપયોગ state ને અપડેટ કરવા માટે થાય છે.
-- **Uncontrolled Components**: આ એ Components છે જ્યાં ફોર્મ ડેટા DOM દ્વારા મેનેજ કરવામાં આવે છે, React state દ્વારા નહિ. તમે refs નો ઉપયોગ કરીને ફોર્મ એલીમેન્ટના value ને ઍક્સેસ કરી શકો છો.
+9. React માં controlled અને uncontrolled components એવેન્ટ્સ માટે શું છે?
 
-```javascript
+- Controlled Components: આ એ Components છે જ્યાં ફોર્મ ડેટા (જેમ કે input, select, વગેરે) React state દ્વારા મેનેજ કરવામાં આવે છે. આ માટે `onChange` જેવા events નો ઉપયોગ state ને અપડેટ કરવા માટે થાય છે.
+- Uncontrolled Components: આ એ Components છે જ્યાં ફોર્મ ડેટા DOM દ્વારા મેનેજ કરવામાં આવે છે, React state દ્વારા નહિ. તમે refs નો ઉપયોગ કરીને ફોર્મ એલીમેન્ટના value ને ઍક્સેસ કરી શકો છો.
+
+
 // Controlled Component
 class MyComponent extends React.Component {
   handleChange = (event) => {
@@ -227,14 +220,14 @@ class MyComponent extends React.Component {
 
 ---
 
-### **10. Class Components માં event handlers માટે `this` કેવી રીતે bind કરવું?**
+10. Class Components માં event handlers માટે `this` કેવી રીતે bind કરવું?
 
-**જવાબ**:  
+જવાબ:  
 Class components માં, event handler methods આપમેળે `this` ને component instance સાથે બાઇન્ડ નથી કરતી. તમારે એ `this` ને constructor માં બાઇન્ડ કરવું કે પછી arrow functions નો ઉપયોગ કરવો.
 
-**Constructor માં બાઇન્ડ કરવું:**
+Constructor માં બાઇન્ડ કરવું:
 
-```javascript
+
 class MyComponent extends React.Component {
   constructor() {
     super();
@@ -249,13 +242,13 @@ class MyComponent extends React.Component {
     return <button onClick={this.handleClick}>Click Me</button>;
   }
 }
-```
 
-**Arrow functions નો ઉપયોગ કરવો:**
 
-```javascript
+Arrow functions નો ઉપયોગ કરવો:
+
+
 handleClick = () => {
   console.log("Button clicked!");
 };
-```
+
 

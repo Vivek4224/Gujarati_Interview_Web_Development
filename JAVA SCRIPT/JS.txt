@@ -6,7 +6,7 @@ ans:- JavaScript એ એક ઓબ્જેક્ટ based પ્રોગ્ર
 બ્રાઉઝર માં JavaScript ઘણા કામો કરી શકે છે જેમ કે નીચે દર્શાવેલા છે:
 
 HTML એલિમેન્ટ્સને મેનિપ્યુલેટ કરવું.
-યૂઝર એકશન પર પ્રતિસાદ આપવો, જેમ કે જ્યારે યૂઝર માઉસ ક્લિક કરે અથવા કીબોર્ડનો ઉપયોગ કરે ત્યારે Event ચલાવવી.
+યૂઝર એકશન પર feedback આપવો, જેમ કે જ્યારે યૂઝર માઉસ ક્લિક કરે અથવા કીબોર્ડનો ઉપયોગ કરે ત્યારે Event ચલાવવી.
 રિમોટ સર્વર પર રિક્વેસ્ટ મોકલવી.
 ફાઇલો ડાઉનલોડ અને અપલોડ કરવી.
 કૂકીઝ મેળવી અને સેટ કરવી અને ક્લાયન્ટ-સાઇડ સ્ટોરેજ (લોકલ અને સેશન સ્ટોરેજ) હેન્ડલ કરવું.
@@ -21,7 +21,7 @@ HTML/CSS સાથે સંપૂર્ણ ઈન્ટિગ્રેશન.
 
 Ans: ECMAScript એ એક સ્ક્રિપ્ટિંગ language છે જે ECMA International દ્વારા ECMA-262 માં સ્ટાન્ડર્ડાઈઝ કરવામાં આવી છે. ActionScript, JavaScript અને ઘણી બીજી સ્ક્રિપ્ટિંગ language માં ECMAScript ઉપયોગમાં લેવામાં આવે છે. એમાં, JavaScript એ એક પ્રખ્યાત ક્લાયન્ટ-સાઇડ સ્ક્રિપ્ટિંગ language છે અને ECMAScript નું એક implementation છે, કારણ કે આ સ્ટાન્ડર્ડ પ્રકાશિત થયો હતો. હાલનું વર્ઝન ECMAScript 6 છે.
 
-ECMAScript સામાન્ય રીતે JavaScript નું સ્ટાન્ડર્ડાઈઝડ વર્ઝન છે અને એક સામાન્ય ઉદ્દેશ માટેની પ્રોગ્રામિંગ language છે, જે JavaScript અને અન્ય languageઓમાં અમલમાં આવે છે. એ એક સ્ક્રિપ્ટિંગ language છે જેના પર આધારિત બ્રાઉઝર-આધારિત JavaScript અને Node.js પણ વિકસિત થયા છે.
+ECMAScript સામાન્ય રીતે JavaScript નું સ્ટાન્ડર્ડાઈઝડ વર્ઝન છે અને એક સામાન્ય ઉદ્દેશ માટેની પ્રોગ્રામિંગ language છે, જે JavaScript અને અન્ય language માં અમલમાં આવે છે. એ એક સ્ક્રિપ્ટિંગ language છે જેના પર બ્રાઉઝર-આધારિત JavaScript અને Node.js પણ વિકસિત થયા છે.
 
 
 
@@ -327,7 +327,7 @@ New Number 50
 
 18. DOM શું છે?  
 
-Ans: DOM એ W3C (World Wide Web Consortium) ધોરણ છે. જ્યારે HTML પેજ બ્રાઉઝરમાં લોડ થાય છે, ત્યારે બ્રાઉઝર DOM (Document Object Model) બનાવે છે. આ HTML element ઓબ્જેક્ટ તરીકે વ્યાખ્યાયિત કરે છે અને સ્ક્રિપ્ટોને document ની properties અને રચનામાં dynamic રીતે ફેરફાર કરવા માટેની અનુમતિ આપે છે.
+Ans: DOM એ W3C (World Wide Web Consortium) ધોરણ છે. જ્યારે HTML પેજ બ્રાઉઝરમાં લોડ થાય છે, ત્યારે બ્રાઉઝર DOM (Document Object Model) બનાવે છે. આ HTML element ઓબ્જેક્ટ તરીકે defined કરે છે અને સ્ક્રિપ્ટોને document ની properties અને composition માં dynamic રીતે ફેરફાર કરવા માટેની અનુમતિ આપે છે.
 
 જ્યારે કોઈ HTML Document બ્રાઉઝરમાં લોડ થાય છે, તે Document ઓબ્જેક્ટ બની જાય છે, જે HTML Documentનું root element છે. દરેક DOM element માં વિવિધ પ્રોપર્ટી અને method હોય છે. અને Document ઑબ્જેક્ટ્સની મદદથી, વેબ પેજ પર જરૂરી વર્તન મુજબ dynamic content ઉમેરવા માટે powerfull રીતે work કરી શકીએ છીએ.
 

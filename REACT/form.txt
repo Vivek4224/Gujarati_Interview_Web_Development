@@ -1,11 +1,11 @@
-### **1. React માં form input કેવી રીતે સંભાળવું?**
+1. React માં form input કેવી રીતે સંભાળવું?
 
-**જવાબ**:  
+જવાબ:  
 React માં, તમે **controlled components** નો ઉપયોગ કરીને form input ને સંભાળી શકો છો, જ્યાં input ની value React state દ્વારા નિયંત્રિત થાય છે. તમે `value` prop નો ઉપયોગ કરીને input field ને state સાથે બાઈન્ડ કરો છો અને `onChange` event handler નો ઉપયોગ કરીને state ને અપડેટ કરો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 import { useState } from 'react';
 
 function MyForm() {
@@ -31,18 +31,18 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **2. React માં controlled components શું છે?**
 
-**જવાબ**:  
-**Controlled component** એ તે input element છે જેની value component ની state દ્વારા નિયંત્રિત થાય છે. Input field ની value component ની state માં સંગ્રહાય છે અને input field માં થયેલ દરેક ફેરફાર `onChange` event દ્વારા સંભાળવામાં આવે છે, જે state ને અપડેટ કરે છે.
+
+2. React માં controlled components શું છે?
+
+જવાબ:  
+Controlled component એ તે input element છે જેની value component ની state દ્વારા નિયંત્રિત થાય છે. Input field ની value component ની state માં સંગ્રહાય છે અને input field માં થયેલ દરેક ફેરફાર `onChange` event દ્વારા સંભાળવામાં આવે છે, જે state ને અપડેટ કરે છે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const [value, setValue] = useState('');
 
@@ -58,18 +58,17 @@ function MyForm() {
     />
   );
 }
-```
 
----
 
-### **3. React માં uncontrolled components શું છે?**
 
-**જવાબ**:  
-**Uncontrolled component** એ તે input element છે જ્યાં value DOM દ્વારા સંભાળી લેવામાં આવે છે, React state દ્વારા નહીં. તેના value ને મેનેજ કરવા માટે, તમે **ref** નો ઉપયોગ કરીને DOM element ને સીધો access કરી શકો છો.
+3. React માં uncontrolled components શું છે?
+
+જવાબ:  
+Uncontrolled component એ તે input element છે જ્યાં value DOM દ્વારા સંભાળી લેવામાં આવે છે, React state દ્વારા નહીં. તેના value ને મેનેજ કરવા માટે, તમે ref નો ઉપયોગ કરીને DOM element ને સીધો access કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const inputRef = useRef();
 
@@ -85,18 +84,17 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **4. React માં form submission કેવી રીતે સંભાળવું?**
 
-**જવાબ**:  
+4. React માં form submission કેવી રીતે સંભાળવું?
+
+જવાબ:  
 React માં form submission `onSubmit` event handler નો ઉપયોગ કરીને સંભાળવામાં આવે છે. તમે `event.preventDefault()` નો ઉપયોગ કરીને form ની default submission behavior ને રોકી શકો છો અને પછી જરૂરી ડેટા સાથે કામ કરી શકો છો.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const [name, setName] = useState('');
 
@@ -116,18 +114,17 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **5. React માં form data કેવી રીતે validate કરવું?**
 
-**જવાબ**:  
-Form data validation `onSubmit` handler અંદર કરવામાં આવી શકે છે, જ્યાં તમે input values ચકાસી શકો છો અને submission પહેલાં તેને માન્ય બનાવો છો. વધુ જટિલ validation માટે, તમે **Formik** અથવા **React Hook Form** જેવી લાઇબ્રેરીઝનો ઉપયોગ કરી શકો છો.
+5. React માં form data કેવી રીતે validate કરવું?
+
+જવાબ:  
+Form data validation `onSubmit` handler અંદર કરવામાં આવી શકે છે, જ્યાં તમે input values ચકાસી શકો છો અને submission પહેલાં તેને માન્ય બનાવો છો. વધુ જટિલ validation માટે, તમે Formik અથવા React Hook Form જેવી લાઇબ્રેરીઝનો ઉપયોગ કરી શકો છો.
 
 ઉદાહરણ (સરળ validation):
 
-```jsx
+
 function MyForm() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -154,17 +151,17 @@ function MyForm() {
     </form>
   );
 }
-```
 
 
-### **6. `useState` હૂકનો ફોર્મ્સમાં શું હેતુ છે?**
 
-**જવાબ**:  
+6. `useState` હૂકનો ફોર્મ્સમાં શું હેતુ છે?
+
+જવાબ:  
 `useState` હૂકનો ઉપયોગ controlled components માં form inputs ની state ને મેનેજ કરવા માટે થાય છે. આ હૂક તમને input values પર નજર રાખવાની અને user દ્વારા input બદલતી વખતે state ને અપડેટ કરવાની સગવડ આપે છે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const [name, setName] = useState('');
 
@@ -182,18 +179,17 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **7. React ફોર્મ્સમાં `onChange` event શું છે?**
 
-**જવાબ**:  
+7. React ફોર્મ્સમાં `onChange` event શું છે?
+
+જવાબ:  
 `onChange` event handler દરેક વખતે ટ્રિગર થાય છે જ્યારે input value બદલાય છે. controlled components માં, user જ્યારે form field માં ટાઈપ કરે છે ત્યારે આ event component ની state ને અપડેટ કરવા માટે ઉપયોગી છે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const [email, setEmail] = useState('');
 
@@ -209,18 +205,17 @@ function MyForm() {
     />
   );
 }
-```
 
----
 
-### **8. React માં multiple inputs કેવી રીતે સંભાળી શકાય છે?**
 
-**જવાબ**:  
+8. React માં multiple inputs કેવી રીતે સંભાળી શકાય છે?
+
+જવાબ:  
 તમે multiple inputs ને single state object નો ઉપયોગ કરીને handle કરી શકો છો, જેમાં બધા form values હોય. `onChange` handler પછીથી state object ના સંબંધિત ભાગને અપડેટ કરે છે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -252,18 +247,18 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **9. React માં `useRef` હૂક શું છે, અને ફોર્મ્સમાં કેવી રીતે ઉપયોગ થાય છે?**
 
-**જવાબ**:  
+
+9. React માં `useRef` હૂક શું છે, અને ફોર્મ્સમાં કેવી રીતે ઉપયોગ થાય છે?
+
+જવાબ:  
 `useRef` હૂકનો ઉપયોગ DOM elements ને સીધું reference કરવા માટે થાય છે, જે uncontrolled components માં ઉપયોગી છે. આ હૂક તમને input field નું value એ state માં રાખ્યા વગર access કરવાની સગવડ આપે છે.
 
 ઉદાહરણ:
 
-```jsx
+
 function MyForm() {
   const inputRef = useRef();
 
@@ -279,18 +274,17 @@ function MyForm() {
     </form>
   );
 }
-```
 
----
 
-### **10. React માં ફોર્મ કેવી રીતે રીસેટ કરશો?**
 
-**જવાબ**:  
+10. React માં ફોર્મ કેવી રીતે રીસેટ કરશો?
+
+જવાબ:  
 તમે controlled components માં input fields સાથે જોડાયેલા state values ને ક્લિયર કરીને ફોર્મ રીસેટ કરી શકો છો, અથવા uncontrolled components માં form element પર `.reset()` મેડથડ નો ઉપયોગ કરી શકો છો.
 
 ઉદાહરણ (controlled component):
 
-```jsx
+
 function MyForm() {
   const [inputValue, setInputValue] = useState('');
 
@@ -311,11 +305,11 @@ function MyForm() {
     </form>
   );
 }
-```
+
 
 ઉદાહરણ (uncontrolled component):
 
-```jsx
+
 function MyForm() {
   const inputRef = useRef();
 
@@ -332,5 +326,5 @@ function MyForm() {
     </form>
   );
 }
-```
+
 
