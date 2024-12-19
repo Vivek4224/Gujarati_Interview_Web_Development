@@ -1,62 +1,75 @@
-Here are 10 questions and answers related to **data types in JavaScript**:
+### **1. JavaScript માં Primitive Data Types શું છે?**  
+**Answer**: JavaScript માં primitive data types એ છે:  
+- **String**: અક્ષરોની અનુક્રમણિકા દર્શાવે છે.  
+- **Number**: પૂર્ણાંક અને ફ્લોટિંગ પોઈન્ટ નંબર બંનેને દર્શાવે છે.  
+- **BigInt**: મોટા પૂર્ણાંક (Number ટાઇપની મર્યાદા પર હોવા થી પર) દર્શાવે છે.  
+- **Boolean**: `true` અથવા `false`ને દર્શાવે છે.  
+- **undefined**: એ વૈરિયેબલ જે ડિક્લેર થયેલ છે પરંતુ તે વેલ્યુને અસાઇન કરવામાં આવી નથી.  
+- **Symbol**: એક અનોખું અને અપરિવર્તનશીલ વેલ્યુ જે ઘણીવાર ઓબ્જેક્ટ પ્રોપર્ટી કી તરીકે વપરાય છે.  
+- **null**: કોઈ પણ ઓબ્જેક્ટ વેલ્યુના ઇરાદાપૂર્વક ન હોવાની સ્થિતિ દર્શાવે છે.
 
-### 1. **What are the primitive data types in JavaScript?**
-   **Answer**: The primitive data types in JavaScript are:
-   - **String**: Represents a sequence of characters.
-   - **Number**: Represents both integer and floating-point numbers.
-   - **BigInt**: Represents large integers (beyond the limit of the Number type).
-   - **Boolean**: Represents `true` or `false`.
-   - **undefined**: A variable that has been declared but not assigned a value.
-   - **Symbol**: A unique and immutable value often used as object property keys.
-   - **null**: Represents the intentional absence of any object value.
 
-### 2. **What is a `null` value in JavaScript?**
-   **Answer**: `null` is a primitive data type that represents the intentional absence of any object value. It is explicitly assigned to a variable to indicate "no value" or "empty value."
 
-### 3. **What is the difference between `null` and `undefined` in JavaScript?**
-   **Answer**: 
-   - `undefined` is a default value assigned to a variable that has been declared but not assigned a value.
-   - `null` is an intentional assignment that represents the absence of any value or object.
+### **2. JavaScript માં `null` value શું છે?**  
+**Answer**: `null` એ એક primitive data type છે જે任何 ઓબ્જેક્ટ વેલ્યુની ઇરાદાપૂર્વક અસ્તિત્વના અભાવને દર્શાવે છે. આને એક વૈરિયેબલને "કોઈ વેલ્યુ નથી" અથવા "ખાલી વેલ્યુ" દર્શાવવા માટે સ્પષ્ટ રીતે અસાઇન કરવામાં આવે છે.  
 
-### 4. **What is the `typeof` operator in JavaScript?**
-   **Answer**: The `typeof` operator is used to check the type of a variable or expression. It returns a string indicating the data type of the operand. Example:
-   ```javascript
-   typeof "hello"; // "string"
-   typeof 42;      // "number"
-   typeof true;    // "boolean"
-   typeof {};      // "object"
-   ```
 
-### 5. **What is the difference between `Object` and `Primitive` data types?**
-   **Answer**: 
-   - **Primitive types** (string, number, boolean, etc.) are immutable and hold simple values.
-   - **Object types** (objects, arrays, functions) can store collections of data and are mutable.
 
-### 6. **What is the `typeof` result for an array in JavaScript?**
-   **Answer**: The `typeof` operator returns `"object"` for arrays, as arrays are a special type of object in JavaScript. Example:
-   ```javascript
-   typeof [1, 2, 3]; // "object"
-   ```
+### **3. JavaScript માં `null` અને `undefined` વચ્ચે શું તફાવત છે?**  
+**Answer**:  
+- `undefined` એ ડિફૉલ્ટ વેલ્યુ છે જે એવા વૈરિયેબલને અસાઇન થાય છે જે ડિક્લેર તો કરવામાં આવ્યું છે પરંતુ વેલ્યુ અસાઇન નથી કરવામાં આવી.  
+- `null` એ એક ઇરાદાપૂર્વક કરેલી અસાઇનમેન્ટ છે જે કોઈ પણ વેલ્યુ અથવા ઓબ્જેક્ટના અભાવને દર્શાવે છે.
 
-### 7. **What is a `BigInt` in JavaScript?**
-   **Answer**: `BigInt` is a special data type that allows for representation of integers larger than the maximum value that a regular `Number` type can store. Example:
-   ```javascript
-   const bigNumber = 123456789012345678901234567890n;
-   ```
 
-### 8. **What are `symbol` data types used for in JavaScript?**
-   **Answer**: `Symbol` is a primitive data type used to create unique identifiers for object properties. They are often used to avoid name clashes in object properties, especially in libraries or frameworks.
 
-### 9. **What is type coercion in JavaScript?**
-   **Answer**: Type coercion is the automatic or implicit conversion of values from one data type to another in JavaScript. For example, when adding a number to a string, the number is coerced into a string:
-   ```javascript
-   5 + "5"; // "55"
-   ```
+### **4. JavaScript માં `typeof` operator શું છે?**  
+**Answer**: `typeof` operator એ એક સાધન છે જે વૈરિયેબલ અથવા એક્સપ્રેશનના ટાઈપને ચકાસવા માટે વપરાય છે. આ એપરેન્ડના ડેટા ટાઈપને દર્શાવતો સ્ટ્રિંગ રિટર્ન કરે છે. ઉદાહરણ:  
+```javascript  
+typeof "hello"; // "string"  
+typeof 42;      // "number"  
+typeof true;    // "boolean"  
+typeof {};      // "object"  
+```
 
-### 10. **Can JavaScript have mixed data types in an array?**
-   **Answer**: Yes, JavaScript arrays can contain elements of different data types. An array can store strings, numbers, objects, booleans, etc., all in a single array.
-   ```javascript
-   let arr = [1, "hello", true, {name: "John"}];
-   ```
 
-These questions focus on the different data types in JavaScript and their behavior, helping to build a solid understanding of how JavaScript handles different kinds of data.
+
+### **5. `Object` અને `Primitive` data types વચ્ચે શું તફાવત છે?**  
+**Answer**:  
+- **Primitive types** (string, number, boolean, વગેરે) એ અપરિવર્તનશીલ (immutable) હોય છે અને એ સરળ વેલ્યુઝ રાખે છે.  
+- **Object types** (objects, arrays, functions) એ ડેટાના સંગ્રહને રાખી શકે છે અને એ પરિવર્તનશીલ (mutable) હોય છે.
+
+
+
+### **6. JavaScript માં array માટે `typeof` કયું પરિણામ આપે છે?**  
+**Answer**: `typeof` operator એ array માટે `"object"` રિટર્ન કરે છે, કેમકે array JavaScript માં એક વિશિષ્ટ પ્રકારનો object છે. ઉદાહરણ:  
+```javascript  
+typeof [1, 2, 3]; // "object"  
+```
+
+
+### **7. JavaScript માં `BigInt` શું છે?**  
+**Answer**: `BigInt` એ એક વિશિષ્ટ ડેટા ટાઈપ છે જે સામાન્ય `Number` ટાઈપ દ્વારા સંગ્રહિત કરવામાં આવતી મહત્તમ વેલ્યુ કરતાં મોટા પૂર્ણાંકોને દર્શાવવાની પરવાનગી આપે છે. ઉદાહરણ:  
+```javascript  
+const bigNumber = 123456789012345678901234567890n;  
+```
+
+
+
+### **8. JavaScript માં `symbol` data types શું માટે વપરાય છે?**  
+**Answer**: `Symbol` એ એક primitive data type છે જે ઓબ્જેક્ટ પ્રોપર્ટી માટે અનોખા ઓળખાણ પેદા કરવા માટે વપરાય છે. આનો ઉપયોગ ખાસ કરીને ઓબ્જેક્ટ પ્રોપર્ટી નામાંકન વિમુક્ત રહેવા માટે કરવામાં આવે છે, ખાસ કરીને લાઇબ્રેરીઝ અથવા ફ્રેમવર્ક્સમાં.
+
+
+
+### **9. JavaScript માં type coercion શું છે?**  
+**Answer**: Type coercion એ JavaScript માં values ના એક ડેટા ટાઇપથી બીજું ડેટા ટાઇપમાં સ્વચાલિત અથવા સંકેતથી રૂપાંતર કરવાની પ્રક્રિયા છે. ઉદાહરણ તરીકે, જ્યારે એક નંબરને સ્ટ્રિંગ સાથે ઉમેરવામાં આવે છે, ત્યારે નંબર સ્ટ્રિંગમાં બદલાય છે:  
+```javascript  
+5 + "5"; // "55"  
+```
+
+
+### **10. JavaScript માં array માં મિક્સ ડેટા ટાઈપ્સ હોઈ શકે છે?**  
+**Answer**: હા, JavaScript arrays માં અલગ-અલગ ડેટા ટાઈપ્સના એલીમેન્ટ્સ હોઈ શકે છે. એક arrayમાં strings, numbers, objects, booleans, વગેરે બધાં એક જ arrayમાં સંગ્રહિત કરી શકાય છે.  
+```javascript  
+let arr = [1, "hello", true, {name: "John"}];  
+```
+

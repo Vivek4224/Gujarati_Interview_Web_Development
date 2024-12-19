@@ -1,9 +1,9 @@
-Here are some **questions and answers** related to the **`useEffect`** hook in React, which is used to handle side effects in functional components:
-
----
-
 ### **1. What is the `useEffect` hook in React?**
-The `useEffect` hook is used to perform side effects in functional components. Side effects can include data fetching, subscriptions, manual DOM manipulation, and setting up timers. It is similar to lifecycle methods in class components like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+**Answer**:  
+`useEffect` હૂકનો ઉપયોગ ફંક્શનલ કોમ્પોનન્ટ્સમાં સાયડ એફેક્ટ્સ (side effects)ને સંભાળવા માટે થાય છે. સાયડ એફેક્ટ્સમાં ડેટા ફેચિંગ, સબ્સ્ક્રિપ્શન, મેન્યુઅલ DOM મેનિપ્યુલેશન, અને ટાઇમર સેટ કરવું સમાવે છે. તે ક્લાસ કોમ્પોનન્ટ્સના લાઇફસાયકલ મેથડ્સ જેવા છે જેમ કે `componentDidMount`, `componentDidUpdate`, અને `componentWillUnmount`.
+
+**ઉદાહરણ**:
 
 ```javascript
 import { useEffect } from "react";
@@ -16,9 +16,13 @@ useEffect(() => {
 ---
 
 ### **2. What is the syntax for using `useEffect`?**
-The `useEffect` hook takes two arguments:
-1. A function to run (the effect).
-2. An optional dependency array that determines when the effect should run.
+
+**Answer**:  
+`useEffect` હૂક બે દલીલ (arguments) લે છે:
+1. ચલાવવાનો ફંક્શન (એફેક્ટ).
+2. એક વૈકલ્પિક ડિપેન્ડન્સી એરે, જે એફેક્ટને ક્યારે ચલાવવું જોઈએ તે નિર્ધારિત કરે છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -29,15 +33,21 @@ useEffect(() => {
 ---
 
 ### **3. What is the `useEffect` dependency array?**
-The dependency array controls when the effect should run. It can be:
-- **Empty (`[]`)**: The effect runs only once when the component mounts.
-- **Array with dependencies (`[dep1, dep2]`)**: The effect runs only when one of the dependencies changes.
-- **No dependency array**: The effect runs after every render (similar to `componentDidUpdate`).
+
+**Answer**:  
+ડિપેન્ડન્સી એરે એફેક્ટને ક્યારે ચલાવવો તે નિયંત્રિત કરે છે. તે હોઈ શકે છે:
+- **ખાલી (`[]`)**: એફેક્ટ ફક્ત એકવાર કમ્પોનન્ટના માઉન્ટ થવા પર ચલાવાય છે.
+- **ડિપેન્ડન્સી સાથે એરે (`[dep1, dep2]`)**: એફેક્ટ ફક્ત ત્યારે ચલાવાય છે જ્યારે એમાંના કોઈ એક ડિપેન્ડન્સી બદલાય છે.
+- **ડિપેન્ડન્સી એરે વગર**: એફેક્ટ દરેક રેન્ડર પછી ચલાવાય છે (જેમ કે `componentDidUpdate`).
 
 ---
 
 ### **4. What happens if you don't provide a dependency array to `useEffect`?**
-If no dependency array is provided, the effect will run **after every render** of the component, which is similar to the `componentDidUpdate` lifecycle method in class components.
+
+**Answer**:  
+જો તમે ડિપેન્ડન્સી એરે આપશો નહીં, તો એફેક્ટ **પ્રત્યેક રેન્ડર** પછી ચાલે છે, જે ક્લાસ કોમ્પોનન્ટમાં `componentDidUpdate` લાઇફસાયકલ મેથડ જેવું છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -48,7 +58,11 @@ useEffect(() => {
 ---
 
 ### **5. How can you run an effect only once, similar to `componentDidMount`?**
-To run an effect only once, you provide an empty dependency array `[]`. The effect will execute only on component mount and clean up on unmount.
+
+**Answer**:  
+એફેક્ટને ફક્ત એકવાર ચલાવવા માટે, તમે ખાલી ડિપેન્ડન્સી એરે `[]` આપો છો. એફેક્ટ ફક્ત કમ્પોનન્ટના માઉન્ટ થવા પર ચાલે છે અને અનમાઉન્ટ થતી વખતે ક્લીનઅપ કરે છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -56,10 +70,13 @@ useEffect(() => {
 }, []); // Empty array means it runs only once
 ```
 
----
 
 ### **6. How do you clean up effects in `useEffect`?**
-If your effect creates resources like subscriptions, timers, or event listeners, you can clean them up by returning a cleanup function from the `useEffect` callback. This cleanup function runs when the component unmounts or before the effect runs again.
+
+**Answer**:  
+જો તમારા અસરકારક (effect) માં સબ્સ્ક્રિપ્શન, ટાઇમર, અથવા ઇવેન્ટ લિસ્નર્સ જેવા રિસોર્સો બનાવવામાં આવે છે, તો તમે `useEffect` callbackમાંથી ક્લીનઅપ ફંક્શન પરત આપીને તેને ક્લીન કરી શકો છો. આ ક્લીનઅપ ફંક્શન ત્યારે ચાલે છે જ્યારે કમ્પોનન્ટ અનમાઉન્ટ થાય છે અથવા અસરકારક ફરીથી ચાલે છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -78,7 +95,11 @@ useEffect(() => {
 ---
 
 ### **7. Can you use multiple `useEffect` hooks in a component?**
-Yes, you can use multiple `useEffect` hooks in a single component. Each effect can handle different concerns and run independently.
+
+**Answer**:  
+હા, તમે એક જ કમ્પોનન્ટમાં ઘણા `useEffect` હૂક્સનો ઉપયોગ કરી શકો છો. દરેક અસરકરક અલગ ચિંતાઓને સંભાળી શકે છે અને સ્વતંત્ર રીતે ચાલે છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -93,7 +114,11 @@ useEffect(() => {
 ---
 
 ### **8. How does `useEffect` handle asynchronous operations?**
-`useEffect` itself cannot return a promise, but you can define an asynchronous function inside the effect to handle asynchronous operations like data fetching.
+
+**Answer**:  
+`useEffect` પોતે પ્રોમિસ પરત આપી શકતો નથી, પરંતુ તમે અસરકરકમાં અંદર એસીન્ક ફંક્શન પરિભાષિત કરી શકો છો જે એસીન્ક ઓપરેશન્સ જેમ કે ડેટા ફેચિંગને સંભાળી શકે છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -110,17 +135,25 @@ useEffect(() => {
 ---
 
 ### **9. What is the behavior of `useEffect` during the render phase?**
-React runs the `useEffect` function **after the render** is committed to the screen, meaning it runs after the DOM has been updated. This makes it safe to perform side effects like data fetching, DOM manipulation, etc., without blocking the UI rendering.
+
+**Answer**:  
+React `useEffect` ફંક્શન **રેન્ડર** પછી ચાલે છે, એટલે કે તે DOM ને અપડેટ થયા પછી ચાલે છે. આનો અર્થ એ છે કે તમે સाइड એફેક્ટ્સ જેમ કે ડેટા ફેચિંગ, DOM મેનિપ્યુલેશન વગેરે કરી શકો છો, વિના UI રેન્ડરિંગને રોક્યા.
 
 ---
 
 ### **10. What is the purpose of `useEffect` in handling side effects?**
-`useEffect` is designed to handle side effects in a clean and declarative way, separating logic like data fetching, event listeners, and subscriptions from the core render logic of your component. This helps to keep the component's logic clear and maintainable.
+
+**Answer**:  
+`useEffect` સाइड એફેક્ટ્સને સ્વચ્છ અને જાહેર રીતે સંભાળવા માટે ડિઝાઇન કરેલ છે, જેમ કે ડેટા ફેચિંગ, ઇવેન્ટ લિસ્નર્સ અને સબ્સ્ક્રિપ્શન, જે તમારી કમ્પોનન્ટના કોર રેન્ડર લોજિકથી અલગ છે. આ કમ્પોનન્ટની લોજિકને સાફ અને જાળવી રાખવામાં મદદ કરે છે.
 
 ---
 
 ### **11. How do you handle conditional effects with `useEffect`?**
-You can include conditions inside the `useEffect` callback function, but it’s better to control the effect’s behavior with the dependency array. For example, you can conditionally call a function depending on state or props.
+
+**Answer**:  
+તમે `useEffect` callback ફંક્શનમાં શરતોને સમાવિષ્ટ કરી શકો છો, પરંતુ તેને સરભર રીતે નિયંત્રિત કરવા માટે ડિપેન્ડન્સી એરેનો ઉપયોગ કરવું શ્રેષ્ઠ છે. ઉદાહરણ તરીકે, તમે સ્ટેટ અથવા પ્રોપ્સ પર આધાર રાખીને એફેક્ટ ફંક્શનને શરતી રીતે કૉલ કરી શકો છો.
+
+**ઉદાહરણ**:
 
 ```javascript
 const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -135,11 +168,15 @@ useEffect(() => {
 ---
 
 ### **12. What is the `useEffect` cleanup function, and when is it called?**
-The cleanup function inside `useEffect` is called in the following scenarios:
-- **Before the effect runs again** when its dependencies change.
-- **When the component unmounts**.
 
-It is useful for cleaning up resources like event listeners, timers, or subscriptions.
+**Answer**:  
+`useEffect` માં ક્લીનઅપ ફંક્શન નીચેના પરિસ્થિતિઓમાં બોલાવવામાં આવે છે:
+- **જ્યારે એફેક્ટ ફરીથી ચાલે છે**, તેના ડિપેન્ડન્સી બદલાય ત્યારે.
+- **કંપનીન્ટ અનમાઉન્ટ થાય છે**.
+
+આનો ઉપયોગ ઇવેન્ટ લિસ્નર્સ, ટાઇમર્સ, અથવા સબ્સ્ક્રિપ્શન જેવા રિસોર્સોને ક્લીન કરવામાં થાય છે.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -159,7 +196,11 @@ useEffect(() => {
 ---
 
 ### **13. Can you run an effect only when a specific value changes in `useEffect`?**
-Yes, by passing a value or a list of values in the dependency array, the effect will run only when those values change.
+
+**Answer**:  
+હા, તમે ડિપેન્ડન્સી એરેમાં ચોક્કસ મૂલ્ય અથવા મૂલ્યો આપી શકો છો, જેથી એફેક્ટ ફક્ત ત્યારે ચાલે છે જ્યારે તે મૂલ્ય બદલાય.
+
+**ઉદાહરણ**:
 
 ```javascript
 useEffect(() => {
@@ -170,13 +211,17 @@ useEffect(() => {
 ---
 
 ### **14. What is the difference between `componentDidMount` and `useEffect` with an empty dependency array?**
-Both `componentDidMount` and `useEffect` with an empty dependency array run only once when the component is mounted. However, `useEffect` is part of the functional component, and it provides an opportunity to handle cleanup when the component unmounts.
+
+**Answer**:  
+બીજો, `componentDidMount` અને `useEffect` જેમાં ખાલી ડિપેન્ડન્સી એરે હોય છે, તે ફક્ત એકવાર ચાલે છે જ્યારે કમ્પોનન્ટ માઉન્ટ થાય છે. તેમ છતાં, `useEffect` એ ફંક્શનલ કમ્પોનન્ટનો હૂક છે અને તે કમ્પોનન્ટ અનમાઉન્ટ થવાથી પહેલા ક્લીનઅપ પણ કરવામાં મદદ કરે છે.
 
 ---
 
 ### **15. Can `useEffect` be used for performance optimizations?**
-Yes, `useEffect` can be used for performance optimizations, like preventing unnecessary API calls or re-rendering of components. By carefully managing dependencies in the dependency array, you can ensure that the effect runs only when necessary.
+
+**Answer**:  
+હા, `useEffect`નો ઉપયોગ પરફોર્મન્સ ઓપ્ટિમાઇઝેશન માટે કરી શકાય છે, જેમ કે અનાવશ્યક API કોલ્સ અથવા કમ્પોનન્ટ્સના રિ-રેન્ડરિંગને રોકવાનું. ડિપેન્ડન્સી એરેમાં ડિપેન્ડન્સી સંભાળીને, તમે એફેક્ટને ફક્ત તે સમયે ચલાવવાનું સુનિશ્ચિત કરી શકો છો જ્યારે તે જરૂરિયાત હોય.
 
 ---
 
-These questions and answers cover the essential concepts and best practices for using the `useEffect` hook in React. The hook is central to handling side effects and is an important part of modern React development.
+

@@ -1,291 +1,304 @@
-Here is a list of **30 questions and answers** focused on **events in JavaScript**, covering basic concepts, event handling, and advanced topics.
-
 ---
 
 ### **1. What is an event in JavaScript?**
-An event in JavaScript is an occurrence that can be triggered by user interactions (like clicks, keypresses, etc.) or by other elements of the browser, such as page loading or resizing.
+
+JavaScript માં event એ એક ઘટના છે જે યુઝર ઇન્ટરએકશન્સ (જેમ કે ક્લિક્સ, કીપ્રેસ વગેરે) અથવા બ્રાઉઝરની બીજા તત્વો દ્વારા ટ્રિગર થઈ શકે છે, જેમ કે પેજ લોડ થવું અથવા રીઝાઈઝ થવું.
 
 ---
 
 ### **2. What is event handling in JavaScript?**
-Event handling in JavaScript refers to the process of responding to user actions or other events (like mouse clicks or keyboard input). This is done by attaching event listeners to HTML elements.
+
+JavaScript માં event handling એ યુઝરના actions કે બીજા events (જેમ કે માઉસ ક્લિક્સ અથવા કીબોર્ડ ઇનપુટ) પર રિસ્પોન્ડ કરવાની પ્રોસેસ છે. આનું કાર્ય HTML elements પર event listeners જોડીને કરવામાં આવે છે.
 
 ---
 
-### **3. What is an event listener in JavaScript?**
-An event listener is a function in JavaScript that waits for a specific event to occur on a particular element and then executes a callback function when the event is triggered.
+### **3. JavaScript માં event listener શું છે?**
+
+Event listener એ JavaScript માં એક ફંક્શન છે જે ચોક્કસ ઇવેન્ટના घटનાને સંભળાવવાનું કામ કરે છે. જ્યારે તે ઇવેન્ટ ચોક્કસ એલેમેન્ટ પર થાય છે, ત્યારે તે callback function ને ચલાવે છે.
 
 ```javascript
 element.addEventListener('click', function() {
-    alert('Element clicked!');
+    alert('એલેમેન્ટ ક્લિક કરાયું!');
 });
+```
+
+Explanation in Gujarati:
+Event listener એ એક ફંક્શન છે જે કંઈક ઇવેન્ટ થાય તે માટે રાહ જુઓ છે (જેમ કે ક્લિક, ડબલ ક્લિક, વગેરે). જ્યારે તે ઇવેન્ટ એ પરિપ્રેક્ષિત (element) પર થાય છે, ત્યારે તે કોડને એક્ઝીક્યુટ કરે છે.
+
+---
+
+### **4. `addEventListener()` method શું છે?**
+
+`addEventListener()` મેટોડનો ઉપયોગ કોઈ ચોક્કસ એલેમેન્ટ પર ઇવેન્ટ હેન્ડલર (handler)ને એડ કરવા માટે થાય છે, જે નવા ઇવેન્ટ હેન્ડલર દ્વારા પહેલાથી હાજર ઈવેન્ટ હેન્ડલર્સને ઓવરરાઇટ (overwrite) કર્યા વિના કરવામાં આવે છે.
+
+```javascript
+element.addEventListener('click', function() {
+    alert('એલેમેન્ટ ક્લિક કરાયું!');
+});
+```
+
+Explanation in Gujarati:
+`addEventListener()` મેટોડનો ઉપયોગ એલેમેન્ટ પર ઈવેન્ટ સનસેણી (listener) જોડી આપવા માટે થાય છે. આ રીતે, એકથી વધુ હેન્ડલર્સ એડ કરી શકાય છે અને કોઈપણ પદાવલીના ઇવેન્ટ હેન્ડલર્સને અસર કરવાના વિના.
 ```
 
 ---
 
-### **4. What is the `addEventListener()` method?**
-The `addEventListener()` method is used to attach an event handler to a specified element without overwriting existing event handlers.
+### **5. `removeEventListener()` method શું છે?**
 
-```javascript
-element.addEventListener('click', function() {
-    alert('Element clicked!');
-});
-```
-
----
-
-### **5. What is the `removeEventListener()` method?**
-The `removeEventListener()` method is used to remove an event listener that was previously added to an element.
+`removeEventListener()` મેટોડનો ઉપયોગ એ એક ઇવેન્ટ લિસ્નર (listener)ને દૂર કરવા માટે થાય છે જે પહેલા એલેમેન્ટ પર એડ કરવામાં આવ્યો હતો.
 
 ```javascript
 const handleClick = function() {
-    alert('Element clicked!');
+    alert('એલેમેન્ટ ક્લિક કરાયું!');
 };
 
 element.addEventListener('click', handleClick);
 element.removeEventListener('click', handleClick);
+``` 
+
+Explanation in Gujarati:
+`removeEventListener()` નો ઉપયોગ ત્યારે થાય છે જ્યારે આપણે કઈ ચોક્કસ ઇવેન્ટ માટેના લિસ્નરને દૂર કરવાનું હોય, જે પહેલા એડ કરવામાં આવ્યો હોય.
+
+---
+
+### **6. `addEventListener()` અને `onclick` વચ્ચે શું ભિન્નતા છે?**  
+- **`addEventListener()`** એ એજ ઇવેંટ માટે એકજ એલીમેન્ટ પર એકથી વધુ ઇવેંટ લિસનર જોડવા માટે પરવાનગી આપે છે.  
+- **`onclick`** માત્ર એક જ ઇવેંટ હેન્ડલર રાખી શકે છે, અને એ માત્ર એક જ હેન્ડલરને સમર્થન આપે છે, અને કોઈ પણ પદ્ધતિ અગાઉના હેન્ડલરને ઓવરરાઇટ (મ overwritten) કરી દે છે.
+
+---
+
+### **7. જાવાસ્ક્રિપ્ટમાં ઇવેંટ પ્રોપેગેશન શું છે?**  
+ઇવેંટ પ્રોપેગેશન એ એલીમેન્ટ્સ દ્વારા DOMમાં ઇવેંટના પ્રાપ્ત થવાની ક્રમને સંદર્ભિત કરે છે. આએ **બબલિંગ** અથવા **કેપ્ચરિંગ** હોઈ શકે છે:
+- **બબલિંગ**: ઇવેંટ લક્ષ્ય એલીમેન્ટમાંથી શરૂ થાય છે અને રૂટ સુધી બબલ થાય છે.
+- **કેપ્ચરિંગ**: ઇવેંટ રૂટથી શરૂ થાય છે અને લક્ષ્ય એલીમેન્ટ સુધી પહોંચે છે.
+
+---
+
+### **8. ઇવેંટ બબલિંગ શું છે?**  
+ઇવેંટ બબલિંગ એ ઇવેંટ પ્રોપેગેશનનો એક પ્રકાર છે, જેમાં ઇવેંટ લક્ષ્ય એલીમેન્ટમાંથી શરૂ થાય છે અને પછી પેરેન્ટ એલીમેન્ટ્સ મારફતે DOMના રૂટ સુધી "બબલ" થાય છે.
+
+---
+
+### **9. ઇવેંટ કેપચરિંગ શું છે?**  
+ઇવેંટ કેપચરિંગ (અથવા ટ્રિકલિંગ) એ ઇવેંટ બબલિંગનો વિપરીત છે. આમાં ઇવેંટ રૂટ એલીમેન્ટમાંથી શરૂ થાય છે અને લક્ષ્ય એલીમેન્ટ સુધી પહોંચે છે.
+
+---
+
+### **10. તમે ઇવેંટ પ્રોપેગેશન કેવી રીતે અટકાવી શકો છો?**  
+ઇવેંટ પ્રોપેગેશન અટકાવવા માટે, તમે ઇવેંટ ઓબ્જેક્ટ પર `stopPropagation()` મેડથડનો ઉપયોગ કરી શકો છો:
+
+```javascript  
+element.addEventListener('click', function(event) {  
+    event.stopPropagation();  
+});  
 ```
 
 ---
 
-### **6. What is the difference between `addEventListener()` and `onclick`?**
-- `addEventListener()` allows multiple event listeners to be attached to the same element for the same event.
-- `onclick` can only have one event handler at a time and will overwrite any existing handler.
+### **11. `preventDefault()` મેડથડ શું છે?**  
+`preventDefault()` મેડથડનો ઉપયોગ ઇવેંટ સાથે સંકળાયેલા ડિફોલ્ટ ઍકશનને અટકાવવાનું થાય છે. ઉદાહરણ તરીકે, તે ફોર્મ સબમિશન અથવા લિંક નાવિગેશનને રોકવા માટે ઉપયોગમાં લાવી શકાય છે.  
 
----
-
-### **7. What is event propagation in JavaScript?**
-Event propagation refers to the order in which events are received by elements in the DOM. It can be either **bubbling** or **capturing**:
-- **Bubbling**: The event starts from the target element and bubbles up to the root.
-- **Capturing**: The event starts from the root and propagates down to the target element.
-
----
-
-### **8. What is event bubbling?**
-Event bubbling is a type of event propagation where the event starts from the target element and then "bubbles up" through the parent elements to the root of the DOM.
-
----
-
-### **9. What is event capturing?**
-Event capturing (or trickling) is the opposite of event bubbling. The event starts from the root element and propagates down to the target element.
-
----
-
-### **10. How can you stop event propagation?**
-To stop event propagation, you can use the `stopPropagation()` method on the event object:
-
-```javascript
-element.addEventListener('click', function(event) {
-    event.stopPropagation();
-});
+```javascript  
+element.addEventListener('submit', function(event) {  
+    event.preventDefault();  
+});  
+```
 ```
 
 ---
 
-### **11. What is the `preventDefault()` method?**
-The `preventDefault()` method is used to prevent the default action associated with an event from being performed. For example, it can be used to prevent a form submission or a link navigation.
+### **12. JavaScriptમાં માઉસ ઇવેંટના વિવિધ પ્રકારો શું છે?**  
+- **`click`**: જ્યારે એલીમેન્ટ પર ક્લિક કરવામાં આવે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`dblclick`**: જ્યારે એલીમેન્ટ પર ડબલ-ક્લિક કરવામાં આવે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`mousedown`**: જ્યારે માઉસ બટન દબાવવામાં આવે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`mouseup`**: જ્યારે માઉસ બટન છૂટે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`mousemove`**: જ્યારે માઉસ એલીમેન્ટ પર હલચલ કરે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
 
-```javascript
-element.addEventListener('submit', function(event) {
-    event.preventDefault();
-});
+---
+
+### **13. JavaScriptમાં કીબોર્ડ ઇવેંટના વિવિધ પ્રકારો શું છે?**  
+- **`keydown`**: જ્યારે કી દબાય છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`keyup`**: જ્યારે કી છૂટે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.  
+- **`keypress`**: આ હવે ડીપ્રેકેટેડ છે. જ્યારે કી દબાય છે અને છોડવામાં આવે છે ત્યારે આ ઇવેંટ ટ્રિગર થાય છે.
+
+---
+
+### **14. `onload` ઇવેંટ શું છે?**  
+`onload` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે કોઈ સ્રોત (જેમ કે ઇમેજ અથવા સ્ક્રિપ્ટ) સફળતાપૂર્વક લોડ થઈ જાય છે.  
+
+```javascript  
+window.onload = function() {  
+    console.log('Page has loaded!');  
+};  
 ```
 
 ---
 
-### **12. What are the different types of mouse events in JavaScript?**
-- `click`: Fires when an element is clicked.
-- `dblclick`: Fires when an element is double-clicked.
-- `mousedown`: Fires when the mouse button is pressed down.
-- `mouseup`: Fires when the mouse button is released.
-- `mousemove`: Fires when the mouse moves over an element.
+### **15. `onresize` ઇવેંટ શું છે?**  
+`onresize` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે બ્રાઉઝર વિન્ડોનું કદ બદલાય છે.  
 
----
-
-### **13. What are the different types of keyboard events in JavaScript?**
-- `keydown`: Fires when a key is pressed down.
-- `keyup`: Fires when a key is released.
-- `keypress`: Deprecated. Fires when a key is pressed and released.
-
----
-
-### **14. What is the `onload` event in JavaScript?**
-The `onload` event is triggered when a resource (such as an image or script) has been successfully loaded.
-
-```javascript
-window.onload = function() {
-    console.log('Page has loaded!');
-};
+```javascript  
+window.onresize = function() {  
+    console.log('Window resized!');  
+};  
 ```
 
 ---
 
-### **15. What is the `onresize` event in JavaScript?**
-The `onresize` event is triggered when the browser window is resized.
+### **16. `onscroll` ઇવેંટ શું છે?**  
+`onscroll` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે કોઈ એલીમેન્ટ સ્ક્રોલ થાય છે, જેમ કે જ્યારે યૂઝર પેજને સ્ક્રોલ કરે છે અથવા સ્ક્રોલેબલ કન્ટેનર.  
 
-```javascript
-window.onresize = function() {
-    console.log('Window resized!');
-};
+```javascript  
+window.onscroll = function() {  
+    console.log('Page scrolled!');  
+};  
 ```
 
 ---
 
-### **16. What is the `onscroll` event in JavaScript?**
-The `onscroll` event is triggered when an element is scrolled, such as when a user scrolls the page or a scrollable container.
+### **17. `focus` ઇવેંટ શું છે?**  
+`focus` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે એલીમેન્ટ (સામાન્ય રીતે ઇનપુટ અથવા ટેક્સ્ટએરિયા) ફોકસ પ્રાપ્ત કરે છે.  
 
-```javascript
-window.onscroll = function() {
-    console.log('Page scrolled!');
-};
+```javascript  
+element.addEventListener('focus', function() {  
+    console.log('Input focused!');  
+});  
 ```
 
 ---
 
-### **17. What is the `focus` event in JavaScript?**
-The `focus` event is triggered when an element (typically an input or textarea) gains focus.
+### **18. `blur` ઇવેંટ શું છે?**  
+`blur` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે એલીમેન્ટ ફોકસ ગુમાવા.  
 
-```javascript
-element.addEventListener('focus', function() {
-    console.log('Input focused!');
-});
+```javascript  
+element.addEventListener('blur', function() {  
+    console.log('Input lost focus!');  
+});  
 ```
 
 ---
 
-### **18. What is the `blur` event in JavaScript?**
-The `blur` event is triggered when an element loses focus.
+### **19. `change` ઇવેંટ શું છે?**  
+`change` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે ઇનપુટ, સિલેક્ટ, અથવા ટેક્સ્ટએરિયા એલીમેન્ટનો મલ્ય બદલાય અને એલીમેન્ટ ફોકસ ગુમાવા.  
 
-```javascript
-element.addEventListener('blur', function() {
-    console.log('Input lost focus!');
-});
+```javascript  
+element.addEventListener('change', function() {  
+    console.log('Value changed!');  
+});  
 ```
 
 ---
 
-### **19. What is the `change` event in JavaScript?**
-The `change` event is triggered when the value of an input, select, or textarea element changes and the element loses focus.
+### **20. `submit` ઇવેંટ શું છે?**  
+`submit` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે ફોર્મ સબમિટ કરવામાં આવે છે.  
 
-```javascript
-element.addEventListener('change', function() {
-    console.log('Value changed!');
-});
+```javascript  
+form.addEventListener('submit', function(event) {  
+    event.preventDefault();  
+    console.log('Form submitted!');  
+});  
 ```
 
 ---
 
-### **20. What is the `submit` event in JavaScript?**
-The `submit` event is triggered when a form is submitted.
+### **21. `input` ઇવેંટ શું છે?**  
+`input` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે યુઝર ટાઇપ કરતી વખતે ઇનપુટ અથવા ટેક્સ્ટએરિયા એલીમેન્ટનો મલ્ય બદલાય છે.  
 
-```javascript
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Form submitted!');
-});
+```javascript  
+element.addEventListener('input', function() {  
+    console.log('Input value changed!');  
+});  
 ```
 
 ---
 
-### **21. What is the `input` event in JavaScript?**
-The `input` event is triggered when the value of an input or textarea element changes while the user types.
+### **22. `DOMContentLoaded` ઇવેંટ શું છે?**  
+`DOMContentLoaded` ઇવેંટ ત્યારે ફાયર થાય છે જ્યારે HTML સંપૂર્ણપણે લોડ અને પાર્સ થઈ જાય છે, પરંતુ આઇમેજેસ, સ્ટાઇલશીટ અને અન્ય સ્રોતો લોડ થવાની પ્રક્રિયા પૂર્ણ નથી થઈ.  
 
-```javascript
-element.addEventListener('input', function() {
-    console.log('Input value changed!');
-});
+```javascript  
+document.addEventListener('DOMContentLoaded', function() {  
+    console.log('DOM fully loaded and parsed!');  
+});  
 ```
 
 ---
 
-### **22. What is the `DOMContentLoaded` event in JavaScript?**
-The `DOMContentLoaded` event is fired when the HTML has been completely loaded and parsed, but before stylesheets, images, and other resources have finished loading.
+### **23. Event delegation શું છે?**  
+Event delegation એ એક તકનીક છે જેમાં એક પેરન્ટ એલીમેન્ટ પર એક જ ઇવેંટ લિસનર એડ કરવામાં આવે છે જેથી તે મલ્ટિપલ ચાઇલ્ડ એલીમેન્ટ્સ માટે ઇવેંટ્સને હેન્ડલ કરી શકે છે, જે ઇવેંટ લિસનર્સની સંખ્યા ઘટાડે છે.  
 
-```javascript
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded and parsed!');
-});
+```javascript  
+document.querySelector('#parent').addEventListener('click', function(event) {  
+    if (event.target && event.target.matches('button')) {  
+        console.log('Button clicked!');  
+    }  
+});  
 ```
 
 ---
 
-### **23. What is event delegation?**
-Event delegation is a technique where a single event listener is attached to a parent element to handle events for multiple child elements, reducing the number of event listeners.
+### **24. `target` પ્રોપર્ટી શું છે?**  
+`target` પ્રોપર્ટી એ એલીમેન્ટને સંકેત કરે છે જે ઇવેંટને ટ્રિગર કરે છે. આથી તમે એલીમેન્ટ સુધી પહોંચ શકો છો જેમણે ઇવેંટ શરૂ કર્યું.  
 
-```javascript
-document.querySelector('#parent').addEventListener('click', function(event) {
-    if (event.target && event.target.matches('button')) {
-        console.log('Button clicked!');
-    }
-});
+```javascript  
+element.addEventListener('click', function(event) {  
+    console.log(event.target); // Logs the clicked element  
+});  
 ```
 
 ---
 
-### **24. What is the `target` property in an event?**
-The `target` property refers to the element that triggered the event. It allows you to access the specific element that caused the event.
+### **25. `currentTarget` પ્રોપર્ટી શું છે?**  
+`currentTarget` પ્રોપર્ટી એ એલીમેન્ટને સંકેત કરે છે જેમાં ઇવેંટ લિસનર એડ કરાયેલો છે. તે `target` થી જુદું હોઈ શકે છે, ખાસ કરીને ઇવેંટ ડિલીગેશનના કેસમાં.  
 
-```javascript
-element.addEventListener('click', function(event) {
-    console.log(event.target); // Logs the clicked element
-});
+```javascript  
+element.addEventListener('click', function(event) {  
+    console.log(event.currentTarget); // Logs the element the listener is attached to  
+});  
 ```
 
 ---
 
-### **25. What is the `currentTarget` property in an event?**
-The `currentTarget` property refers to the element to which the event listener is attached. It may be different from `target` in cases of event delegation.
+### **26. `keyboardEvent` શું છે?**  
+`keyboardEvent` એ એક ઇવેંટ છે જે ત્યારે થાય છે જ્યારે યૂઝર કીબોર્ડ સાથે ક્રિયા કરે છે, જેમ કે કોઈ કી દબાવવી અથવા છોડી દેવું. આ ઇવેંટ pressed key વિશે માહિતી આપે છે જેમ કે `key`, `keyCode`, અને `which` જેવી પ્રોપર્ટીઓ દ્વારા.
 
-```javascript
-element.addEventListener('click', function(event) {
-    console.log(event.currentTarget); // Logs the element the listener is attached to
-});
+---
+
+### **27. તમે event નું ડિફૉલ્ટ વર્તન કેવી રીતે રોકી શકો છો?**  
+`event.preventDefault()` મેથડ નો ઉપયોગ કરો. ઉદાહરણ તરીકે, ફોર્મ સબમિશનને રોકવું:  
+```javascript  
+form.addEventListener('submit', function(event) {  
+    event.preventDefault();  
+    console.log('Form submission prevented!');  
+});  
 ```
 
 ---
 
-### **26. What is a `keyboardEvent` in JavaScript?**
-A `keyboardEvent` is an event that occurs when a user interacts with the keyboard, such as pressing or releasing a key. It provides information about the key pressed through properties like `key`, `keyCode`, and `which`.
+### **28. `mousemove` ઇવેંટ શું છે?**  
+`mousemove` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે માઉસ કોઈ એલીમેન્ટ પર હલવાય છે.  
 
----
-
-### **27. How can you prevent the default behavior of an event?**
-Use the `event.preventDefault()` method. For example, preventing form submission:
-```javascript
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Form submission prevented!');
-});
+```javascript  
+element.addEventListener('mousemove', function(event) {  
+    console.log('Mouse moved at: ' + event.clientX + ', ' + event.clientY);  
+});  
+```
 ```
 
 ---
 
-### **28. What is the `mousemove` event in JavaScript?**
-The `mousemove` event is triggered whenever the mouse moves over an element.
+### **29. `mouseenter` અને `mouseleave` ઇવેંટ શું છે?**  
+- **mouseenter**: જ્યારે માઉસ પોઈન્ટર એલીમેન્ટમાં પ્રવેશ કરે છે ત્યારે ફાયર થાય છે (આ બબલ નથી થતું).  
+- **mouseleave**: જ્યારે માઉસ પોઈન્ટર એલીમેન્ટમાંથી બહાર નીકળી જાય છે ત્યારે ફાયર થાય છે (આ બબલ નથી થતું).
 
-```javascript
-element.addEventListener('mousemove', function(event) {
-    console.log('Mouse moved at: ' + event.clientX + ', ' + event.clientY);
-});
+---
+
+### **30. `drag` ઇવેંટ શું છે?**  
+`drag` ઇવેંટ ત્યારે ટ્રિગર થાય છે જ્યારે કોઈ એલીમેન્ટ ખેચવામાં આવી રહ્યું હોય.  
+
+```javascript  
+element.addEventListener('drag', function() {  
+    console.log('Element is being dragged');  
+});  
 ```
 
 ---
-
-### **29. What is the `mouseenter` and `mouseleave` event?**
-- **mouseenter**: Fired when the mouse pointer enters an element (does not bubble).
-- **mouseleave**: Fired when the mouse pointer leaves an element (does not bubble).
-
----
-
-### **30. What is the `drag` event in JavaScript?**
-The `drag` event is triggered when an element is being dragged.
-
-```javascript
-element.addEventListener('drag', function() {
-    console.log('Element is being dragged');
-});
-```
-
----
-
-These questions cover a wide range of JavaScript events and event handling techniques, from basic concepts to advanced topics, making them useful for interview preparation.

@@ -1,32 +1,28 @@
-Here are the **top 10 questions and answers** related to **`React.memo`**, which will help a **fresher** prepare for a React interview:
-
----
-
 ### **1. What is `React.memo`?**
 
-**Answer**:  
-`React.memo` is a higher-order component that helps to optimize functional components by memoizing them. It prevents unnecessary re-renders of a component when its props do not change. It only re-renders the component when the props passed to it have changed.
+**ઉત્તર**:  
+`React.memo` એ એક હાઈઅર-ઓર્ડર કોમ્પોનન્ટ છે જે ફંક્શનલ કોમ્પોનન્ટ્સને ઑપ્ટિમાઇઝ કરવામાં મદદ કરે છે. તે મેમોાઇઝ કરીને કોમ્પોનન્ટ્સને અનાવશ્યક રીરેન્ડર્સથી બચાવે છે જ્યારે તેની પ્રોપ્સ બદલાતી નથી. તે માત્ર ત્યારે જ રીરેન્ડર કરે છે જ્યારે તેને નવો પ્રોપ્સ મળતા હોય.
 
 ```jsx
 const MyComponent = React.memo(function MyComponent(props) {
-  // component logic
+  // કોમ્પોનન્ટ લોજિક
   return <div>{props.value}</div>;
 });
 ```
 
 ---
 
-### **2. How does `React.memo` improve performance?**
+### **2. `React.memo` કેવી રીતે પ્રદર્શનને સુધારે છે?**
 
-**Answer**:  
-`React.memo` improves performance by skipping the re-rendering of functional components when the props haven’t changed. This is especially useful when a component receives the same props on subsequent renders, which would otherwise cause unnecessary updates.
+**ઉત્તર**:  
+`React.memo` ફંક્શનલ કોમ્પોનન્ટ્સના રીરેન્ડરિંગને સ્કિપ કરીને પ્રદર્શનને સુધારે છે, જ્યારે પ્રોપ્સ બદલાતા નથી. આ ખાસ કરીને ત્યારે ઉપયોગી છે જ્યારે એક કોમ્પોનન્ટને પછતા રેન્ડરો પર આ mesma પ્રોપ્સ મળે છે, જે અન્યથા અનાવશ્યક અપડેટ્સને કારણે થશે.
 
 ---
 
-### **3. How do you use `React.memo` with a functional component?**
+### **3. `React.memo` ને ફંક્શનલ કોમ્પોનન્ટ સાથે કેવી રીતે ઉપયોગ કરશો?**
 
-**Answer**:  
-You can wrap a functional component with `React.memo` to enable memoization. This will make the component re-render only when the props change.
+**ઉત્તર**:  
+તમે `React.memo` સાથે ફંક્શનલ કોમ્પોનન્ટને લપેટી શકો છો જેથી મેમોાઇઝેશન સક્રિય થઈ જાય. આને કારણે કોમ્પોનન્ટ માત્ર ત્યારે જ રીરેન્ડર થશે જ્યારે પ્રોપ્સ બદલાય.
 
 ```jsx
 const MyComponent = React.memo(function MyComponent({ name }) {
@@ -37,12 +33,12 @@ const MyComponent = React.memo(function MyComponent({ name }) {
 
 ---
 
-### **4. Does `React.memo` compare all props of a component by default?**
+### **4. શું `React.memo` ડિફોલ્ટ રીતે કોમ્પોનન્ટના તમામ પ્રોપ્સની તુલના કરે છે?**
 
-**Answer**:  
-Yes, by default, `React.memo` performs a shallow comparison of the component's props. If the props are complex (such as objects or arrays), it may lead to re-renders even if the content hasn't changed. You can optimize it further using a custom comparison function.
+**ઉત્તર**:  
+હા, ડિફોલ્ટ રૂપે `React.memo` કોમ્પોનન્ટના પ્રોપ્સની શેલો તુલના કરે છે. જો પ્રોપ્સ જટિલ (જેમ કે ઑબ્જેક્ટ્સ અથવા એરે) હોય, તો તે અનાવશ્યક રીરેન્ડર જાહેર કરી શકે છે, ભલે સામગ્રી એ બદલાઈ ન હોય. તમે તેને વધુ ઑપ્ટિમાઇઝ કરવા માટે કસ્ટમ તુલના કાર્ય ઉપયોગ કરી શકો છો.
 
-Example with default shallow comparison:
+ડિફોલ્ટ શેલો તુલના સાથે ઉદાહરણ:
 
 ```jsx
 const MyComponent = React.memo(function MyComponent({ name, age }) {
@@ -52,10 +48,10 @@ const MyComponent = React.memo(function MyComponent({ name, age }) {
 
 ---
 
-### **5. How can you provide a custom comparison function to `React.memo`?**
+### **5. તમે `React.memo` ને કસ્ટમ તુલના કાર્ય કેવી રીતે પ્રદાન કરી શકો છો?**
 
-**Answer**:  
-You can pass a second argument to `React.memo`, which is a custom comparison function that compares the current props with the next props. This allows more control over when the component should re-render.
+**ઉત્તર**:  
+તમે `React.memo` માં એક બીજું દલીલ પસાર કરી શકો છો, જે કસ્ટમ તુલના કાર્ય છે, જે વર્તમાન પ્રોપ્સ અને આગામી પ્રોપ્સની તુલના કરે છે. આ રીતે તમે નિયંત્રિત કરી શકો છો કે કોમ્પોનન્ટ ક્યારે રીરેન્ડર થશે.
 
 ```jsx
 const MyComponent = React.memo(
@@ -68,14 +64,14 @@ const MyComponent = React.memo(
 );
 ```
 
-In this example, the component will only re-render if either the `name` or `age` prop changes.
+આ ઉદાહરણમાં, કોમ્પોનન્ટ માત્ર ત્યારે જ રીરેન્ડર થશે જ્યારે `name` અથવા `age` પ્રોપ બદલાય.
 
----
 
-### **6. Can `React.memo` be used with class components?**
 
-**Answer**:  
-No, `React.memo` only works with functional components. If you want similar functionality in a class component, you can use `PureComponent`, which performs shallow comparison of the component's props and state.
+### **6. શું `React.memo` કલેક્શન કોમ્પોનન્ટ્સ સાથે ઉપયોગ કરી શકાય છે?**
+
+**ઉત્તર**:  
+નહીં, `React.memo` માત્ર ફંક્શનલ કોમ્પોનન્ટ્સ સાથે કામ કરે છે. જો તમે કલેક્શન કોમ્પોનન્ટમાં સમાન કાર્યક્ષમતા જોઈએ છો, તો તમે `PureComponent` નો ઉપયોગ કરી શકો છો, જે કોમ્પોનન્ટના પ્રોપ્સ અને સ્ટેટના શેલો કોમ્પેરિઝનને કરે છે.
 
 ```jsx
 class MyComponent extends React.PureComponent {
@@ -88,20 +84,20 @@ class MyComponent extends React.PureComponent {
 
 ---
 
-### **7. When should you use `React.memo`?**
+### **7. તમે ક્યારે `React.memo` નો ઉપયોગ કરશો?**
 
-**Answer**:  
-You should use `React.memo` when:
-- Your component is receiving the same props multiple times and you want to avoid unnecessary re-renders.
-- The component is a **pure** component, meaning it only relies on props and doesn't have internal state changes that affect the rendering.
-- Your component is complex and performance may be an issue with frequent re-renders.
+**ઉત્તર**:  
+તમે `React.memo` નો ઉપયોગ ત્યારે કરવો જોઈએ:
+- જ્યારે તમારા કોમ્પોનન્ટને એકજ પ્રોપ્સ ઘણી વાર મળતા હોય અને તમે અનાવશ્યક રીરેન્ડર્સથી બચવા માંગતા હો.
+- જ્યારે કોમ્પોનન્ટ **pure** હોય, એટલે કે તે માત્ર પ્રોપ્સ પર આધાર રાખે છે અને તેમાં એવી આંતરિક સ્ટેટ બદલાવ નથી જે રેન્ડરિંગને પ્રભાવિત કરે.
+- જ્યારે કોમ્પોનન્ટ જટિલ હોય અને વારંવાર રીડિરોંગના કારણે પ્રદર્શનનું એક મુદ્દો થઈ શકે.
 
 ---
 
-### **8. Can `React.memo` be used with hooks?**
+### **8. શું `React.memo` હૂક્સ સાથે ઉપયોગ કરી શકાય છે?**
 
-**Answer**:  
-Yes, `React.memo` can be used with functional components that use hooks. It will optimize the re-rendering based on prop changes, and it works seamlessly with hooks like `useState`, `useEffect`, etc.
+**ઉત્તર**:  
+હા, `React.memo` હૂક્સનો ઉપયોગ કરનારા ફંક્શનલ કોમ્પોનન્ટ્સ સાથે ઉપયોગ કરી શકાય છે. તે પ્રોપ્સ બદલાવ પર આધારિત રીડિરોંગને ઑપ્ટિમાઇઝ કરે છે, અને તે `useState`, `useEffect` વગેરે જેવી હૂક્સ સાથે સીમલેસ કામ કરે છે.
 
 ```jsx
 const MyComponent = React.memo(function MyComponent({ name }) {
@@ -112,27 +108,24 @@ const MyComponent = React.memo(function MyComponent({ name }) {
 
 ---
 
-### **9. What is the difference between `React.memo` and `useMemo`?**
+### **9. `React.memo` અને `useMemo` વચ્ચે શું તફાવત છે?**
 
-**Answer**:  
-- **`React.memo`** is used to memoize entire components. It optimizes functional components by preventing unnecessary re-renders based on prop changes.
-- **`useMemo`** is a hook used to memoize expensive calculations or values inside a functional component to avoid recalculating them on every render.
+**ઉત્તર**:  
+- **`React.memo`** એ સંપૂર્ણ કોમ્પોનન્ટને મેમોાઇઝ કરવા માટે વપરાય છે. તે ફંક્શનલ કોમ્પોનન્ટ્સને ઑપ્ટિમાઇઝ કરે છે જેથી પ્રોપ્સ બદલાવના આધારે અનાવશ્યક રીડિરોંગ રોકાય.
+- **`useMemo`** એ હૂક છે જે ફંક્શનલ કોમ્પોનન્ટમાં ખર્ચાળ ગણતરીઓ અથવા મૂલ્યોને મેમોાઇઝ કરવા માટે વપરાય છે જેથી દરેક રીડિરોંગ પર તેમને ફરીથી ગણવું ન પડે.
 
 ```jsx
-// Using React.memo
+// React.memo નો ઉપયોગ
 const MyComponent = React.memo(function MyComponent(props) { ... });
 
-// Using useMemo
+// useMemo નો ઉપયોગ
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
 ---
 
-### **10. Can `React.memo` be used to optimize functional components with context?**
+### **10. શું `React.memo` કોમ્પોનન્ટ્સના context સાથે ઑપ્ટિમાઇઝ કરવા માટે ઉપયોગ કરી શકાય છે?**
 
-**Answer**:  
-`React.memo` does not prevent re-renders when the component's context changes. If a context value changes, `React.memo` will still cause the component to re-render because context values are not part of the shallow comparison. You can optimize context updates by using `React.memo` for the child components and passing the context values more efficiently.
+**ઉત્તર**:  
+`React.memo` જ્યારે કોમ્પોનન્ટના context માં ફેરફાર થાય છે ત્યારે રીડિરોંગને રોકતો નથી. જો context મૂલ્ય બદલાય છે, તો `React.memo` કોમ્પોનન્ટને રી-રેન્ડર થવા માટે مجبور કરશે કારણ કે context મૂલ્યો શેલો કોમ્પેરિઝનમાં ભાગ નથી લેતા. તમે context અપડેટ્સને ઑપ્ટિમાઇઝ કરવા માટે `React.memo` નો ઉપયોગ કરી શકો છો, તેમજ ચાઈલ્ડ કોમ્પોનન્ટ્સને વધુ કાર્યક્ષમ રીતે context મૂલ્યો પસાર કરી શકો છો.
 
----
-
-These questions and answers cover the basic usage and advanced concepts related to `React.memo`, which is useful for optimizing the performance of React applications, especially when dealing with functional components.

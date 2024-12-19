@@ -1,21 +1,17 @@
-Here are the **top 10 React component-related questions and answers** for a **fresher** preparing for a React interview:
+### **1. React Components શું છે?**
+
+**જવાબ**:  
+React components એ React એપ્લિકેશનના બિલ્ડિંગ બ્લોક્સ છે. એક કમ્પોનેન્ટ એ એક સ્વતંત્ર યુનિટ છે જે પોતાનો state મેનેજ કરે છે અને તેના props પર આધાર રાખીને UIને રેન્ડર કરે છે. React માં બે પ્રકારના કમ્પોનેન્ટ્સ હોય છે:
+- **Class components**: પરંપરાગત કમ્પોનેન્ટ્સ જે `React.Component` થી એક્સટેન્ડ થાય છે.
+- **Functional components**: સરળ કમ્પોનેન્ટ્સ જે JavaScript ફંક્શન્સ તરીકે ડિફાઈન થાય છે.
 
 ---
 
-### **1. What are React components?**
+### **2. React માં class component અને functional component માં શું તફાવત છે?**
 
-**Answer**:  
-React components are the building blocks of a React application. A component is a self-contained unit that manages its own state and renders UI based on its props. There are two types of components in React:
-- **Class components**: Traditional components that extend `React.Component`.
-- **Functional components**: Simpler components defined as JavaScript functions.
+**જવાબ**:  
+- **Class components**: આ એ ES6 ક્લાસ છે જે `React.Component` થી એક્સટેન્ડ થાય છે અને તેમાં `render()` મેડથોડ હોવું જરૂરી છે. આ કમ્પોનેન્ટ્સ state અને lifecycle methods રાખી શકે છે.
 
----
-
-### **2. What is the difference between a class component and a functional component in React?**
-
-**Answer**:  
-- **Class components**: These are ES6 classes that extend `React.Component` and must have a `render()` method. They can hold and manage state and lifecycle methods.
-  
 ```jsx
 class MyClassComponent extends React.Component {
   render() {
@@ -24,7 +20,7 @@ class MyClassComponent extends React.Component {
 }
 ```
 
-- **Functional components**: These are simple JavaScript functions that can accept `props` and return JSX. With React 16.8 and the introduction of Hooks, functional components can also manage state and use lifecycle-like features.
+- **Functional components**: આ સરળ JavaScript ફંક્શન્સ છે જે `props` સ્વીકારે છે અને JSX રિટર્ન કરે છે. React 16.8 સાથે Hooksની ઓળખાણ પછી, functional components હવે state મેનેજ કરી શકે છે અને lifecycle જેવી ફીચર્સનો ઉપયોગ કરી શકે છે.
 
 ```jsx
 function MyFunctionalComponent({ name }) {
@@ -34,10 +30,10 @@ function MyFunctionalComponent({ name }) {
 
 ---
 
-### **3. What are props in React?**
+### **3. React માં Props શું છે?**
 
-**Answer**:  
-Props (short for "properties") are read-only inputs passed to a component from its parent. Props allow data to flow from one component to another, making components reusable and dynamic.
+**જવાબ**:  
+Props (જેને "properties" કહેવામાં આવે છે) એ રીડ-ઓનલિ ઇનપુટ્સ છે જે કમ્પોનેન્ટને તેના પેરેન્ટમાંથી આપવામાં આવે છે. Props એ એક કમ્પોનેન્ટથી બીજું કમ્પોનેન્ટ સુધી ડેટા ફ્લો કરવાની પરવાનગી આપે છે, જે કમ્પોનેન્ટ્સને પુનરાવૃત્તિક (reusable) અને ડાયનેમિક બનાવે છે.
 
 ```jsx
 function Greeting({ name }) {
@@ -50,13 +46,13 @@ function Greeting({ name }) {
 
 ---
 
-### **4. What is state in React?**
+### **4. React માં State શું છે?**
 
-**Answer**:  
-State is a JavaScript object that holds data that can change over time and can affect how a component renders. State is managed within a component and can be updated using `this.setState()` in class components or the `useState()` hook in functional components.
+**જવાબ**:  
+State એ એક JavaScript ઑબ્જેક્ટ છે જે એ ડેટાને ધરાવે છે જે સમય સાથે બદલાઇ શકે છે અને જે કમ્પોનેન્ટના રેન્ડરિંગને પ્રભાવિત કરી શકે છે. State કમ્પોનેન્ટની અંદર મેનેજ થાય છે અને તેને `this.setState()` દ્વારા class componentsમાં અપડેટ કરવામાં આવે છે અથવા `useState()` hook દ્વારા functional componentsમાં અપડેટ કરવામાં આવે છે.
 
 ```jsx
-// Using state in a class component
+// Class component માં state નો ઉપયોગ
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -80,10 +76,10 @@ class MyComponent extends React.Component {
 
 ---
 
-### **5. What is the `useState` hook?**
+### **5. `useState` hook શું છે?**
 
-**Answer**:  
-`useState` is a Hook in functional components that allows you to add state to a function component. It returns an array with two elements: the current state value and a function to update it.
+**જવાબ**:  
+`useState` એ એક Hook છે જે ફંક્શનલ કમ્પોનેન્ટ્સમાં state ઉમેરવા માટે ઉપયોગમાં લેવાય છે. તે બે તત્વો ધરાવતો એરે રિટર્ન કરે છે: હાલની state કિંમત અને તેને અપડેટ કરવા માટે એક ફંક્શન.
 
 ```jsx
 import { useState } from 'react';
@@ -100,32 +96,31 @@ function Counter() {
 }
 ```
 
----
 
-### **6. What are lifecycle methods in React?**
+### **6. React માં Lifecycle Methods શું છે?**
 
-**Answer**:  
-Lifecycle methods are special methods in class components that allow you to run code at specific points in a component's lifecycle. Some common lifecycle methods include:
-- `componentDidMount()`: Runs once after the component is mounted.
-- `componentDidUpdate()`: Runs after the component is updated.
-- `componentWillUnmount()`: Runs before the component is removed from the DOM.
-
----
-
-### **7. What are React Hooks?**
-
-**Answer**:  
-React Hooks are functions that allow you to use state and other React features in functional components. Some commonly used Hooks are:
-- `useState`: Manages state in a functional component.
-- `useEffect`: Handles side effects like data fetching, timers, etc.
-- `useContext`: Accesses context in a functional component.
+**જવાબ**:  
+Lifecycle methods એ ખાસ પદ્ધતિઓ છે જે ક્લાસ કમ્પોનેન્ટ્સમાં હોય છે અને તમને કમ્પોનેન્ટના લાઇફસાયકલના નિશ્ચિત પોઈન્ટ્સ પર કોડ ચલાવવાની પરવાનગી આપે છે. કેટલાક સામાન્ય lifecycle methods એ છે:
+- `componentDidMount()`: કમ્પોનેન્ટ માઉન્ટ થયા પછી એકવાર ચાલે છે.
+- `componentDidUpdate()`: કમ્પોનેન્ટ અપડેટ થય પછી ચાલે છે.
+- `componentWillUnmount()`: કમ્પોનેન્ટ DOMમાંથી કાઢી નાખ્યા પહેલા ચાલે છે.
 
 ---
 
-### **8. What is the `useEffect` hook in React?**
+### **7. React Hooks શું છે?**
 
-**Answer**:  
-`useEffect` is a Hook that lets you perform side effects in functional components. It can be used for tasks like fetching data, setting up subscriptions, and updating the DOM after render. It runs after every render by default, but you can control when it runs by passing dependencies.
+**જવાબ**:  
+React Hooks એ પદ્ધતિઓ છે જે તમને ફંક્શનલ કમ્પોનેન્ટ્સમાં state અને અન્ય React સુવિધાઓનો ઉપયોગ કરવાની પરવાનગી આપે છે. કેટલીક સામાન્ય રીતે ઉપયોગમાં લેવાતી Hooks એ છે:
+- `useState`: ફંક્શનલ કમ્પોનેન્ટમાં state મેનેજ કરે છે.
+- `useEffect`: સાઇડ ઇફેક્ટ્સ જેમ કે ડેટા ફેચિંગ, ટાઇમર્સ વગેરેને હેન્ડલ કરે છે.
+- `useContext`: ફંક્શનલ કમ્પોનેન્ટમાં context ને ઍક્સેસ કરે છે.
+
+---
+
+### **8. React માં `useEffect` Hook શું છે?**
+
+**જવાબ**:  
+`useEffect` એ એક Hook છે જે ફંક્શનલ કમ્પોનેન્ટ્સમાં સાઇડ ઇફેક્ટ્સને પરફોર્મ કરવાની પરવાનગી આપે છે. તેને ડેટા ફેચિંગ, સબ્સ્ક્રિપ્શન સેટ અપ કરવા, અને રેન્ડર પછી DOMને અપડેટ કરવા માટે ઉપયોગમાં લાવી શકાય છે. ડિફૉલ્ટે, તે દરેક રેન્ડર પછી ચાલે છે, પરંતુ તમે એ ડિપેન્ડન્સી એરે આપી શકો છો અને જ્યારે તે ચાલે છે તે નિયંત્રિત કરી શકો છો.
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -137,7 +132,7 @@ function FetchData() {
     fetch('https://api.example.com/data')
       .then(response => response.json())
       .then(data => setData(data));
-  }, []); // Empty dependency array means it runs once, similar to componentDidMount.
+  }, []); // ખાલી ડિપેન્ડન્સી એરેનો અર્થ એ છે કે આ માત્ર એકવાર, componentDidMount જેવું ચાલે છે.
 
   return <div>{JSON.stringify(data)}</div>;
 }
@@ -145,10 +140,10 @@ function FetchData() {
 
 ---
 
-### **9. What is component composition in React?**
+### **9. React માં Component Composition શું છે?**
 
-**Answer**:  
-Component composition is the practice of combining smaller, reusable components to build more complex UI components. React encourages composition over inheritance, allowing you to combine simple components to create more flexible UIs.
+**જવાબ**:  
+Component composition એ નાના, પુનરાવર્તિત ઉપયોગ માટેના કમ્પોનેન્ટ્સને એકત્ર કરીને વધુ જટિલ UI કમ્પોનેન્ટ્સ બનાવવાની પદ્ધતિ છે. React એ inheritance કરતાં compositionને પ્રોત્સાહિત કરે છે, જે તમને સરળ કમ્પોનેન્ટ્સને મિશ્રિત કરીને વધુ લચીલા UI બનાવવા દે છે.
 
 ```jsx
 function Header() {
@@ -171,10 +166,10 @@ function App() {
 
 ---
 
-### **10. What is the context API in React?**
+### **10. React માં Context API શું છે?**
 
-**Answer**:  
-The Context API allows you to share values like themes, user authentication, etc., across multiple components without having to pass props manually through every level of the component tree. It includes `React.createContext()`, `Provider`, and `Consumer` components.
+**જવાબ**:  
+Context API એ તમને મૂલ્યો જેમ કે થીમ્સ, યુઝર ઓથેન્ટિકેશન, વગેરેને ઘણા કમ્પોનેન્ટ્સમાં શેર કરવાની પરવાનગી આપે છે, જ્યારે પ્રોપ્સને દરેક લેવલમાં મેન્યુઅલી પસાર કરવાની જરૂર નથી. તેમાં `React.createContext()`, `Provider`, અને `Consumer` કમ્પોનેન્ટ્સ શામેલ છે.
 
 ```jsx
 const MyContext = React.createContext();
@@ -197,3 +192,5 @@ function Child() {
 ```
 
 ---
+
+Let me know if you need more translations!

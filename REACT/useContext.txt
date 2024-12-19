@@ -1,13 +1,9 @@
-Here are the **top 10 questions and answers** related to **`useContext`** in React, which will help a **fresher** prepare for a React interview:
-
----
-
 ### **1. What is `useContext` in React?**
 
 **Answer**:  
-`useContext` is a hook in React that allows you to access the value of a context directly within a functional component. It provides a way to pass data through the component tree without having to manually pass props down at every level.
+`useContext` એ React માં એક હૂક છે જે તમને ફંક્શનલ કોમ્પોનન્ટમાં સીધા કૉન્સટેક્સ્ટની મૂલ્યને એક્સેસ કરવાની મંજૂરી આપે છે. આનો ઉપયોગ કરીને, તમે કમ્પોનન્ટ ટ્રીમાંથી પ્રોપ્સને દરેક સ્તરે મેન્યુઅલી પસાર કર્યા વિના ડેટા પાસ કરી શકો છો.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -23,9 +19,9 @@ function MyComponent() {
 ### **2. How do you create a context in React?**
 
 **Answer**:  
-You can create a context using `React.createContext()`. This function returns an object that includes `Provider` and `Consumer` components. The `Provider` is used to pass down the context value to the component tree, while `useContext` or `Consumer` can be used to access it.
+તમે `React.createContext()` નો ઉપયોગ કરીને કૉન્સટેક્સ્ટ બનાવી શકો છો. આ ફંક્શન એક ઓબ્જેક્ટ આપે છે જેમાં `Provider` અને `Consumer` કમ્પોનન્ટ્સ સમાવિષ્ટ હોય છે. `Provider` કમ્પોનન્ટ કૉન્સટેક્સ્ટ મૂલ્યને કમ્પોનન્ટ ટ્રીમાં પસાર કરવા માટે ઉપયોગ થાય છે, જ્યારે `useContext` અથવા `Consumer` તેનો એક્સેસ કરવા માટે ઉપયોગ થાય છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext('default value');
@@ -36,9 +32,9 @@ const MyContext = React.createContext('default value');
 ### **3. How do you provide a context value in React?**
 
 **Answer**:  
-To provide a context value, use the `Provider` component that comes with the context. The `value` prop of the `Provider` is used to pass the value to all components within the context's scope.
+કૉન્સટેક્સ્ટ મૂલ્ય પ્રદાન કરવા માટે, તમે કૉન્સટેક્સ્ટ સાથે આપેલા `Provider` કમ્પોનન્ટનો ઉપયોગ કરો છો. `Provider` ના `value` પ્રોપનો ઉપયોગ મૂલ્યને કૉન્સટેક્સ્ટની પૃથ્વી પર તમામ કમ્પોનન્ટ્સને પહોંચાડવા માટે થાય છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -57,9 +53,9 @@ function App() {
 ### **4. How do you consume a context value in a component?**
 
 **Answer**:  
-You can consume a context value inside a functional component using the `useContext` hook. It takes the context object as an argument and returns the current context value.
+તમે ફંક્શનલ કોમ્પોનન્ટમાં `useContext` હૂકનો ઉપયોગ કરીને કૉન્સટેક્સ્ટ મૂલ્યનો ઉપભોગ કરી શકો છો. આ હૂક કૉન્સટેક્સ્ટ ઓબ્જેક્ટને આર્ગ્યુમેન્ટ તરીકે લે છે અને વર્તમાન કૉન્સટેક્સ્ટ મૂલ્ય આપે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -75,9 +71,9 @@ function MyComponent() {
 ### **5. Can you use `useContext` in class components?**
 
 **Answer**:  
-No, `useContext` is a hook and can only be used in functional components. In class components, you would use the `static contextType` or the `Context.Consumer` to access context.
+ના, `useContext` એ હૂક છે અને ફક્ત ફંક્શનલ કોમ્પોનન્ટ્સમાં જ ઉપયોગ કરી શકાય છે. ક્લાસ કોમ્પોનન્ટ્સમાં, તમે `static contextType` અથવા `Context.Consumer` નો ઉપયોગ કરીને કૉન્સટેક્સ્ટ એક્સેસ કરી શકો છો.
 
-Example with `contextType` in class components:
+**ક્લાસ કોમ્પોનન્ટ્સ સાથે `contextType` નો ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -96,10 +92,10 @@ class MyComponent extends React.Component {
 ### **6. How does `useContext` differ from `Context.Consumer`?**
 
 **Answer**:  
-- `useContext` is a hook that works only in functional components and provides the current context value directly.
-- `Context.Consumer` is a component that uses a render prop pattern and can be used in both functional and class components.
+- `useContext` એ એક હૂક છે જે ફક્ત ફંક્શનલ કોમ્પોનન્ટ્સમાં કામ કરે છે અને નમૂનાની મૂલ્યને સીધો પ્રદાન કરે છે.
+- `Context.Consumer` એ એક કમ્પોનન્ટ છે જે રેન્ડર પ્રોપ પેટર્નનો ઉપયોગ કરે છે અને તે ફંક્શનલ અને ક્લાસ કોમ્પોનન્ટ્સ બંનેમાં ઉપયોગ કરી શકાય છે.
 
-Example with `Context.Consumer`:
+**`Context.Consumer` નો ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext('Hello');
@@ -118,9 +114,9 @@ function MyComponent() {
 ### **7. How do you update the context value?**
 
 **Answer**:  
-You can update the context value by using the state in the `Provider` component. When the state changes, the context value automatically updates and triggers re-renders for all consumers.
+કૉન્સટેક્સ્ટ મૂલ્યને અપડેટ કરવા માટે, તમે `Provider` કમ્પોનન્ટમાં સ્ટેટનો ઉપયોગ કરી શકો છો. જયારે સ્ટેટ બદલાય છે, ત્યારે કૉન્સટેક્સ્ટ મૂલ્ય આપોઆપ અપડેટ થાય છે અને બધા કૉન્સ્યુમર્સ માટે રી-રેન્ડર ટ્રિગર કરે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -147,9 +143,9 @@ function MyComponent() {
 ### **8. Can you pass multiple values through a context?**
 
 **Answer**:  
-Yes, you can pass multiple values through a context by using an object or an array as the value. The consumers will receive the entire object or array and can destructure the values they need.
+હા, તમે કૉન્સટેક્સ્ટ દ્વારા અનેક મૂલ્યોને પાસ કરી શકો છો, એક ઓબ્જેક્ટ અથવા એરેનો ઉપયોગ કરીને. કૉન્સ્યુમર્સ સમગ્ર ઓબ્જેક્ટ અથવા એરેને પ્રાપ્ત કરશે અને તેઓ જરૂરી મૂલ્યોને ડીસ્ટ્રક્ચર કરી શકે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -175,23 +171,23 @@ function MyComponent() {
 ### **9. When should you use `useContext` in React?**
 
 **Answer**:  
-You should use `useContext` when you need to pass data through many layers of components without having to explicitly pass props down the component tree. It’s particularly useful for global state, theming, or user authentication contexts.
+તમે `useContext` નો ઉપયોગ ત્યારે કરવો જોઈએ જ્યારે તમને ઘણા સ્તરોના કમ્પોનન્ટ્સ દ્વારા ડેટા પસાર કરવાની જરૂર હોય, અને પ્રોપ્સને કૉમ્પોનન્ટ ટ્રીમાંExplicitલી પસાર કરવાની જરૂર ન હોય. આ ખાસ કરીને ગ્લોબલ સ્ટેટ, થીમિંગ, અથવા યુઝર ઓથન્ટિકેશન કૉન્સટેક્સ્ટ માટે ઉપયોગી છે.
 
-Examples:
-- User authentication state
-- Theme (light or dark mode)
-- Language/locale settings
+**ઉદાહરણ**:
+- યુઝર ઓથન્ટિકેશન સ્ટેટ
+- થીમ (લાઇટ અથવા ડાર્ક મોડ)
+- ભાષા/સ્થાન સેટિંગ્સ
 
 ---
 
 ### **10. What are the performance considerations when using `useContext`?**
 
 **Answer**:  
-When you update a context value, all components that consume that context will re-render, even if only a small part of the context is changed. To optimize performance, you can:
-- **Split contexts**: Use different contexts for different pieces of state to avoid unnecessary re-renders.
-- **Memoize context values**: Use `useMemo` to memoize the context value if it is computed or derived from other values.
+જ્યારે તમે કૉન્સટેક્સ્ટ મૂલ્યને અપડેટ કરો છો, ત્યારે બધા કૉન્સ્યુમર્સ જે તે કૉન્સટેક્સ્ટનો ઉપયોગ કરે છે, તે ફરીથી રી-રેન્ડર થાય છે, ભલે જ કૉન્સટેક્સ્ટના એક નાનો ભાગ બદલાયો હોય. પરફોર્મન્સ ઓપ્ટિમાઇઝ કરવા માટે, તમે આને કરી શકો છો:
+- **કૉન્સટેક્સ્ટને વિભાજિત કરો**: વિવિધ રાજ્ય માટે અલગ-અલગ કૉન્સટેક્સ્ટનો ઉપયોગ કરો, જેથી અનાવશ્યક રી-રેન્ડરોથી બચી શકાય.
+- **કૉન્સટેક્સ્ટ મૂલ્યોને મેમોઇઝ કરો**: જો કૉન્સટેક્સ્ટ મૂલ્ય ગણના અથવા અન્ય મૂલ્યોમાંથી પ્રાપ્ત થાય છે, તો `useMemo` નો ઉપયોગ કરીને તેને મેમોઇઝ કરો.
 
-Example with `useMemo`:
+**`useMemo` સાથે ઉદાહરણ**:
 
 ```jsx
 const MyContext = React.createContext();
@@ -208,6 +204,4 @@ function App() {
 }
 ```
 
----
 
-These questions and answers cover the basics of `useContext` and help in understanding how context works in React, and when and how to use it efficiently.

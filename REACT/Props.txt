@@ -1,18 +1,14 @@
-Here are the **top 10 questions and answers** focused on **props** in React, which are essential for a **fresher** preparing for a React interview:
-
----
-
 ### **1. What are props in React?**
 
-**Answer**:  
-Props (short for "properties") are read-only data passed from a parent component to a child component. Props allow data to flow through the component tree and make components dynamic and reusable.
+**ઉત્તર**:  
+Props (જેથી "properties" માટે સંક્ષિપ્ત છે) એ વાંચવા માટેના ડેટા છે જે પેરન્ટ કોમ્પોનન્ટમાંથી ચાઈલ્ડ કોમ્પોનન્ટમાં પસાર થાય છે. Props કોમ્પોનન્ટ ટ્રીમાંથી ડેટા પ્રવાહિત કરવામાં મદદ કરે છે અને કોમ્પોનન્ટને ગતિશીલ અને પુનઃઉપયોગયોગ્ય બનાવે છે.
 
 ```jsx
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 
-// Parent component
+// પેરન્ટ કોમ્પોનન્ટ
 <Greeting name="John" />
 ```
 
@@ -20,17 +16,17 @@ function Greeting({ name }) {
 
 ### **2. What is the difference between props and state in React?**
 
-**Answer**:  
-- **Props**: Immutable and passed from parent to child. They cannot be changed within the child component.
-- **State**: Mutable and managed within the component. State can change and trigger re-renders.
+**ઉત્તર**:  
+- **Props**: બદલતી નથી અને પેરન્ટથી ચાઈલ્ડમાં પસાર થાય છે. તેને ચાઈલ્ડ કોમ્પોનન્ટમાં બદલવાનું શક્ય નથી.
+- **State**: બદલવાની ક્ષમતા ધરાવે છે અને કોમ્પોનન્ટની અંદર સંચાલિત થાય છે. સ્ટેટ બદલાઈ શકે છે અને રી-રેન્ડરને ટ્રિગર કરી શકે છે.
 
 ```jsx
-// Props example:
+// Props ઉદાહરણ:
 function ChildComponent({ name }) {
   return <h1>{name}</h1>;
 }
 
-// State example:
+// State ઉદાહરણ:
 class Counter extends React.Component {
   state = { count: 0 };
 
@@ -48,8 +44,8 @@ class Counter extends React.Component {
 
 ### **3. How do you pass props to a child component?**
 
-**Answer**:  
-You pass props to a child component by adding them as attributes when rendering the child component within the parent.
+**ઉત્તર**:  
+તમારે ચાઈલ્ડ કોમ્પોનન્ટને પેરન્ટ કોમ્પોનન્ટમાં ચાઈલ્ડને રેન્ડર કરતી વખતે પ્રોપ્સને એટ્રિબ્યુટ્સ તરીકે પસાર કરવા પડે છે.
 
 ```jsx
 function Parent() {
@@ -66,15 +62,15 @@ function Child({ name }) {
 
 ### **4. Can props be modified inside the child component?**
 
-**Answer**:  
-No, props are **immutable**. They are read-only, and any modification should be done in the parent component before passing them down. If you need to modify data, you should use state within the child component.
+**ઉત્તર**:  
+ના, props **immutable** છે. આનો અર્થ એ છે કે તેઓ માત્ર વાંચવા માટે છે, અને જો કોઈ ફેરફાર કરવાની જરૂર છે, તો તેને પેરન્ટ કોમ્પોનન્ટમાં કરવો જોઈએ, પછી તેને ચાઈલ્ડમાં મોકલવામાં આવે છે. જો તમને ડેટા બદલીને દેખાવમાં ફેરફાર કરવા હોય, તો તમારે સ્ટેટનો ઉપયોગ કરવાની જરૂર છે.
 
 ---
 
 ### **5. What is prop drilling in React?**
 
-**Answer**:  
-Prop drilling refers to the process of passing props through multiple levels of components in a component tree, even if some intermediate components don't need the props. This can lead to cumbersome code, especially in large applications.
+**ઉત્તર**:  
+પ્રોપ ડ્રિલિંગ એ પ્રોસેસ છે જેમાં પ્રોપ્સને અનેક સ્તરોમાંથી પસાર કરવામાં આવે છે, જ્યાં સુધી તે ચાઈલ્ડ કોમ્પોનન્ટ સુધી પહોંચી જાય. જ્યારે કેટલીક મધ્યસ્થ કોમ્પોનન્ટ્સને એ પ્રોપ્સની જરૂર ન હોય, તો પણ તે પસાર થાય છે. આ આકસ્મિક કોડ થવા માટે સક્રિય કરી શકે છે, ખાસ કરીને મોટા એપ્લિકેશન્સમાં.
 
 ```jsx
 function Grandparent() {
@@ -91,12 +87,11 @@ function Child({ name }) {
 }
 ```
 
----
 
-### **6. What is defaultProps in React?**
+### **6. What is `defaultProps` in React?**
 
-**Answer**:  
-`defaultProps` is a way to define default values for props in case they are not passed by the parent component. It ensures that a prop has a value even if it is not explicitly passed.
+**ઉત્તર**:  
+`defaultProps` એ એ રીતે ડિફોલ્ટ મૂલ્યો નિર્ધારિત કરવા માટે છે જ્યારે પેરન્ટ કોમ્પોનન્ટ દ્વારા પ્રોપ્સ પસાર કરવામાં આવી નથી. આ એ ખાતરી કરે છે કે પ્રોપનો મૂલ્ય હોય, ભલે તે ચોક્કસ રીતે પસાર ન કરાયો હોય.
 
 ```jsx
 function MyComponent({ name }) {
@@ -108,14 +103,14 @@ MyComponent.defaultProps = {
 };
 ```
 
-If `name` is not provided by the parent, it defaults to `'Guest'`.
+જ્યારે `name` પેરન્ટ દ્વારા પ્રદાન કરાયું નથી, ત્યારે તે `'Guest'` પર ડિફોલ્ટ થાય છે.
 
 ---
 
 ### **7. How can you validate props in React?**
 
-**Answer**:  
-You can validate props using `PropTypes`. This allows you to enforce the expected types and structure of props passed to a component. If the props don't match the expected type, React will show a warning in the console.
+**ઉત્તર**:  
+તમે `PropTypes` નો ઉપયોગ કરીને પ્રોપ્સનું વેલિડેશન કરી શકો છો. આ તમને કોમ્પોનન્ટ્સને આપેલી પ્રોપ્સના અપેક્ષિત પ્રકાર અને માળખાનું અમલ કરવાનો મોકો આપે છે. જો પ્રોપ્સ અપેક્ષિત પ્રકાર સાથે મેળ ખાવા માટે ન હોય, તો React કન્સોલમાં એક ચેતવણી દર્શાવશે.
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -132,10 +127,10 @@ MyComponent.propTypes = {
 
 ---
 
-### **8. What are the children props in React?**
+### **8. What are the `children` props in React?**
 
-**Answer**:  
-`children` is a special prop in React that allows components to pass arbitrary content between their opening and closing tags. It can be any valid React elements or components.
+**ઉત્તર**:  
+`children` એ Reactમાં એક વિશેષ પ્રોપ છે જે કોમ્પોનન્ટ્સને તેમના ઓપનિંગ અને ક્લોઝિંગ ટેગ્સ વચ્ચે મોહી પૅસ કરવાનો મોકો આપે છે. આ કોઈપણ માન્ય React એલિમેન્ટ્સ અથવા કોમ્પોનન્ટ્સ હોઈ શકે છે.
 
 ```jsx
 function MyContainer({ children }) {
@@ -147,14 +142,14 @@ function MyContainer({ children }) {
 </MyContainer>
 ```
 
-In this case, the content (`<h1>Hello, world!</h1>`) is passed as `children`.
+આ કેસમાં, કોન્ટેન્ટ (`<h1>Hello, world!</h1>`) એ `children` તરીકે પસાર થાય છે.
 
 ---
 
 ### **9. How can you pass multiple values as props to a component?**
 
-**Answer**:  
-You can pass multiple values as props by adding each prop individually when rendering the component.
+**ઉત્તર**:  
+તમે એક પછી એક પ્રોપ્સને કોમ્પોનન્ટને પાસ કરીને અનેક મૂલ્યો તરીકે પ્રોપ્સ પસાર કરી શકો છો.
 
 ```jsx
 function Greeting({ name, age }) {
@@ -164,7 +159,7 @@ function Greeting({ name, age }) {
 <Greeting name="John" age={25} />
 ```
 
-Alternatively, you can pass an object as a prop and destructure it in the child component:
+વૈકલ્પિક રીતે, તમે એક ઑબ્જેક્ટને પ્રોપ તરીકે પસાર કરી શકો છો અને બાળક કોમ્પોનન્ટમાં તેને ડિસટ્રક્ચર કરી શકો છો:
 
 ```jsx
 function Greeting({ person }) {
@@ -179,8 +174,8 @@ const person = { name: 'John', age: 25 };
 
 ### **10. How can you pass a function as a prop in React?**
 
-**Answer**:  
-You can pass a function as a prop to allow a child component to call it. This is commonly used for event handling or communication between components.
+**ઉત્તર**:  
+તમે ફંક્શનને પ્રોપ તરીકે પસાર કરી શકો છો જેથી બાળક કોમ્પોનન્ટ તેને કૉલ કરી શકે. આ સામાન્ય રીતે ઇવેન્ટ હેન્ડલિંગ અથવા કોમ્પોનન્ટ્સ વચ્ચે સંચાર માટે ઉપયોગ થાય છે.
 
 ```jsx
 function Parent() {
@@ -196,6 +191,6 @@ function Child({ greet }) {
 }
 ```
 
-In this example, the `Parent` component passes a `greet` function to `Child`, which calls it when the button is clicked.
+આ ઉદાહરણમાં, `Parent` કોમ્પોનન્ટ `greet` ફંક્શનને `Child` ને પસાર કરે છે, જે બટન ક્લિક થતા તેને કૉલ કરે છે.
 
 ---

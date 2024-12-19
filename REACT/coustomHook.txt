@@ -1,9 +1,7 @@
-Here are some **questions and answers** related to **Custom Hooks** in React, which allow you to extract and reuse stateful logic across multiple components:
+### **1. React માં custom hook શું છે?**
 
----
-
-### **1. What is a custom hook in React?**
-A custom hook is a JavaScript function that starts with the prefix `use` and allows you to extract and reuse stateful logic between components. Custom hooks allow you to encapsulate logic in a reusable manner and avoid duplication in your components.
+**જવાબ**:  
+Custom hook એ JavaScript ફંક્શન છે જે `use` પ્રિફિક્સથી શરૂ થાય છે અને components વચ્ચે stateful લોજિકને extract અને reuse કરવાની તક આપે છે. Custom hooks તમને લોજિકને reusable રીતે encapsulate કરવા અને components માં duplication ટાળી આપતું છે.
 
 ```javascript
 import { useState } from 'react';
@@ -20,12 +18,14 @@ function useCounter(initialValue = 0) {
 
 ---
 
-### **2. How do you create a custom hook?**
-To create a custom hook, define a function that uses React hooks (like `useState`, `useEffect`, etc.) and starts with the prefix `use`. This function can be used across different components.
+### **2. Custom hook કેવી રીતે બનાવવું?**
+
+**જવાબ**:  
+Custom hook બનાવવા માટે, એવી ફંક્શન ડિફાઈન કરો જે React hooks (જેમ કે `useState`, `useEffect` વગેરે) નો ઉપયોગ કરે અને તે `use` પ્રિફિક્સથી શરૂ થાય. આ ફંક્શનને વિવિધ components માં ઉપયોગ માટે લાવવામાં આવી શકે છે.
 
 ```javascript
 function useCustomHook() {
-  // Custom logic using React hooks
+  // React hooks નો ઉપયોગ કરીને કસ્ટમ લોજિક
   const [state, setState] = useState(null);
 
   const updateState = (newState) => {
@@ -38,8 +38,10 @@ function useCustomHook() {
 
 ---
 
-### **3. Can a custom hook call other hooks?**
-Yes, a custom hook can call other React hooks inside it. This is one of the main benefits of custom hooks—they allow you to combine multiple hooks to create complex behavior in a reusable function.
+### **3. શું custom hook અન્ય hooks ને call કરી શકે છે?**
+
+**જવાબ**:  
+હા, custom hook અન્ય React hooks ને તેલમા call કરી શકે છે. આ custom hooks ની મુખ્ય ફાયદો છે—તે allows કરે છે કે તમે ઘણા hooks ને સંકલિત કરીને reusable ફંક્શનમાં જટિલ વર્તન બનાવી શકો છો.
 
 ```javascript
 function useCounter(initialValue = 0) {
@@ -55,20 +57,24 @@ function useCounter(initialValue = 0) {
 
 ---
 
-### **4. Why should you use custom hooks in React?**
-Custom hooks help:
-- **Reuse logic**: Share logic between multiple components without duplication.
-- **Encapsulation**: Isolate complex logic from the component code to keep components clean and focused on rendering.
-- **Composition**: Combine different hooks to create more sophisticated functionality that can be reused.
+### **4. React માં custom hooks નો ઉપયોગ કેમ કરવો?**
+
+**જવાબ**:  
+Custom hooks ની મદદથી:
+- **Reuse લોજિક**: વિવિધ components વચ્ચે લોજિકને વિના duplication વિના share કરી શકાય છે.
+- **Encapsulation**: જટિલ લોજિકને component codeમાંથી અલગ કરી components ને સાફ અને focused રાખી શકાય છે.
+- **Composition**: વિવિધ hooks ને સંકલિત કરી વધુ sophisticated functionality બનાવવામાં reusable hooks તૈયાર કરી શકાય છે.
 
 ---
 
-### **5. How do you use a custom hook in a component?**
-You use a custom hook just like any other React hook, by calling it inside the component.
+### **5. Component માં custom hook કેવી રીતે ઉપયોગ કરવું?**
+
+**જવાબ**:  
+Custom hook નો ઉપયોગ તમે અન્ય React hook ની જેમ component માં કરી શકો છો, એટલે કે તમે તેને component માં call કરો.
 
 ```javascript
 function Counter() {
-  const { count, increment } = useCounter(0);  // Using the custom hook
+  const { count, increment } = useCounter(0);  // Custom hook નો ઉપયોગ
 
   return (
     <div>
@@ -79,10 +85,11 @@ function Counter() {
 }
 ```
 
----
 
-### **6. Can custom hooks use lifecycle hooks like `useEffect`?**
-Yes, custom hooks can use `useEffect` (or other lifecycle hooks) just like any regular React component. This allows you to handle side effects within your custom hook.
+### **6. શું custom hooks માં lifecycle hooks જેમ કે `useEffect` નો ઉપયોગ કરી શકાય છે?**
+
+**જવાબ**:  
+હા, custom hooks માં `useEffect` (અથવા અન્ય lifecycle hooks) નો ઉપયોગ regular React components જે રીતે કરી શકાય છે. આથી, તમે custom hookમાં side effects હેન્ડલ કરી શકો છો.
 
 ```javascript
 import { useState, useEffect } from 'react';
@@ -111,9 +118,10 @@ function useLocalStorage(key, initialValue) {
 
 ---
 
-### **7. What is the purpose of the `useMemo` and `useCallback` hooks in custom hooks?**
-- **`useMemo`**: In a custom hook, `useMemo` can be used to memoize values that require expensive computations. This ensures that the value is recalculated only when the dependencies change.
-- **`useCallback`**: `useCallback` can be used to memoize functions passed down to other components, preventing them from being recreated on each render.
+### **7. Custom hooks માં `useMemo` અને `useCallback` hooks નો ઉપયોગ શું છે?**
+
+- **`useMemo`**: Custom hook માં, `useMemo` એ values ને memoize કરવા માટે ઉપયોગી છે જે expensive computations કરે છે. આથી, તે value ને dependencies બદલાયા પછી જ recalculated થાય છે.
+- **`useCallback`**: `useCallback` એ functions ને memoize કરવા માટે ઉપયોગી છે જે બીજી components ને pass કરવામાં આવે છે, જેથી દરેક render પર function ના નવા instances ન બનાવાય.
 
 ```javascript
 const useExpensiveCalculation = (data) => {
@@ -124,8 +132,10 @@ const useExpensiveCalculation = (data) => {
 
 ---
 
-### **8. Can you return multiple values from a custom hook?**
-Yes, you can return multiple values from a custom hook, often in the form of an object or an array. This allows you to encapsulate various pieces of logic in a single hook and return all necessary values to the component.
+### **8. શું તમે custom hook થી multiple values return કરી શકો છો?**
+
+**જવાબ**:  
+હા, તમે custom hook થી multiple values return કરી શકો છો, સામાન્ય રીતે object અથવા array ની આકૃતિમાં. આથી, તમે એક જ hook માં વિવિધ લોજિકના ટુકડાં encapsulate કરી શકો છો અને જરૂરી values component ને return કરી શકો છો.
 
 ```javascript
 function useForm(initialState) {
@@ -144,8 +154,10 @@ function useForm(initialState) {
 
 ---
 
-### **9. How do custom hooks interact with component state?**
-Custom hooks allow you to encapsulate and manage state internally. The state can then be returned to the component using the hook, allowing the component to render based on the state values.
+### **9. Custom hooks કેવી રીતે component state સાથે interact કરે છે?**
+
+**જવાબ**:  
+Custom hooks એ state ને encapsulate અને manage કરવા માટે મદદ કરે છે. આ state ને hook દ્વારા component ને return કરવામાં આવે છે, જેથી component state values ની આધારે render થાય છે.
 
 ```javascript
 function useCounter(initialValue = 0) {
@@ -172,8 +184,10 @@ const Counter = () => {
 
 ---
 
-### **10. Can custom hooks use `useRef` to persist values between renders?**
-Yes, custom hooks can use `useRef` to store values that persist across renders without causing re-renders. This is useful for tracking mutable values that don’t need to trigger component re-renders.
+### **10. શું custom hooks માં `useRef` નો ઉપયોગ કરી શકો છો values ને persist કરવા માટે?**
+
+**જવાબ**:  
+હા, custom hooks માં `useRef` નો ઉપયોગ કરી શકો છો જેથી values એક render થી બીજા render સુધી persist થાય, પરંતુ re-renders ના triggers ના બને. આ mutable values ને track કરવાનું ખૂબ જ ઉપયોગી છે જેમણે component re-rendersને મોકલવાની જરૂર નથી.
 
 ```javascript
 function usePrevious(value) {
@@ -188,8 +202,11 @@ function usePrevious(value) {
 
 ---
 
-### **11. Can you return a function from a custom hook?**
-Yes, custom hooks can return functions. Returning functions from custom hooks is a common pattern, especially when the custom hook encapsulates logic that manipulates or handles state.
+
+### **11. શું તમે custom hook થી function return કરી શકો છો?**
+
+**જવાબ**:  
+હા, custom hooks થી function return કરી શકાય છે. custom hooks માં functions return કરવાનો એક સામાન્ય પૅટર્ન છે, ખાસ કરીને જ્યારે custom hook એ એવી લોજિક encapsulate કરે છે જે state ને સંભાળતી અથવા બદલે છે.
 
 ```javascript
 function useToggle(initialState = false) {
@@ -203,8 +220,10 @@ function useToggle(initialState = false) {
 
 ---
 
-### **12. Can custom hooks use `useReducer`?**
-Yes, custom hooks can use `useReducer` to handle more complex state logic compared to `useState`. This is especially useful when the state depends on actions or needs to be updated in complex ways.
+### **12. શું custom hooks માં `useReducer` નો ઉપયોગ કરી શકો છો?**
+
+**જવાબ**:  
+હા, custom hooks માં `useReducer` નો ઉપયોગ કરીને વધુ જટિલ state લોજિક હેન્ડલ કરી શકાય છે, ખાસ કરીને જ્યારે state actions પર આધાર રાખતી હોય અથવા તેને જટિલ રીતે અપડેટ કરવાની જરૂર હોય.
 
 ```javascript
 function useCounter(initialState) {
@@ -230,22 +249,26 @@ function useCounter(initialState) {
 
 ---
 
-### **13. Can you use `useContext` in a custom hook?**
-Yes, you can use `useContext` in a custom hook to share context values across multiple components. This allows you to encapsulate logic related to context consumption.
+### **13. શું custom hook માં `useContext` નો ઉપયોગ કરી શકો છો?**
+
+**જવાબ**:  
+હા, custom hook માં `useContext` નો ઉપયોગ કરી શકાય છે જેથી context value ને અનેક components વચ્ચે વહેંચી શકાય. આથી, context consumption સાથે સંબંધિત લોજિકને encapsulate કરવામાં મદદ મળે છે.
 
 ```javascript
 import { useContext } from 'react';
 
 function useTheme() {
-  const theme = useContext(ThemeContext); // Access context value
+  const theme = useContext(ThemeContext); // Context value મેળવવી
   return theme;
 }
 ```
 
 ---
 
-### **14. Can you use `useEffect` inside a custom hook?**
-Yes, `useEffect` can be used inside custom hooks to manage side effects like fetching data, subscribing to services, or manipulating the DOM. This allows you to encapsulate side effects that multiple components can share.
+### **14. શું custom hook માં `useEffect` નો ઉપયોગ કરી શકો છો?**
+
+**જવાબ**:  
+હા, custom hooks માં `useEffect` નો ઉપયોગ કરી શકાય છે જેથી side effects જેમ કે ડેટા લાવવું, સર્વિસ સાથે સબ્સક્રાઇબ કરવું, અથવા DOM ને મેનિપ્યુલેટ કરવું એ મેનેજ કરી શકાય. આથી, તમે એક જ લોજિકને અમુક components માંથી શેર કરી શકો છો.
 
 ```javascript
 function useDataFetching(url) {
@@ -266,10 +289,11 @@ function useDataFetching(url) {
 
 ---
 
-### **15. What are the best practices for using custom hooks in React?**
-- **Name custom hooks with the `use` prefix**: Custom hooks must start with `use` to follow the React conventions and rules of hooks.
-- **Keep custom hooks focused**: Each custom hook should ideally encapsulate one piece of logic or behavior.
-- **Use custom hooks for logic reuse**: Use custom hooks to abstract out complex or repeated logic in your components.
-- **Don’t overuse custom hooks**: Only create custom hooks when it makes sense and helps with reusability or readability. If the logic is simple, a regular function might be enough.
+### **15. React માં custom hooks નો ઉપયોગ કરતી વખતે શ્રેષ્ઠ પ્રથા શું છે?**
+
+- **Custom hooks ને `use` પેક્સ સાથે નામ આપો**: Custom hooks ને React conventions અને hooks ના નિયમો મુજબ `use` થી શરુ થવું જોઈએ.
+- **Custom hooks ને focused રાખો**: દરેક custom hookને એક જ લોજિક અથવા વર્તન encapsulate કરવું જોઈએ.
+- **Custom hooks નો ઉપયોગ લોજિકના પુનઃઉપયોગ માટે કરો**: custom hooks નો ઉપયોગ મુશ્કેલ અથવા પુનરાવૃત્તિ થતાં લોજિકને components માંથી દૂર કરવા માટે કરો.
+- **Custom hooks નો અતિરેક ઉપયોગ ન કરો**: માત્ર ત્યારે જ custom hooks બનાવો જ્યારે તે સમજદારી છે અને પુનરાવૃત્તિ અથવા વાંચનીયતામાં મદદ કરે છે. જો લોજિક સરળ હોય, તો સામાન્ય function પણ પૂરતો હોઈ શકે છે.
 
 ---

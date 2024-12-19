@@ -1,19 +1,15 @@
-Here are the **top 10 questions and answers** related to **`useState`** in React, which will help a **fresher** prepare for a React interview:
-
----
-
 ### **1. What is the `useState` hook in React?**
 
 **Answer**:  
-`useState` is a hook in React that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that value.
+`useState` એ એક હૂક છે જે ફંક્શનલ કોમ્પોનેન્ટ્સમાં સ્ટેટ ઉમેરવા માટે ઉપયોગ થાય છે. આ હૂક એ બે ઘટકોવાળી એરે પરત આપે છે: વર્તમાન સ્ટેટ મૂલ્ય અને તેને અપડેટ કરવા માટેની ફંક્શન.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 import { useState } from 'react';
 
 function Counter() {
-  const [count, setCount] = useState(0); // state variable 'count' with initial value 0
+  const [count, setCount] = useState(0); // સ્ટેટ વેરિઅબલ 'count' આરંભિક મૂલ્ય 0 સાથે
   return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
 ```
@@ -23,13 +19,13 @@ function Counter() {
 ### **2. How do you initialize state with `useState`?**
 
 **Answer**:  
-You initialize state by calling `useState` and passing the initial state value as an argument. The initial value can be of any type, such as a number, string, array, or object.
+તમે `useState` ને કોલ કરીને અને આરંભિક સ્ટેટ મૂલ્ય પાસ કરીને સ્ટેટને આરંભિત કરી શકો છો. આરંભિક મૂલ્ય કોઈપણ પ્રકારનું હોઈ શકે છે, જેમ કે સંખ્યા, સ્ટ્રિંગ, એરે અથવા ઑબ્જેક્ટ.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
-const [count, setCount] = useState(0); // number as initial state
-const [name, setName] = useState('John'); // string as initial state
+const [count, setCount] = useState(0); // સંખ્યા તરીકે આરંભિક સ્ટેટ
+const [name, setName] = useState('John'); // સ્ટ્રિંગ તરીકે આરંભિક સ્ટેટ
 ```
 
 ---
@@ -37,18 +33,18 @@ const [name, setName] = useState('John'); // string as initial state
 ### **3. Can you set the state directly in React using `useState`?**
 
 **Answer**:  
-No, you should not mutate state directly in React. Instead, use the setter function returned by `useState` to update the state. Direct mutation won't trigger re-rendering and will lead to inconsistent state behavior.
+હા, તમે સીધા સ્ટેટને બદલવા માટે `useState` નો ઉપયોગ કરી શકતા નથી. તેના બદલે, સ્ટેટને અપડેટ કરવા માટે `useState` દ્વારા પરત આવેલી સેટર ફંક્શનનો ઉપયોગ કરો. સીધા મ્યુટેશનથી રેન્ડર ટ્રિગર થતો નથી અને અસંગત સ્ટેટ વર્તન માટે દોરી શકે છે.
 
-Example (incorrect):
+**ઉદાહરણ (ખોટું)**:
 
 ```jsx
-count = count + 1; // This is incorrect
+count = count + 1; // આ ખોટું છે
 ```
 
-Example (correct):
+**ઉદાહરણ (સાચું)**:
 
 ```jsx
-setCount(count + 1); // This triggers a re-render
+setCount(count + 1); // આ રેન્ડર ટ્રિગર કરે છે
 ```
 
 ---
@@ -56,12 +52,12 @@ setCount(count + 1); // This triggers a re-render
 ### **4. What is the default value in `useState`?**
 
 **Answer**:  
-The default value in `useState` is the initial state you provide when calling the hook. If no argument is provided, it defaults to `undefined`.
+`useState` માં ડિફોલ્ટ મૂલ્ય તે આરંભિક સ્ટેટ છે જે તમે હૂકને કોલ કરતી વખતે પ્રદાન કરો છો. જો કોઈ દલીલ પૂરી પાડવામાં ન આવે, તો તેનું મૂલ્ય `undefined` તરીકે ડિફોલ્ટ હોય છે.
 
-Example with default value:
+**ડિફોલ્ટ મૂલ્ય સાથે ઉદાહરણ**:
 
 ```jsx
-const [count, setCount] = useState(0); // Default value is 0
+const [count, setCount] = useState(0); // ડિફોલ્ટ મૂલ્ય 0 છે
 ```
 
 ---
@@ -69,57 +65,57 @@ const [count, setCount] = useState(0); // Default value is 0
 ### **5. How can you update state based on the previous state with `useState`?**
 
 **Answer**:  
-You can use a **functional update** form of the setter function to update state based on its previous value. This is useful when the new state depends on the previous state.
+તમે **ફંક્શનલ અપડેટ** ફોર્મનો ઉપયોગ કરી શકો છો, જ્યાં સેટર ફંક્શન અગાઉના સ્ટેટના આધારે સ્ટેટને અપડેટ કરે છે. આ તે સમયે ઉપયોગી છે જ્યારે નવી સ્ટેટ અગાઉની સ્ટેટ પર આધાર રાખે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 setCount(prevCount => prevCount + 1);
 ```
 
-This ensures the state update is based on the latest value of `count`, avoiding potential issues with stale closures.
+આ ખાતરી કરે છે કે સ્ટેટ અપડેટ છેલ્લી `count` ની મૂલ્ય પર આધારિત છે, જે સ્ટેલ ક્લોઝરથી સંબંધિત સમસ્યાઓથી બચાવે છે.
 
 ---
 
 ### **6. Can you use `useState` more than once in a component?**
 
 **Answer**:  
-Yes, you can call `useState` multiple times in a component to manage multiple state variables. Each call to `useState` manages its own piece of state.
+હા, તમે એક જ કોમ્પોનેન્ટમાં એક કરતાં વધુ વાર `useState` નો ઉપયોગ કરી શકો છો, જેથી તમે એકથી વધુ સ્ટેટ વેરિઅબલ્સ મેનેજ કરી શકો છો. દરેક `useState` કૉલ તેના પોતાના સ્ટેટ ટુકડાને મેનેજ કરે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const [count, setCount] = useState(0);
 const [name, setName] = useState('John');
 ```
 
-Each state variable (`count`, `name`) has its own setter function (`setCount`, `setName`).
+પ્રત્યેક સ્ટેટ વેરિઅબલ (`count`, `name`) માટે તેની પોતાની સેટર ફંક્શન (`setCount`, `setName`) છે.
 
 ---
 
 ### **7. What is the `useState` hook's return value?**
 
 **Answer**:  
-`useState` returns an array with two elements:
-1. **The current state value**.
-2. **A function to update the state**.
+`useState` એ બે ઘટકોવાળી એરે પરત આપે છે:
+1. **વર્તમાન સ્ટેટ મૂલ્ય**.
+2. **સ્ટેટને અપડેટ કરવા માટેની ફંક્શન**.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const [count, setCount] = useState(0);
 ```
 
-Here, `count` is the current state value, and `setCount` is the function to update the `count` state.
+અહીં, `count` એ વર્તમાન સ્ટેટ મૂલ્ય છે, અને `setCount` એ `count` સ્ટેટને અપડેટ કરવા માટેની ફંક્શન છે.
 
 ---
 
 ### **8. Can you use `useState` with objects and arrays?**
 
 **Answer**:  
-Yes, you can use `useState` with objects and arrays. However, when updating state with objects or arrays, you need to spread the existing state to avoid mutating the previous state.
+હા, તમે `useState` નો ઉપયોગ ઑબ્જેક્ટ્સ અને એરે સાથે કરી શકો છો. પરંતુ, જ્યારે તમે ઑબ્જેક્ટ્સ અથવા એરે સાથે સ્ટેટ અપડેટ કરો છો, ત્યારે પહેલાંની સ્ટેટને મ્યુટેટ કરવાનો ટાળો, એટલે કે એરે અથવા ઑબ્જેક્ટને છાંટવું જરૂરી છે.
 
-Example with object:
+**ઑબ્જેક્ટ સાથે ઉદાહરણ**:
 
 ```jsx
 const [user, setUser] = useState({ name: 'John', age: 30 });
@@ -130,12 +126,12 @@ setUser(prevUser => ({
 }));
 ```
 
-Example with array:
+**એરે સાથે ઉદાહરણ**:
 
 ```jsx
 const [items, setItems] = useState([1, 2, 3]);
 
-setItems(prevItems => [...prevItems, 4]); // Add a new item
+setItems(prevItems => [...prevItems, 4]); // નવું આઇટમ ઉમેરો
 ```
 
 ---
@@ -143,9 +139,9 @@ setItems(prevItems => [...prevItems, 4]); // Add a new item
 ### **9. Can you pass a function as the initial value to `useState`?**
 
 **Answer**:  
-Yes, you can pass a function to `useState` to lazily initialize the state. This is useful when the initial state is computed or derived from complex logic.
+હા, તમે `useState` ને એક ફંક્શન પાસ કરી શકો છો જે સ્ટેટને ક્રમશ: આરંભિત કરે છે. આ એ વખતે ઉપયોગી છે જ્યારે આરંભિક સ્ટેટ કંપ્લેક્સ લોજિકથી ગણવામાં આવે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const [count, setCount] = useState(() => {
@@ -154,25 +150,23 @@ const [count, setCount] = useState(() => {
 });
 ```
 
-The function is only executed on the initial render.
+ફંક્શન ફક્ત પ્રારંભિક રેન્ડર પર જ અમલ થાય છે.
 
 ---
 
 ### **10. Does calling `setState` in `useState` trigger a re-render?**
 
 **Answer**:  
-Yes, calling the setter function returned by `useState` (e.g., `setCount`) triggers a re-render of the component. React re-renders the component with the updated state, allowing the component to reflect the new state in the UI.
+હા, `useState` દ્વારા પરત આવેલી સેટર ફંક્શન (ઉદાહરણ તરીકે, `setCount`) કૉલ કરવાથી કોમ્પોનેન્ટના રેન્ડર ટ્રિગર થાય છે. React રેન્ડર કરતો છે અને નવી સ્ટેટ સાથે UI ને અપડેટ કરે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const [count, setCount] = useState(0);
 
 const increment = () => {
-  setCount(count + 1); // Triggers re-render with updated count
+  setCount(count + 1); // અપડેટ થયેલ count સાથે રેન્ડર ટ્રિગર કરે છે
 };
 ```
 
----
 
-These questions and answers cover the basics and some advanced use cases for `useState`, which is essential for managing state in React functional components.

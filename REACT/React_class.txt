@@ -1,9 +1,7 @@
-Here are the **top questions and answers** related to **class components** in React for a fresher's interview:
-
----
-
 ### **1. What is a class component in React?**
-A class component is a JavaScript class that extends `React.Component` and includes methods like `render()` to return the JSX for the component's UI. Class components can have state and lifecycle methods, making them more powerful than functional components before the introduction of hooks.
+
+**ઉત્તર**:  
+ક્લાસ કોમ્પોનન્ટ એ એક જાવાસ્ક્રિપ્ટ ક્લાસ છે જે `React.Component` ને એક્સટેન્ડ કરે છે અને `render()` જેવા મિથોડ્સને સમાવેશ કરે છે જે JSX પરત આપે છે, જે કોમ્પોનન્ટના UI માટે હોય છે. ક્લાસ કોમ્પોનન્ટ્સ પાસે સ્ટેટ અને લાઈફસાયકલ મિથોડ્સ હોઈ છે, જે તેમને હૂક્સના પરિચય પહેલાં ફંક્શનલ કોમ્પોનન્ટ્સ કરતાં વધુ શક્તિશાળી બનાવે છે.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -16,7 +14,9 @@ class MyComponent extends React.Component {
 ---
 
 ### **2. How do you define state in a class component?**
-State in a class component is defined using the `constructor` method, and the state is set using `this.state`. You can update the state using `this.setState()`.
+
+**ઉત્તર**:  
+ક્લાસ કોમ્પોનન્ટમાં, સ્ટેટને `constructor` મિથોડનો ઉપયોગ કરીને વ્યાખ્યાયિત કરવામાં આવે છે અને સ્ટેટને `this.state` દ્વારા સેટ કરવામાં આવે છે. તમે સ્ટેટને અપડેટ કરવા માટે `this.setState()`નો ઉપયોગ કરી શકો છો.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -36,7 +36,9 @@ class MyComponent extends React.Component {
 ---
 
 ### **3. What is the purpose of `this.setState()` in class components?**
-`this.setState()` is used to update the state in a class component. It triggers a re-render of the component and updates the UI accordingly. `setState()` is asynchronous, meaning React batches state updates for performance optimization.
+
+**ઉત્તર**:  
+`this.setState()` એ ક્લાસ કોમ્પોનન્ટમાં સ્ટેટને અપડેટ કરવા માટે ઉપયોગ થાય છે. તે કોમ્પોનન્ટના રેન્ડરને ટ્રિગર કરે છે અને UI ને તે પ્રમાણે અપડેટ કરે છે. `setState()` એ અસિંક્રોનસ હોય છે, એટલે કે React કાર્યક્ષમતાના અનુકૂળતા માટે સ્ટેટ અપડેટને બેચ કરે છે.
 
 ```javascript
 this.setState({ count: this.state.count + 1 });
@@ -45,10 +47,12 @@ this.setState({ count: this.state.count + 1 });
 ---
 
 ### **4. What are lifecycle methods in class components?**
-Lifecycle methods are special methods in class components that are called at specific stages of a component's life (e.g., when it's created, updated, or destroyed). Some common lifecycle methods are:
-- `componentDidMount()`: Called after the component is mounted.
-- `componentDidUpdate()`: Called after the component updates.
-- `componentWillUnmount()`: Called before the component is unmounted and destroyed.
+
+**ઉત્તર**:  
+લાઈફસાયકલ મિથોડ્સ એ ખાસ મિથોડ્સ છે જે ક્લાસ કોમ્પોનન્ટ્સમાં નક્કી કરેલા સમયગાળા પર કોલ થાય છે (જેમ કે, જ્યારે તે બનાવાયું, અપડેટ થયું, અથવા નષ્ટ થયું). કેટલાક સામાન્ય લાઈફસાયકલ મિથોડ્સ છે:
+- **`componentDidMount()`**: આ મિથોડ કોમ્પોનન્ટ માઉન્ટ થવા પછી એકવાર કોલ થાય છે.
+- **`componentDidUpdate()`**: આ મિથોડ કોમ્પોનન્ટ અપડેટ થવા પછી કોલ થાય છે.
+- **`componentWillUnmount()`**: આ મિથોડ કોમ્પોનન્ટ માઉન્ટ થયાને પહેલાં કોલ થાય છે અને તે નષ્ટ થાય છે.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -65,13 +69,18 @@ class MyComponent extends React.Component {
 ---
 
 ### **5. What is the difference between `componentDidMount()` and `componentWillUnmount()`?**
-- **`componentDidMount()`** is called once, immediately after the component is mounted (inserted into the DOM). It’s typically used for data fetching or setting up subscriptions.
-- **`componentWillUnmount()`** is called just before the component is unmounted and removed from the DOM. It’s used for cleanup tasks, such as cancelling network requests or removing event listeners.
+
+**ઉત્તર**:  
+- **`componentDidMount()`** એ એકવાર કોલ થાય છે, તરત જ કોમ્પોનન્ટ માઉન્ટ થવા (DOMમાં સમાવિષ્ટ થવા) પછી. આ ડેટા ફેચિંગ અથવા સબ્સ્ક્રિપ્શન સેટઅપ માટે સામાન્ય રીતે ઉપયોગી છે.
+- **`componentWillUnmount()`** એ કોલ થાય છે તરત કોમ્પોનન્ટ માઉન્ટ થયાને પહેલાં અને DOMમાંથી દૂર થવા. આ ક્લીનઅપ ટાસ્ક માટે ઉપયોગી છે, જેમ કે નેટવર્ક રિક્વેસ્ટ રદ કરવી અથવા ઇવેન્ટ લિસ્ટનર્સ દૂર કરવી.
 
 ---
 
+
 ### **6. How do you pass props to a class component?**
-Props in class components are passed similarly to functional components, but they are accessed via `this.props`. You cannot modify `props` in a class component.
+
+**ઉત્તર**:  
+ક્લાસ કોમ્પોનન્ટ્સમાં પ્રોપ્સને ફંક્શનલ કોમ્પોનન્ટ્સની જેમ જ પસાર કરવામાં આવે છે, પરંતુ તેમને `this.props` દ્વારા ઍક્સેસ કરવામાં આવે છે. તમે ક્લાસ કોમ્પોનન્ટમાં `props`ને બદલતા નથી.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -80,14 +89,16 @@ class MyComponent extends React.Component {
   }
 }
 
-// Usage
+// ઉપયોગ
 <MyComponent message="Hello, World!" />
 ```
 
 ---
 
 ### **7. How do you handle events in class components?**
-In class components, you handle events by binding the method to `this` in the constructor or using arrow functions to ensure the correct context for `this`.
+
+**ઉત્તર**:  
+ક્લાસ કોમ્પોનન્ટ્સમાં, તમે ઈવેન્ટ્સને પરિભાષિત કરતા `this` સાથે મીથોડને બાઇન્ડ કરી તેના કૉનટેક્સટને સાચી રીતે નક્કી કરો છો.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -107,7 +118,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-Alternatively, you can use arrow functions to avoid manual binding:
+વૈકલ્પિક રીતે, તમે મેન્યુઅલ બાઇન્ડિંગથી બચવા માટે એરો ફંક્શનનો ઉપયોગ કરી શકો છો:
 
 ```javascript
 handleClick = () => {
@@ -118,12 +129,14 @@ handleClick = () => {
 ---
 
 ### **8. What is the purpose of `super()` in the constructor of a class component?**
-`super()` is used to call the constructor of the parent class (`React.Component`) and set up the component properly. It must be called before `this` can be used in a class component.
+
+**ઉત્તર**:  
+`super()` એ પેરન્ટ ક્લાસ (`React.Component`)ના કન્સ્ટ્રકટરને કૉલ કરવા માટે ઉપયોગ થાય છે અને કોમ્પોનન્ટને યોગ્ય રીતે સેટ અપ કરે છે. `this`નો ઉપયોગ કરવો પહેલાં `super()`ને કૉલ કરવું જરૂરી છે.
 
 ```javascript
 class MyComponent extends React.Component {
   constructor() {
-    super(); // Calls the parent class constructor
+    super(); // પેરન્ટ ક્લાસ કન્સ્ટ્રકટર કૉલ કરે છે
     this.state = { count: 0 };
   }
 }
@@ -132,7 +145,9 @@ class MyComponent extends React.Component {
 ---
 
 ### **9. How do you update the state based on the previous state in class components?**
-You can pass a function to `setState()` that receives the previous state as an argument. This ensures that the state update is based on the most recent state value.
+
+**ઉત્તર**:  
+તમે `setState()`ને ફંક્શન આપે શકો છો જે પહેલાંના સ્ટેટને આપના તર્ક તરીકે મળે છે. આનો અર્થ એ થાય છે કે સ્ટેટનો અપડેટ છેલ્લાં સ્ટેટ મૂલ્ય પર આધારિત રહેશે.
 
 ```javascript
 this.setState(prevState => {
@@ -143,14 +158,15 @@ this.setState(prevState => {
 ---
 
 ### **10. What is `shouldComponentUpdate()` in React class components?**
-`shouldComponentUpdate()` is a lifecycle method that determines whether a component should re-render. It receives `nextProps` and `nextState` as arguments and returns a boolean (`true` or `false`). If it returns `false`, React will skip the render process.
+
+**ઉત્તર**:  
+`shouldComponentUpdate()` એ એક લાઈફસાયકલ મિથોડ છે જે નક્કી કરે છે કે કોમ્પોનન્ટને ફરીથી રેન્ડર થવું જોઈએ કે નહિ. આ `nextProps` અને `nextState` એર્ગ્યુમેન્ટ્સ તરીકે પ્રાપ્ત કરે છે અને બૂલીયન (આધિકૃત અથવા ખોટું) રીટર્ન કરે છે. જો તે ખોટું પરત કરે છે, તો React રેન્ડર પ્રક્રિયાને સ્કિપ કરશે.
 
 ```javascript
 class MyComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    return nextState.count !== this.state.count; // Re-render only if count changes
+    return nextState.count !== this.state.count; // ફક્ત જો count બદલાય તો રેન્ડર કરવું
   }
 }
 ```
 
----

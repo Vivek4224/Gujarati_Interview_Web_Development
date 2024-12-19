@@ -1,13 +1,9 @@
-Here are the **top 10 questions and answers** related to **`useReducer`** in React, which will help a **fresher** prepare for a React interview:
-
----
-
 ### **1. What is `useReducer` in React?**
 
 **Answer**:  
-`useReducer` is a hook in React that is used to manage more complex state logic in a functional component. It is similar to `useState`, but instead of just updating state, it uses a reducer function to handle state transitions. `useReducer` is typically used when the state logic is more complicated or involves multiple sub-values or actions.
+`useReducer` એ React માં એક hook છે જે ફંક્શનલ કોમ્પોનેન્ટમાં વધુ કંપ્લેક્સ સ્ટેટ લોજિકને મેનેજ કરવા માટે ઉપયોગ થાય છે. તે `useState` ના સમાન છે, પરંતુ તે માત્ર સ્ટેટને અપડેટ કરવાને બદલે, સ્ટેટ ટ્રાન્ઝિશન્સને હેન્ડલ કરવા માટે એક રિડ્યૂસર ફંક્શનનો ઉપયોગ કરે છે. જ્યારે સ્ટેટ લોજિક વધુ કંપ્લેક્સ હોય અથવા બહુવિધ સબ-વેલ્યુઝ અથવા એક્શનના સમાવેશ થાય ત્યારે સામાન્ય રીતે `useReducer` નો ઉપયોગ થાય છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const initialState = { count: 0 };
@@ -41,51 +37,50 @@ function Counter() {
 ### **2. How does `useReducer` differ from `useState`?**
 
 **Answer**:  
-- **`useState`** is used for simple state management, typically when state values are primitive types or just a single value.
-- **`useReducer`** is used for managing complex state, especially when the next state depends on the previous state or involves multiple sub-values. It also allows handling actions in a more structured way, similar to Redux.
+- **`useState`** એ સરળ સ્ટેટ મેનેજમેન્ટ માટે ઉપયોગમાં આવે છે, સામાન્ય રીતે જ્યારે સ્ટેટ મૂલ્યો પ્રિમિટિવ પ્રકારના હોય અથવા ફક્ત એક જ મૂલ્ય હોય.
+- **`useReducer`** એ વધુ કંપ્લેક્સ સ્ટેટ માટે ઉપયોગ થાય છે, ખાસ કરીને જ્યારે આગામી સ્ટેટ પૃથ્વી પર આધાર રાખે છે અથવા તેમાં બહુવિધ સબ-વેલ્યુઝ હોય. તે વધુ ગોઠવણબદ્ધ રીતે એક્શનને હેન્ડલ કરવાની સુવિધા આપે છે, જે Redux ની સમાન છે.
 
-In `useReducer`, a reducer function defines how the state should change based on different actions.
+`useReducer` માં, રિડ્યૂસર ફંક્શન એ વ્યાખ્યાયિત કરે છે કે કેવી રીતે સ્ટેટ વિવિધ એક્શન પર આધાર રાખીને બદલાશે.
 
 ---
 
 ### **3. When should you use `useReducer` over `useState`?**
 
 **Answer**:  
-You should use `useReducer` when:
-- The state logic is complex and involves multiple sub-values.
-- State changes depend on the previous state.
-- You need to handle more complex actions (e.g., in response to user events, API responses).
-- You want to manage state in a more structured way (similar to Redux).
+તમારે `useReducer` નો ઉપયોગ ત્યારે કરવો જોઈએ જ્યારે:
+- સ્ટેટ લોજિક કંપ્લેક્સ હોય અને તેમાં બહુવિધ સબ-વેલ્યુઝનો સમાવેશ થાય.
+- સ્ટેટ ફેરફારો પૃથ્વી પર આધાર રાખે છે.
+- તમને વધુ કંપ્લેક્સ એક્શનને હેન્ડલ કરવાની જરૂર હોય (જેમ કે વપરાશકર્તાના ઇવેન્ટ્સ અથવા API પ્રતિસાદના જવાબ તરીકે).
+- તમે વધુ ગોઠવણબદ્ધ રીતે સ્ટેટ મેનેજ કરવા માંગો છો (Redux ની સમાન રીતે).
 
-For simple state updates, `useState` is often preferred as it's more concise.
+સરળ સ્ટેટ અપડેટ માટે, `useState` સામાન્ય રીતે વધુ યોગ્ય અને સંક્ષિપ્ત રહે છે.
 
 ---
 
 ### **4. What are the parameters of the `useReducer` hook?**
 
 **Answer**:  
-`useReducer` takes two parameters:
-1. **A reducer function**: A function that specifies how the state changes in response to actions.
-2. **An initial state**: The initial state value before any action is dispatched.
+`useReducer` બે પેરામિટર લે છે:
+1. **રિડ્યૂસર ફંક્શન**: એ ફંક્શન જે વિશિષ્ટ કરે છે કે સ્ટેટ કઈ રીતે એક્શનના પ્રતિસાદ રૂપે બદલાશે.
+2. **પ્રારંભિક સ્ટેટ**: એ પ્રારંભિક સ્ટેટ મૂલ્ય જે કોઈ પણ એક્શન ડિસ્પેચ કર્યા પછી પહેલા હોય છે.
 
-The reducer function receives the current state and an action and returns the new state.
+રિડ્યૂસર ફંક્શન વર્તમાન સ્ટેટ અને એક્શનને પ્રાપ્ત કરે છે અને નવા સ્ટેટને પરત આપે છે.
 
 ```jsx
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
----
 
 ### **5. What is the reducer function?**
 
 **Answer**:  
-The reducer function is a function that defines how the state should be updated in response to specific actions. It takes two arguments:
-1. **`state`**: The current state.
-2. **`action`**: An object that describes the action to perform.
+Reducer ફંક્શન એ એ ફંક્શન છે જે વાચકને નિયંત્રિત કરે છે કે કેમ સ્ટેટને ખાસ એક્શનના પ્રતિસાદ તરીકે કેવી રીતે અપડેટ કરવું. તે બે દલીલો લે છે:
+1. **`state`**: વર્તમાન સ્ટેટ.
+2. **`action`**: એ ઑબ્જેક્ટ જે એ એક્શનને વર્ણવે છે જે કરવામાં આવી રહી છે.
 
-It returns the new state.
+આ નવા સ્ટેટને પરત આપે છે.
 
-Example of a reducer function:
+**Reducer ફંક્શનનું ઉદાહરણ**:
 
 ```jsx
 function reducer(state, action) {
@@ -105,12 +100,12 @@ function reducer(state, action) {
 ### **6. How do you dispatch an action with `useReducer`?**
 
 **Answer**:  
-You dispatch an action by calling the `dispatch` function returned by `useReducer`. The action is typically an object that contains a `type` and possibly additional data to help update the state.
+`useReducer` સાથે એક્શનને ડિસ્પેચ (dispatch) કરવાના માટે, તમારે `dispatch` ફંક્શનનો ઉપયોગ કરવો પડે છે, જે `useReducer` દ્વારા પાછું આપવામાં આવે છે. એક્શન સામાન્ય રીતે એક ઑબ્જેક્ટ હોય છે જેમાં `type` હોય છે અને સંભવત: તેની સાથે વધુ ડેટા હોય છે જે સ્ટેટને અપડેટ કરવા માટે ઉપયોગી હોય છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
-dispatch({ type: 'increment' });  // Action with a type of 'increment'
+dispatch({ type: 'increment' });  // 'increment' પ્રકાર સાથે એક્શન
 ```
 
 ---
@@ -118,15 +113,15 @@ dispatch({ type: 'increment' });  // Action with a type of 'increment'
 ### **7. Can you pass additional data in the action when dispatching?**
 
 **Answer**:  
-Yes, you can pass additional data in the action object. This is often useful when you need to update the state with dynamic values.
+હા, તમે એક્શન ઑબ્જેક્ટમાં વધારાનું ડેટા પાસ કરી શકો છો. આ ખાસ કરીને ઉપયોગી છે જ્યારે તમને સ્ટેટને ગતિશીલ મૂલ્ય સાથે અપડેટ કરવાની જરૂર હોય.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
-dispatch({ type: 'setCount', payload: 5 });  // Action with a 'payload' for dynamic data
+dispatch({ type: 'setCount', payload: 5 });  // 'payload' સાથે એક્શન જેમાં ગતિશીલ ડેટા છે
 ```
 
-In the reducer, you can handle this data:
+Reducer માં તમે આ ડેટાને હેન્ડલ કરી શકો છો:
 
 ```jsx
 function reducer(state, action) {
@@ -144,9 +139,9 @@ function reducer(state, action) {
 ### **8. Can `useReducer` be used with asynchronous actions?**
 
 **Answer**:  
-`useReducer` itself does not directly handle asynchronous actions. However, you can dispatch actions asynchronously by using side-effects, such as within `useEffect` or with `async` functions.
+`useReducer` એ સ્વરૂપે આસરતી ક્રિયાઓને સીધી રીતે હેન્ડલ નથી કરે. તેમ છતાં, તમે `useEffect` અથવા `async` ફંક્શન્સ જેવી સાઈડ-એફેક્ટ્સનો ઉપયોગ કરીને આસરતી એક્શનને ડિસ્પેચ કરી શકો છો.
 
-Example with `useEffect` and `async`:
+**`useEffect` અને `async` સાથે ઉદાહરણ**:
 
 ```jsx
 function fetchData(dispatch) {
@@ -173,9 +168,9 @@ function MyComponent() {
 ### **9. How do you use multiple `useReducer` hooks in a single component?**
 
 **Answer**:  
-You can use multiple `useReducer` hooks in a single component to manage different pieces of state independently. Each `useReducer` will manage its own part of the state and its own dispatch function.
+તમે એક જ કંપોનેન્ટમાં એકથી વધુ `useReducer` હૂક્સનો ઉપયોગ કરી શકો છો, જે દરેક સ્ટેટના અલગ ભાગને સ્વતંત્ર રીતે મેનેજ કરે છે. દરેક `useReducer` પોતાની જાતની સ્ટેટ અને પોતાની જાતનો `dispatch` ફંક્શન મેનેજ કરે છે.
 
-Example:
+**ઉદાહરણ**:
 
 ```jsx
 const [countState, dispatchCount] = useReducer(countReducer, { count: 0 });
@@ -201,12 +196,11 @@ function MyComponent() {
 ### **10. What are the advantages of using `useReducer` over `useState`?**
 
 **Answer**:  
-- **Better management of complex state**: `useReducer` is better suited for managing complex state that involves multiple sub-values or more complicated state transitions.
-- **More predictable state updates**: It centralizes the state update logic in a single reducer function, making it easier to understand how the state changes.
-- **Decouples state logic from UI**: `useReducer` separates state changes from the UI components, making it easier to maintain and test.
+- **કંપ્લેક્સ સ્ટેટનું વધુ સારો વ્યવસ્થાપન**: `useReducer` એ વધુ કંપ્લેક્સ સ્ટેટ મેનેજ કરવા માટે શ્રેષ્ઠ છે, જેમાં બહુવિધ સબ-મુલ્યો અથવા વધુ કંપ્લેક્સ સ્ટેટ ટ્રાન્ઝિશન હોય.
+- **વધુ આગોતરી સ્ટેટ અપડેટ્સ**: તે એક જ રિડ્યૂસર ફંક્શનમાં સ્ટેટ અપડેટ લોજિકને કેન્દ્રિત કરે છે, જે એ સ્ટેટ કેવી રીતે બદલાય તે સમજવામાં સહેલું બનાવે છે.
+- **UI થી સ્ટેટ લોજિકને અલગ પાડે છે**: `useReducer` સ્ટેટ ફેરફારોને UI કોમ્પોનેન્ટથી અલગ કરે છે, જે તેને જાળવવામાં અને પરીક્ષણ કરવામાં સહેલું બનાવે છે.
 
-`useReducer` is especially useful when the component has multiple state variables that change based on different actions.
+`useReducer` એ ખાસ કરીને ઉપયોગી છે જ્યારે કંપોનેન્ટમાં અનેક સ્ટેટ વેરીયેબલ્સ હોય છે, જે વિવિધ એક્શન પર આધાર રાખે છે.
 
 ---
 
-These questions and answers cover the essential concepts of `useReducer`, a powerful hook in React used for managing complex state transitions.

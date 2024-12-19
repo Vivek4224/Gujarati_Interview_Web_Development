@@ -1,25 +1,21 @@
-Here are the **top 10 React rendering-related questions and answers** for a **fresher**:
-
----
-
 ### **1. What is rendering in React?**
 
-**Answer**:  
-Rendering in React refers to the process of converting React components into HTML elements that are displayed in the browser. React efficiently updates the DOM by using a virtual DOM, which is compared to the real DOM to minimize unnecessary updates.
+**ઉત્તર**:  
+React માં રેન્ડરિંગ એ પ્રોસેસ છે જેમાં React કોમ્પોનન્ટ્સને HTML એલેમેન્ટ્સમાં બદલીને બ્રાઉઝર પર દર્શાવાય છે. React વર્ચ્યુઅલ DOM નો ઉપયોગ કરે છે, જેના દ્વારા તે રિયલ DOM સાથે સરખાવીને અનાવશ્યક અપડેટ્સને ઘટાડે છે.
 
 ---
 
 ### **2. What is the Virtual DOM in React?**
 
-**Answer**:  
-The Virtual DOM is an in-memory representation of the real DOM. React uses it to optimize rendering by comparing the virtual DOM with the real DOM and updating only the parts that have changed, instead of re-rendering the entire DOM.
+**ઉત્તર**:  
+વર્ચ્યુઅલ DOM એ રિયલ DOM નો એક ઇન-મેમોરી પ્રતિનિધિ છે. React તેનો ઉપયોગ રેન્ડરિંગને ઓપ્ટિમાઇઝ કરવા માટે કરે છે, જેમાં વર્ચ્યુઅલ DOM ને રિયલ DOM સાથે સરખાવીને ફક્ત એ જ ભાગો અપડેટ થાય છે જે બદલાયા હોય, સંપૂર્ણ DOM ને ફરીથી રેન્ડર કર્યા વિના.
 
 ---
 
 ### **3. What is the `render()` method in React?**
 
-**Answer**:  
-The `render()` method is used in React class components to specify the JSX that should be rendered to the screen. It is called every time the component's state or props change.
+**ઉત્તર**:  
+`render()` મિથોડ React class કોમ્પોનન્ટ્સમાં ઉપયોગમાં લેવાય છે, જેમાં JSXને સ્ક્રીન પર રેન્ડર કરવું છે. આ મિથોડ દરેક વખતે બોલાય છે જ્યારે કોમ્પોનન્ટની state અથવા props બદલાય છે.
 
 ```jsx
 class MyComponent extends React.Component {
@@ -33,34 +29,34 @@ class MyComponent extends React.Component {
 
 ### **4. How does React decide when to re-render a component?**
 
-**Answer**:  
-React re-renders a component when its **state** or **props** change. When a component's state or props change, React triggers the `render()` method to update the component’s output.
+**ઉત્તર**:  
+React એ કોમ્પોનન્ટને રી-રેન્ડર કરે છે જ્યારે તેની **state** અથવા **props** બદલાય છે. જ્યારે કોમ્પોનન્ટની state અથવા props બદલાય છે, ત્યારે React `render()` મિથોડને ટ્રિગર કરે છે જેથી કોમ્પોનન્ટના આઉટપુટને અપડેટ કરી શકાય.
 
 ---
 
 ### **5. What is the significance of the `key` prop in React rendering?**
 
-**Answer**:  
-The `key` prop is used in React when rendering lists of elements. It helps React identify which items have changed, been added, or removed. Using keys improves performance by allowing React to efficiently update and re-render only the changed elements.
+**ઉત્તર**:  
+React માં લિસ્ટના એલેમેન્ટ્સને રેન્ડર કરતી વખતે `key` પ્રોપનો ઉપયોગ થાય છે. આ પ્રોપ React ને ઓળખવામાં મદદ કરે છે કે કયા આઇટમ્સમાં ફેરફાર આવ્યો છે, નવા આઇટમ્સ ઉમેર્યા છે, અથવા કોઇ આઇટમ્સ દૂર કરવામાં આવ્યા છે. કીનો ઉપયોગ પરફોર્મન્સને સુધારે છે, કારણ કે તે React ને ફક્ત બદલાયેલા એલેમેન્ટ્સને જ સક્રિય રીતે અપડેટ અને રી-રેન્ડર કરવા માટે માર્ગદર્શન આપે છે.
 
 ```jsx
 const items = ['Apple', 'Banana', 'Cherry'];
 const list = items.map((item, index) => <li key={index}>{item}</li>);
 ```
 
----
+
 
 ### **6. What is React’s reconciliation process?**
 
-**Answer**:  
-React’s reconciliation process, also known as "diffing", compares the current virtual DOM with the new virtual DOM and calculates the minimal set of changes required to update the real DOM. This allows React to render updates efficiently without reloading the entire UI.
+**ઉત્તર**:  
+React નો રીકન્સિલિયેશન પ્રોસેસ, જેને "ડિફિંગ" પણ કહેવામાં આવે છે, વર્તમાન વર્ચ્યુઅલ DOM ને નવી વર્ચ્યુઅલ DOM સાથે સરખાવે છે અને રિયલ DOM ને અપડેટ કરવા માટે જરૂરી ન્યૂનતમ ફેરફારોની ગણતરી કરે છે. આ પ્રોસેસ React ને UI પુનઃલોડ કર્યા વિના અપડેટ્સને કાર્યક્ષમ રીતે રેન્ડર કરવા માટે મંજૂરી આપે છે.
 
 ---
 
 ### **7. What is `shouldComponentUpdate()` in React?**
 
-**Answer**:  
-`shouldComponentUpdate()` is a lifecycle method that allows you to prevent unnecessary re-renders of a component. It returns `true` by default, but you can override it to perform a custom comparison of props and state and decide whether the component needs to re-render.
+**ઉત્તર**:  
+`shouldComponentUpdate()` એ એક લાઈફસાયકલ મિથોડ છે જે તમને કોમ્પોનન્ટના અનાવશ્યક રી-રેન્ડરિંગથી રોકવા માટે મદદ કરે છે. તેનો ડિફોલ્ટ મૂલ્ય `true` હોય છે, પરંતુ તમે તેને ઓવરરાઇડ કરી શકો છો જેથી props અને state નો કસ્ટમ કંપેરિસન કરી શકો અને નક્કી કરી શકો કે કોમ્પોનન્ટને રી-રેન્ડર કરવાની જરૂર છે કે નહીં.
 
 ```jsx
 shouldComponentUpdate(nextProps, nextState) {
@@ -72,8 +68,8 @@ shouldComponentUpdate(nextProps, nextState) {
 
 ### **8. What is a PureComponent in React?**
 
-**Answer**:  
-`React.PureComponent` is a base class that implements `shouldComponentUpdate()` with a shallow prop and state comparison. This means that `PureComponent` prevents re-rendering if the props and state have not changed, optimizing performance for functional components.
+**ઉત્તર**:  
+`React.PureComponent` એ એક બેસ ક્લાસ છે જે `shouldComponentUpdate()` ને શાલો (સાતત્ય) પ્રોપ અને સ્ટેટ કંપેરિસન સાથે અમલમાં લાવે છે. આનો અર્થ એ છે કે `PureComponent` એ રી-રેન્ડરિંગને અટકાવે છે જો props અને stateમાં ફેરફાર ન થયો હોય, જે ફંક્શનલ કોમ્પોનન્ટ્સ માટે પ્રદર્શનને ઓપ્ટિમાઇઝ કરે છે.
 
 ```jsx
 class MyComponent extends React.PureComponent {
@@ -87,8 +83,8 @@ class MyComponent extends React.PureComponent {
 
 ### **9. What is React.memo() and how does it help with rendering?**
 
-**Answer**:  
-`React.memo()` is a higher-order component (HOC) that memoizes a functional component. It prevents unnecessary re-renders by comparing the previous and next props. If the props haven’t changed, React skips the re-rendering.
+**ઉત્તર**:  
+`React.memo()` એ એક હાયર-ઓર્ડર કોમ્પોનન્ટ (HOC) છે જે ફંક્શનલ કોમ્પોનન્ટને મેમોઈઝ કરે છે. તે અગાઉના અને નવા props ની સરખામણી કરીને અનાવશ્યક રી-રેન્ડરિંગ અટકાવે છે. જો props માં કોઈ ફેરફાર ન થયો હોય, તો React રી-રેન્ડરિંગને સ્કિપ કરે છે.
 
 ```jsx
 const MyComponent = React.memo(function({ name }) {
@@ -100,10 +96,9 @@ const MyComponent = React.memo(function({ name }) {
 
 ### **10. What are the potential causes of unnecessary re-renders in React?**
 
-**Answer**:  
-Unnecessary re-renders in React can be caused by:
-- Changing state or props in a way that triggers re-renders without affecting the component’s output.
-- Not using `shouldComponentUpdate()` or `React.memo()` to prevent redundant rendering.
-- Passing new object or array references as props that cause re-rendering even when data has not changed.
+**ઉત્તર**:  
+React માં અનાવશ્યક રી-રેન્ડર્સના કેટલાક કારણો છે:
+- સ્ટેટ અથવા props ને એવી રીતે બદલી રહી છે કે જે રી-રેન્ડરિંગને પ્રેરિત કરે છે પરંતુ કોમ્પોનન્ટના આઉટપુટ પર કોઈ અસર ન કરે.
+- `shouldComponentUpdate()` અથવા `React.memo()` નો ઉપયોગ કરીને વધુ રેન્ડરિંગથી બચાવવાનો પ્રયાસ ન કરવો.
+- નવા ઓબ્જેક્ટ અથવા એરે રેફરન્સને props તરીકે પાસ કરવી, જે ડેટામાં કોઈ ફેરફાર ન થયા હોવા છતાં રી-રેન્ડરિંગને પ્રેરિત કરે છે.
 
----

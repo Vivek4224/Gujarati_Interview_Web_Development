@@ -1,29 +1,31 @@
-Here are **30 questions and answers** about **React** to help with interviews or understanding core concepts:
-
----
-
 ### **1. What is React?**
-React is a JavaScript library for building user interfaces, primarily for single-page applications. It allows developers to build reusable UI components and manage the state of the application.
+
+**ઉત્તર**:  
+React એ એક જાવાસ્ક્રિપ્ટ લાઇબ્રેરી છે જે યુઝર ઈન્ટરફેસ (UI) બનાવવા માટે ઉપયોગ થાય છે, ખાસ કરીને સિંગલ પેજ એપ્લિકેશન્સ (SPA) માટે. તે ડેવલપર્સને પુનઃ ઉપયોગ કરી શકાય તેવા UI કોમ્પોનન્ટ્સ બનાવવાનો અને એપ્લિકેશનની સ્ટેટ મેનેજ કરવાનો મોકો આપે છે.
 
 ---
 
 ### **2. What are components in React?**
-Components are the building blocks of a React application. They can be function components or class components and define how the UI looks and behaves.
+
+**ઉત્તર**:  
+React માં કોમ્પોનન્ટ્સ એ એપ્લિકેશનના બિલ્ડિંગ બ્લોક્સ છે. આ ફંક્શન કોમ્પોનન્ટ અથવા ક્લાસ કોમ્પોનન્ટ હોઈ શકે છે અને તે UI કેવી રીતે દેખાય છે અને કાર્ય કરે છે તે વ્યાખ્યાયિત કરે છે.
 
 ---
 
 ### **3. What is the difference between a function component and a class component?**
-- **Function Component**: A simpler way to write components, introduced with hooks in React 16.8.
-- **Class Component**: An older style of writing components that can have lifecycle methods and state.
 
-Example:
+**ઉત્તર**:  
+- **ફંક્શન કોમ્પોનન્ટ**: એ React 16.8 માં હૂકસના પરિચય સાથે કોમ્પોનન્ટ્સ લખવાનો સરળ માર્ગ છે.  
+- **ક્લાસ કોમ્પોનન્ટ**: એ જૂના સ્વરૂપના કોમ્પોનન્ટ્સ છે, જેમાં લાઇફસાયકલ મિથોડ્સ અને સ્ટેટ હોઈ શકે છે.
+
+ઉદાહરણ:
 ```javascript
-// Function component
+// ફંક્શન કોમ્પોનન્ટ
 function MyComponent() {
   return <div>Hello, World!</div>;
 }
 
-// Class component
+// ક્લાસ કોમ્પોનન્ટ
 class MyComponent extends React.Component {
   render() {
     return <div>Hello, World!</div>;
@@ -34,7 +36,9 @@ class MyComponent extends React.Component {
 ---
 
 ### **4. What are props in React?**
-Props (short for properties) are inputs to a React component. They are passed down from parent to child components and are immutable within the child component.
+
+**ઉત્તર**:  
+Props (જેને પ્રોપર્ટી કહ્યું જાય છે) એ React કોમ્પોનન્ટ્સ માટે ઇનપુટ્સ છે. આ પેરેન્ટ થી ચાઈલ્ડ કોમ્પોનન્ટમાં પસાર થાય છે અને ચાઈલ્ડ કોમ્પોનન્ટમાં અમ્યુટેબલ હોય છે.
 
 ```javascript
 function MyComponent(props) {
@@ -45,7 +49,9 @@ function MyComponent(props) {
 ---
 
 ### **5. What is state in React?**
-State is a mutable data structure that is managed within a component. It allows components to re-render when the data changes.
+
+**ઉત્તર**:  
+સ્ટેટ એ એકMutable ડેટા માળખું છે જે કોમ્પોનન્ટની અંદર મેનેજ કરવામાં આવે છે. તે કોમ્પોનન્ટ્સને તેના ડેટામાં ફેરફાર થાય ત્યારે ફરીથી રેન્ડર થવા માટે મંજૂરી આપે છે.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -64,12 +70,16 @@ class MyComponent extends React.Component {
 ---
 
 ### **6. What are hooks in React?**
-Hooks are functions that allow you to "hook into" React state and lifecycle features from function components. Common hooks include `useState`, `useEffect`, and `useContext`.
+
+**ઉત્તર**:  
+હૂકસ એ એવી ફંક્શન્સ છે જે તમને ફંક્શન કોમ્પોનન્ટ્સમાં React ના સ્ટેટ અને લાઇફસાયકલ ફીચર્સ સાથે જોડાવાનો અવસર આપે છે. સામાન્ય હૂકસમાં `useState`, `useEffect`, અને `useContext` સામેલ છે.
 
 ---
 
 ### **7. What is `useState()` hook?**
-`useState()` is a hook that allows you to add state to function components. It returns an array with two elements: the current state value and a function to update it.
+
+**ઉત્તર**:  
+`useState()` એ એક હૂક છે જે તમને ફંક્શન કોમ્પોનન્ટ્સમાં સ્ટેટ ઉમેરવા માટે મદદ કરે છે. તે બે ઘટકો ધરાવતી એક એરે પરત આપે છે: હાલની સ્ટેટ કિંમત અને તેને અપડેટ કરવા માટેનો ફંક્શન.
 
 ```javascript
 const [count, setCount] = useState(0);
@@ -78,18 +88,22 @@ const [count, setCount] = useState(0);
 ---
 
 ### **8. What is `useEffect()` hook?**
-`useEffect()` is a hook that performs side effects in function components, like fetching data or updating the DOM. It replaces lifecycle methods like `componentDidMount` and `componentDidUpdate` in class components.
+
+**ઉત્તર**:  
+`useEffect()` એ એક હૂક છે જે ફંક્શન કોમ્પોનન્ટ્સમાં સાઈડ ઇફેક્ટ્સ (જેમ કે ડેટા મેળવવું અથવા DOM અપડેટ કરવું) કરવા માટે ઉપયોગ થાય છે. તે ક્લાસ કોમ્પોનન્ટ્સમાં `componentDidMount` અને `componentDidUpdate` જેવી લાઇફસાયકલ મિથોડ્સને બદલે કાર્ય કરે છે.
 
 ```javascript
 useEffect(() => {
   console.log('Component mounted or updated');
-}, [count]); // Dependency array
+}, [count]); // ડિપેન્ડન્સી એરે
 ```
 
 ---
 
 ### **9. What is JSX in React?**
-JSX (JavaScript XML) is a syntax extension for JavaScript, used with React to describe what the UI should look like. It allows HTML-like code in JavaScript files.
+
+**ઉત્તર**:  
+JSX (JavaScript XML) એ જાવાસ્ક્રિપ્ટ માટેનું એક સિનટેક્સ એક્સટેન્શન છે, જે React સાથે ઉપયોગ થાય છે UI કેવી રીતે દેખાય તે વર્ણવવા માટે. તે જાવાસ્ક્રિપ્ટ ફાઈલોમાં HTML જેવા કોડની મંજૂરી આપે છે.
 
 ```javascript
 const element = <h1>Hello, World!</h1>;
@@ -98,18 +112,24 @@ const element = <h1>Hello, World!</h1>;
 ---
 
 ### **10. What is a virtual DOM?**
-The virtual DOM is a lightweight in-memory representation of the actual DOM. React uses it to optimize updates to the real DOM by first comparing the virtual DOM with the real DOM and then updating only the necessary parts.
+
+**ઉત્તર**:  
+વર્ચ્યુઅલ DOM એ વાસ્તવિક DOMનું લાઇટવેઇટ મેમરી પ્રતિકૃતિ છે. React તેને વાસ્તવિક DOM ના અપડેટ્સને ઓપ્ટિમાઇઝ કરવા માટે ઉપયોગ કરે છે, જે પહેલા વર્ચ્યુઅલ DOM ને વાસ્તવિક DOM સાથે તુલના કરે છે અને પછી માત્ર જરૂરી ભાગોને અપડેટ કરે છે.
 
 ---
 
 ### **11. What is the difference between controlled and uncontrolled components in React?**
-- **Controlled Components**: Form elements whose value is controlled by React state.
-- **Uncontrolled Components**: Form elements that maintain their own internal state, with the value accessed using refs.
+
+**ઉત્તર**:  
+- **નિયંત્રિત કોમ્પોનન્ટ્સ**: ફોર્મ એલેમેન્ટ્સ જેમની કિંમત React સ્ટેટ દ્વારા નિયંત્રિત થાય છે.  
+- **અનિયંત્રિત કોમ્પોનન્ટ્સ**: ફોર્મ એલેમેન્ટ્સ જેમની અંદર પોતાની અંદરની સ્ટેટ હોય છે, અને જેની કિંમત refs દ્વારા પ્રવેશ પામે છે.
 
 ---
 
 ### **12. What are keys in React?**
-Keys help React identify which items in the list are changed, added, or removed. They should be unique for each item in a list.
+
+**ઉત્તર**:  
+કીઝ React ને મદદ કરે છે કે તે યાદ રાખી શકે કયા આઇટમ્સ યાદીમાં બદલાયા છે, ઉમેરાયા છે અથવા દૂર કરવામાં આવ્યા છે. દરેક આઇટમ માટે કી અનન્ય હોવી જોઈએ.
 
 ```javascript
 const items = ["Apple", "Banana", "Cherry"];
@@ -119,7 +139,9 @@ const listItems = items.map((item, index) => <li key={index}>{item}</li>);
 ---
 
 ### **13. What is the context API in React?**
-The context API allows you to pass data through the component tree without having to pass props down manually at every level. It’s useful for global state management.
+
+**ઉત્તર**:  
+Context API તમને કોમ્પોનન્ટ ટ્રીમાં ડેટાને એક સ્તર પરથી બીજું સ્તર પર પસાર કરવામાં મદદ કરે છે, જેથી તમે દરેક લેવલ પર પ્રોપ્સ પસાર કરવાના પ્રયોગો ટાળી શકો છો. આ ગ્લોબલ સ્ટેટ મેનેજમેન્ટ માટે ઉપયોગી છે.
 
 ```javascript
 const MyContext = React.createContext();
@@ -128,7 +150,9 @@ const MyContext = React.createContext();
 ---
 
 ### **14. What are higher-order components (HOCs)?**
-A higher-order component is a function that takes a component and returns a new component with additional props or behavior.
+
+**ઉત્તર**:  
+હાઇઅર-ઓર્ડર કોમ્પોનન્ટ એ એ ફંક્શન છે જે એક કોમ્પોનન્ટ લે છે અને તેને વધુ પ્રોપ્સ અથવા વર્તન સાથે એક નવો કોમ્પોનન્ટ પરત આપે છે.
 
 ```javascript
 function withLoading(Component) {
@@ -138,10 +162,11 @@ function withLoading(Component) {
 }
 ```
 
----
 
 ### **15. What is a functional component?**
-A functional component is a simpler form of a component in React, written as a JavaScript function. It does not have its own state or lifecycle methods until React introduced hooks.
+
+**ઉત્તર**:  
+ફંક્શનલ કોમ્પોનન્ટ એ React માં એક સરળ રૂપ છે જે જાવાસ્ક્રિપ્ટ ફંક્શન તરીકે લખાય છે. તે પોતાના સ્ટેટ અથવા લાઇફસાયકલ મિથોડ્સ ધરાવતો નથી, જ્યાં સુધી React હૂકસ (Hooks) નું પરિચય ન થયો હોય.
 
 ```javascript
 function MyComponent() {
@@ -152,7 +177,9 @@ function MyComponent() {
 ---
 
 ### **16. What is a class component?**
-A class component is a React component defined using a JavaScript class. It can have state and lifecycle methods.
+
+**ઉત્તર**:  
+ક્લાસ કોમ્પોનન્ટ એ React કોમ્પોનન્ટ છે જે જાવાસ્ક્રિપ્ટ ક્લાસનો ઉપયોગ કરીને વ્યાખ્યાયિત કરવામાં આવે છે. તે સ્ટેટ અને લાઇફસાયકલ મિથોડ્સ ધરાવતો હોય છે.
 
 ```javascript
 class MyComponent extends React.Component {
@@ -165,12 +192,16 @@ class MyComponent extends React.Component {
 ---
 
 ### **17. What are lifecycle methods in React?**
-Lifecycle methods are hooks in class components that allow you to run code at specific points during a component’s life, such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+**ઉત્તર**:  
+લાઇફસાયકલ મિથોડ્સ એ ક્લાસ કોમ્પોનન્ટ્સમાં હૂકસ છે જે તમને કોમ્પોનન્ટના જીવનકાળમાં નિશ્ચિત પોઈન્ટ્સ પર કોડ ચલાવવાનો અવસર આપે છે, જેમ કે `componentDidMount`, `componentDidUpdate`, અને `componentWillUnmount`.
 
 ---
 
 ### **18. What is React Router?**
-React Router is a library that enables routing in React applications. It allows you to navigate between different views or components based on the URL.
+
+**ઉત્તર**:  
+React Router એ એક લાઇબ્રેરી છે જે React એપ્લિકેશન્સમાં રાઉટિંગ સક્રિય કરે છે. આ તમને URL પર આધારિત અલગ અલગ વિધાઓ અથવા કોમ્પોનન્ટ્સ વચ્ચે નેવિગેટ કરવાની મંજૂરી આપે છે.
 
 ```javascript
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -186,12 +217,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 ---
 
 ### **19. What is Redux?**
-Redux is a state management library for JavaScript apps. It provides a global store for the application state and uses actions and reducers to update the state.
+
+**ઉત્તર**:  
+Redux એ જાવાસ્ક્રિપ્ટ એપ્લિકેશન્સ માટે સ્ટેટ મેનેજમેન્ટ લાઇબ્રેરી છે. તે એપ્લિકેશન સ્ટેટ માટે એક ગ્લોબલ સ્ટોર પ્રદાન કરે છે અને સ્ટેટને અપડેટ કરવા માટે એકશન્સ અને રિડ્યુસરનો ઉપયોગ કરે છે.
 
 ---
 
 ### **20. What is a reducer in Redux?**
-A reducer is a pure function that takes the current state and an action as arguments and returns a new state.
+
+**ઉત્તર**:  
+રિડ્યુસર એ એક શુદ્ધ ફંક્શન છે જે હાલના સ્ટેટ અને એક એકશનને આર્ગ્યુમેન્ટ્સ તરીકે લે છે અને નવો સ્ટેટ પરત આપે છે.
 
 ```javascript
 function counter(state = 0, action) {
@@ -207,24 +242,30 @@ function counter(state = 0, action) {
 ---
 
 ### **21. What is the difference between `useEffect()` and `componentDidMount()`?**
-- `componentDidMount()` is used in class components to perform side effects after the component mounts.
-- `useEffect()` in function components can be used to achieve the same effect, but it runs after every render unless you specify dependencies.
+
+**ઉત્તર**:  
+- `componentDidMount()` એ ક્લાસ કોમ્પોનન્ટ્સમાં ઉપયોગ થતો છે જે કોમ્પોનન્ટના માઉન્ટ પછી સાઈડ ઇફેક્ટ્સને અમલમાં લાવે છે.
+- `useEffect()` એ ફંક્શનલ કોમ્પોનન્ટ્સમાં આ અસર પ્રાપ્ત કરવા માટે ઉપયોગી છે, પરંતુ તે દરેક રેન્ડર પછી ચાલે છે, સિવાય જ્યારે તમે ડિપેન્ડન્સીસ દર્શાવતા નથી.
 
 ---
 
 ### **22. What is the purpose of `useCallback()` hook?**
-`useCallback()` is a hook used to memoize functions, ensuring that the function is not recreated on every render unless its dependencies change.
+
+**ઉત્તર**:  
+`useCallback()` એ એક હૂક છે જે ફંક્શનને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જે સુનિશ્ચિત કરે છે કે ફંક્શન દરેક રેન્ડર પર ફરીથી ન બનાવાઈ જાય, જ્યારે તેની ડિપેન્ડન્સીસ બદલાઈ જાય.
 
 ```javascript
 const memoizedFunction = useCallback(() => {
-  // Function body
+  // ફંક્શનનું શરીર
 }, [dependency]);
 ```
 
 ---
 
 ### **23. What is the purpose of `useMemo()` hook?**
-`useMemo()` is a hook used to memoize expensive calculations so that they are recalculated only when the dependencies change.
+
+**ઉત્તર**:  
+`useMemo()` એ એક હૂક છે જે ખર્ચાળ હિસાબકિતાબને મેમોઇઝ કરવા માટે ઉપયોગમાં લેવાય છે, જેથી તે માત્ર ત્યારે ફરીથી ગણવામાં આવે જ્યારે તેની ડિપેન્ડન્સીસ બદલાય.
 
 ```javascript
 const memoizedValue = useMemo(() => expensiveCalculation(a, b), [a, b]);
@@ -233,36 +274,48 @@ const memoizedValue = useMemo(() => expensiveCalculation(a, b), [a, b]);
 ---
 
 ### **24. What is Prop drilling?**
-Prop drilling refers to the process of passing data from a parent component to a deeply nested child component through intermediate components. This can be avoided using the Context API or state management libraries like Redux.
+
+**ઉત્તર**:  
+પ્રોપ ડ્રિલિંગ એ એ ડેટાને પેરેન્ટ કોમ્પોનન્ટમાંથી નેચરલી નેસ્ટેડ ચાઈલ્ડ કોમ્પોનન્ટમાં પસાર કરવાની પ્રક્રિયા છે. આને Context API અથવા સ્ટેટ મેનેજમેન્ટ લાઇબ્રેરીઝ જેવી Redux નો ઉપયોગ કરીને ટાળી શકાય છે.
 
 ---
 
 ### **25. What are controlled forms in React?**
-Controlled forms in React are forms where the form data is controlled by React state. The input elements' values are linked to the state, and updates to the form are done via `setState()`.
+
+**ઉત્તર**:  
+React માં નિયંત્રિત ફોર્મ્સ એ ફોર્મ્સ છે જ્યાં ફોર્મ ડેટાને React સ્ટેટ દ્વારા નિયંત્રિત કરવામાં આવે છે. ઇનપુટ એલેમેન્ટ્સના મૂલ્યો સ્ટેટ સાથે જોડાય છે, અને ફોર્મને અપડેટ્સ `setState()` મારફતે કરવામાં આવે છે.
 
 ---
 
+
 ### **26. How do you optimize performance in React?**
-- Use `React.memo()` for functional components to prevent unnecessary re-renders.
-- Use `PureComponent` for class components.
-- Use `useCallback()` and `useMemo()` to avoid recreating functions and values.
-- Split the app into smaller chunks using code-splitting.
+
+**ઉત્તર**:  
+React માં પરફોર્મન્સને ઓપ્ટિમાઇઝ કરવા માટે:
+- ફંક્શનલ કોમ્પોનન્ટ્સ માટે `React.memo()` નો ઉપયોગ કરો, જેથી અનાવશ્યક રી-રેન્ડર્સ રોકી શકાય.
+- ક્લાસ કોમ્પોનન્ટ્સ માટે `PureComponent` નો ઉપયોગ કરો.
+- ફંક્શનલ કોમ્પોનન્ટ્સમાં `useCallback()` અને `useMemo()` નો ઉપયોગ કરો, જેથી ફંક્શન અને વેલ્યૂઝ ફરીથી ન બનાવાય.
+- એપ્લિકેશનને નાના ચંક્સમાં વિભાજિત કરવા માટે કોડ-સ્પ્લિટિંગનો ઉપયોગ કરો.
 
 ---
 
 ### **27. What is the difference between `React.createElement()` and JSX?**
-- `React.createElement()` is a low-level API to create React elements.
-- JSX is a syntax extension that makes it easier to write `React.createElement()` calls in a declarative way.
+
+**ઉત્તર**:  
+- `React.createElement()` એ React એલેમેન્ટ્સ બનાવવા માટેનું એક લોઉ-લેવલ API છે.
+- JSX એ એક સિનટેક્સ એક્સટેંશન છે, જે `React.createElement()` કોલ્સને ડિક્લેરેટિવ રીતે લખવાનું સરળ બનાવે છે.
 
 ---
 
 ### **28. What are error boundaries in React?**
-Error boundaries are React components that catch JavaScript errors anywhere in their child component tree and log those errors, preventing the app from crashing.
+
+**ઉત્તર**:  
+એર બાઉન્ડરીઝ એ React કોમ્પોનન્ટ્સ છે જે તેમના ચાઈલ્ડ કોમ્પોનન્ટ ટ્રીમાં ક્યાંય પણ જાવાસ્ક્રિપ્ટ એરર્સને પકડી લે છે અને એ એરર્સને લોગ કરે છે, જેથી એપ્લિકેશન ક્રેશ ન થાય.
 
 ```javascript
 class ErrorBoundary extends React.Component {
   componentDidCatch(error, info) {
-    // Handle error
+    // એરેને સંભાળવો
   }
 }
 ```
@@ -270,12 +323,16 @@ class ErrorBoundary extends React.Component {
 ---
 
 ### **29. How do you trigger a re-render in React?**
-Re-renders in React occur when state or props change. You can trigger a re-render by calling `setState()` in class components or updating state with `useState()` in function components.
+
+**ઉત્તર**:  
+React માં રી-રેન્ડર્સ ત્યારે થાય છે જ્યારે state અથવા props બદલાય છે. તમે `setState()` નો ઉપયોગ કરીને ક્લાસ કોમ્પોનન્ટ્સમાં અથવા `useState()` નો ઉપયોગ કરીને ફંક્શનલ કોમ્પોનન્ટ્સમાં સ્ટેટને અપડેટ કરીને રી-રેન્ડર ટ્રિગર કરી શકો છો.
 
 ---
 
 ### **30. What is the purpose of `React.StrictMode`?**
-`React.StrictMode` is a wrapper component that highlights potential problems in your application, like deprecated APIs and unsafe lifecycle methods. It does not affect the production build.
+
+**ઉત્તર**:  
+`React.StrictMode` એ એક રેપ્પર કોમ્પોનન્ટ છે જે તમારા એપ્લિકેશનમાં સંભવિત સમસ્યાઓને હાઇલાઇટ કરે છે, જેમ કે ડીપ્રેકેટેડ API અને અનસેફ લાઇફસાયકલ મિથોડ્સ. આ પ્રોડક્શન બિલ્ડને પ્રભાવિત નથી કરે.
 
 ```javascript
 <React.StrictMode>
