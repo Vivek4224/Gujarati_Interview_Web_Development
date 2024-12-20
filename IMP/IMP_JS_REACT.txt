@@ -252,12 +252,12 @@ JavaScript માં Loop ના પ્રકારો:
    }
   
 
-   **Example**:
-   ```javascript
+   Example:
+
    for (let i = 0; i < 5; i++) {
        console.log(i); // Prints 0, 1, 2, 3, 4
    }
-   ```
+
 
    - **initialization**: Loop શરૂ થવા પહેલાં એકવાર ચાલે છે (કાઉન્ટર initialize કરવા માટે).
    - **condition**: દરેક iteration પહેલાં ચકાસવામાં આવે છે. loop તે સમયે ચાલે છે જ્યારે condition `true` હોય.
@@ -266,21 +266,20 @@ JavaScript માં Loop ના પ્રકારો:
 2. while loop 
    `while` loop એ ત્યારે ઉપયોગ થાય છે જયારે તમે code ને ત્યાં સુધી repeat કરવા માંગો છો જયારે condition `true` હોય. Condition દરેક iteration પહેલાં evaluated થાય છે.
 
-   **Syntax**:
-   ```javascript
+   Syntax:
+  
    while (condition) {
        // Code to be executed
    }
-   ```
 
-   **Example**:
-   ```javascript
+   Example:
+   
    let i = 0;
    while (i < 5) {
        console.log(i); // Prints 0, 1, 2, 3, 4
        i++;
    }
-   ```
+ 
 
    Loop condition `true` evaluated થાય ત્યાં સુધી ચાલુ રહે છે. જો condition `false` હોય, તો loop ન ચાલે.
 
@@ -288,35 +287,35 @@ JavaScript માં Loop ના પ્રકારો:
    `do...while` loop એ `while` loop જેવું છે, પરંતુ condition code block execute થવા પછી evaluate થાય છે. એટલે કે, loop ની અંદરનું code ઓછામાં ઓછો એકવાર ચલાવાય છે, ભલે condition શરુઆતમાં `false` હોય.
 
    Syntax:
-   ```javascript
+   
    do {
        // Code to be executed
    } while (condition);
-   ```
+   
 
    Example:
-   ```javascript
+   
    let i = 0;
    do {
        console.log(i); // Prints 0, 1, 2, 3, 4
        i++;
    } while (i < 5);
-   ```
+ 
 
    આ રીતે, loop નો code block ઓછામાં ઓછો એકવાર run થાય છે, ભલે condition `false` હોય.
 
 4. for...in loop 
    `for...in` loop નો ઉપયોગ object ના **keys** (properties) પર iterate (ચલાવવી) માટે થાય છે.
 
-   **Syntax**:
-   ```javascript
+   Syntax:
+   
    for (let key in object) {
        // Code to be executed
    }
-   ```
+   
 
-   **Example**:
-   ```javascript
+   Example:
+  
    const person = { name: "Alice", age: 25, city: "New York" };
    for (let key in person) {
        console.log(key + ": " + person[key]); 
@@ -325,31 +324,31 @@ JavaScript માં Loop ના પ્રકારો:
    // name: Alice
    // age: 25
    // city: New York
-   ```
+  
 
    આ loop `person` object ના દરેક key પર iterate કરે છે.
 
 5. for...of loop 
    `for...of` loop નો ઉપયોગ iterable objects જેવા કે arrays, strings, વગેરે પર values iterate કરવા માટે થાય છે.
 
-   **Syntax**:
-   ```javascript
+   Syntax:
+  
    for (let value of iterable) {
        // Code to be executed
    }
-   ```
+ 
 
-   **Example**:
-   ```javascript
+   Example:
+  
    const arr = [10, 20, 30, 40];
    for (let value of arr) {
        console.log(value); // Prints 10, 20, 30, 40
    }
-   ```
+
 
    આ loop array ની values પર iterate કરે છે અને દરેક value પર code execute કરે છે.
 
----
+
 
 ### Loop ના પ્રકારોની સીરફી:
 
@@ -441,7 +440,8 @@ JSX એ JavaScript XML નો સંક્ષેપ છે, અને તે Rea
 1. What is `React.memo`?
 
 ઉત્તર:  
-`React.memo` એ એક હાઈઅર-ઓર્ડર કોમ્પોનન્ટ છે જે ફંક્શનલ કોમ્પોનન્ટ્સને ઑપ્ટિમાઇઝ કરવામાં મદદ કરે છે. તે મેમોાઇઝ કરીને કોમ્પોનન્ટ્સને અનાવશ્યક રીરેન્ડર્સથી બચાવે છે જ્યારે તેની પ્રોપ્સ બદલાતી નથી. તે માત્ર ત્યારે જ રીરેન્ડર કરે છે જ્યારે તેને નવો પ્રોપ્સ મળતા હોય.
+`React.memo` એ એક હાઈઅર-ઓર્ડર કોમ્પોનન્ટ છે જે ફંક્શનલ કોમ્પોનન્ટ્સને ઑપ્ટિમાઇઝ કરવામાં મદદ કરે છે. તે મેમોઇઝ કરીને કોમ્પોનન્ટ્સને અનાવશ્યક રીરેન્ડર્સથી બચાવે છે જ્યારે તેની 
+પ્રોપ્સ બદલાતી નથી. તે માત્ર ત્યારે જ રીરેન્ડર કરે છે જ્યારે તેને નવો પ્રોપ્સ મળતા હોય.
 
 
 1. What are props in React?
@@ -483,9 +483,7 @@ React માં રેન્ડરિંગ એ પ્રોસેસ છે જ
 React Router એ React એપ્લિકેશનમાં રૂટિંગ હેન્ડલ કરવા માટેની લાઇબ્રેરી છે. તે તમને વિવિધ દૃશ્યો (કોમ્પોનન્ટ્સ) વચ્ચે નેવિગેટ કરવાની અને બ્રાઉઝર URL સંચાલિત કરવાની મંજૂરી આપે છે, જે વર્તમાન URL ના આધાર પર કોમ્પોનન્ટ્સને ડાયનેમિક રીતે રેન્ડર કરવાની રીત પ્રદાન કરે છે.
 
 1. What is State?
-React માં, state એ એક એવું ઓબ્જેક્ટ છે જે કમ્પોનન્ટ વિશેની માહિતી અથવા ડેટાને ધરાવે છે, જે સમય સાથે બદલાઈ શકે છે. આ state કમ્પોનન્ટને યુઝર ઇનપુટ, ઇવેન્ટ્સ, અથવા બીજા ફેરફારો પર પ્રતિસાદ આપવાનું અને state અપડેટ થાય ત્યારે તે ફરીથી રેન્ડર થવાનું સક્ષમ બનાવે છે.
-
-ઉદાહરણ તરીકે, એક કાઉન્ટર કમ્પોનન્ટમાં, state હાલમાંનો કાઉન્ટ સંગ્રહિત કરે છે, અને જ્યારે બટન ક્લિક થાય છે, ત્યારે state અપડેટ થાય છે અને નવા કાઉન્ટને દર્શાવા માટે રેન્ડર ટ્રીiggers કરે છે.
+React માં, state એ એક એવું ઓબ્જેક્ટ છે જે કમ્પોનન્ટ વિશેની માહિતી અથવા ડેટાને ધરાવે છે, જે સમય સાથે બદલાઈ શકે છે. આ state કમ્પોનન્ટને યુઝર ઇનપુટ, ઇવેન્ટ્સ, અથવા બીજા ફેરફારો પર   આપવાનું અને state અપડેટ થાય ત્યારે તે ફરીથી રેન્ડર થવાનું સક્ષમ બનાવે છે.
 
 
 1. What is `useCallback` in React?
