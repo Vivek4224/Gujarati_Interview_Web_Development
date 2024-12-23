@@ -1,0 +1,90 @@
+1. HTML શું છે?
+Answer: HTML (Hypertext Markup Language) એ વેબપેજ બનાવવા માટેનો માનક ભાષા છે. આ વેબ પરનાં કન્ટેન્ટને structure કરવા માટે elements અને tags નો ઉપયોગ કરે છે.
+
+2. HTML અને HTML5 માં શું ફરક છે?
+Answer: HTML5 એ HTML નો તાજું સંસ્કરણ છે, જેમાં નવી સુવિધાઓ છે જેમ કે audio અને video માટેનો મૌલિક સપોર્ટ, નવી elements (જેમકે `<article>`, `<section>`, `<nav>`) અને local storage, જે HTML ને અગાઉની સંસ્કરણ કરતા વધારે interactive અને versatile બનાવે છે.
+
+3. HTML tags શું છે?
+Answer: HTML tags એ HTML દસ્તાવેજના બાંધકામના ખૂણાં છે, જે વેબ માટે કન્ટેન્ટ માર્કઅપ કરવા માટે ઉપયોગમાં આવે છે. Tags સામાન્ય રીતે એંગલ બ્રૅકેટ્સમાં લખાય છે, જેમ કે `<p>`, `<div>`, અથવા `<h1>`.
+
+4. `<head>` tag નો હેતુ શું છે?
+Answer: `<head>` tag એ HTML દસ્તાવેજનો મેટાડેટા ધરાવે છે, જેમ કે દસ્તાવેજનું ટાઈટલ, બાહ્ય સંસાધનો (જેમ કે CSS અથવા JavaScript) માટે લિંક અને મેટા માહિતી જેમ કે વર્ણન અને કીવર્ડ્સ.
+
+5. HTML માં semantic elements શું છે?
+Answer: Semantic elements એ વેબપેજના structureમાં તેમના અર્થને સ્પષ્ટ રીતે દર્શાવે છે. ઉદાહરણરૂપ, `<header>`, `<footer>`, `<article>`, `<nav>`, અને `<section>` જે બ્રાઉઝર્સ અને ડેવલપર્સને કન્ટેન્ટના સંદર્ભને સમજવામાં મદદ કરે છે.
+
+6. Inline અને block-level element માં શું ફરક છે?
+Answer: Block-level elements (જેમકે `<div>`, `<p>`) પેરન્ટ container ની સંપૂર્ણ પહોળાઈ લે છે, જેથી "block" structure બને છે. Inline elements (જેમકે `<span>`, `<a>`) ફક્ત તેમના કન્ટેન્ટ જેટલી પહોળાઈ લે છે.
+
+7. `<meta>` tag નો ઉપયોગ શું છે?
+Answer: `<meta>` tag એ HTML દસ્તાવેજ માટે મેટાડેટા પ્રદાન કરે છે, જેમ કે character encoding (`<meta charset="UTF-8">`), author, description, અને search engines માટે keywords.
+
+8. `<div>` tag નો હેતુ શું છે?
+Answer: `<div>` tag એ એક સામાન્ય container છે જે elements ને જૂથબધ્ધ કરીને styling અથવા scripting માટે ઉપયોગ થાય છે. તેનું કોઈ semantic અર્થ નથી, પરંતુ તેને ખાસ કરીને લેઆઉટ ડિઝાઇનમાં ઉપયોગ થાય છે.
+
+9. HTML માં anchor tag શું છે?
+Answer: `<a>` tag hyperlinks બનાવવા માટે ઉપયોગ થાય છે. આ એક પૃષ્ઠ અથવા સંસાધનને બીજા પૃષ્ઠ અથવા સંસાધન સાથે જોડે છે. ઉદાહરણ: `<a href="https://www.example.com">Visit Example</a>`.
+
+10. `<strong>` અને `<b>` tags માં શું ફરક છે?
+Answer: `<strong>` એ એ મેસેજ આપે છે કે ટેક્સ્ટને મજબૂત રીતે હાઇલાઇટ કરવું જોઈએ (જેમ કે આ સામાન્ય રીતે bold માં દર્શાય છે), જ્યારે `<b>` ફક્ત ટેક્સ્ટને bold બનાવે છે, જેનો કોઈ semantic અર્થ નથી.
+
+11. `<em>` અને `<i>` tags માં શું ફરક છે?
+Answer: `<em>` એ ટેક્સ્ટને emphasis આપવાના માટે છે (સામાન્ય રીતે italics માં દર્શાય છે), જે અર્થ સાથે આવે છે, જ્યારે `<i>` ફક્ત styling માટે છે, જે ટેક્સ્ટને italic બનાવે છે.
+
+12. `<form>` tag નો ઉપયોગ શું છે?
+Answer: `<form>` tag એ યૂઝરથી ઈનપુટ મેળવવા માટે છે. તેમાં ઈનપુટ ફીલ્ડ્સ, બટન્સ, ચેકબોક્સ અને અન્ય તત્વો હોય છે, જે માહિતી સર્વર પર મોકલવામાં મદદ કરે છે.
+
+13. `<input>` tag નો હેતુ શું છે?
+Answer: `<input>` tag એ ફોર્મમાં interactive controls બનાવવા માટે છે. આ યૂઝરને ડેટા દાખલ કરવા માટે મૌકો આપે છે, જેમ કે ટેક્સ્ટ, નમ્બર્સ, અથવા પસંદગીઓ.
+
+14. `<link>` અને `<a>` tags માં શું ફરક છે?
+Answer: `<link>` tag એ બાહ્ય સંસાધનો (જેમ કે CSS ફાઇલો) ને HTML દસ્તાવેજ સાથે જોડવા માટે છે, જ્યારે `<a>` tag hyperlinks બનાવે છે જે બીજી દસ્તાવેજો અથવા સંસાધનો સાથે જોડે છે.
+
+15. `alt` attribute શું છે અને તે ઈમેજ tag માં કઈ રીતે કાર્ય કરે છે?**
+Answer: `alt` attribute એ ઈમેજ માટે વિકલ્પી લખાણ પ્રદાન કરે છે, જો તે પ્રદર્શિત ન થતી હોય. આ એક્સેસિબિલિટી અને SEO માં મદદ કરે છે.
+
+16. `<img>` tag નો હેતુ શું છે?
+Answer: `<img>` tag એ HTML દસ્તાવેજમાં ઈમેજ એम्बેડ કરવા માટે છે. તેમાં `src` (source) અને `alt` (alternative text) જેવા attributes છે.
+
+17. `<ul>`, `<ol>`, અને `<li>` tags માં શું ફરક છે?
+Answer: `<ul>` એ unordered list (બુલેટ પોઈન્ટ્સ) બનાવે છે, `<ol>` એ ordered list (સંખ્યા સાથે) બનાવે છે, અને `<li>` એ લિસ્ટ આઇટમ્સને દર્શાવે છે.
+
+18. HTML attributes શું છે?
+Answer: HTML attributes એ તત્વો વિશે વધુ માહિતી આપે છે, જેમ કે `id`, `class`, `src`, `href` વગેરે, અને આ attributes ઓપનિંગ ટૅગની અંદર લખાય છે.
+
+19. `id` attribute નો ઉપયોગ શું છે?
+   **Answer**: `id` attribute એ દરેક તત્વને અનન્ય ઓળખ આપે છે. આનો ઉપયોગ styling (CSS) માટે અથવા JavaScript સાથે ચોક્કસ તત્વને ટાર્ગેટ કરવા માટે થાય છે.
+
+20. HTML માં `class` attribute શું છે?
+   Answer: `class` attribute એ એક અથવા વધુ class નામો તત્વને આપે છે, જે CSS માં styling માટે અથવા JavaScript માં manipulation માટે ઉપયોગમાં લેવામાં આવે છે.
+
+21. `<span>` tag નો હેતુ શું છે?
+Answer: `<span>` tag એ inline container છે, જે કન્ટેન્ટના ભાગને styling કરવા માટે અથવા JavaScript functions લાગુ કરવા માટે ઉપયોગ થાય છે, જેમાં લેઆઉટ પર કોઈ અસર નથી.
+
+22. HTML5 માં નવા input types કયા છે?
+Answer: HTML5 એ નવા input types ઉમેર્યા છે, જેમ કે `email`, `tel`, `date`, `number`, `url`, અને `range`, જે યૂઝર એક્સપિરીયન્સ અને વેલિડેશનને સુધારે છે.
+
+23. `<iframe>` tag શું છે?
+Answer: `<iframe>` tag એ બીજા HTML દસ્તાવેજને હાલના પૃષ્ઠમાં એંબેડ કરવા માટે છે, inline frame બનાવે છે. આનો ઉપયોગ સામાન્ય રીતે વિડિઓઝ, મેપ્સ, અથવા બાહ્ય વેબસાઇટ્સ એંબેડ કરવા માટે થાય છે.
+
+24. HTML માં comment કેવી રીતે ઉમેરશો?
+Answer: HTML માં comments `<!-- comment goes here -->` તરીકે ઉમેરવામાં આવે છે. આ બ્રાઉઝર પર દેખાતી નથી.
+
+25. `<thead>`, `<tbody>`, અને `<tfoot>` tags માં શું ફરક છે?
+Answer: `<thead>` એ ટેબલનો હેડર વિભાગ પરિભાષિત કરે છે, `<tbody>` એ બોડી વિભાગ, અને `<tfoot>` એ ફૂટર વિભાગ. આ ટેબલને વધુ સુગમ અને સુવિધાજનક બનાવવા માટે મદદ કરે છે.
+
+26. Self-closing tag શું છે?
+Answer: Self-closing tag એ એવી HTML તત્વ છે જેને બંધ ટૅગની જરૂર નથી. આને સામાન્ય રીતે trailing slash સાથે લખવામાં આવે છે, જેમકે `<img />`, `<br />`, અથવા `<hr />`.
+
+27. `<canvas>` tag શું છે?
+Answer: `<canvas>` tag એ graphics, એનિમેશન્સ, અથવા અન્ય dynamic visual content ડ્રોઇંગ કરવા માટે JavaScript સાથે ઉપયોગ થાય છે. આનો ઉપયોગ સામાન્ય રીતે ગેમિંગ અથવા interactive applications માટે થાય છે.
+
+28. `id` અને `class` attributes માં શું ફરક છે?
+Answer: `id` attribute દરેક તત્વ માટે અનન્ય છે અને દસ્તાવેજમાં ફક્ત એકવાર ઉપયોગ કરી શકાય છે, જ્યારે `class` attribute ઘણા તત્વોને લાગુ પડે છે અને ઘણા values ધરાવવો શક્ય છે.
+
+29. HTML માં data attributes શું છે?
+Answer: Data attributes એ કસ્ટમ attributes છે જે HTML તત્વો પર વધારાની માહિતી સ્ટોર કરવા માટે ઉમેરવામાં આવે છે. આ attributes `data-`થી શરૂ થાય છે, જેમકે `data-id="123"`, અને JavaScript દ્વારા ઍક્સેસ કરી શકાય છે.
+
+30. `<table>` tag નો હેતુ શું છે?
+Answer: `<table>` tag એ ટેબલ પરિભાષિત કરવા માટે છે. તેમાં nested tags હોય છે જેમકે `<tr>` (પંક્તિઓ), `<td>` (ટેબલ ડેટા) અને `<th>` (ટેબલ હેડર).
+

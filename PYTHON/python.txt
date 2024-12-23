@@ -1,0 +1,168 @@
+Here is a list of commonly asked **Python interview questions and answers** to help you prepare for your interview:
+
+### 1. **What is Python?**
+   **Answer**: Python is a high-level, interpreted, and general-purpose programming language. It is known for its readability and simplicity, which makes it popular for web development, data analysis, artificial intelligence, automation, and more.
+
+### 2. **What are the key features of Python?**
+   **Answer**: Some key features of Python include:
+   - Easy to read and write syntax
+   - Dynamically typed
+   - Object-oriented programming
+   - Supports multiple programming paradigms (procedural, object-oriented, functional)
+   - Extensive standard library
+   - Cross-platform compatibility
+   - Interactive shell
+
+### 3. **What is the difference between a list and a tuple in Python?**
+   **Answer**: 
+   - **List**: A list is mutable (its elements can be changed), and is defined using square brackets `[]`.
+   - **Tuple**: A tuple is immutable (its elements cannot be changed), and is defined using parentheses `()`.
+   - Example:
+     ```python
+     my_list = [1, 2, 3]  # mutable
+     my_tuple = (1, 2, 3)  # immutable
+     ```
+
+### 4. **What are Python’s built-in data types?**
+   **Answer**: The built-in data types in Python include:
+   - **Numeric types**: `int`, `float`, `complex`
+   - **Sequence types**: `list`, `tuple`, `range`
+   - **Text type**: `str`
+   - **Set types**: `set`, `frozenset`
+   - **Mapping type**: `dict`
+   - **Boolean type**: `bool`
+   - **Binary types**: `bytes`, `bytearray`, `memoryview`
+
+### 5. **What is a function in Python?**
+   **Answer**: A function is a block of reusable code that performs a specific task. It can accept arguments (inputs) and return values (outputs). Functions in Python are defined using the `def` keyword.
+   ```python
+   def my_function(a, b):
+       return a + b
+   result = my_function(5, 3)  # returns 8
+   ```
+
+### 6. **What is a lambda function?**
+   **Answer**: A lambda function is a small anonymous function defined with the `lambda` keyword. It can take any number of arguments but only has one expression.
+   ```python
+   add = lambda x, y: x + y
+   result = add(5, 3)  # returns 8
+   ```
+
+### 7. **What is a Python dictionary?**
+   **Answer**: A Python dictionary is an unordered collection of key-value pairs. Keys must be unique and immutable, while values can be of any data type.
+   ```python
+   my_dict = {'name': 'John', 'age': 30}
+   ```
+
+### 8. **What are Python decorators?**
+   **Answer**: Decorators are functions that modify the behavior of other functions or methods. They are used to wrap another function, allowing you to add functionality to it.
+   ```python
+   def decorator_function(original_function):
+       def wrapper_function():
+           print("Before function call")
+           original_function()
+           print("After function call")
+       return wrapper_function
+   
+   @decorator_function
+   def say_hello():
+       print("Hello!")
+   
+   say_hello()  # Outputs: Before function call, Hello!, After function call
+   ```
+
+### 9. **What is the difference between `deepcopy()` and `copy()` in Python?**
+   **Answer**: 
+   - **`copy()`**: Creates a shallow copy of an object, meaning it copies the references of the objects within the original object, not the objects themselves.
+   - **`deepcopy()`**: Creates a deep copy of an object, meaning it copies the objects themselves and all objects referenced by them.
+   ```python
+   import copy
+   my_list = [1, [2, 3]]
+   shallow_copy = copy.copy(my_list)  # shallow copy
+   deep_copy = copy.deepcopy(my_list)  # deep copy
+   ```
+
+### 10. **What is the difference between `is` and `==` in Python?**
+   **Answer**:
+   - **`==`**: Used to compare the values of two objects.
+   - **`is`**: Used to compare the memory addresses (identity) of two objects.
+   ```python
+   a = [1, 2, 3]
+   b = [1, 2, 3]
+   print(a == b)  # True (values are equal)
+   print(a is b)  # False (different memory locations)
+   ```
+
+### 11. **What is exception handling in Python?**
+   **Answer**: Exception handling allows you to manage errors gracefully without crashing the program. In Python, exceptions are handled using `try`, `except`, `else`, and `finally`.
+   ```python
+   try:
+       x = 1 / 0
+   except ZeroDivisionError as e:
+       print("Cannot divide by zero!")
+   ```
+
+### 12. **What is the `self` keyword in Python?**
+   **Answer**: `self` is a reference to the instance of the class. It is used to access variables and methods associated with the current object.
+
+### 13. **What is a Python module?**
+   **Answer**: A module is a file that contains Python code. It can define functions, classes, and variables, and can be imported into other Python programs to be reused.
+   ```python
+   import math
+   print(math.sqrt(16))  # Outputs: 4.0
+   ```
+
+### 14. **What are Python's built-in functions?**
+   **Answer**: Python includes many built-in functions like `print()`, `len()`, `sum()`, `type()`, `range()`, etc., which help perform common tasks.
+   ```python
+   print(len([1, 2, 3]))  # Outputs: 3
+   ```
+
+### 15. **What is list comprehension in Python?**
+   **Answer**: List comprehension provides a concise way to create lists. It consists of an expression followed by a `for` loop.
+   ```python
+   my_list = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]
+   ```
+
+### 16. **Explain the `with` statement in Python.**
+   **Answer**: The `with` statement is used to wrap the execution of a block of code, ensuring that certain tasks are performed automatically, such as closing files after use.
+   ```python
+   with open('file.txt', 'r') as file:
+       content = file.read()
+   ```
+
+### 17. **What is a generator in Python?**
+   **Answer**: A generator is a function that returns an iterator, one value at a time. Generators are written using `yield` instead of `return`.
+   ```python
+   def my_generator():
+       for i in range(3):
+           yield i
+
+   gen = my_generator()
+   for value in gen:
+       print(value)  # Outputs: 0, 1, 2
+   ```
+
+### 18. **What is a Python iterator?**
+   **Answer**: An iterator is an object that represents a stream of data. It implements two methods:
+   - `__iter__()`: Returns the iterator object itself.
+   - `__next__()`: Returns the next value in the sequence.
+
+### 19. **What is the purpose of `global` keyword in Python?**
+   **Answer**: The `global` keyword allows you to modify the value of a variable defined outside the current function scope (in the global scope).
+   ```python
+   x = 10
+   def change_global():
+       global x
+       x = 20
+
+   change_global()
+   print(x)  # Outputs: 20
+   ```
+
+### 20. **What is Python's Global Interpreter Lock (GIL)?**
+   **Answer**: The GIL is a mutex that allows only one thread to execute Python bytecode at a time. This can be a bottleneck for CPU-bound tasks but doesn't significantly affect I/O-bound tasks.
+
+---
+
+These questions cover a broad range of basic and advanced Python concepts. If you'd like to dive deeper into any topic or need examples, feel free to ask!

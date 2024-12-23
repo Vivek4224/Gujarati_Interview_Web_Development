@@ -1,0 +1,177 @@
+Here is a list of common **Python file handling interview questions and answers** to help you prepare:
+
+### 1. **What is file handling in Python?**
+   **Answer**: File handling in Python refers to the process of reading from and writing to files. Python provides built-in functions to open, read, write, and close files using file objects.
+
+### 2. **How do you open a file in Python?**
+   **Answer**: You can open a file in Python using the `open()` function. The syntax is:
+   ```python
+   file = open('file_name', 'mode')
+   ```
+   Where:
+   - `'file_name'` is the name of the file to open.
+   - `'mode'` specifies the mode in which the file is opened. Some common modes include:
+     - `'r'`: Read (default mode)
+     - `'w'`: Write (creates a new file or overwrites an existing one)
+     - `'a'`: Append (adds content to the end of a file)
+     - `'b'`: Binary mode (e.g., `'rb'` for reading a binary file)
+     - `'x'`: Exclusive creation (fails if the file exists)
+
+### 3. **How do you read a file in Python?**
+   **Answer**: You can read a file in Python using several methods:
+   - **`read()`**: Reads the entire file.
+     ```python
+     file = open('file.txt', 'r')
+     content = file.read()
+     print(content)
+     file.close()
+     ```
+   - **`readline()`**: Reads a single line at a time.
+     ```python
+     file = open('file.txt', 'r')
+     line = file.readline()
+     print(line)
+     file.close()
+     ```
+   - **`readlines()`**: Reads all the lines into a list.
+     ```python
+     file = open('file.txt', 'r')
+     lines = file.readlines()
+     for line in lines:
+         print(line)
+     file.close()
+     ```
+
+### 4. **How do you write to a file in Python?**
+   **Answer**: You can write to a file using the `write()` or `writelines()` method.
+   - **`write()`**: Writes a string to the file.
+     ```python
+     file = open('file.txt', 'w')
+     file.write('Hello, World!')
+     file.close()
+     ```
+   - **`writelines()`**: Writes a list of strings to the file.
+     ```python
+     lines = ['Hello, World!\n', 'Welcome to Python file handling.\n']
+     file = open('file.txt', 'w')
+     file.writelines(lines)
+     file.close()
+     ```
+
+### 5. **What is the purpose of `with` statement in file handling?**
+   **Answer**: The `with` statement is used to open files and automatically close them when the block of code is exited. It is a context manager that ensures the file is closed properly, even if an error occurs during file operations.
+   ```python
+   with open('file.txt', 'r') as file:
+       content = file.read()
+       print(content)
+   # File is automatically closed after the block ends.
+   ```
+
+### 6. **What happens if you open a file in write mode (`'w'`) but the file does not exist?**
+   **Answer**: If the file does not exist, Python will create a new file when opened in `'w'` mode. If the file already exists, it will be overwritten.
+
+### 7. **What is the difference between `read()` and `readlines()`?**
+   **Answer**: 
+   - **`read()`**: Reads the entire content of the file and returns it as a single string.
+   - **`readlines()`**: Reads the entire file and returns each line as an element in a list.
+   ```python
+   with open('file.txt', 'r') as file:
+       content = file.read()  # returns the whole file content as a string
+       print(content)
+   
+   with open('file.txt', 'r') as file:
+       lines = file.readlines()  # returns each line as a list item
+       print(lines)
+   ```
+
+### 8. **How do you handle exceptions while working with files in Python?**
+   **Answer**: You can handle exceptions using `try`, `except`, and `finally`. This ensures that the file is closed properly, even if an error occurs.
+   ```python
+   try:
+       file = open('file.txt', 'r')
+       content = file.read()
+   except FileNotFoundError:
+       print("File not found.")
+   except IOError:
+       print("Error occurred while reading the file.")
+   finally:
+       file.close()
+   ```
+
+### 9. **How do you check if a file exists in Python?**
+   **Answer**: You can check if a file exists using the `os.path.exists()` method from the `os` module or the `os.path.isfile()` method to check specifically for files (not directories).
+   ```python
+   import os
+   if os.path.exists('file.txt'):
+       print("File exists.")
+   else:
+       print("File does not exist.")
+   ```
+
+### 10. **What is the `os` module used for in file handling?**
+   **Answer**: The `os` module provides functions to interact with the operating system. It allows you to perform file and directory operations, such as checking if a file exists, renaming files, deleting files, and getting the current working directory.
+   ```python
+   import os
+   # Get current working directory
+   print(os.getcwd())
+   # Remove a file
+   os.remove('file.txt')
+   ```
+
+### 11. **How do you rename a file in Python?**
+   **Answer**: You can rename a file using the `os.rename()` function.
+   ```python
+   import os
+   os.rename('old_file.txt', 'new_file.txt')
+   ```
+
+### 12. **How do you delete a file in Python?**
+   **Answer**: You can delete a file using the `os.remove()` function.
+   ```python
+   import os
+   os.remove('file.txt')
+   ```
+
+### 13. **How do you copy a file in Python?**
+   **Answer**: You can copy a file using the `shutil` module.
+   ```python
+   import shutil
+   shutil.copy('source_file.txt', 'destination_file.txt')
+   ```
+
+### 14. **How do you append to a file in Python?**
+   **Answer**: You can append to a file by opening it in append mode `'a'`. This will add new content at the end of the file.
+   ```python
+   with open('file.txt', 'a') as file:
+       file.write('This is new content added at the end of the file.')
+   ```
+
+### 15. **What is the `flush()` method used for in file handling?**
+   **Answer**: The `flush()` method is used to flush the internal buffer of a file object. It writes any buffered data to the disk without closing the file.
+   ```python
+   file = open('file.txt', 'w')
+   file.write('Hello, World!')
+   file.flush()  # Forces the data to be written to the file
+   ```
+
+### 16. **How do you read binary files in Python?**
+   **Answer**: To read binary files, you need to open the file in binary mode (`'rb'`).
+   ```python
+   with open('image.jpg', 'rb') as file:
+       content = file.read()
+       print(content)  # Prints the binary data
+   ```
+
+### 17. **What is the difference between `write()` and `writelines()`?**
+   **Answer**:
+   - **`write()`**: Writes a string to the file.
+   - **`writelines()`**: Writes a list of strings to the file without adding newlines (you must include `\n` if needed).
+   ```python
+   lines = ['Line 1\n', 'Line 2\n', 'Line 3\n']
+   with open('file.txt', 'w') as file:
+       file.writelines(lines)
+   ```
+
+---
+
+These questions cover the key aspects of **file handling in Python**. If you need any further explanations or examples on these topics, feel free to ask!
